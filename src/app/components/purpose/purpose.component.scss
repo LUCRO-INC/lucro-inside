@@ -1,0 +1,79 @@
+@import './theme/settings';
+
+.purpose {
+  position: relative;
+  height: 90vh;
+  @include flexbox(space-evenly, center, row-reverse);
+
+  &__text {
+    width: 31%;
+    min-width: 595px;
+    margin-right: 4%;
+
+    &--title {
+      @include fontStyle($--fs-h1, 72px, $--fw-black, $--clr-font-dark, undefined);
+      margin-bottom: 0.125em;
+    }
+
+    &--paragraph {
+      width: 88%;
+      @include fontStyle($--fs-p, 22px, $--fw-light, $--clr-font-light, undefined)
+    }
+  }
+
+  &__image {
+    @include flexbox(center, center, row);
+    position: relative;
+    width: 25%;
+    min-width: 470px;
+    margin-left: 9%;
+
+    img {
+      max-width: 100%;
+      border-radius: 30px;
+
+      &.purpose__image1 {
+        position: absolute;
+        left: 2em;
+        bottom: 8.2em;
+        z-index: 1;
+      }
+      &.purpose__image2 {
+        position: absolute;
+        left: 25em;
+        bottom: 50%;
+        z-index: 1;
+      }
+      &.purpose__image3 {
+        position: absolute;
+        border-radius: 0;
+        top: -1.3em;
+        left: 7.5em;
+      }
+      &.purpose__image4 {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .backOverlay {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: .8;
+  }
+
+  .backLogo {
+    position: absolute;
+    z-index: 1;
+    top: -6em;
+    right: 1em;
+  }
+
+  @include md {
+  }
+
+  @include lg {
+  }
+}

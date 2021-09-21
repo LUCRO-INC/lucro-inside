@@ -1,0 +1,66 @@
+@import './theme/settings';
+
+.beliefs {
+  height: 70vh;
+  margin-left: 4%;
+  @include flexbox(space-evenly, center, row);
+
+  &__text {
+    width: 30%;
+    min-width: 518px;
+
+    &--title {
+      @include fontStyle($--fs-h2, 72px, $--fw-black, $--clr-font-dark, undefined);
+      margin-bottom: 0.35em;
+    }
+
+    &--paragraph {
+      width: 80%;
+      @include fontStyle($--fs-p, 22px, $--fw-light, $--clr-font-light, undefined)
+    }
+  }
+
+  &__image {
+    @include flexbox(center, center, row);
+    position: relative;
+    margin-left: 3%;
+    right: 10%;
+    width: 25%;
+    min-width: 417px;
+
+    img {
+      max-width: 100%;
+
+      &.beliefs__image1 {
+        position: absolute;
+        top: -14.3em;
+        left: 4.5em;
+        z-index: 1;
+      }
+      &.beliefs__image2 {
+        position: absolute;
+        top: -8.5em;
+        left: -0.7em;
+        z-index: 1;
+      }
+      &.beliefs__image3 {
+        position: absolute;
+        right: -6em;
+        z-index: -2;
+      }
+      &.beliefs__image4 {
+        position: absolute;
+        top: -9.5em;
+        right: -8em;
+        z-index: -1;
+      }
+      &.beliefs__image5 {
+        position: absolute;
+        border-radius: 100px 100px 100px 100px;
+        -webkit-box-shadow: 0px 10px 18px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 10px 18px -5px rgba(0,0,0,0.75);
+        box-shadow: 0px 10px 18px -5px rgba(0,0,0,0.75);
+      }
+    }
+  }
+}
