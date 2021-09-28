@@ -1,23 +1,30 @@
-@import './theme/settings';
+@import "./theme/settings";
 
 .footer {
-  padding-inline: 18%;
+  @include flexbox(center, center, column);
+  position: relative;
+  margin-top: 7em;
+  padding-inline: 10%;
+
+  .brand {
+    margin-bottom: 2.5em;
+  }
 
   &-top {
-    @include flexbox(undefined, flex-start, row);
-    margin-top: 1em;
+    @include flexbox(center, center, column);
 
     .footer-navbar {
-      margin-right: 8.5em;
+      text-align: center;
+      margin-top: 2em;
 
       &__title {
-        @include fontStyle($--fs-p, 20px, $--fw-black, #000, undefined);
+        @include fontStyle(16px, 20px, $--fw-black, #000, undefined);
         margin-bottom: 16px;
       }
 
       &__item {
-        @include fontStyle($--fs-p, 22px, $--fw-light, undefined, undefined);
-        margin-bottom: 24px;
+        @include fontStyle(14px, 20px, $--fw-light, undefined, undefined);
+        margin-bottom: 18px;
 
         &--link {
           color: $--clr-font-dark;
@@ -27,8 +34,7 @@
 
     .download-links {
       @include flexbox(center, center, column);
-      margin-left: auto;
-      margin-top: 5px;
+      margin-block: 2em;
 
       &__link {
         margin-bottom: 12px;
@@ -36,13 +42,19 @@
     }
   }
 
+  hr {
+    height: 1px;
+    width: 100%;
+  }
+
   &-bottom {
-    @include flexbox(space-between, center, row);
-    margin-block: 1.5em 3em;
+    @include flexbox(space-between, center, column-reverse);
+    margin-bottom: 3em;
+    text-align: center;
 
     &__text {
-      width: 65%;
-      color: $--clr-font-dark;
+      width: 101%;
+      @include fontStyle(12px, 16px, $--fw-black, $--clr-font-dark, undefined);
 
       a {
         color: #000;
@@ -63,7 +75,7 @@
 
         &__item {
           padding: 7px;
-          margin-inline: 8px;
+          margin: 1.3em 8px;
           background-color: #e1e5e4;
           border-radius: 50%;
 
@@ -72,6 +84,82 @@
           }
         }
       }
+    }
+  }
+
+  @include sm {
+    @include flexbox(center, flex-start, column);
+    margin-top: 15em;
+
+    &-top {
+      @include flexbox(initial, flex-start, row);
+      width: 100%;
+
+      .footer-navbar {
+        text-align: initial;
+        margin-top: 0;
+        margin-right: 3em;
+      }
+
+      .download-links {
+        margin-left: auto;
+      }
+    }
+
+    &-bottom {
+      width: 100%;
+    }
+  }
+
+  @include md {
+    &-top {
+      .footer-navbar {
+        &__item {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-bottom {
+      &__text {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @include lg {
+    height: fit-content;
+    top: 1rem;
+
+    &-top {
+      .footer-navbar {
+        margin-right: 8em;
+
+        &__item {
+          margin-bottom: 22px;
+        }
+      }
+    }
+  }
+
+  @include xl {
+    &-top {
+      .footer-navbar {
+        margin-right: 10em;
+
+        &__item {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    &-bottom {
+      flex-direction: row;
+      margin-top: 1.5em;
+      text-align: initial;
     }
   }
 }

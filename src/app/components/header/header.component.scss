@@ -3,13 +3,13 @@
 header {
   @include flexbox(center, center, undefined);
   max-width: 100%;
-  position: relative;
-  height: 84px;
+  position: fixed;
+  width: 100%;
   background: linear-gradient(180deg, rgba(244, 247, 245, 0.8) 0%, rgba(244, 247, 245, 0.4) 100%);
   backdrop-filter: blur(8px);
+  z-index: 98;
 
   .brand {
-    position: fixed;
     right: 40%;
     padding: 5px 0 5px 16px;
   }
@@ -17,7 +17,7 @@ header {
   .nav-toggle {
     display: block;
     background: transparent;
-    position: fixed;
+    position: absolute;
     padding: .5em;
     border: 0;
     cursor: pointer;
@@ -58,7 +58,7 @@ header {
     display: block;
     background: white;
     position: fixed;
-    top: 84px;
+    top: 71px;
     left: 0;
     right: 0;
     height: 345px;
@@ -129,15 +129,16 @@ header {
           transition: border-bottom 200ms linear;
 
           &--link {
+            text-align: center;
             text-decoration: none;
             @include fontStyle($--fs-p, 20px, undefined, $--clr-font-regular, undefined);
 
             &::after {
               content: '';
               position: absolute;
-              bottom: -8px;
-              left: 0;
-              width: 100%;
+              bottom: -24px;
+              left: -27%;
+              width: 160%;
               height: 8px;
               background-color: $--clr-lucro-red;
               opacity: 0;
@@ -167,7 +168,7 @@ header {
       }
 
     .main-navbar {
-      transform: translateY(-70%);
+      transform: translateY(-250%);
     }
   }
 }
