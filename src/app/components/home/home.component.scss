@@ -214,6 +214,7 @@
 
   @include lg {
     height: 80vh;
+    background: radial-gradient(30% 100% at 0% 60%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%), radial-gradient(100% 100% at 100% 10%, #cdebd94b 0%, rgba(205, 235, 217, 0) 80%);
     padding-inline: 6%;
     @include flexbox(space-evenly, center, row-reverse);
 
