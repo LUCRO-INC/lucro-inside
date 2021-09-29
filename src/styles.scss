@@ -1,9 +1,12 @@
-@import '../theme/settings';
+@import "../theme/settings";
 
 @font-face {
-  font-family: 'Circular Std';
-  src: url('/assets/fonts/Circular Std Medium 500.eot');
-  src: local('☺'), url('/assets/fonts/Circular Std Medium 500.woff') format('woff'), url('/assets/fonts/Circular Std Medium 500.ttf') format('truetype'), url('/assets/fonts/Circular Std Medium 500.svg') format('svg');
+  font-family: "Circular Std";
+  src: url("/assets/fonts/Circular Std Medium 500.eot");
+  src: local("☺"),
+    url("/assets/fonts/Circular Std Medium 500.woff") format("woff"),
+    url("/assets/fonts/Circular Std Medium 500.ttf") format("truetype"),
+    url("/assets/fonts/Circular Std Medium 500.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -11,21 +14,25 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    transition: all 200ms ease-in-out;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 200ms ease-in-out;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Circular Std', sans-serif;
-    font-size: 62.5%;
-    background: linear-gradient(180deg, rgba(244, 247, 245, 0.8) 0%, rgba(244, 247, 245, 0.4) 100%);
-    backdrop-filter: blur(8px);
+  font-family: "Circular Std", sans-serif;
+  font-size: 62.5%;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 247, 245, 0.8) 0%,
+    rgba(244, 247, 245, 0.4) 100%
+  );
+  backdrop-filter: blur(8px);
 }
 
 a {
