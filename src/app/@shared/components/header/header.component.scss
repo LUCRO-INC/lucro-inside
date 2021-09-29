@@ -1,4 +1,4 @@
-@import '../../../../theme/settings', '../../../../theme/breakpoints';
+@import '../../../../../theme/settings', '../../../../../theme/breakpoints';
 
 header {
   @include flexbox(center, center, undefined);
