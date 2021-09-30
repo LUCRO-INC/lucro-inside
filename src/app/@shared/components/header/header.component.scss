@@ -5,8 +5,6 @@ header {
   max-width: 100%;
   position: fixed;
   width: 100%;
-  background: linear-gradient(180deg, rgba(244, 247, 245, 0.8) 0%, rgba(244, 247, 245, 0.4) 100%);
-  backdrop-filter: blur(8px);
   z-index: 98;
 
   .brand {
@@ -106,6 +104,8 @@ header {
   @include lg {
     @include flexbox(center, center, column);
     position: fixed;
+    top: 0;
+    height: fit-content;
 
     .nav-toggle {
       opacity: 0;
@@ -116,7 +116,7 @@ header {
       background: transparent;
       height: 100%;
       padding: 10px 20px;
-      transform: translateY(-25%);
+      transform: translateY(-10%);
 
       .navbar {
         @include flexbox(space-between, center, row);
@@ -169,7 +169,7 @@ header {
       }
 
     .main-navbar {
-      transform: translateY(-250%);
+      transform: translateY(-45%);
     }
   }
 }
