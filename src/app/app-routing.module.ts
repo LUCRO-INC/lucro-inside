@@ -7,18 +7,19 @@ import { EmpresasComponent } from './pages/empresas/empresas.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: EmpresasComponent,
     pathMatch: 'full'
   },
   {
     path: 'empresas',
-    redirectTo: 'EmpresasComponent',
+    component: EmpresasComponent,
+    pathMatch: 'full'
   },
   {
     path: 'contactenos',
-    redirectTo: 'ContactenosComponent',
+    component: ContactenosComponent,
+    pathMatch: 'full'
   },
-  { path: 'home', loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule) },
 ];
 
 @NgModule({
