@@ -1,13 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ContactenosComponent } from './pages/contactenos/contactenos.component';
+import { EmpresasComponent } from './pages/empresas/empresas.component';
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: EmpresasComponent,
     pathMatch: 'full'
   },
-  { path: 'home', loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule) },
+  {
+    path: 'empresas',
+    component: EmpresasComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'contactenos',
+    component: ContactenosComponent,
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
