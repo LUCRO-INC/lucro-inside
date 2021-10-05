@@ -7,18 +7,16 @@ import { EmpresasComponent } from './pages/empresas/empresas.component';
 const routes: Routes = [
   {
     path: '',
-    component: EmpresasComponent,
+    redirectTo: 'empresas',
     pathMatch: 'full'
   },
   {
     path: 'empresas',
     component: EmpresasComponent,
-    pathMatch: 'full'
   },
   {
     path: 'contactenos',
     component: ContactenosComponent,
-    pathMatch: 'full'
   },
 ];
 
