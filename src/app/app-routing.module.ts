@@ -1,24 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ContactenosComponent } from './pages/contactenos/contactenos.component';
-import { EmpresasComponent } from './pages/empresas/empresas.component';
-
 const routes: Routes = [
   {
     path: '',
-    component: EmpresasComponent,
+    redirectTo: 'empresas',
     pathMatch: 'full'
   },
   {
     path: 'empresas',
-    component: EmpresasComponent,
-    pathMatch: 'full'
+    loadChildren: () => import('./pages/empresas/empresas.module').then(m => m.EmpresasModule)
   },
   {
     path: 'contactenos',
-    component: ContactenosComponent,
-    pathMatch: 'full'
+    loadChildren: () => import('./pages/contactenos/contactenos.module').then(m => m.ContactenosModule)
   },
 ];
 

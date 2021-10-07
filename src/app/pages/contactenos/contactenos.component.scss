@@ -1,1 +1,428 @@
+@import "./theme/settings";
 
+.contactenos {
+  @include flexbox(center, center, column);
+  .container {
+    @include flexbox(center, center, column);
+    max-width: 485px;
+    padding: 1.25rem;
+    position: relative;
+    top: 72px;
+
+    .contactenos__text {
+      @include flexbox(center, center, column);
+      width: 100%;
+
+      .contactenos__image {
+        position: relative;
+        overflow: hidden;
+        left: -1.5em;
+        width: 12.789375rem;
+        height: 8.75rem;
+        margin-right: auto;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+
+          &.contactenos__image1 {
+            position: absolute;
+            width: 5.9775rem;
+            top: 0.3em;
+            left: 10.8em;
+          }
+          &.contactenos__image2 {
+            position: absolute;
+            width: 9.095rem;
+            z-index: 1;
+          }
+          &.contactenos__image3 {
+            position: absolute;
+            width: 0.959375rem;
+            top: 10.2em;
+            left: 13.4em;
+            z-index: 2;
+          }
+        }
+      }
+
+      &--title {
+        @include fontStyle(
+          20px,
+          24px,
+          $--fw-black,
+          $--clr-font-regular,
+          undefined
+        );
+        width: 100%;
+        letter-spacing: 0.15px;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+      }
+
+      &--paragraph {
+        width: 100%;
+        @include fontStyle(
+          12px,
+          16px,
+          $--fw-light,
+          $--clr-font-light,
+          undefined
+        );
+        letter-spacing: 0.004em;
+        margin-bottom: 1.5em;
+      }
+
+      .btn-ghost {
+        display: none;
+      }
+    }
+
+    .contactenos-form {
+      #name {
+        background: #fff,
+          url("../../../assets/images/icons/user.svg") no-repeat 94.5% 45%;
+      }
+
+      #email {
+        background: #fff,
+          url("../../../assets/images/icons/at.svg") no-repeat 94.5% 45%;
+      }
+
+      #phoneNumber {
+        background: #fff,
+          url("../../../assets/images/icons/phone.svg") no-repeat 94.5% 45%;
+      }
+
+      #company {
+        background: #fff,
+          url("../../../assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%;
+      }
+
+      select,
+      .form-control,
+      .input-textarea {
+        @include fontStyle(
+          14px,
+          20px,
+          $--fw-light,
+          $--clr-font-regular,
+          undefined
+        );
+        background-color: #fff;
+        font-family: inherit;
+        letter-spacing: 0.4px;
+        padding: 1.125rem 0.9375rem;
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0.5rem;
+        border: 1px solid #bbc7ca;
+        border-radius: 4px;
+
+        &::placeholder {
+          @include fontStyle(
+            14px,
+            20px,
+            $--fw-light,
+            $--clr-font-regular,
+            undefined
+          );
+        }
+      }
+
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: url("../../../assets/images/icons/select-arrow.svg")
+          no-repeat 94.5% 45%;
+      }
+
+      input {
+        background-color: #fff;
+      }
+
+      .input-textarea {
+        background-color: #fff;
+        min-height: 3.625rem;
+        height: 7.5rem;
+        max-height: 18.75rem;
+        &::placeholder {
+          color: #9aabaf;
+        }
+      }
+
+      .submit-button {
+        @include fontStyle(14px, 17.71px, $--fw-light, #ffffff, uppercase);
+        letter-spacing: 1.5px;
+        width: 100%;
+        height: 3rem;
+        margin-block: 8px;
+        padding: 8px 24px;
+        border-radius: 16px;
+        background-color: #36af67;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          background-color: #1c693b;
+        }
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+
+      .form-conditions {
+        @include fontStyle(
+          12px,
+          16px,
+          $--fw-light,
+          $--clr-font-regular,
+          undefined
+        );
+        text-align: center;
+        margin-block: 0.5rem 4em;
+      }
+    }
+
+    .backEllipse {
+      position: absolute;
+      overflow: hidden;
+      width: 26.75rem;
+      left: -13rem;
+      top: 7rem;
+      z-index: -1;
+    }
+  }
+
+  @include sm {
+    .container {
+      .contactenos__text {
+        .contactenos__image {
+          width: 14.0683125rem;
+          height: 9.625rem;
+          img {
+            &.contactenos__image1 {
+              width: 6.57525rem;
+              top: 0.33em;
+              left: 11.88em;
+            }
+            &.contactenos__image2 {
+              width: 10.0045rem;
+            }
+            &.contactenos__image3 {
+              width: 1.0553125rem;
+              top: 11.22em;
+              left: 14.74em;
+            }
+          }
+        }
+        &--title {
+          font-size: 22px;
+          line-height: 26.4px;
+          margin-top: 1.1em;
+        }
+        &--paragraph {
+          font-size: 13.2px;
+          line-height: 17.6px;
+        }
+      }
+      .backEllipse {
+        width: 29.425rem;
+        top: 7.5rem;
+      }
+    }
+  }
+
+  @include md {
+    .container {
+      .contactenos__text {
+        .contactenos__image {
+          width: 16.6261875rem;
+          height: 11.375rem;
+          img {
+            &.contactenos__image1 {
+              width: 7.77075rem;
+              top: 0.39em;
+              left: 14.04em;
+            }
+            &.contactenos__image2 {
+              width: 11.8235rem;
+            }
+            &.contactenos__image3 {
+              width: 1.2471875rem;
+              top: 13.26em;
+              left: 17.42em;
+            }
+          }
+        }
+        &--title {
+          font-size: 26px;
+          line-height: 31.2px;
+          margin-top: 1.3em;
+        }
+        &--paragraph {
+          font-size: 15.6px;
+          line-height: 20.8px;
+        }
+      }
+      .backEllipse {
+        width: 34.775rem;
+        top: 9rem;
+      }
+    }
+  }
+
+  @include lg {
+    background: radial-gradient(
+      80% 80% at 100% 0%,
+      #cdebd985 0%,
+      rgba(205, 235, 217, 0) 100%
+    );
+    .container {
+      @include flexbox(space-evenly, flex-start, row-reverse);
+      width: 100%;
+      max-width: initial;
+      margin-top: 100px;
+      left: -3em;
+
+      .contactenos-form {
+        max-width: 22.25rem;
+      }
+
+      .contactenos__text {
+        @include flexbox(center, flex-start, column-reverse);
+        max-width: 25.0665rem;
+
+        &--title {
+          font-size: 27.2px;
+          line-height: 24.96px;
+          letter-spacing: 0.25px;
+          margin-top: 0.75em;
+        }
+        &--paragraph {
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+        }
+
+        .btn-ghost {
+          @include fontStyle(
+            14px,
+            17.71px,
+            $--fw-bold,
+            $--clr-font-regular,
+            uppercase
+          );
+          display: block;
+          background: transparent;
+          margin-top: 2em;
+          padding: 10px 35px;
+          width: auto;
+          border: $--clr-font-dark 2px solid;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+
+        .contactenos__image {
+          width: 25.0665rem;
+          height: 17.15rem;
+          img {
+            &.contactenos__image1 {
+              width: 11.7165rem;
+              top: 0.8em;
+              left: 21.44em;
+            }
+            &.contactenos__image2 {
+              width: 17.826rem;
+            }
+            &.contactenos__image3 {
+              width: 1.8805rem;
+              top: 20.8em;
+              left: 25.6em;
+            }
+          }
+        }
+      }
+      .backEllipse {
+        width: 31.2rem;
+        top: -15rem;
+        left: -6rem;
+      }
+    }
+  }
+
+  @include xl {
+    .container {
+      @include flexbox(space-evenly, flex-start, row-reverse);
+      width: 100%;
+      max-width: initial;
+      margin-top: 100px;
+      left: -8em;
+
+      .contactenos-form {
+        max-width: 27.8125rem;
+
+        select,
+        .form-control,
+        .input-textarea {
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .contactenos__text {
+        max-width: 31.333125rem;
+
+        &--title {
+          font-size: $--fs-h3;
+          line-height: 43.01px;
+          letter-spacing: 0.25px;
+          margin-top: 0.75em;
+          margin-bottom: 0.3em;
+        }
+        &--paragraph {
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.4px;
+        }
+
+        .contactenos__image {
+          width: 31.333125rem;
+          height: 21.4375rem;
+          img {
+            &.contactenos__image1 {
+              width: 14.645625rem;
+              top: 1em;
+              left: 26.8em;
+            }
+            &.contactenos__image2 {
+              width: 22.2825rem;
+            }
+            &.contactenos__image3 {
+              width: 2.350625rem;
+              top: 26em;
+              left: 32em;
+            }
+          }
+        }
+
+        .btn-ghost {
+          padding: 10px 30px;
+        }
+      }
+      .backEllipse {
+        width: 39rem;
+        top: -18rem;
+      }
+    }
+  }
+}

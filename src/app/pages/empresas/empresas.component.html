@@ -9,9 +9,9 @@
     <img src="../../../assets/images/Group 31.svg" class="home__image7" />
   </div>
   <article class="home__text">
-    <h1 class="home__text--title">¿Qué es Lucro para empresas?</h1>
+    <h1 class="home__text--title">{{sectionOne?.title}}</h1>
     <p class="home__text--paragraph">
-      Fortalece tus procesos empresariales con nuestras soluciones de software a la medida. Con Lucro Inside estarás a la vanguardia en la implementación de sistemas para calcular variables de interés que mejoren las estrategias de negocio e impulsen la relación entre clientes y productos.
+      {{sectionOne?.body}}
     </p>
   </article>
 </section>
@@ -24,8 +24,8 @@
     <img src="../../../assets/images/concentrated-dark-skinned-freelancer-holds-paper-documents-and-mobile-phone-works-remotely-in-coworking-space-watches-digital-online-webinar-thinks-about-organisation-plan 1.png" class="purpose__image4">
   </div>
   <article class="purpose__text">
-    <h1 class="purpose__text--title">Nuestro propósito</h1>
-    <p class="purpose__text--paragraph">Somos una empresa colombiana orientada a ofrecer servicios de tecnología, soluciones de software y transformación digital para empresas. Para Lucro, la investigación e inmersión profunda sobre los datos estadísticos del consumidor y el mercado garantizan el éxito en las estrategias empresariales. Investigación, análisis de datos, estrategia y ejecución son los pilares que defendemos. Esto ha hecho que grandes empresas líderes en Colombia trabajen de la mano con Lucro-inside para potencializar su core de negocio.</p>
+    <h1 class="purpose__text--title">{{sectionTwo?.title}}</h1>
+    <p class="purpose__text--paragraph">{{sectionTwo?.body}}</p>
   </article>
   <img src="../../../assets/images/Vector.svg" class="backLogo">
 </section>
@@ -76,6 +76,6 @@
       intereses de las personas se pueden generar mejores oportunidades de
       crecimiento en los diferentes sectores de la economía.
     </p>
-    <button class="btn-ghost">Contáctanos</button>
+    <button routerLink="/contactenos" class="btn-ghost">Contáctanos</button>
   </article>
 </section>

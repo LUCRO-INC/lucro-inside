@@ -4,6 +4,7 @@ header {
   @include flexbox(center, center, undefined);
   max-width: 100%;
   position: fixed;
+  height: 4.5rem;
   width: 100%;
   z-index: 98;
 
@@ -106,7 +107,7 @@ header {
     @include flexbox(center, center, column);
     position: fixed;
     top: 0;
-    height: fit-content;
+    height: 5.5rem;
 
     .nav-toggle {
       opacity: 0;
