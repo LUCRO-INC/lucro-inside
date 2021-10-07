@@ -107,7 +107,7 @@ header {
     @include flexbox(center, center, column);
     position: fixed;
     top: 0;
-    height: 4.5rem;
+    height: 5.5rem;
 
     .nav-toggle {
       opacity: 0;
@@ -171,7 +171,7 @@ header {
       }
 
     .main-navbar {
-      transform: translateY(-5%);
+      transform: translateY(-45%);
     }
   }
 }

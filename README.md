@@ -2,6 +2,15 @@
 
 ### As pendient tasks in Luncro-inside project we have:
 
- - To integrate everything in a single component and take a look in the illuminations of the background at the first section.
- - To increase the letter-spacing in the paragraphs of the site.
- - fix the header to the top of the viewport
+ - To increase the letter-spacing in the paragraphs of the 'Empresas' page.
+ - Reset the header to the new 'hamburger' design.
+ - bring texts dinamically
+
+ ### Questions to solve with Project Manager
+
+ - Design of the menu-navbar in desktop's viewports.
+ - Main page of the site: 'Empresas' or 'Inicio'.
+ - Lists of:
+        - Countries
+        - Companies sectors list
+        - List of 'Number of employees'
