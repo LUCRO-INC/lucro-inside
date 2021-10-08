@@ -87,6 +87,7 @@
     &--paragraph {
       width: 90%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
+      letter-spacing: 0.4px;
     }
   }
 
@@ -485,6 +486,7 @@
     &--paragraph {
       width: 100%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
+      letter-spacing: 0.4px;
     }
   }
 
@@ -805,6 +807,7 @@
     &--paragraph {
       width: 100%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
+      letter-spacing: 0.4px;
     }
   }
 
@@ -1112,6 +1115,7 @@
     &--paragraph {
       width: 90%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
+      letter-spacing: 0.4px;
       margin-bottom: 1.5em;
     }
 

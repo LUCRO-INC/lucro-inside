@@ -2,9 +2,9 @@
 
 ### As pendient tasks in Luncro-inside project we have:
 
- - To increase the letter-spacing in the paragraphs of the 'Empresas' page.
  - Reset the header to the new 'hamburger' design.
  - bring texts dinamically
+ - Go to start when press page's btn.
 
  ### Questions to solve with Project Manager
 
