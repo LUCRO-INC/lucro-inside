@@ -195,6 +195,91 @@
       z-index: -1;
     }
   }
+  .overlay {
+    display: none;
+    background: rgba(34, 46, 49, 0.49);
+    backdrop-filter: blur(7px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+
+    .sent {
+      @include flexbox(space-evenly, center, column);
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 27rem;
+      height: 23.1875rem;
+      max-height: 25.125rem;
+      padding-inline: 10%;
+
+      &__title {
+        @include fontStyle(34px, 43.01px, $--fw-black, #fff, capitalize);
+        background: #68C38D;
+        position: absolute;
+        border-radius: 16px 16px 0 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10% 1rem 0.5rem;
+        letter-spacing: 0.25px;
+      }
+      &__paragraph {
+        @include fontStyle(14px, 20px, $--fw-light, $--clr-font-regular, Undefined);
+        position: absolute;
+        top: 7.0625rem;
+        padding: 10% 1rem 0.5rem;
+        letter-spacing: 0.4px;
+      }
+
+      &-btn {
+        @include fontStyle(
+          14px,
+          17.71px,
+          $--fw-bold,
+          $--clr-font-regular,
+          uppercase
+        );
+        position: absolute;
+        bottom: 2em;
+        background: transparent;
+        width: 93%;
+        max-width: 16.25rem;
+        padding: 0.75rem;
+        letter-spacing: 1.25px;
+        border: $--clr-font-dark 2px solid;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .fa-times {
+        @include flexbox(center, center, undefined);
+        position: absolute;
+        left: 45%;
+        bottom: -2em;
+        font-size: 24px;
+        color: #EF5D50;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        background-color: #F4F7F5;
+      }
+    }
+
+    &.active {
+      @include flexbox(center, center, undefined);
+    }
+  }
 
   @include sm {
     .container {
@@ -231,6 +316,23 @@
       .backEllipse {
         width: 29.425rem;
         top: 7.5rem;
+      }
+    }
+    .overlay {
+      .sent {
+        &__title {
+          padding-inline: 1.2em;
+        }
+        &__paragraph {
+          padding-inline: 3em;
+          top: 6rem;
+        }
+        .fa-times {
+          top: 0;
+          right: -2em;
+          left: initial;
+          bottom: initial;
+        }
       }
     }
   }
