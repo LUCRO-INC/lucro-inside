@@ -269,7 +269,14 @@
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 0.5rem;
+        cursor: pointer;
         background-color: #F4F7F5;
+        &:hover {
+          color: #a13d33;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
       }
     }
 

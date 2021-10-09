@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
 
@@ -17,6 +17,7 @@ export class EmpresasComponent implements OnInit {
   constructor(private service:CmsService) { }
 
   async ngOnInit() {
+    window.scrollTo(0, 0);
     const p = await this.service.get()
     this.sectionOne = p.Empresas?.find(item => item.name == 'sectionOne') || {}
     this.sectionTwo = p.Empresas?.find(item => item.name == 'sectionTwo') || {}

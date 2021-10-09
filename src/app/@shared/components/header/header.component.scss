@@ -54,7 +54,7 @@ header {
 
   .main-navbar {
     display: block;
-    background: white;
+    background: linear-gradient(180deg, rgba(244, 247, 245, 0.9) 0%, rgba(244, 247, 245, 0.8) 100%);
     position: fixed;
     top: 71px;
     left: 0;
@@ -100,9 +100,20 @@ header {
         }
       }
     }
+  }
 
-    &.active {
+  &.active {
+    .main-navbar {
       transform: translateY(0%);
+    }
+    .hamburger {
+      transform: rotate(.625turn);
+    }
+    .hamburger::before {
+      transform: rotate(90deg) translateX(-6px);
+    }
+    .hamburger::after {
+      opacity: 0;
     }
   }
 
@@ -161,6 +172,11 @@ header {
       }
     }
 
+    &.active {
+      .main-navbar {
+        transform: translateY(-10%);
+      }
+    }
   }
 
   @include xl {
@@ -175,6 +191,12 @@ header {
 
     .main-navbar {
       transform: translateY(-45%);
+    }
+
+    &.active {
+      .main-navbar {
+        transform: translateY(-45%);
+      }
     }
   }
 }

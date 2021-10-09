@@ -1,30 +1,50 @@
-<header>
+<header [ngClass]="{'active':clickHamburger}">
   <div class="brand">
     <img src="../../../assets/images/Brand-Lucro.svg" alt="logo Lucro" />
   </div>
 
-  <button class="nav-toggle" aria-label="toggle navigation">
-    <span class="hamburger" (click)="clickHamburger()"></span>
+  <button
+    class="nav-toggle"
+    aria-label="toggle navigation"
+    (click)="clickHamburger = !clickHamburger"
+  >
+    <span class="hamburger"></span>
   </button>
   <nav class="main-navbar">
     <ul class="navbar">
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link">Inicio</a>
+        <a routerLinkActive="active" class="navbar__item--link"
+        (click)="clickHamburger = !clickHamburger">Inicio</a>
       </li>
       <li class="navbar__item">
-        <a routerLink="/empresas" routerLinkActive="active" class="navbar__item--link">Empresas</a>
+        <a
+          routerLink="/empresas"
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Empresas</a
+        >
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link">Soluciones</a>
+        <a routerLinkActive="active" class="navbar__item--link"
+        (click)="clickHamburger = !clickHamburger">Soluciones</a>
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link">Tecnología</a>
+        <a routerLinkActive="active" class="navbar__item--link"
+        (click)="clickHamburger = !clickHamburger">Tecnología</a>
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link">Consumidores</a>
+        <a routerLinkActive="active" class="navbar__item--link"
+        (click)="clickHamburger = !clickHamburger">Consumidores</a>
       </li>
       <li class="navbar__item">
-        <a routerLink="/contactenos" routerLinkActive="active" class="navbar__item--link">Contáctenos</a>
+        <a
+          routerLink="/contactenos"
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Contáctenos</a
+        >
       </li>
     </ul>
   </nav>

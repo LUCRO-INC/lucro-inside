@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class ContactenosComponent implements OnInit {
 
-  public showMenu:boolean = false
+  public clickSubmit:boolean = false
 
   constructor(
     private formBuilder: FormBuilder
@@ -16,6 +16,7 @@ export class ContactenosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
 
   }
 

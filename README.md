@@ -14,3 +14,8 @@
         - Countries
         - Companies sectors list
         - List of 'Number of employees'
+
+### Documentation to read
+
+- ReactiveFormsModule
+- Intersection Observer with Angular

@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  clickHamburger(): void {
-    alert('Algo significativo');
-  }
+  public clickHamburger:boolean = false
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

@@ -27,7 +27,7 @@
         </p>
       </div>
     </article>
-    <form class="contactenos-form" ngClass="{'active':sowMenu}">
+    <form class="contactenos-form">
       <input
         type="text"
         name="name"
@@ -87,7 +87,7 @@
         type="submit"
         id="submit"
         class="submit-button"
-        (click)="showMenu = !showMenu"
+        (click)="clickSubmit = !clickSubmit"
       >
         Enviar
       </button>
@@ -103,7 +103,7 @@
         src="../../../assets/images/contactenos/Ellipse 44.svg"
     /></span>
   </div>
-  <div class="overlay">
+  <div class="overlay" [ngClass]="{'active':clickSubmit}">
     <div class="sent">
       <h4 class="sent__title">Mensaje enviado</h4>
       <p class="sent__paragraph">
@@ -112,7 +112,7 @@
         Te invitamos a llenar una breve encuesta para concerte mejor.
       </p>
       <button class="sent-btn">Programa una llamada</button>
-      <span><i class="fas fa-times"></i></span>
+      <button (click)="clickSubmit = !clickSubmit"><i class="fas fa-times"></i></button>
     </div>
   </div>
 </section>
