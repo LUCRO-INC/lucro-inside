@@ -11,13 +11,17 @@ export class EmpresasComponent implements OnInit {
 
   public sectionOne:Section = {}
   public sectionTwo:Section = {}
+  public sectionThree:Section = {}
+  public sectionFour:Section = {}
 
   constructor(private service:CmsService) { }
 
   async ngOnInit() {
     const p = await this.service.get()
-    this.sectionOne = p.home?.find(item => item.name == 'sectionOne') || {}
-    this.sectionTwo = p.home?.find(item => item.name == 'sectionTwo') || {}
+    this.sectionOne = p.Empresas?.find(item => item.name == 'sectionOne') || {}
+    this.sectionTwo = p.Empresas?.find(item => item.name == 'sectionTwo') || {}
+    this.sectionThree = p.Empresas?.find(item => item.name == 'sectionThree') || {}
+    this.sectionFour = p.Empresas?.find(item => item.name == 'sectionFour') || {}
   }
 
 }

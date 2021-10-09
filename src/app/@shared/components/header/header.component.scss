@@ -24,7 +24,6 @@ header {
     top: 2em;
     opacity: 1;
     z-index: 100;
-    transition: opacity 200ms ease-in-out;
 
     .hamburger {
       display: block;
@@ -100,6 +99,10 @@ header {
           }
         }
       }
+    }
+
+    &.active {
+      transform: translateY(0%);
     }
   }
 

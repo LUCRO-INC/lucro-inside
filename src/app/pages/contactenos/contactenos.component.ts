@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-contactenos',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactenosComponent implements OnInit {
 
-  constructor() { }
+  public showMenu:boolean = false
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+  }
 
   ngOnInit(): void {
+
   }
 
 }

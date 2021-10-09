@@ -80,23 +80,20 @@
 
     .contactenos-form {
       #name {
-        background: #fff,
-          url("../../../assets/images/icons/user.svg") no-repeat 94.5% 45%;
+        background: url("../../../assets/images/icons/user.svg") no-repeat 94.5% 45%, #fff;
       }
 
       #email {
-        background: #fff,
-          url("../../../assets/images/icons/at.svg") no-repeat 94.5% 45%;
+        background: url("../../../assets/images/icons/at.svg") no-repeat 94.5% 45%, #fff;
       }
 
       #phoneNumber {
-        background: #fff,
-          url("../../../assets/images/icons/phone.svg") no-repeat 94.5% 45%;
+        background: url("../../../assets/images/icons/phone.svg") no-repeat 94.5% 45%, #fff;
       }
 
       #company {
-        background: #fff,
-          url("../../../assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%;
+        background:
+          url("../../../assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%, #fff;
       }
 
       select,
