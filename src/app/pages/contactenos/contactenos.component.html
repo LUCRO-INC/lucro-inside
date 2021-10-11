@@ -27,13 +27,14 @@
         </p>
       </div>
     </article>
-    <form class="contactenos-form">
+    <form class="contactenos-form" [formGroup]="contactForm" (ngSubmit)="sendForm(contactForm)">
       <input
         type="text"
         name="name"
         placeholder="Nombre completo"
         id="name"
         class="form-control"
+        formControlName="name"
         required
       />
       <input
@@ -42,6 +43,7 @@
         placeholder="Correo corporativo"
         id="email"
         class="form-control"
+        formControlName="email"
         required
       />
       <input
@@ -50,9 +52,10 @@
         placeholder="Teléfono"
         id="phoneNumber"
         class="form-control"
+        formControlName="tel"
         required
       />
-      <select name="country" id="country" class="form-control">
+      <select formControlName="country" name="country" id="country" class="form-control">
         <option disabled selected value>País</option>
         <option value="Colombia">Colombia</option>
         <option value="EEUU">United States</option>
@@ -63,14 +66,15 @@
         placeholder="¿Cómo se llama tu empresa?"
         id="company"
         class="form-control"
+        formControlName="company"
         required
       />
-      <select name="sector" id="sector" class="form-control">
+      <select name="sector" id="sector" formControlName="sector" class="form-control">
         <option disabled selected value>Sector de la empresa</option>
         <option value="Law-business">Asesoría jurídica</option>
         <option value="Data-science">Ciencia de datos</option>
       </select>
-      <select name="employees" id="employees" class="form-control">
+      <select name="employees" id="employees" formControlName="employees" class="form-control">
         <option disabled selected value>Cantidad de empleados</option>
         <option value="0-5">de 0 a 5</option>
         <option value="5-20">de 5 a 20</option>
@@ -81,13 +85,13 @@
         name="description"
         id="description"
         class="input-textarea"
+        formControlName="description"
         placeholder="Descripción"
       ></textarea>
       <button
         type="submit"
         id="submit"
         class="submit-button"
-        (click)="clickSubmit = !clickSubmit"
       >
         Enviar
       </button>

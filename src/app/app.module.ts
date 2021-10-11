@@ -7,12 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactenosComponent } from './pages/contactenos/contactenos.component';
 import { EmpresasComponent } from './pages/empresas/empresas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContactenosComponent,
-    EmpresasComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

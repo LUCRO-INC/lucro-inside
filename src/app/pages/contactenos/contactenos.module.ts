@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ContactenosRoutingModule } from './contactenos-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactenosComponent } from './contactenos.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ContactenosComponent],
   imports: [
     CommonModule,
     ContactenosRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })
