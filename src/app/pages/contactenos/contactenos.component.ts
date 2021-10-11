@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Section } from 'src/app/@core/models/section';
+import { CmsService } from 'src/app/@core/services/cms.service';
 
 @Component({
   selector: 'app-contactenos',
@@ -8,12 +10,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactenosComponent implements OnInit {
 
+  public sectionContactenos:Section = {}
+
   public clickSubmit:boolean = false
 
   public contactForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private service:CmsService
   ) {
     this.contactForm = this.formBuilder.group({
       name: ['',Validators.required],
@@ -27,9 +32,10 @@ export class ContactenosComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     window.scrollTo(0, 0);
-
+    const p = await this.service.get()
+    this.sectionContactenos = p.Contactenos?.find(item => item.name == 'sectionContactenos') || {}
   }
 
   sendForm(contactForm:FormGroup){

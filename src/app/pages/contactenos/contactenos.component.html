@@ -4,26 +4,17 @@
       <button class="btn-ghost">agendar con un comercial</button>
       <div class="contactenos__image">
         <img
-          src="../../../assets/images/contactenos/Group 31.svg"
-          class="contactenos__image1"
-        />
-        <img
-          src="../../../assets/images/contactenos/Group 34.png"
-          class="contactenos__image2"
-        />
-        <img
-          src="../../../assets/images/contactenos/Ellipse 42.svg"
-          class="contactenos__image3"
+          *ngFor="let img of sectionContactenos.images"
+          [src]="img.src"
+          [class]="img.class"
         />
       </div>
       <div class="contactenos__text--text">
         <h3 class="contactenos__text--title">
-          ¡Inicia tu solicitud con Lucro!
+          {{ sectionContactenos?.title }}
         </h3>
         <p class="contactenos__text--paragraph">
-          Nos complace crear una asesoría para ti en Lucro. Es necesario que
-          puedas contar con más de 3 minutos para completar esta solicitud y
-          reservar tu asesoría. ¡Vamos a empezar!
+          {{ sectionContactenos?.body }}
         </p>
       </div>
     </article>
