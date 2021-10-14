@@ -165,6 +165,254 @@ export class CmsService {
           }
         ]
       }
+    ],
+
+    Soluciones: [
+      {
+        name: 'machineLearning',
+        label: 'Machine Learning',
+        title: 'Machine Learning',
+        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
+        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/MachineLearning/image 49.png',
+            class: 'machineLearning__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/MachineLearning/image 50.png',
+            class: 'machineLearning__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/MachineLearning/Union.png',
+            class: 'machineLearning__image3'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'solucionesDashboard',
+        label: 'Dashboard',
+        title: 'Soluciones Dashboard',
+        subTitle: 'No es sólo tener datos, es tenerlos organizados para encontrar insight.',
+        body: 'Emplea herramientas de gestión empresarial para levantamiento de información (indicadores, métricas, geolocalización, fechas, entre otros) a través de una app personalizada.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/solucionesDashboard/Ellipse 2076.svg',
+            class: 'dashboard__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/solucionesDashboard/image 39.svg',
+            class: 'dashboard__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'solucionesRPA',
+        label: 'RPA',
+        title: 'Soluciones RPA',
+        subTitle: 'Automatizaciones que generan eficiencias.',
+        body: 'Aplica la automatización robótica de procesos (Software que emula acciones humanas) para dar soluciones de lenguaje natural y análisis de sentimiento en las estrategias omnicanal de tu empresa. ',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/solucionesRPA/Ellipse 2076.svg',
+            class: 'rpa__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/solucionesRPA/image 41.png',
+            class: 'rpa__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'investigacionSegmentada',
+        label: 'Wisdom',
+        title: 'Investigación segmentada',
+        subTitle: 'El futuro de la investigación de mercados en el mundo: Conocemos lo que gente dice y lo que realmente hace',
+        body: 'Toma decisiones empresariales inteligentes, basadas en nuestros paneles de investigación, creados con segmentaciones, filtros avanzados y cruces que evidencian correlaciones con las más de 8 mil preguntas que hemos realizado a nuestro panel.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/investigacionSegmentada/Ellipse 2076 (1).svg',
+            class: 'investigacion__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/investigacionSegmentada/image 42.svg',
+            class: 'investigacion__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'evaluacionDesempeno',
+        label: 'Desempeño de terreno',
+        title: 'Evaluación de desempeño en terreno',
+        subTitle: 'Lo que el vendedor ve, lo pueden ver todos en la compañía',
+        body: 'Adquiere un innovador sistema de evaluación y verificación para equipos de trabajo y/o capacitaciones, en el terreno de la ejecución, con trazabilidad en tiempo real para el logro de objetivos y potencializar tu fuerza comercial.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2076.svg',
+            class: 'evaluacion__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
+            class: 'evaluacion__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2077.svg',
+            class: 'evaluacion__image3'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'codigosQR',
+        label: 'Códigos QR',
+        title: 'Sistema de QR personalizados',
+        subTitle: 'Generamos códigos QR que son tu llave para la información',
+        body: 'Implementa sistemas de QR personalizados altamente funcionales para promocionales, seguimiento de paquetes o inventario, cartas de restaurantes, controles de accesos, entre otros.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/sistemaQR/Mask Group.svg',
+            class: 'codigos__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/sistemaQR/Ellipse 2076.svg',
+            class: 'codigos__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'realidadAumentada',
+        label: 'Realidad Aumentada',
+        title: 'Gamificación y realidad aumentada',
+        subTitle: 'Cuando el usuario juega con tu marca, aprende mucho más de ella.',
+        body: 'Ejecuta dinámicas y mecánicas de gamificación para mejorar estrategias, resultados y demás proyectos empresariales, convirtiendo tareas y procesos aburridos en mundos virtuales divertidos.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/realidadAumentada/Ellipse 2076.svg',
+            class: 'realidad__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/realidadAumentada/Group 1476.png',
+            class: 'realidad__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/realidadAumentada/image 44.svg',
+            class: 'realidad__image3'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'ads',
+        label: 'Ads',
+        title: 'Optimizador de pauta',
+        subTitle: 'Volviendo la publicidad digital aún más eficiente',
+        body: 'Crea una pauta comercial optimizada en consumidores que presenten un interés real y comprobable sobre tu marca. Nuestra tecnología realiza un entendimiento profundo de clientes y su entorno en tiempo real, más allá de gustos e intereses.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/ads/Ellipse 2076.svg',
+            class: 'ads__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/ads/image 40.svg',
+            class: 'ads__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'scraper',
+        label: 'Scraper',
+        title: 'Lucro Scraper',
+        subTitle: 'Una misma marca, un mundo de precios diferentes',
+        body: 'Incrementa tus ventas y analiza el precio de tus productos y de la competencia con nuestro identificador de precios en tiendas electrónicas en tiempo real. Incluye arquitectura analítica de agrupación de datos, comparación por secuencias de tiempos y su respectivo tablero.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/scraper/Ellipse 2076 (1).svg',
+            class: 'scraper__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/scraper/image 40.svg',
+            class: 'scraper__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        }
+      },
+      {
+        name: 'chatbot',
+        label: 'ChatBot',
+        title: 'Desarrollo de ChatBot',
+        subTitle: 'Una conversación fluida con tus clientes te genera resultados increíbles',
+        body: 'Utiliza nuestra metodología Robotic Process Automation junto con el procesamiento del lenguaje natural para brindar una mejor experiencia a clientes o consumidores y al mismo tiempo recopilar información útil para la empresa.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/chatbot/Ellipse 2076.svg',
+            class: 'chatbot__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/chatbot/Group 1477.svg',
+            class: 'chatbot__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      }
     ]
   };
 

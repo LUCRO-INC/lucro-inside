@@ -1,4 +1,4 @@
-<header [ngClass]="{'active':clickHamburger}">
+<header [ngClass]="{ active: clickHamburger }">
   <div class="brand">
     <img src="../../../assets/images/Brand-Lucro.svg" alt="logo Lucro" />
   </div>
@@ -13,8 +13,12 @@
   <nav class="main-navbar">
     <ul class="navbar">
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link"
-        (click)="clickHamburger = !clickHamburger">Inicio</a>
+        <a
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Inicio</a
+        >
       </li>
       <li class="navbar__item">
         <a
@@ -26,16 +30,29 @@
         >
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link"
-        (click)="clickHamburger = !clickHamburger">Soluciones</a>
+        <a
+          routerLink="/soluciones"
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Soluciones</a
+        >
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link"
-        (click)="clickHamburger = !clickHamburger">Tecnología</a>
+        <a
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Tecnología</a
+        >
       </li>
       <li class="navbar__item">
-        <a routerLinkActive="active" class="navbar__item--link"
-        (click)="clickHamburger = !clickHamburger">Consumidores</a>
+        <a
+          routerLinkActive="active"
+          class="navbar__item--link"
+          (click)="clickHamburger = !clickHamburger"
+          >Consumidores</a
+        >
       </li>
       <li class="navbar__item">
         <a

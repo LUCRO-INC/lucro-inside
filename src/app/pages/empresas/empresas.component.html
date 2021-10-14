@@ -1,4 +1,4 @@
-<section class="home">
+<section class="home" #home>
   <div class="home__image">
     <img *ngFor="let img of sectionOne.images" [src]="img.src" [class]="img.class" />
   </div>
@@ -10,7 +10,7 @@
   </article>
 </section>
 
-<section class="purpose">
+<section class="purpose" #purpose>
   <div class="purpose__image">
     <img *ngFor="let img of sectionTwo.images" [src]="img.src" [class]="img.class" />
   </div>
@@ -21,7 +21,7 @@
   <img src="../../../assets/images/Vector.svg" class="backLogo" />
 </section>
 
-<section class="beliefs">
+<section class="beliefs" #beliefs>
   <div class="beliefs__image">
     <img *ngFor="let img of sectionThree.images" [src]="img.src" [class]="img.class" />
   </div>
@@ -33,7 +33,7 @@
   </article>
 </section>
 
-<section class="work">
+<section class="work" #work>
   <div class="work__image">
     <img *ngFor="let img of sectionFour.images" [src]="img.src" [class]="img.class" />
   </div>

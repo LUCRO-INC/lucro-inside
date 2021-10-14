@@ -1,0 +1,309 @@
+<section class="soluciones">
+  <div class="machineLearning">
+    <div class="machineLearning__image">
+      <img
+        *ngFor="let img of machineLearning.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="machineLearning__text">
+      <h3 class="machineLearning__text--title">{{ machineLearning?.title }}</h3>
+      <h6 class="machineLearning__text--subTitle">
+        {{ machineLearning?.subTitle }}
+      </h6>
+      <p class="machineLearning__text--paragraph">
+        {{ machineLearning?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="machineLearning.button?.class">
+        {{ machineLearning.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="solucionesDashboard">
+    <div class="solucionesDashboard__image">
+      <img
+        *ngFor="let img of solucionesDashboard.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="solucionesDashboard__text">
+      <h3 class="solucionesDashboard__text--title">
+        {{ solucionesDashboard?.title }}
+      </h3>
+      <h6 class="solucionesDashboard__text--subTitle">
+        {{ solucionesDashboard?.subTitle }}
+      </h6>
+      <p class="solucionesDashboard__text--paragraph">
+        {{ solucionesDashboard?.body }}
+      </p>
+      <button
+        routerLink="/contactenos"
+        [class]="solucionesDashboard.button?.class"
+      >
+        {{ solucionesDashboard.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="solucionesRPA">
+    <div class="solucionesRPA__image">
+      <img
+        *ngFor="let img of solucionesRPA.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="solucionesRPA__text">
+      <h3 class="solucionesRPA__text--title">{{ solucionesRPA?.title }}</h3>
+      <h6 class="solucionesRPA__text--subTitle">
+        {{ solucionesRPA?.subTitle }}
+      </h6>
+      <p class="solucionesRPA__text--paragraph">
+        {{ solucionesRPA?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="solucionesRPA.button?.class">
+        {{ solucionesRPA.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="investigacionSegmentada">
+    <div class="investigacionSegmentada__image">
+      <img
+        *ngFor="let img of investigacionSegmentada.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="investigacionSegmentada__text">
+      <h3 class="investigacionSegmentada__text--title">
+        {{ investigacionSegmentada?.title }}
+      </h3>
+      <h6 class="investigacionSegmentada__text--subTitle">
+        {{ investigacionSegmentada?.subTitle }}
+      </h6>
+      <p class="investigacionSegmentada__text--paragraph">
+        {{ investigacionSegmentada?.body }}
+      </p>
+      <button
+        routerLink="/contactenos"
+        [class]="investigacionSegmentada.button?.class"
+      >
+        {{ investigacionSegmentada.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="evaluacionDesempeno">
+    <div class="evaluacionDesempeno__image">
+      <img
+        *ngFor="let img of evaluacionDesempeno.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="evaluacionDesempeno__text">
+      <h3 class="evaluacionDesempeno__text--title">
+        {{ evaluacionDesempeno?.title }}
+      </h3>
+      <h6 class="evaluacionDesempeno__text--subTitle">
+        {{ evaluacionDesempeno?.subTitle }}
+      </h6>
+      <p class="evaluacionDesempeno__text--paragraph">
+        {{ evaluacionDesempeno?.body }}
+      </p>
+      <button
+        routerLink="/contactenos"
+        [class]="evaluacionDesempeno.button?.class"
+      >
+        {{ evaluacionDesempeno.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="codigosQR">
+    <div class="codigosQR__image">
+      <img
+        *ngFor="let img of codigosQR.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="codigosQR__text">
+      <h3 class="codigosQR__text--title">{{ codigosQR?.title }}</h3>
+      <h6 class="codigosQR__text--subTitle">{{ codigosQR?.subTitle }}</h6>
+      <p class="codigosQR__text--paragraph">
+        {{ codigosQR?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="codigosQR.button?.class">
+        {{ codigosQR.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="realidadAumentada">
+    <div class="realidadAumentada__image">
+      <img
+        *ngFor="let img of realidadAumentada.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="realidadAumentada__text">
+      <h3 class="realidadAumentada__text--title">
+        {{ realidadAumentada?.title }}
+      </h3>
+      <h6 class="realidadAumentada__text--subTitle">
+        {{ realidadAumentada?.subTitle }}
+      </h6>
+      <p class="realidadAumentada__text--paragraph">
+        {{ realidadAumentada?.body }}
+      </p>
+      <button
+        routerLink="/contactenos"
+        [class]="realidadAumentada.button?.class"
+      >
+        {{ realidadAumentada.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="ads">
+    <div class="ads__image">
+      <img *ngFor="let img of ads.images" [src]="img.src" [class]="img.class" />
+    </div>
+    <article class="ads__text">
+      <h3 class="ads__text--title">{{ ads?.title }}</h3>
+      <h6 class="ads__text--subTitle">{{ ads?.subTitle }}</h6>
+      <p class="ads__text--paragraph">
+        {{ ads?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="ads.button?.class">
+        {{ ads.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="scraper">
+    <div class="scraper__image">
+      <img
+        *ngFor="let img of scraper.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="scraper__text">
+      <h3 class="scraper__text--title">{{ scraper?.title }}</h3>
+      <h6 class="scraper__text--subTitle">{{ scraper?.subTitle }}</h6>
+      <p class="scraper__text--paragraph">
+        {{ scraper?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="scraper.button?.class">
+        {{ scraper.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+
+  <div class="chatbot">
+    <div class="chatbot__image">
+      <img
+        *ngFor="let img of chatbot.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="chatbot__text">
+      <h3 class="chatbot__text--title">{{ chatbot?.title }}</h3>
+      <h6 class="chatbot__text--subTitle">{{ chatbot?.subTitle }}</h6>
+      <p class="chatbot__text--paragraph">
+        {{ chatbot?.body }}
+      </p>
+      <button routerLink="/contactenos" [class]="chatbot.button?.class">
+        {{ chatbot.button?.content }}
+      </button>
+      <div class="bottom-text">
+        <p>
+          ¿Qué tipo de preguntas podemos resolverte?
+        </p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+        </span>
+      </div>
+    </article>
+  </div>
+</section>

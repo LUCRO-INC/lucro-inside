@@ -1,0 +1,417 @@
+@import "./theme/settings";
+
+.soluciones {
+  @include flexbox(center, center, column);
+
+  h3 {
+    @include fontStyle(20px, 24px, $--fw-black, #36af67, undefined);
+    letter-spacing: 0.15px;
+    margin-top: 1.4rem;
+    max-width: 25rem;
+  }
+
+  h6 {
+    @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
+    letter-spacing: 0.004em;
+    margin-top: 1.6875rem;
+    max-width: 24.5rem;
+  }
+
+  p {
+    @include fontStyle(12px, 16px, $--fw-light, $--clr-font-light, undefined);
+    letter-spacing: 0.004em;
+    margin-top: 1.6875rem;
+    max-width: 24.5rem;
+  }
+
+  .btn-ghost {
+    @include fontStyle(12px, 16px, $--fw-bold, $--clr-font-regular, uppercase);
+    letter-spacing: 0.004em;
+    background: transparent;
+    width: 70%;
+    padding: 0.5rem 0.75rem;
+    margin-top: 1.6875rem;
+    border: $--clr-font-dark 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .machineLearning,
+  .solucionesDashboard,
+  .solucionesRPA,
+  .investigacionSegmentada,
+  .evaluacionDesempeno,
+  .codigosQR,
+  .realidadAumentada,
+  .ads,
+  .scraper,
+  .chatbot {
+    @include flexbox(center, center, column);
+    top: 69px;
+    padding-block: 5em;
+    position: relative;
+    margin-bottom: 15em;
+
+    &__image {
+      position: relative;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    &__text {
+      width: 90%;
+      position: relative;
+
+      .bottom-text {
+        @include flexbox(center, center, row);
+        position: absolute;
+        margin-top: 7.6875rem;
+        p {
+          @include fontStyle(14px, 16px, $--fw-light, #049b41, undefined);
+          letter-spacing: 0.4px;
+          margin-top: initial;
+          max-width: 11rem;
+        }
+      }
+    }
+  }
+
+  .machineLearning {
+    &__image {
+      max-width: 17.7rem;
+      height: 11rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.machineLearning__image1 {
+          position: absolute;
+          width: 9.75rem;
+          top: 3em;
+        }
+        &.machineLearning__image2 {
+          position: absolute;
+          width: 8.08125rem;
+          left: 15.3em;
+        }
+        &.machineLearning__image3 {
+          position: absolute;
+          width: 2.405rem;
+          top: 4.2em;
+          left: 13.3em;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .solucionesDashboard {
+    &__image {
+      max-width: 15.375rem;
+      height: 10.31125rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.dashboard__image1 {
+          position: absolute;
+          width: 9.75rem;
+          top: 0.5em;
+        }
+        &.dashboard__image2 {
+          position: absolute;
+          width: 14.776875rem;
+          left: 1em;
+        }
+      }
+    }
+  }
+
+  .solucionesRPA {
+    &__image {
+      max-width: 12.625rem;
+      height: 13.9375rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.rpa__image1 {
+          position: absolute;
+          width: 6.341875rem;
+          top: 10em;
+          left: 10em;
+        }
+        &.rpa__image2 {
+          position: absolute;
+          width: 10.49125rem;
+        }
+      }
+    }
+  }
+
+  .investigacionSegmentada {
+    &__image {
+      max-width: 13.6875rem;
+      height: 13.660625rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.investigacion__image1 {
+          position: absolute;
+          width: 9.445rem;
+          top: 0.2em;
+          left: 3em;
+        }
+        &.investigacion__image2 {
+          position: absolute;
+          width: 13.6875rem;
+        }
+      }
+    }
+  }
+
+  .evaluacionDesempeno {
+    &__image {
+      max-width: 10.8125rem;
+      height: 13.5rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.evaluacion__image1 {
+          position: absolute;
+          width: 10.20125rem;
+          top: 2.3em;
+        }
+        &.evaluacion__image2 {
+          position: absolute;
+          width: 9.625rem;
+          left: 0.4em;
+          z-index: 1;
+        }
+        &.evaluacion__image3 {
+          position: absolute;
+          width: 4.36rem;
+          top: 0.5em;
+          left: 10.5em;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  .codigosQR {
+    &__image {
+      max-width: 13.1875rem;
+      height: 14rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.codigos__image1 {
+          position: absolute;
+          width: 14.125rem;
+          z-index: 1;
+        }
+        &.codigos__image2 {
+          position: absolute;
+          width: 9.918125rem;
+          top: 5.5em;
+          left: 5.2em;
+        }
+      }
+    }
+  }
+
+  .realidadAumentada {
+    &__image {
+      max-width: 12.965625rem;
+      height: 13.50375rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.realidad__image1 {
+          position: absolute;
+          width: 9.581875rem;
+          top: 1.5em;
+          z-index: -1;
+        }
+        &.realidad__image2 {
+          position: absolute;
+          width: 4.003125rem;
+          top: 7em;
+          left: 1em;
+        }
+        &.realidad__image3 {
+          position: absolute;
+          width: 8rem;
+          left: 8em;
+        }
+      }
+    }
+  }
+
+  .ads {
+    &__image {
+      max-width: 11.564375rem;
+      height: 14.8125rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.ads__image1 {
+          position: absolute;
+          width: 9.199375rem;
+          top: 2em;
+        }
+        &.ads__image2 {
+          position: absolute;
+          width: 8.8875rem;
+          left: 4em;
+        }
+      }
+    }
+  }
+
+  .scraper {
+    &__image {
+      max-width: 9.204375rem;
+      height: 14.464375rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.scraper__image1 {
+          position: absolute;
+          width: 9.1275rem;
+          top: 5.7em;
+        }
+        &.scraper__image2 {
+          position: absolute;
+          width: 8.869375rem;
+          left: 0.3em;
+        }
+      }
+    }
+  }
+
+  .chatbot {
+    &__image {
+      max-width: 11.45rem;
+      height: 13.41875rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.chatbot__image1 {
+          position: absolute;
+          width: 11.155rem;
+          top: 1.3em;
+        }
+        &.chatbot__image2 {
+          position: absolute;
+          width: 9.384375rem;
+          left: 3.5em;
+        }
+      }
+    }
+  }
+
+  @include sm {
+    h3 {
+      font-size: 22px;
+      line-height: 26.4px;
+      letter-spacing: 0.165;
+      max-width: 27.5rem;
+    }
+    h6,
+    p {
+      font-size: 13.2px;
+      line-height: 17.6px;
+      letter-spacing: 0.0044;
+      max-width: 26.95rem;
+    }
+  }
+
+  @include md {
+    h3 {
+      font-size: 26px;
+      line-height: 31.2px;
+      letter-spacing: 0.195;
+      max-width: 32.5rem;
+    }
+    h6,
+    p {
+      font-size: 15.6px;
+      line-height: 20.8px;
+      letter-spacing: 0.0052;
+      max-width: 31.85rem;
+    }
+  }
+
+  @include lg {
+    h3 {
+      font-size: 38.4px;
+      line-height: 48.576px;
+      letter-spacing: 0.195;
+      min-width: 22.25rem;
+    }
+    h6 {
+      font-size: 16px;
+      line-height: 19.2px;
+      letter-spacing: 0.12;
+      max-width: 22.8125rem;
+    }
+    p {
+      font-size: 9.6px;
+      line-height: 12.8px;
+      letter-spacing: 0.0032;
+      max-width: 22.8125rem;
+    }
+    .machineLearning,
+    .solucionesDashboard,
+    .solucionesRPA,
+    .investigacionSegmentada,
+    .evaluacionDesempeno,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .scraper,
+    .chatbot {
+      justify-content: space-evenly;
+      flex-direction: row-reverse;
+      padding-inline: 5%;
+      height: 80vh;
+      width: 80%;
+    }
+  }
+
+  @include xl {
+    h3 {
+      font-size: 48px;
+      line-height: 60.72px;
+      letter-spacing: 0.195;
+      max-width: 27.8125rem;
+    }
+    h6 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.15;
+      max-width: 27.8125rem;
+    }
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.004;
+      max-width: 27.8125rem;
+    }
+  }
+}

@@ -2,23 +2,24 @@
 
 .home {
   @include flexbox(center, center, column);
+  overflow-x: hidden;
   top: 69px;
   padding-block: 5em;
-  margin-bottom: 15em;
-  height: 38.75rem;
+  margin-bottom: 7em;
+  height: 37.75rem;
   position: relative;
-  z-index: 2;
 
   &__image {
     position: relative;
-    overflow: hidden;
+    overflow-y: visible;
     width: 90%;
     max-width: 336px;
-    height: 263px;
+    height: 270px;
 
     img {
       max-width: 100%;
       max-height: 100%;
+      opacity: 0;
 
       &.home__image1 {
         position: absolute;
@@ -82,19 +83,53 @@
       );
       width: 90%;
       margin-bottom: 0.125em;
+      opacity: 0;
     }
 
     &--paragraph {
       width: 90%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
       letter-spacing: 0.4px;
+      opacity: 0;
+    }
+  }
+
+  &.show {
+    .home__image {
+      &1{
+        animation: rotate-bottom-center 500ms ease-in forwards;
+      }
+      &2{
+        animation: pop-in 500ms ease-in forwards;
+      }
+      &3{
+        animation: pop-in 400ms ease-in 400ms forwards;
+      }
+      &4{
+        animation: fadein 400ms ease-in 1100ms forwards;
+      }
+      &5{
+        animation: fadein 400ms ease-in 1200ms forwards;
+      }
+      &6{
+        animation: fadein 400ms ease-in 1300ms forwards;
+      }
+      &7{
+        animation: fadein-right 400ms ease-in 200ms forwards;
+      }
+    }
+    .home__text--title {
+      animation: fadein-left 1000ms ease-in forwards;
+    }
+    .home__text--paragraph {
+      animation: fadein-left 800ms ease-in 400ms forwards;
     }
   }
 
   @include sm {
     &__image {
       max-width: 400px;
-      height: 300px;
+      height: 320px;
 
       img {
         margin-left: 5.5em;
@@ -154,11 +189,11 @@
   }
 
   @include md {
-    height: 41.5625rem;
+    height: 43.5625rem;
 
     &__image {
       max-width: 490px;
-      height: 500px;
+      height: 520px;
 
       img {
         margin-left: 7em;
@@ -216,7 +251,7 @@
 
   @include lg {
     height: 80vh;
-    background: radial-gradient(30% 100% at 0% 50%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%), radial-gradient(100% 100% at 100% 10%, #cdebd94b 0%, rgba(205, 235, 217, 0) 80%);
+    background: radial-gradient(30% 100% at 0% 50%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%), radial-gradient(100% 100% at 100% 10%, #cdebd99d 0%, rgba(205, 235, 217, 0) 80%);
     padding-inline: 6%;
     @include flexbox(space-evenly, center, row-reverse);
 
@@ -396,9 +431,10 @@
 .purpose {
   @include flexbox(center, center, column);
   background-color: #EAFD81;
-  padding-block: 0.5em;
+  padding-top: 6em;
   margin-block: 0.5em;
   position: relative;
+  overflow-x: hidden;
   z-index: 3;
 
   &:before,
@@ -434,6 +470,7 @@
 
     img {
       max-width: 100%;
+      opacity: 0;
 
       &.purpose__image1 {
         position: absolute;
@@ -448,6 +485,7 @@
         top: 6em;
         left: 25em;
         z-index: 1;
+        opacity: initial;
       }
       &.purpose__image3 {
         position: absolute;
@@ -481,17 +519,42 @@
       );
       width: 100%;
       margin-bottom: 0.725em;
+      opacity: 0;
     }
 
     &--paragraph {
       width: 100%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
       letter-spacing: 0.4px;
+      opacity: 0;
     }
   }
 
   .backLogo {
     display: none;
+  }
+
+  &.show {
+    .purpose__image {
+      &1{
+        animation: fadein-left 500ms ease-in forwards;
+      }
+      &2{
+        animation: rotate-infinite 3000ms linear infinite;
+      }
+      &3{
+        animation: fadein-right 400ms ease-in forwards;
+      }
+      &4{
+        animation: pop-in 400ms ease-in 1000ms forwards;
+      }
+    }
+    .purpose__text--title {
+      animation: fadein-right 1000ms ease-in forwards;
+    }
+    .purpose__text--paragraph {
+      animation: fadein-right 800ms ease-in 400ms forwards;
+    }
   }
 
   @include sm {
@@ -550,7 +613,7 @@
   }
 
   @include md {
-    height: 41rem;
+    height: 52rem;
 
     &__image {
       max-width: 490px;
@@ -725,6 +788,7 @@
 
 .beliefs {
   @include flexbox(center, center, column);
+  overflow-x: hidden;
   position: relative;
   padding-block: 0.5em;
   margin-top: 3em;
@@ -749,6 +813,7 @@
         top: 0em;
         left: 4.7em;
         z-index: 3;
+        opacity: 0;
       }
       &.beliefs__image2 {
         position: absolute;
@@ -757,12 +822,14 @@
         top: 5.4em;
         left: 0em;
         z-index: 3;
+        opacity: 0;
       }
       &.beliefs__image3 {
         position: absolute;
         width: 162.21px;
         top: 4.4em;
         left: 13.2em;
+        opacity: 0;
       }
       &.beliefs__image4 {
         position: absolute;
@@ -770,6 +837,7 @@
         top: 4.4em;
         left: 7.7em;
         z-index: 1;
+        opacity: 0;
       }
       &.beliefs__image5 {
         position: absolute;
@@ -781,6 +849,7 @@
         -moz-box-shadow: 0px 10px 18px -5px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 10px 18px -5px rgba(0, 0, 0, 0.75);
         z-index: 2;
+        opacity: 0;
       }
     }
   }
@@ -802,12 +871,40 @@
       );
       width: 100%;
       margin-bottom: 0.725em;
+      opacity: 0;
     }
 
     &--paragraph {
       width: 100%;
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
       letter-spacing: 0.4px;
+      opacity: 0;
+    }
+  }
+
+  &.show {
+    .beliefs__image {
+      &1{
+        animation: fadein-left 400ms ease-in forwards;
+      }
+      &2{
+        animation: fadein-left 400ms ease-in forwards;
+      }
+      &3{
+        animation: fadein-right 400ms ease-in forwards;
+      }
+      &4{
+        animation: fadein 400ms ease-in 350ms forwards;
+      }
+      &5{
+        animation: pop-in 400ms ease-in 700ms forwards;
+      }
+    }
+    .beliefs__text--title {
+      animation: fadein-right 1000ms ease-in forwards;
+    }
+    .beliefs__text--paragraph {
+      animation: fadein-right 800ms ease-in 400ms forwards;
     }
   }
 
@@ -863,7 +960,7 @@
   }
 
   @include md {
-    height: 41rem;
+    height: 43rem;
 
     &__image {
       max-width: 490px;
@@ -1046,6 +1143,7 @@
 .work {
   @include flexbox(center, center, column);
   position: relative;
+  overflow-x: hidden;
 
   &__image {
     position: relative;
@@ -1059,6 +1157,7 @@
     img {
       max-width: 100%;
       max-height: 100%;
+      opacity: 0;
 
       &.work__image1 {
         position: absolute;
@@ -1110,6 +1209,7 @@
       @include fontStyle(20px, 24px, $--fw-black, $--clr-font-dark, undefined);
       width: 90%;
       margin-bottom: 1em;
+      opacity: 0;
     }
 
     &--paragraph {
@@ -1117,6 +1217,7 @@
       @include fontStyle(14px, 20px, $--fw-light, $--clr-font-light, undefined);
       letter-spacing: 0.4px;
       margin-bottom: 1.5em;
+      opacity: 0;
     }
 
     .btn-ghost {
@@ -1139,6 +1240,32 @@
       &:active {
         transform: scale(0.95);
       }
+    }
+  }
+
+  &.show {
+    .work__image {
+      &1{
+        animation: fadein-right 400ms ease-in forwards;
+      }
+      &2{
+        animation: fadein-left 400ms ease-in forwards;
+      }
+      &3{
+        animation: fadein-left 400ms ease-in forwards;
+      }
+      &4{
+        animation: fadein 400ms ease-in 350ms forwards;
+      }
+      &5{
+        animation: pop-in 400ms ease-in 700ms forwards;
+      }
+    }
+    .work__text--title {
+      animation: fadein-right 1000ms ease-in forwards;
+    }
+    .work__text--paragraph {
+      animation: fadein-right 800ms ease-in 400ms forwards;
     }
   }
 
