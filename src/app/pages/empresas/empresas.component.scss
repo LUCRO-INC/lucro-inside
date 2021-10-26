@@ -2,7 +2,7 @@
 
 .home {
   @include flexbox(center, center, column);
-  overflow-x: hidden;
+  overflow: hidden;
   top: 69px;
   padding-block: 5em;
   margin-bottom: 7em;
@@ -250,7 +250,7 @@
   }
 
   @include lg {
-    height: 80vh;
+    height: 85vh;
     background: radial-gradient(30% 100% at 0% 50%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%), radial-gradient(100% 100% at 100% 10%, #cdebd99d 0%, rgba(205, 235, 217, 0) 80%);
     padding-inline: 6%;
     @include flexbox(space-evenly, center, row-reverse);
@@ -442,18 +442,19 @@
     content: '';
     width: 100%;
     height: 50px;
-    background: #f8faf9;
     position: absolute;
   }
 
   &:before {
     top: 0;
+    background: #fafcfb;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
   }
 
   &:after {
     bottom: 0;
+    background: #ffffff;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
   }
@@ -485,7 +486,6 @@
         top: 6em;
         left: 25em;
         z-index: 1;
-        opacity: initial;
       }
       &.purpose__image3 {
         position: absolute;
@@ -540,7 +540,7 @@
         animation: fadein-left 500ms ease-in forwards;
       }
       &2{
-        animation: rotate-infinite 3000ms linear infinite;
+        animation: rotate-infinite 400000ms linear infinite;
       }
       &3{
         animation: fadein-right 400ms ease-in forwards;
@@ -742,7 +742,7 @@
   @include xl {
     &__text {
       margin-top: 10em;
-      min-width: 500px;
+      min-width: 514px;
       &--title {
         font-size: $--fs-h1;
         line-height: 72px;
@@ -901,10 +901,10 @@
       }
     }
     .beliefs__text--title {
-      animation: fadein-right 1000ms ease-in forwards;
+      animation: fadein-left 1000ms ease-in forwards;
     }
     .beliefs__text--paragraph {
-      animation: fadein-right 800ms ease-in 400ms forwards;
+      animation: fadein-left 800ms ease-in 400ms forwards;
     }
   }
 
@@ -1373,6 +1373,7 @@
 
   @include lg {
     @include flexbox(space-evenly, center, row);
+    height: 49em;
 
     &__text {
       @include flexbox(center, flex-start, column);
@@ -1447,6 +1448,7 @@
   }
 
   @include xl {
+    height: 68em;
     &__text {
       min-width: 400px;
       max-width: 586px;
@@ -1466,7 +1468,7 @@
           $--clr-font-light,
           undefined
         );
-        width: 100%;
+        width: 90%;
         font-size: $--fs-p;
         line-height: 22px;
       }

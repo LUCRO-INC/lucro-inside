@@ -2,12 +2,52 @@
 
 .soluciones {
   @include flexbox(center, center, column);
+  overflow-x: visible;
+
+  nav {
+    position: absolute;
+    width: 0.375rem;
+    left: 0;
+    ul {
+      @include flexbox(space-between, flex-start, column);
+      height: 21.25rem;
+      justify-content: space-between;
+      li {
+        text-align: right;
+        button {
+          background: transparent;
+          border-style: none;
+          cursor: pointer;
+          div {
+            content: "";
+            background-color: $--clr-font-light;
+            height: 0.125rem;
+            width: 0.375rem;
+          }
+          .solucion-label {
+            display: none;
+          }
+
+          &:hover,
+          &:active,
+          &:focus {
+            div {
+              height: 0.25rem;
+              width: 0.75rem;
+              background-color: $--clr-lucro-red;
+            }
+          }
+        }
+      }
+    }
+  }
 
   h3 {
     @include fontStyle(20px, 24px, $--fw-black, #36af67, undefined);
     letter-spacing: 0.15px;
     margin-top: 1.4rem;
     max-width: 25rem;
+    opacity: 0;
   }
 
   h6 {
@@ -15,6 +55,7 @@
     letter-spacing: 0.004em;
     margin-top: 1.6875rem;
     max-width: 24.5rem;
+    opacity: 0;
   }
 
   p {
@@ -22,6 +63,11 @@
     letter-spacing: 0.004em;
     margin-top: 1.6875rem;
     max-width: 24.5rem;
+    opacity: 0;
+  }
+
+  span {
+    opacity: 0;
   }
 
   .btn-ghost {
@@ -34,6 +80,7 @@
     border: $--clr-font-dark 2px solid;
     border-radius: 10px;
     cursor: pointer;
+    opacity: 0;
     &:hover {
       opacity: 0.8;
     }
@@ -53,6 +100,7 @@
   .scraper,
   .chatbot {
     @include flexbox(center, center, column);
+    display: none;
     top: 69px;
     padding-block: 5em;
     position: relative;
@@ -60,7 +108,6 @@
 
     &__image {
       position: relative;
-      overflow-x: hidden;
       width: 100%;
     }
 
@@ -94,11 +141,13 @@
           position: absolute;
           width: 9.75rem;
           top: 3em;
+          opacity: 0;
         }
         &.machineLearning__image2 {
           position: absolute;
           width: 8.08125rem;
           left: 15.3em;
+          opacity: 0;
         }
         &.machineLearning__image3 {
           position: absolute;
@@ -106,6 +155,7 @@
           top: 4.2em;
           left: 13.3em;
           z-index: 1;
+          opacity: 0;
         }
       }
     }
@@ -128,6 +178,7 @@
           position: absolute;
           width: 14.776875rem;
           left: 1em;
+          opacity: 0;
         }
       }
     }
@@ -150,6 +201,7 @@
         &.rpa__image2 {
           position: absolute;
           width: 10.49125rem;
+          opacity: 0;
         }
       }
     }
@@ -168,10 +220,12 @@
           width: 9.445rem;
           top: 0.2em;
           left: 3em;
+          opacity: 0;
         }
         &.investigacion__image2 {
           position: absolute;
           width: 13.6875rem;
+          opacity: 0;
         }
       }
     }
@@ -189,12 +243,14 @@
           position: absolute;
           width: 10.20125rem;
           top: 2.3em;
+          opacity: 0;
         }
         &.evaluacion__image2 {
           position: absolute;
           width: 9.625rem;
           left: 0.4em;
           z-index: 1;
+          opacity: 0;
         }
         &.evaluacion__image3 {
           position: absolute;
@@ -202,6 +258,7 @@
           top: 0.5em;
           left: 10.5em;
           z-index: 2;
+          opacity: 0;
         }
       }
     }
@@ -219,12 +276,14 @@
           position: absolute;
           width: 14.125rem;
           z-index: 1;
+          opacity: 0;
         }
         &.codigos__image2 {
           position: absolute;
           width: 9.918125rem;
-          top: 5.5em;
-          left: 5.2em;
+          top: 5.4em;
+          left: 5.3em;
+          opacity: 0;
         }
       }
     }
@@ -243,17 +302,20 @@
           width: 9.581875rem;
           top: 1.5em;
           z-index: -1;
+          opacity: 0;
         }
         &.realidad__image2 {
           position: absolute;
           width: 4.003125rem;
           top: 7em;
           left: 1em;
+          opacity: 0;
         }
         &.realidad__image3 {
           position: absolute;
           width: 8rem;
           left: 8em;
+          opacity: 0;
         }
       }
     }
@@ -271,11 +333,13 @@
           position: absolute;
           width: 9.199375rem;
           top: 2em;
+          opacity: 0;
         }
         &.ads__image2 {
           position: absolute;
           width: 8.8875rem;
           left: 4em;
+          opacity: 0;
         }
       }
     }
@@ -293,11 +357,13 @@
           position: absolute;
           width: 9.1275rem;
           top: 5.7em;
+          opacity: 0;
         }
         &.scraper__image2 {
           position: absolute;
           width: 8.869375rem;
           left: 0.3em;
+          opacity: 0;
         }
       }
     }
@@ -315,17 +381,153 @@
           position: absolute;
           width: 11.155rem;
           top: 1.3em;
+          opacity: 0;
         }
         &.chatbot__image2 {
           position: absolute;
           width: 9.384375rem;
           left: 3.5em;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .active {
+    &.machineLearning,
+    &.solucionesDashboard,
+    &.solucionesRPA,
+    &.investigacionSegmentada,
+    &.evaluacionDesempeno,
+    &.codigosQR,
+    &.realidadAumentada,
+    &.ads,
+    &.scraper,
+    &.chatbot {
+      display: flex;
+    }
+
+    &.show {
+      h3 {
+        animation: fadein-left 500ms ease-in forwards;
+      }
+      h6 {
+        animation: fadein-left 500ms ease-in 200ms forwards;
+      }
+      p,
+      span {
+        animation: fadein-left 500ms ease-in 400ms forwards;
+      }
+      .btn-ghost {
+        animation: fadein-left 500ms ease-in 600ms forwards;
+      }
+      .machineLearning {
+        &__image1 {
+          animation: fadein-left 500ms ease-in forwards;
+        }
+        &__image2 {
+          animation: fadein-right 500ms ease-in 250ms forwards;
+        }
+        &__image3 {
+          animation: pop-in 500ms ease-in 700ms forwards;
+        }
+      }
+      &.solucionesDashboard {
+        .dashboard__image1 {
+          animation: fadein-right 500ms ease-in forwards;
+        }
+        .dashboard__image2 {
+          animation: pop-in 500ms ease-in 500ms forwards;
+        }
+      }
+      &.solucionesRPA {
+        .rpa__image1 {
+          animation: fadein-right 500ms ease-in forwards;
+        }
+        .rpa__image2 {
+          animation: pop-in 500ms ease-in 500ms forwards;
+        }
+      }
+      &.investigacionSegmentada {
+        .investigacion__image1 {
+          animation: pop-in 500ms ease-in forwards;
+        }
+        .investigacion__image2 {
+          animation: fadein-right 500ms ease-in 500ms forwards;
+        }
+      }
+      &.evaluacionDesempeno {
+        .evaluacion__image1 {
+          animation: fadein-right 500ms ease-in forwards;
+        }
+        .evaluacion__image2 {
+          animation: fadein 500ms ease-in 400ms forwards;
+        }
+        .evaluacion__image3 {
+          animation: fadein-left 500ms ease-in 200ms forwards;
+        }
+      }
+      &.codigosQR {
+        .codigos__image1 {
+          animation: fadein 500ms ease-in 400ms forwards;
+        }
+        .codigos__image2 {
+          animation: fadein-left 500ms ease-in forwards;
+        }
+      }
+      &.realidadAumentada {
+        .realidad__image1 {
+          animation: fadein-left 500ms ease-in forwards;
+        }
+        .realidad__image2 {
+          animation: pop-in 500ms ease-in 400ms forwards;
+        }
+        .realidad__image3 {
+          animation: fadein-right 500ms ease-in 200ms forwards;
+        }
+      }
+      &.ads {
+        .ads__image1 {
+          animation: fadein-left 500ms ease-in forwards;
+        }
+        .ads__image2 {
+          animation: fadein-down 500ms ease-in 400ms forwards;
+        }
+      }
+      &.scraper {
+        .scraper__image1 {
+          animation: pop-in 500ms ease-in forwards;
+        }
+        .scraper__image2 {
+          animation: fadein-right 500ms ease-in 400ms forwards;
+        }
+      }
+      &.chatbot {
+        .chatbot__image1 {
+          animation: pop-in 500ms ease-in forwards;
+        }
+        .chatbot__image2 {
+          animation: fadein-left 500ms ease-in 400ms forwards;
         }
       }
     }
   }
 
   @include sm {
+    nav {
+      width: 0.4125rem;
+      ul {
+        height: 23.375rem;
+        li {
+          button {
+            div {
+              height: 0.1375rem;
+              width: 0.4125;
+            }
+          }
+        }
+      }
+    }
     h3 {
       font-size: 22px;
       line-height: 26.4px;
@@ -339,9 +541,210 @@
       letter-spacing: 0.0044;
       max-width: 26.95rem;
     }
+    .machineLearning {
+      &__image {
+        max-width: 19.47rem;
+        height: 12.1rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 10.725rem;
+            top: 3.3em;
+          }
+          &.machineLearning__image2 {
+            width: 8.889375rem;
+            left: 16.83em;
+          }
+          &.machineLearning__image3 {
+            width: 2.6455rem;
+            top: 4.62em;
+            left: 14.63em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard {
+      &__image {
+        max-width: 16.9125rem;
+        height: 11.342375rem;
+
+        img {
+          &.dashboard__image1 {
+            width: 10.725rem;
+            top: 0.55em;
+          }
+          &.dashboard__image2 {
+            width: 16.2545625rem;
+            left: 1.1em;
+          }
+        }
+      }
+    }
+    .solucionesRPA {
+      &__image {
+        max-width: 13.8875rem;
+        height: 15.33125rem;
+
+        img {
+          &.rpa__image1 {
+            width: 6.9760625rem;
+            top: 11em;
+            left: 11em;
+          }
+          &.rpa__image2 {
+            width: 11.540375rem;
+          }
+        }
+      }
+    }
+    .investigacionSegmentada {
+      &__image {
+        max-width: 15.05625rem;
+        height: 15.0266875rem;
+
+        img {
+          &.investigacion__image1 {
+            width: 10.3895rem;
+            top: 0.22em;
+            left: 3.3em;
+          }
+          &.investigacion__image2 {
+            width: 15.05625rem;
+          }
+        }
+      }
+    }
+    .evaluacionDesempeno {
+      &__image {
+        max-width: 11.89375rem;
+        height: 14.85rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 11.221375rem;
+            top: 2.53em;
+          }
+          &.evaluacion__image2 {
+            width: 70.5875rem;
+            left: -0.5em;
+          }
+          &.evaluacion__image3 {
+            width: 4.796rem;
+            top: 0.55em;
+            left: 11.55em;
+          }
+        }
+      }
+    }
+    .codigosQR {
+      &__image {
+        max-width: 14.50625rem;
+        height: 14.7125rem;
+
+        img {
+          &.codigos__image1 {
+            width: 15.5375rem;
+          }
+          &.codigos__image2 {
+            width: 10.9099375rem;
+            top: 5.94em;
+            left: 5.83em;
+          }
+        }
+      }
+    }
+    .realidadAumentada {
+      &__image {
+        max-width: 14.2621875rem;
+        height: 14.854125rem;
+
+        img {
+          &.realidad__image1 {
+            width: 10.5400625rem;
+            top: 1.65em;
+          }
+          &.realidad__image2 {
+            width: 4.4034375rem;
+            top: 7.7em;
+            left: 1.1em;
+          }
+          &.realidad__image3 {
+            width: 8.8rem;
+            left: 8.8em;
+          }
+        }
+      }
+    }
+    .ads {
+      &__image {
+        max-width: 12.7208125rem;
+        height: 16.29375rem;
+
+        img {
+          &.ads__image1 {
+            width: 10.1193125rem;
+            top: 2.2em;
+          }
+          &.ads__image2 {
+            width: 9.77625rem;
+            left: 4.4em;
+          }
+        }
+      }
+    }
+
+    .scraper {
+      &__image {
+        max-width: 10.1248125rem;
+        height: 15.9108125rem;
+
+        img {
+          &.scraper__image1 {
+            width: 10.04025rem;
+            top: 6.27em;
+          }
+          &.scraper__image2 {
+            width: 9.7563125rem;
+            left: 0.33em;
+          }
+        }
+      }
+    }
+
+    .chatbot {
+      &__image {
+        max-width: 12.595rem;
+        height: 14.760625rem;
+
+        img {
+          &.chatbot__image1 {
+            width: 12.2705rem;
+            top: 1.43em;
+          }
+          &.chatbot__image2 {
+            width: 10.3228125rem;
+            left: 3.85em;
+          }
+        }
+      }
+    }
   }
 
   @include md {
+    nav {
+      width: 0.4875rem;
+      ul {
+        height: 27.65rem;
+        li {
+          button {
+            div {
+              height: 0.1625rem;
+              width: 0.4875;
+            }
+          }
+        }
+      }
+    }
     h3 {
       font-size: 26px;
       line-height: 31.2px;
@@ -355,14 +758,264 @@
       letter-spacing: 0.0052;
       max-width: 31.85rem;
     }
+    .machineLearning {
+      &__image {
+        max-width: 23.01rem;
+        height: 14.3rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 12.675rem;
+            top: 3.9em;
+          }
+          &.machineLearning__image2 {
+            width: 10.505625rem;
+            left: 19.89em;
+          }
+          &.machineLearning__image3 {
+            width: 3.1265rem;
+            top: 5.46em;
+            left: 17.29em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard {
+      &__image {
+        max-width: 19.9875rem;
+        height: 13.404625rem;
+
+        img {
+          &.dashboard__image1 {
+            width: 12.675rem;
+            top: 0.65em;
+          }
+          &.dashboard__image2 {
+            width: 19.2099375rem;
+            left: 1.3em;
+          }
+        }
+      }
+    }
+    .solucionesRPA {
+      &__image {
+        max-width: 16.4125rem;
+        height: 18.11875rem;
+
+        img {
+          &.rpa__image1 {
+            width: 8.2444375rem;
+            top: 13em;
+            left: 13em;
+          }
+          &.rpa__image2 {
+            width: 13.638625rem;
+          }
+        }
+      }
+    }
+    .investigacionSegmentada {
+      &__image {
+        max-width: 17.79375rem;
+        height: 17.7588125rem;
+
+        img {
+          &.investigacion__image1 {
+            width: 12.2785rem;
+            top: 0.26em;
+            left: 3.9em;
+          }
+          &.investigacion__image2 {
+            width: 17.79375rem;
+          }
+        }
+      }
+    }
+
+    .evaluacionDesempeno {
+      &__image {
+        max-width: 14.05625rem;
+        height: 17.55rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 13.261625rem;
+            top: 2.99em;
+          }
+          &.evaluacion__image2 {
+            width: 12.5125rem;
+            left: 0.52em;
+          }
+          &.evaluacion__image3 {
+            width: 5.668rem;
+            top: 0.65em;
+            left: 13.65em;
+          }
+        }
+      }
+    }
+    .codigosQR {
+      &__image {
+        max-width: 17.14375rem;
+        height: 17.3875rem;
+
+        img {
+          &.codigos__image1 {
+            width: 18.3625rem;
+          }
+          &.codigos__image2 {
+            width: 12.8935625rem;
+            top: 7.02em;
+            left: 6.89em;
+          }
+        }
+      }
+    }
+    .realidadAumentada {
+      &__image {
+        max-width: 16.8553125rem;
+        height: 17.554875rem;
+
+        img {
+          &.realidad__image1 {
+            width: 12.4564375rem;
+            top: 1.95em;
+          }
+          &.realidad__image2 {
+            width: 5.2040625rem;
+            top: 9.1em;
+            left: 1.3em;
+          }
+          &.realidad__image3 {
+            width: 10.4rem;
+            left: 10.4em;
+          }
+        }
+      }
+    }
+    .ads {
+      &__image {
+        max-width: 15.0336875rem;
+        height: 19.25625rem;
+
+        img {
+          &.ads__image1 {
+            width: 11.9591875rem;
+            top: 2.6em;
+          }
+          &.ads__image2 {
+            width: 11.55375rem;
+            left: 5.2em;
+          }
+        }
+      }
+    }
+    .scraper {
+      &__image {
+        max-width: 11.9656875rem;
+        height: 18.8036875rem;
+
+        img {
+          &.scraper__image1 {
+            width: 11.86575rem;
+            top: 7.41em;
+          }
+          &.scraper__image2 {
+            width: 11.5301875rem;
+            left: 0.39em;
+          }
+        }
+      }
+    }
+
+    .chatbot {
+      &__image {
+        max-width: 14.885rem;
+        height: 17.444375rem;
+
+        img {
+          &.chatbot__image1 {
+            width: 14.5015rem;
+            top: 1.69em;
+          }
+          &.chatbot__image2 {
+            width: 12.1996875rem;
+            left: 4.55em;
+          }
+        }
+      }
+    }
   }
 
   @include lg {
+    margin-inline: auto;
+    max-width: 65rem;
+    nav {
+      min-width: 10%;
+      ul {
+        align-items: flex-end;
+        height: 30.6rem;
+        width: 100%;
+        margin-left: auto;
+        li {
+          height: 100%;
+          width: 100%;
+          button {
+            div {
+              display: none;
+            }
+            .solucion-label {
+              display: block;
+              margin-left: auto;
+              width: 95%;
+              text-align: right;
+              @include fontStyle(
+                11.2px,
+                14.168px,
+                $--fw-light,
+                $--clr-font-light,
+                undefined
+              );
+              opacity: 1;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+              .solucion-label {
+                @include fontStyle(
+                  16px,
+                  19.2px,
+                  $--fw-black,
+                  $--clr-font-regular,
+                  undefined
+                );
+                position: relative;
+                right: 0;
+                &::after {
+                  content: "";
+                  position: absolute;
+                  width: 72px;
+                  height: 2px;
+                  bottom: -0.4em;
+                  right: 0;
+                  background: $--clr-lucro-red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    article {
+      max-width: 23rem;
+      margin-left: 4.5em;
+    }
     h3 {
       font-size: 38.4px;
       line-height: 48.576px;
       letter-spacing: 0.195;
-      min-width: 22.25rem;
+      min-width: 22rem;
+      max-width: 22.8125rem;
     }
     h6 {
       font-size: 16px;
@@ -376,6 +1029,9 @@
       letter-spacing: 0.0032;
       max-width: 22.8125rem;
     }
+    .btn-ghost {
+      max-width: 13.7rem;
+    }
     .machineLearning,
     .solucionesDashboard,
     .solucionesRPA,
@@ -388,13 +1044,238 @@
     .chatbot {
       justify-content: space-evenly;
       flex-direction: row-reverse;
-      padding-inline: 5%;
       height: 80vh;
       width: 80%;
+      &__image {
+        margin-top: 7.5em;
+        margin-left: 3em;
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 27.2725rem;
+        height: 16.65rem;
+        margin: initial;
+        padding: initial;
+
+        img {
+          &.machineLearning__image1 {
+            width: 15.2rem;
+            top: 4.8em;
+          }
+          &.machineLearning__image2 {
+            width: 12.25rem;
+            left: 24.712em;
+          }
+          &.machineLearning__image3 {
+            width: 3.8rem;
+            top: 6.32em;
+            left: 21.44em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard {
+      &__image {
+        min-width: 27rem;
+        max-width: 27rem;
+        height: 21.4rem;
+
+        img {
+          &.dashboard__image1 {
+            width: 17.7rem;
+            top: 6em;
+          }
+          &.dashboard__image2 {
+            width: 25.95rem;
+            left: 1.6em;
+          }
+        }
+      }
+    }
+    .solucionesRPA {
+      &__image {
+        max-width: 21.3rem;
+        height: 21.4rem;
+
+        img {
+          &.rpa__image1 {
+            width: 10.7rem;
+            top: 16.8em;
+            left: 16.8em;
+          }
+          &.rpa__image2 {
+            width: 17.7rem;
+          }
+        }
+      }
+    }
+    .investigacionSegmentada {
+      &__image {
+        min-width: 25.65rem;
+        max-width: 25.65rem;
+        height: 25.6rem;
+
+        img {
+          &.investigacion__image1 {
+            width: 17.7rem;
+            top: 0.4em;
+            left: 5.6em;
+          }
+          &.investigacion__image2 {
+            width: 25.65rem;
+          }
+        }
+      }
+    }
+
+    .evaluacionDesempeno {
+      &__image {
+        min-width: 20.35rem;
+        max-width: 20.35rem;
+        height: 25.45rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 19.2rem;
+            top: 3.6em;
+          }
+          &.evaluacion__image2 {
+            width: 15.95rem;
+            left: 2.64em;
+          }
+          &.evaluacion__image3 {
+            width: 7.5rem;
+            top: 0.52em;
+            left: 20.52em;
+          }
+        }
+      }
+    }
+    .codigosQR {
+      &__image {
+        min-width: 23.7775rem;
+        max-width: 23.7775rem;
+        height: 23.925rem;
+
+        img {
+          &.codigos__image1 {
+            width: 23.7775rem;
+          }
+          &.codigos__image2 {
+            width: 17.7rem;
+            top: 10em;
+            left: 9.6em;
+          }
+        }
+      }
+    }
+    .realidadAumentada {
+      &__image {
+        min-width: 23.95rem;
+        max-width: 23.95rem;
+        height: 23.3rem;
+
+        img {
+          &.realidad__image1 {
+            width: 17.7rem;
+            top: 8.8em;
+          }
+          &.realidad__image2 {
+            width: 7.45rem;
+            top: 19.2em;
+            left: 2em;
+          }
+          &.realidad__image3 {
+            width: 14.15rem;
+            left: 15.36em;
+          }
+        }
+      }
+    }
+    .ads {
+      &__image {
+        min-width: 22.25rem;
+        max-width: 22.25rem;
+        height: 29.3rem;
+
+        img {
+          &.ads__image1 {
+            width: 17.7rem;
+          }
+          &.ads__image2 {
+            width: 17.1rem;
+            top: 3.68em;
+            left: 7.84em;
+          }
+        }
+      }
+    }
+    .scraper {
+      &__image {
+        max-width: 17.7rem;
+        height: 28.05rem;
+
+        img {
+          &.scraper__image1 {
+            width: 17.7rem;
+            top: 11.44em;
+          }
+          &.scraper__image2 {
+            width: 17.2rem;
+            left: 0.96em;
+          }
+        }
+      }
+    }
+    .chatbot {
+      &__image {
+        min-width: 19.4rem;
+        max-width: 19.4rem;
+        height: 24.885rem;
+
+        img {
+          &.chatbot__image1 {
+            width: 18.9rem;
+          }
+          &.chatbot__image2 {
+            width: 15.9rem;
+            top: 4.8em;
+            left: 5.6em;
+          }
+        }
+      }
     }
   }
-
   @include xl {
+    max-width: 81.25rem;
+    nav {
+      width: 10%;
+      ul {
+        height: 38.25rem;
+        width: 60%;
+        li {
+          button {
+            .solucion-label {
+              font-size: 14px;
+              line-height: 17.71px;
+              width: 100%;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+              .solucion-label {
+                font-size: 20px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    article {
+      max-width: 28rem;
+    }
     h3 {
       font-size: 48px;
       line-height: 60.72px;
@@ -412,6 +1293,199 @@
       line-height: 16px;
       letter-spacing: 0.004;
       max-width: 27.8125rem;
+    }
+    .btn-ghost {
+      max-width: 17.125rem;
+    }
+    .machineLearning {
+      &__image {
+        max-width: 34.090625rem;
+        height: 20.8125rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 19rem;
+            top: 6em;
+          }
+          &.machineLearning__image2 {
+            width: 15.3125rem;
+            left: 30.89em;
+          }
+          &.machineLearning__image3 {
+            width: 4.75rem;
+            top: 7.9em;
+            left: 26.8em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard {
+      &__image {
+        min-width: 33.75rem;
+        max-width: 33.75rem;
+        height: 26.75rem;
+
+        img {
+          &.dashboard__image1 {
+            width: 22.125rem;
+            top: 7.5em;
+          }
+          &.dashboard__image2 {
+            width: 32.4375rem;
+            left: 2em;
+          }
+        }
+      }
+    }
+    .solucionesRPA {
+      &__image {
+        max-width: 26.625rem;
+        height: 26.75rem;
+
+        img {
+          &.rpa__image1 {
+            width: 13.375rem;
+            top: 21em;
+            left: 21em;
+          }
+          &.rpa__image2 {
+            width: 22.125rem;
+          }
+        }
+      }
+    }
+    .investigacionSegmentada {
+      &__image {
+        min-width: 32.0625rem;
+        max-width: 32.0625rem;
+        height: 32rem;
+
+        img {
+          &.investigacion__image1 {
+            width: 22.125rem;
+            top: 0.5em;
+            left: 7em;
+          }
+          &.investigacion__image2 {
+            width: 32.0625rem;
+          }
+        }
+      }
+    }
+
+    .evaluacionDesempeno {
+      &__image {
+        min-width: 25.4375rem;
+        max-width: 25.4375rem;
+        height: 31.81rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 24rem;
+            top: 4.5em;
+          }
+          &.evaluacion__image2 {
+            width: 19.9375rem;
+            left: 3.3em;
+          }
+          &.evaluacion__image3 {
+            width: 9.375rem;
+            top: 0.65em;
+            left: 25.65em;
+          }
+        }
+      }
+    }
+    .codigosQR {
+      &__image {
+        min-width: 29.721875rem;
+        max-width: 29.721875rem;
+        height: 29.90625rem;
+
+        img {
+          &.codigos__image1 {
+            width: 29.721875rem;
+          }
+          &.codigos__image2 {
+            width: 22.125rem;
+            top: 12.5em;
+            left: 12em;
+          }
+        }
+      }
+    }
+    .realidadAumentada {
+      &__image {
+        max-width: 29.9375rem;
+        height: 29.125rem;
+
+        img {
+          &.realidad__image1 {
+            width: 22.125rem;
+            top: 11em;
+          }
+          &.realidad__image2 {
+            width: 9.3125rem;
+            top: 24em;
+            left: 2.5em;
+          }
+          &.realidad__image3 {
+            width: 17.6875rem;
+            left: 19.2em;
+          }
+        }
+      }
+    }
+    .ads {
+      &__image {
+        max-width: 27.8125rem;
+        height: 36.625rem;
+
+        img {
+          &.ads__image1 {
+            width: 22.125rem;
+          }
+          &.ads__image2 {
+            width: 21.375rem;
+            top: 4.6em;
+            left: 9.8em;
+          }
+        }
+      }
+    }
+    .scraper {
+      &__image {
+        max-width: 22.125rem;
+        height: 35.0625rem;
+
+        img {
+          &.scraper__image1 {
+            width: 22.125rem;
+            top: 14.3em;
+          }
+          &.scraper__image2 {
+            width: 21.5rem;
+            left: 1.2em;
+          }
+        }
+      }
+    }
+    .chatbot {
+      &__image {
+        max-width: 24.25rem;
+        height: 31.10625rem;
+
+        img {
+          &.chatbot__image1 {
+            width: 23.625rem;
+          }
+          &.chatbot__image2 {
+            width: 19.875rem;
+            top: 6em;
+            left: 7em;
+          }
+        }
+      }
     }
   }
 }

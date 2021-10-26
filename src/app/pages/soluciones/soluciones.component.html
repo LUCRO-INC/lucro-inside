@@ -1,5 +1,15 @@
 <section class="soluciones">
-  <div class="machineLearning">
+  <nav>
+    <ul>
+      <li *ngFor="let solucion of soluciones">
+        <button type="button" class="nav-button" (click)="currentSel = solucion.name">
+          <div></div>
+          <p class="solucion-label">{{solucion.label}}</p>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="machineLearning" [ngClass]="{'active show': currentSel == machineLearning.name}" #section01>
     <div class="machineLearning__image">
       <img
         *ngFor="let img of machineLearning.images"
@@ -29,7 +39,7 @@
     </article>
   </div>
 
-  <div class="solucionesDashboard">
+  <div class="solucionesDashboard" [ngClass]="{'active show': currentSel == solucionesDashboard.name}" #section02>
     <div class="solucionesDashboard__image">
       <img
         *ngFor="let img of solucionesDashboard.images"
@@ -64,7 +74,7 @@
     </article>
   </div>
 
-  <div class="solucionesRPA">
+  <div class="solucionesRPA" [ngClass]="{'active show': currentSel == solucionesRPA.name}" #section03>
     <div class="solucionesRPA__image">
       <img
         *ngFor="let img of solucionesRPA.images"
@@ -94,7 +104,7 @@
     </article>
   </div>
 
-  <div class="investigacionSegmentada">
+  <div class="investigacionSegmentada" [ngClass]="{'active show': currentSel == investigacionSegmentada.name}" #section04>
     <div class="investigacionSegmentada__image">
       <img
         *ngFor="let img of investigacionSegmentada.images"
@@ -129,7 +139,7 @@
     </article>
   </div>
 
-  <div class="evaluacionDesempeno">
+  <div class="evaluacionDesempeno" [ngClass]="{'active show': currentSel == evaluacionDesempeno.name}" #section05>
     <div class="evaluacionDesempeno__image">
       <img
         *ngFor="let img of evaluacionDesempeno.images"
@@ -164,7 +174,7 @@
     </article>
   </div>
 
-  <div class="codigosQR">
+  <div class="codigosQR" [ngClass]="{'active show': currentSel == codigosQR.name}" #section06>
     <div class="codigosQR__image">
       <img
         *ngFor="let img of codigosQR.images"
@@ -192,7 +202,7 @@
     </article>
   </div>
 
-  <div class="realidadAumentada">
+  <div class="realidadAumentada" [ngClass]="{'active show': currentSel == realidadAumentada.name}" #section07>
     <div class="realidadAumentada__image">
       <img
         *ngFor="let img of realidadAumentada.images"
@@ -227,7 +237,7 @@
     </article>
   </div>
 
-  <div class="ads">
+  <div class="ads" [ngClass]="{'active show': currentSel == ads.name}" #section08>
     <div class="ads__image">
       <img *ngFor="let img of ads.images" [src]="img.src" [class]="img.class" />
     </div>
@@ -251,7 +261,7 @@
     </article>
   </div>
 
-  <div class="scraper">
+  <div class="scraper" [ngClass]="{'active show': currentSel == scraper.name}" #section09>
     <div class="scraper__image">
       <img
         *ngFor="let img of scraper.images"
@@ -279,7 +289,7 @@
     </article>
   </div>
 
-  <div class="chatbot">
+  <div class="chatbot" [ngClass]="{'active show': currentSel == chatbot.name}" #section10>
     <div class="chatbot__image">
       <img
         *ngFor="let img of chatbot.images"

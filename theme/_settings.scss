@@ -74,6 +74,17 @@ $--fs-h3: 34px;
   }
 }
 
+@keyframes fadein-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 @keyframes fadein-left {
   0% {
     opacity: 0;
@@ -93,6 +104,17 @@ $--fs-h3: 34px;
   100% {
     opacity: 1;
     transform: translateX(0%);
+  }
+}
+
+@keyframes fadein-down {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 
@@ -125,7 +147,14 @@ $--fs-h3: 34px;
 }
 
 @keyframes rotate-infinite {
+  1% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
   100% {
-    transform: rotate(360deg);
+    opacity: 0;
+    transform: rotate(18000deg);
   }
 }

@@ -29,6 +29,7 @@
             width: 5.9775rem;
             top: 0.3em;
             left: 10.8em;
+            opacity: 0;
           }
           &.contactenos__image2 {
             position: absolute;
@@ -41,6 +42,7 @@
             top: 10.2em;
             left: 13.4em;
             z-index: 2;
+            opacity: 0;
           }
         }
       }
@@ -70,6 +72,7 @@
         );
         letter-spacing: 0.004em;
         margin-bottom: 1.5em;
+        opacity: 0;
       }
 
       .btn-ghost {
@@ -115,6 +118,7 @@
         margin-bottom: 0.5rem;
         border: 1px solid #bbc7ca;
         border-radius: 4px;
+        opacity: 0;
 
         &::placeholder {
           @include fontStyle(
@@ -230,6 +234,7 @@
         top: 7.0625rem;
         padding: 10% 1rem 0.5rem;
         letter-spacing: 0.4px;
+        opacity: 0;
       }
 
       &-btn {
@@ -281,6 +286,52 @@
 
     &.active {
       @include flexbox(center, center, undefined);
+    }
+  }
+
+  &.show {
+    .contactenos-form {
+      #name {
+        animation: fadein-left 500ms ease-in forwards;
+      }
+      #email {
+        animation: fadein-left 500ms ease-in 200ms forwards;
+      }
+      #phoneNumber {
+        animation: fadein-left 500ms ease-in 400ms forwards;
+      }
+      #country {
+        animation: fadein-left 500ms ease-in 600ms forwards;
+      }
+      #company {
+        animation: fadein-left 500ms ease-in 800ms forwards;
+      }
+      #sector {
+        animation: fadein-left 500ms ease-in 1000ms forwards;
+      }
+      #employees {
+        animation: fadein-left 500ms ease-in 1200ms forwards;
+      }
+      #description {
+        animation: fadein-left 500ms ease-in 1400ms forwards;
+      }
+    }
+    .contactenos__image {
+      &1{
+        animation: fadein-left 500ms ease-in 500ms forwards;
+      }
+      &2{
+        animation: pop-in 500ms ease-in forwards;
+      }
+      &3{
+        animation: fadein-up 400ms ease-in 1000ms forwards;
+      }
+    }
+    .contactenos__text--title {
+      animation: fadein-right 1000ms ease-in forwards;
+    }
+    .contactenos__text--paragraph {
+      animation: fadein-right 800ms ease-in 400ms forwards;
     }
   }
 
