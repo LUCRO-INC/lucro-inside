@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public clickHamburger:boolean = false
+  @Input() hasMenu: boolean = true;
+
+  public clickHamburger: boolean = false
 
   constructor(
   ) { }

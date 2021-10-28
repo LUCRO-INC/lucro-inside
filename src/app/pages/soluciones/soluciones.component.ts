@@ -14,6 +14,9 @@ import { CmsService } from 'src/app/@core/services/cms.service';
   styleUrls: ['./soluciones.component.scss'],
 })
 export class SolucionesComponent implements OnInit, AfterViewInit {
+
+  public hasFooter: boolean = false;
+
   @ViewChild('section01')
   section01: ElementRef = {} as ElementRef;
   @ViewChild('section02')
@@ -51,7 +54,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public active: any = {};
   public show: any = {};
 
-  constructor(private service: CmsService) {}
+  constructor(private service: CmsService) { }
 
   async ngOnInit() {
     window.scrollTo(0, 0);
