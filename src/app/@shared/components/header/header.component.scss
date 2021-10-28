@@ -14,7 +14,7 @@ header {
   }
 
   .nav-toggle {
-    display: block;
+    @include flexbox(center, center, row);
     background: transparent;
     position: absolute;
     padding: .5em;
@@ -25,9 +25,14 @@ header {
     opacity: 1;
     z-index: 100;
 
+    p {
+      opacity: 0;
+    }
+
     .hamburger {
       display: block;
       position: relative;
+      margin-left: 1em;
 
       &,
       &::before,
@@ -62,13 +67,14 @@ header {
     height: 345px;
     width: 100%;
     padding: 10px 12%;
-    transform: translateY(-250%);
+    transform: translateY(-120%);
     transition: transform 200ms linear;
     z-index: 99;
 
     .navbar {
-      @include flexbox(space-evenly, flex-start, column);
-      height: 100%;
+      @include flexbox(space-between, flex-start, column);
+      height: 60%;
+      margin-block: 2em;
 
       &__item {
         list-style: none;
@@ -80,23 +86,75 @@ header {
           cursor: pointer;
           @include fontStyle($--fs-p, 20px, undefined, $--clr-font-regular, undefined);
 
-          &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.5em;
-            width: 100%;
-            height: 2px;
-            background-color: $--clr-lucro-red;
-            opacity: 0;
-            transform-origin: center;
-            transition: opacity 200ms;
+          .L,
+          .U,
+          .C,
+          .R,
+          .O {
+            display: none;
           }
 
-          &:hover::after,
-          &.active::after {
-            opacity: 1;
+          p {
+            position: relative;
+            span {
+              display: none;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -0.5em;
+              width: 100%;
+              height: 2px;
+              background-color: $--clr-lucro-red;
+              opacity: 0;
+              transform-origin: center;
+              transition: opacity 200ms;
+            }
           }
+
+          &:hover,
+          &.active {
+            p {
+              &::after {
+                opacity: 1;
+              }
+            }
+        }
+        }
+      }
+    }
+    .allies {
+      @include flexbox(space-between, center, column);
+      p {
+        @include fontStyle(
+          14px,
+          17.71px,
+          $--fw-light,
+          $--clr-font-regular,
+          undefined
+        );
+        margin-bottom: 2em;
+      }
+      .v-line {
+        display: none;
+        width: 2px;
+        height: 44px;
+        background-color: $--clr-lucro-red;
+        margin-inline: 2.5em 4em;
+      }
+      .allies-brands {
+        @include flexbox(space-between, center, row);
+        img + img {
+          margin-left: 2em !important;
+        }
+        &__1 {
+          width: 2.816875rem;
+        }
+        &__2 {
+          width: 5.769375rem;
+          border-radius: 6%;
+          outline: solid 1px $--clr-font-dark;
         }
       }
     }
@@ -119,27 +177,38 @@ header {
 
   @include lg {
     @include flexbox(center, center, column);
-    position: fixed;
-    top: 0;
     height: 5.5rem;
 
+    .brand {
+        margin-right: 16px;
+        padding: 5px 0 5px 16px;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        z-index: 100;
+      }
+
     .nav-toggle {
-      opacity: 0;
+      p {
+        opacity: 1;
+      }
     }
 
     .main-navbar {
-      @include flexbox(center, center, undefined);
-      background: transparent;
-      height: 100%;
-      padding: 10px 20px;
-      transform: translateY(-10%);
+      background: rgba(244, 247, 245, 0.8);
+      backdrop-filter: blur(-16px);
+      position: fixed;
+      @include flexbox(center, center, column);
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      transform: translateY(-100%);
 
       .navbar {
-        @include flexbox(space-between, center, row);
-        flex-wrap: wrap;
+        @include flexbox(center, center, row);
 
         &__item {
-          height: 100%;
           position: relative;
           list-style: none;
           padding: 0 30px 10px;
@@ -149,53 +218,94 @@ header {
             text-align: center;
             text-decoration: none;
             @include fontStyle($--fs-p, 20px, undefined, $--clr-font-regular, undefined);
+            .L,
+            .U,
+            .C,
+            .R,
+            .O {
+              display: block;
+            }
+            .L {
+              background: url("../../../../assets/images/Header/01empresas.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 6.4835rem;
+              height: 9.3685rem;
+            }
+            .U {
+              background: url("../../../../assets/images/Header/02soluciones.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 7.73rem;
+              height: 9.3685rem;
+            }
+            .C {
+              background: url("../../../../assets/images/Header/03tecnologia.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 9.6535rem;
+              height: 9.3685rem;
+            }
+            .R {
+              background: url("../../../../assets/images/Header/04consumidores.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 7.2315rem;
+              height: 9.796rem;
+              margin-inline: auto;
+            }
+            .O {
+              background: url("../../../../assets/images/Header/05contactenos.png");
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 9.3685rem;
+              height: 9.3685rem;
+            }
+            p {
+              margin-top: 0.5em;
+              @include fontStyle(
+                24px,
+                30.36px,
+                $--fw-light,
+                $--clr-font-dark,
+                undefined
+              );
+            }
 
             &::after {
-              content: '';
-              position: absolute;
-              bottom: -24px;
-              left: -27%;
-              width: 160%;
-              height: 8px;
-              background-color: $--clr-lucro-red;
-              opacity: 0;
-              transform-origin: center;
-              transition: opacity 200ms;
+              display: none;
             }
 
             &:hover::after,
             &:focus::after {
-              opacity: 1;
+              display: none;
             }
           }
         }
       }
-    }
-
-    &.active {
-      .main-navbar {
-        transform: translateY(-10%);
+      .allies {
+        flex-direction: row;
+        p {
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 0;
+        }
+        .v-line {
+          display: initial;
+        }
+        .allies-brands {
+          &__1 {
+            width: initial;
+          }
+          &__2 {
+            width: initial;
+          }
+        }
       }
     }
-  }
-
-  @include xl {
-
-    .brand {
-        margin-right: 16px;
-        padding: 5px 0 5px 16px;
-        position: absolute;
-        top: 10px;
-        left: 12px;
-      }
-
-    .main-navbar {
-      transform: translateY(-45%);
-    }
-
     &.active {
       .main-navbar {
-        transform: translateY(-45%);
+        transform: translateY(0%);
       }
     }
   }

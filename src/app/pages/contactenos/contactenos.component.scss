@@ -35,6 +35,7 @@
             position: absolute;
             width: 9.095rem;
             z-index: 1;
+            opacity: 0;
           }
           &.contactenos__image3 {
             position: absolute;
@@ -73,10 +74,6 @@
         letter-spacing: 0.004em;
         margin-bottom: 1.5em;
         opacity: 0;
-      }
-
-      .btn-ghost {
-        display: none;
       }
     }
 
@@ -292,46 +289,46 @@
   &.show {
     .contactenos-form {
       #name {
-        animation: fadein-left 500ms ease-in forwards;
+        animation: fadein-left 500ms ease-in 2000ms forwards;
       }
       #email {
-        animation: fadein-left 500ms ease-in 200ms forwards;
+        animation: fadein-left 500ms ease-in 2200ms forwards;
       }
       #phoneNumber {
-        animation: fadein-left 500ms ease-in 400ms forwards;
+        animation: fadein-left 500ms ease-in 2400ms forwards;
       }
       #country {
-        animation: fadein-left 500ms ease-in 600ms forwards;
+        animation: fadein-left 500ms ease-in 2600ms forwards;
       }
       #company {
-        animation: fadein-left 500ms ease-in 800ms forwards;
+        animation: fadein-left 500ms ease-in 2800ms forwards;
       }
       #sector {
-        animation: fadein-left 500ms ease-in 1000ms forwards;
+        animation: fadein-left 500ms ease-in 3000ms forwards;
       }
       #employees {
-        animation: fadein-left 500ms ease-in 1200ms forwards;
+        animation: fadein-left 500ms ease-in 3200ms forwards;
       }
       #description {
-        animation: fadein-left 500ms ease-in 1400ms forwards;
+        animation: fadein-left 500ms ease-in 3400ms forwards;
       }
     }
     .contactenos__image {
       &1{
-        animation: fadein-left 500ms ease-in 500ms forwards;
+        animation: fadein-left 500ms ease-in 800ms forwards;
       }
       &2{
-        animation: pop-in 500ms ease-in forwards;
+        animation: fadein-right 500ms ease-in 1200ms forwards;
       }
       &3{
-        animation: fadein-up 400ms ease-in 1000ms forwards;
+        animation: fadein-up 500ms ease-in 1600ms forwards;
       }
     }
     .contactenos__text--title {
-      animation: fadein-right 1000ms ease-in forwards;
+      animation: fadein-right 500ms ease-in forwards;
     }
     .contactenos__text--paragraph {
-      animation: fadein-right 800ms ease-in 400ms forwards;
+      animation: fadein-right 500ms ease-in 400ms forwards;
     }
   }
 
@@ -463,30 +460,6 @@
           letter-spacing: 0.4px;
         }
 
-        .btn-ghost {
-          @include fontStyle(
-            14px,
-            17.71px,
-            $--fw-bold,
-            $--clr-font-regular,
-            uppercase
-          );
-          display: block;
-          background: transparent;
-          margin-top: 2em;
-          padding: 10px 35px;
-          width: auto;
-          border: $--clr-font-dark 2px solid;
-          border-radius: 10px;
-          cursor: pointer;
-          &:hover {
-            opacity: 0.8;
-          }
-          &:active {
-            transform: scale(0.95);
-          }
-        }
-
         .contactenos__image {
           width: 25.0665rem;
           height: 17.15rem;
@@ -521,7 +494,6 @@
       width: 100%;
       max-width: initial;
       margin-top: 100px;
-      left: -8em;
 
       .contactenos-form {
         max-width: 27.8125rem;
@@ -569,10 +541,6 @@
               left: 32em;
             }
           }
-        }
-
-        .btn-ghost {
-          padding: 10px 30px;
         }
       }
       .backEllipse {

@@ -413,6 +413,54 @@ export class CmsService {
           class: 'btn-ghost'
         },
       }
+    ],
+
+    Clientes: [
+      {
+        name: 'unilever',
+        src: '../../../assets/images/clientes/unilever.png',
+        hover: '../../../assets/images/clientes/unilever-hover.png'
+      },
+      {
+        name: 'coca-cola',
+        src: '../../../assets/images/clientes/coca-cola.png',
+        hover: '../../../assets/images/clientes/coca-cola-hover.png'
+      },
+      {
+        name: 'alpina',
+        src: '../../../assets/images/clientes/alpina.png',
+        hover: '../../../assets/images/clientes/alpina-hover.png'
+      },
+      {
+        name: 'adbid',
+        src: '../../../assets/images/clientes/adbid.png',
+        hover: '../../../assets/images/clientes/adbid-hover.png'
+      },
+      {
+        name: 'innova',
+        src: '../../../assets/images/clientes/innova.png',
+        hover: '../../../assets/images/clientes/innova-hover.png'
+      },
+      {
+        name: 'bios',
+        src: '../../../assets/images/clientes/bios.png',
+        hover: '../../../assets/images/clientes/bios-hover.png'
+      },
+      {
+        name: 'abinbev',
+        src: '../../../assets/images/clientes/abinbev.png',
+        hover: '../../../assets/images/clientes/abinbev-hover.png'
+      },
+      {
+        name: 'placita',
+        src: '../../../assets/images/clientes/placita.png',
+        hover: '../../../assets/images/clientes/placita-hover.png'
+      },
+      {
+        name: 'carvajal',
+        src: '../../../assets/images/clientes/carvajal.png',
+        hover: '../../../assets/images/clientes/carvajal-hover.png'
+      }
     ]
   };
 

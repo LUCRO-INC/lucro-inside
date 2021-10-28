@@ -24,7 +24,7 @@
 
       &__item {
         @include fontStyle(14px, 20px, $--fw-light, undefined, undefined);
-        margin-bottom: 18px;
+        margin-top: 18px;
 
         &--link {
           color: $--clr-font-dark;
@@ -151,7 +151,7 @@
 
   @include lg {
     height: fit-content;
-    top: 1rem;
+    margin-top: 3em;
 
     &-top {
       .footer-navbar {

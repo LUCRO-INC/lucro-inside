@@ -1,0 +1,308 @@
+@import "theme/settings";
+
+.home {
+  @include flexbox(center, center, column);
+  margin-top: 10em;
+  overflow-x: hidden;
+  nav {
+    @include flexbox(center, flex-end, column);
+    overflow-x: hidden;
+    max-width: 100%;
+    .home__lista-rutas {
+      @include flexbox(space-between, center, row);
+      overflow-x: scroll;
+      width: 100%;
+      padding: 5em 15% 10em 30%;
+
+      &::-webkit-scrollbar {
+        background: transparent;
+      }
+
+      a + a {
+        margin-left: 5em;
+      }
+
+      &--link {
+        position: relative;
+        cursor: pointer;
+        .L {
+          background: url("../../../assets/images/Header/01empresas.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 9.234375rem;
+          height: 13.34375rem;
+        }
+        .U {
+          background: url("../../../assets/images/Header/02soluciones.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 11.01rem;
+          height: 13.34375rem;
+        }
+        .C {
+          background: url("../../../assets/images/Header/03tecnologia.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 13.75rem;
+          height: 13.34375rem;
+        }
+        .R {
+          background: url("../../../assets/images/Header/04consumidores.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 10.3rem;
+          height: 13.953125rem;
+        }
+        .O {
+          background: url("../../../assets/images/Header/05contactenos.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 13.34375rem;
+          height: 13.34375rem;
+        }
+        p {
+          margin-top: 0.5em;
+          @include fontStyle(
+            24px,
+            30.36px,
+            $--fw-light,
+            $--clr-font-dark,
+            undefined
+          );
+          text-align: center;
+          span {
+            display: none;
+          }
+        }
+        &:hover {
+          .L {
+            background: url("../../../assets/images/Header/01empresas-hover.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 12rem;
+            height: 17rem;
+          }
+          .U {
+            background: url("../../../assets/images/Header/02soluciones-hover.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 19.3rem;
+            height: 18.8rem;
+          }
+          .C {
+            background: url("../../../assets/images/Header/03tecnologia-hover.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 16.8rem;
+            height: 17.8rem;
+          }
+          .R {
+            background: url("../../../assets/images/Header/04consumidores-hover.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 17rem;
+            height: 16rem;
+          }
+          .O {
+            background: url("../../../assets/images/Header/05contactenos-hover.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 16rem;
+            height: 16rem;
+          }
+          p {
+            position: absolute;
+            left: -15%;
+            font-weight: $--fw-black;
+            min-width: 130%;
+            text-decoration: underline;
+            span {
+              display: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+  .allies {
+    @include flexbox(space-between, center, column);
+    p {
+      @include fontStyle(
+        14px,
+        17.71px,
+        $--fw-light,
+        $--clr-font-regular,
+        undefined
+      );
+      margin-bottom: 2em;
+    }
+    .v-line {
+      display: none;
+      width: 2px;
+      height: 44px;
+      background-color: $--clr-lucro-red;
+      margin-inline: 2.5em 4em;
+    }
+    .allies-brands {
+      @include flexbox(space-between, center, row);
+      img + img {
+        margin-left: 2em !important;
+      }
+      &__1 {
+        width: 2.816875rem;
+      }
+      &__2 {
+        width: 5.769375rem;
+        border-radius: 6%;
+        outline: solid 1px $--clr-font-dark;
+      }
+    }
+  }
+  @include sm {
+    margin-top: 11em;
+    nav {
+      .home__lista-rutas {
+        margin-bottom: 9.9em;
+        &--link {
+          .L {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 10.1578125rem;
+            height: 14.678125rem;
+          }
+          .U {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 12.111rem;
+            height: 14.678125rem;
+          }
+          .C {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 15.1rem;
+            height: 14.678125rem;
+          }
+          .R {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 11.4rem;
+            height: 15.3484375rem;
+          }
+          .O {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 14.678125rem;
+            height: 14.678125rem;
+          }
+        }
+      }
+    }
+    .allies {
+      flex-direction: row;
+      p {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 0;
+      }
+      .v-line {
+        display: initial;
+      }
+      .allies-brands {
+        &__1 {
+          width: initial;
+        }
+        &__2 {
+          width: initial;
+        }
+      }
+    }
+  }
+
+  @include lg {
+    height: 70vh;
+    nav {
+      .home__lista-rutas {
+        overflow-x: initial;;
+        padding: initial;
+        a + a {
+          margin-left: 6.4em;
+        }
+        &--link {
+          .L {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 6.4835rem;
+            height: 9.3685rem;
+          }
+          .U {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 7.73rem;
+            height: 9.3685rem;
+          }
+          .C {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 9.6535rem;
+            height: 9.3685rem;
+          }
+          .R {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 7.2315rem;
+            height: 9.796rem;
+            margin-inline: auto;
+          }
+          .O {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 9.3685rem;
+            height: 9.3685rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include xl {
+    nav {
+      .home__lista-rutas {
+        a + a {
+          margin-left: 8em;
+        }
+        &--link {
+          .L {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 8.104375rem;
+            height: 11.710625rem;
+          }
+          .U {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 9.6625rem;
+            height: 11.710625rem;
+          }
+          .C {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 12.066875rem;
+            height: 11.710625rem;
+          }
+          .R {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 9.039375rem;
+            height: 12.245rem;
+          }
+          .O {
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 11.710625rem;
+            height: 11.710625rem;
+          }
+        }
+      }
+    }
+  }
+}

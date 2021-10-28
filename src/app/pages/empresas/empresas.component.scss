@@ -97,32 +97,32 @@
   &.show {
     .home__image {
       &1{
-        animation: rotate-bottom-center 500ms ease-in forwards;
+        animation: vertical-float 2000ms linear 1500ms infinite forwards;
       }
       &2{
-        animation: pop-in 500ms ease-in forwards;
+        animation: fadein-left 500ms linear 800ms forwards;
       }
       &3{
-        animation: pop-in 400ms ease-in 400ms forwards;
+        animation: fadein-right 500ms linear 1500ms forwards;
       }
       &4{
-        animation: fadein 400ms ease-in 1100ms forwards;
+        animation: fadein 400ms ease-in 1900ms forwards;
       }
       &5{
-        animation: fadein 400ms ease-in 1200ms forwards;
+        animation: fadein 400ms ease-in 2100ms forwards;
       }
       &6{
-        animation: fadein 400ms ease-in 1300ms forwards;
+        animation: fadein 400ms ease-in 2300ms forwards;
       }
       &7{
         animation: fadein-right 400ms ease-in 200ms forwards;
       }
     }
     .home__text--title {
-      animation: fadein-left 1000ms ease-in forwards;
+      animation: fadein-left 500ms ease-in forwards;
     }
     .home__text--paragraph {
-      animation: fadein-left 800ms ease-in 400ms forwards;
+      animation: fadein-left 500ms ease-in 400ms forwards;
     }
   }
 
@@ -537,23 +537,23 @@
   &.show {
     .purpose__image {
       &1{
-        animation: fadein-left 500ms ease-in forwards;
+        animation: horizontal-float 2000ms linear 800ms infinite;
       }
       &2{
         animation: rotate-infinite 400000ms linear infinite;
       }
       &3{
-        animation: fadein-right 400ms ease-in forwards;
+        animation: fadein-right 400ms linear 1200ms forwards;
       }
       &4{
-        animation: pop-in 400ms ease-in 1000ms forwards;
+        animation: fadein 400ms linear 1500ms forwards;
       }
     }
     .purpose__text--title {
-      animation: fadein-right 1000ms ease-in forwards;
+      animation: fadein-right 500ms ease-in forwards;
     }
     .purpose__text--paragraph {
-      animation: fadein-right 800ms ease-in 400ms forwards;
+      animation: fadein-right 500ms ease-in 400ms forwards;
     }
   }
 
@@ -788,17 +788,37 @@
 
 .beliefs {
   @include flexbox(center, center, column);
-  overflow-x: hidden;
   position: relative;
-  padding-block: 0.5em;
-  margin-top: 3em;
-  height: 38.75rem;
+  overflow-x: initial;
+  padding-bottom: 3em;
+
+  .our-clients {
+    display: none;
+    overflow-x: hidden;
+    max-width: 95%;
+    padding-block: 1em;
+    h5 {
+      @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
+      letter-spacing: 0.15px;
+      text-align: center;
+    }
+    &__brands {
+      position: relative;
+      @include flexbox(space-between, center, row);
+      overflow-x: scroll;
+      padding-block: 3em;
+      img {
+        max-width: 50%;
+        margin-inline: 2em;
+      }
+    }
+  }
 
   &__image {
     position: relative;
     overflow-x: hidden;
     margin-left: 4em;
-    top: 0;
+    top: 3em;
     width: 90%;
     max-width: 336px;
     height: 263px;
@@ -885,31 +905,30 @@
   &.show {
     .beliefs__image {
       &1{
-        animation: fadein-left 400ms ease-in forwards;
+        animation: pop-in 2000ms linear 800ms infinite;
       }
       &2{
-        animation: fadein-left 400ms ease-in forwards;
+        animation: pop-in 2000ms linear 1000ms infinite;
       }
       &3{
-        animation: fadein-right 400ms ease-in forwards;
+        animation: fadein-right 500ms linear 1500ms forwards;
       }
       &4{
-        animation: fadein 400ms ease-in 350ms forwards;
+        animation: fadein 500ms ease-in 1900ms forwards;
       }
       &5{
-        animation: pop-in 400ms ease-in 700ms forwards;
+        animation: fadein 500ms ease-in 2300ms forwards;
       }
     }
     .beliefs__text--title {
-      animation: fadein-left 1000ms ease-in forwards;
+      animation: fadein-left 500ms ease-in forwards;
     }
     .beliefs__text--paragraph {
-      animation: fadein-left 800ms ease-in 400ms forwards;
+      animation: fadein-left 500ms ease-in 400ms forwards;
     }
   }
 
   @include sm {
-    margin-top: 5em;
     &__image {
       max-width: 400px;
       height: 300px;
@@ -960,7 +979,6 @@
   }
 
   @include md {
-    height: 43rem;
 
     &__image {
       max-width: 490px;
@@ -1012,12 +1030,15 @@
   }
 
   @include lg {
-    height: 60vh;
     @include flexbox(space-evenly, center, row-reverse);
+    .our-clients {
+      position: absolute;
+      top: 0;
+    }
 
     &__text {
-      position: initial;
-      margin-top: 7em;
+      position: relative;
+      top: 12em;
       width: 50%;
       max-width: 465.07px;
       margin-left: 3em;
@@ -1046,7 +1067,7 @@
     &__image {
       position: relative;
       width: 50%;
-      top: 2em;
+      margin-top: 22em;
       min-width: 300px;
       height: 35.5rem;
       min-height: 200px;
@@ -1246,26 +1267,26 @@
   &.show {
     .work__image {
       &1{
-        animation: fadein-right 400ms ease-in forwards;
+        animation: fadein-right 500ms ease-in 800ms forwards;
       }
       &2{
-        animation: fadein-left 400ms ease-in forwards;
+        animation: fadein-left 500ms ease-in 1200ms forwards;
       }
       &3{
-        animation: fadein-left 400ms ease-in forwards;
+        animation: fadein-left 500ms ease-in 1600ms forwards;
       }
       &4{
-        animation: fadein 400ms ease-in 350ms forwards;
+        animation: fadein 500ms ease-in 2100ms forwards;
       }
       &5{
-        animation: pop-in 400ms ease-in 700ms forwards;
+        animation: rotate-infinite 600000ms linear 700ms infinite;
       }
     }
     .work__text--title {
-      animation: fadein-right 1000ms ease-in forwards;
+      animation: fadein-right 500ms ease-in forwards;
     }
     .work__text--paragraph {
-      animation: fadein-right 800ms ease-in 400ms forwards;
+      animation: fadein-right 500ms ease-in 400ms forwards;
     }
   }
 
@@ -1448,7 +1469,7 @@
   }
 
   @include xl {
-    height: 68em;
+    height: 72em;
     &__text {
       min-width: 400px;
       max-width: 586px;

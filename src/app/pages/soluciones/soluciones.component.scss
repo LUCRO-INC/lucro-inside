@@ -429,7 +429,7 @@
           animation: fadein-right 500ms ease-in 250ms forwards;
         }
         &__image3 {
-          animation: pop-in 500ms ease-in 700ms forwards;
+          animation: pop-in 2000ms linear 700ms infinite;
         }
       }
       &.solucionesDashboard {
@@ -437,7 +437,7 @@
           animation: fadein-right 500ms ease-in forwards;
         }
         .dashboard__image2 {
-          animation: pop-in 500ms ease-in 500ms forwards;
+          animation: fadein 500ms ease-in-out 500ms forwards;
         }
       }
       &.solucionesRPA {
@@ -445,12 +445,12 @@
           animation: fadein-right 500ms ease-in forwards;
         }
         .rpa__image2 {
-          animation: pop-in 500ms ease-in 500ms forwards;
+          animation: fadein 500ms ease-in 500ms forwards;
         }
       }
       &.investigacionSegmentada {
         .investigacion__image1 {
-          animation: pop-in 500ms ease-in forwards;
+          animation: fadein 500ms ease-in forwards;
         }
         .investigacion__image2 {
           animation: fadein-right 500ms ease-in 500ms forwards;
@@ -480,7 +480,7 @@
           animation: fadein-left 500ms ease-in forwards;
         }
         .realidad__image2 {
-          animation: pop-in 500ms ease-in 400ms forwards;
+          animation: fadein 500ms ease-in 400ms forwards;
         }
         .realidad__image3 {
           animation: fadein-right 500ms ease-in 200ms forwards;
@@ -496,7 +496,7 @@
       }
       &.scraper {
         .scraper__image1 {
-          animation: pop-in 500ms ease-in forwards;
+          animation: fadein 500ms ease-in forwards;
         }
         .scraper__image2 {
           animation: fadein-right 500ms ease-in 400ms forwards;
@@ -504,7 +504,7 @@
       }
       &.chatbot {
         .chatbot__image1 {
-          animation: pop-in 500ms ease-in forwards;
+          animation: fadein 500ms ease-in forwards;
         }
         .chatbot__image2 {
           animation: fadein-left 500ms ease-in 400ms forwards;

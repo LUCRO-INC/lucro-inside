@@ -22,6 +22,12 @@
 </section>
 
 <section class="beliefs show" #beliefs>
+  <div class="our-clients">
+    <h5>Ellos son nuestros clientes</h5>
+    <ul class="our-clients__brands">
+      <img *ngFor="let cliente of clientes" [src]="cliente.src">
+    </ul>
+  </div>
   <div class="beliefs__image">
     <img *ngFor="let img of sectionThree.images" [src]="img.src" [class]="img.class" />
   </div>

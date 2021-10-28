@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { DeveloperGuard } from './developer.guard';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'empresas',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'empresas',
@@ -14,8 +19,17 @@ const routes: Routes = [
   },
   {
     path: 'soluciones',
-    canActivate: [DeveloperGuard],
     loadChildren: () => import('./pages/soluciones/soluciones.module').then(m => m.SolucionesModule)
+  },
+  {
+    path: 'tecnologia',
+    canActivate: [DeveloperGuard],
+    loadChildren: () => import('./pages/tecnologia/tecnologia.module').then(m => m.TecnologiaModule)
+  },
+  {
+    path: 'consumidores',
+    canActivate: [DeveloperGuard],
+    loadChildren: () => import('./pages/consumidores/consumidores.module').then(m => m.ConsumidoresModule)
   },
   {
     path: 'contactenos',

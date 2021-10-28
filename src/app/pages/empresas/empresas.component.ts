@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ClientsImg } from 'src/app/@core/models/clients-img';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
 
@@ -23,6 +24,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
   public sectionTwo:Section = {}
   public sectionThree:Section = {}
   public sectionFour:Section = {}
+  public clientes: any
 
   constructor(private service:CmsService) { }
 
@@ -30,6 +32,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     // this.intersectionObserver()
     window.scrollTo(0, 0);
     const p = await this.service.get()
+    this.clientes = p.Clientes
     this.sectionOne = p.Empresas?.find(item => item.name == 'sectionOne') || {}
     this.sectionTwo = p.Empresas?.find(item => item.name == 'sectionTwo') || {}
     this.sectionThree = p.Empresas?.find(item => item.name == 'sectionThree') || {}
