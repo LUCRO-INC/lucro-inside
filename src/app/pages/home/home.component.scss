@@ -5,14 +5,14 @@
   margin-top: 10em;
   overflow-x: hidden;
   nav {
-    @include flexbox(center, flex-end, column);
+    @include flexbox(center, center, column);
     overflow-x: hidden;
     max-width: 100%;
     .home__lista-rutas {
-      @include flexbox(space-between, center, row);
+      @include flexbox(space-between, flex-end, row);
       overflow-x: scroll;
       width: 100%;
-      padding: 5em 15% 10em 30%;
+      padding: 15% 30%;
 
       &::-webkit-scrollbar {
         background: transparent;
@@ -29,36 +29,41 @@
           background: url("../../../assets/images/Header/01empresas.png");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 9.234375rem;
-          height: 13.34375rem;
+          background-position: top left;
+          width: 10.35rem;
+          height: 14.79375rem;
         }
         .U {
           background: url("../../../assets/images/Header/02soluciones.png");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 11.01rem;
-          height: 13.34375rem;
+          background-position: top left;
+          width: 15.21rem;
+          height: 14.79375rem;
         }
         .C {
           background: url("../../../assets/images/Header/03tecnologia.png");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 13.75rem;
-          height: 13.34375rem;
+          background-position: top left;
+          width: 15.57rem;
+          height: 16.65rem;
         }
         .R {
           background: url("../../../assets/images/Header/04consumidores.png");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 10.3rem;
-          height: 13.953125rem;
+          background-position: top left;
+          width: 15.75rem;
+          height: 14.79375rem;
         }
         .O {
           background: url("../../../assets/images/Header/05contactenos.png");
           background-repeat: no-repeat;
           background-size: cover;
-          width: 13.34375rem;
-          height: 13.34375rem;
+          background-position: top left;
+          width: 14.79375rem;
+          height: 14.79375rem;
         }
         p {
           margin-top: 0.5em;
@@ -79,42 +84,34 @@
             background: url("../../../assets/images/Header/01empresas-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
-            width: 12rem;
-            height: 17rem;
+            background-position: top left;
           }
           .U {
             background: url("../../../assets/images/Header/02soluciones-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
-            width: 19.3rem;
-            height: 18.8rem;
+            background-position: top left;
           }
           .C {
             background: url("../../../assets/images/Header/03tecnologia-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
-            width: 16.8rem;
-            height: 17.8rem;
+            background-position: top left;
           }
           .R {
             background: url("../../../assets/images/Header/04consumidores-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
-            width: 17rem;
-            height: 16rem;
+            background-position: top left;
           }
           .O {
             background: url("../../../assets/images/Header/05contactenos-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
-            width: 16rem;
-            height: 16rem;
+            background-position: top left;
           }
           p {
-            position: absolute;
-            left: -15%;
             font-weight: $--fw-black;
-            min-width: 130%;
             text-decoration: underline;
             span {
               display: initial;
@@ -145,16 +142,22 @@
     }
     .allies-brands {
       @include flexbox(space-between, center, row);
-      img + img {
+      a + a {
         margin-left: 2em !important;
+      }
+      a {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      img {
+        max-width: 100%;
       }
       &__1 {
         width: 2.816875rem;
       }
       &__2 {
-        width: 5.769375rem;
-        border-radius: 6%;
-        outline: solid 1px $--clr-font-dark;
+        width: 5.673125rem;
       }
     }
   }
@@ -162,43 +165,43 @@
     margin-top: 11em;
     nav {
       .home__lista-rutas {
-        margin-bottom: 9.9em;
         &--link {
           .L {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 10.1578125rem;
-            height: 14.678125rem;
+            width: 11.5rem;
+            height: 16.4375rem;
           }
           .U {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 12.111rem;
-            height: 14.678125rem;
+            width: 16.9rem;
+            height: 16.4375rem;
           }
           .C {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 15.1rem;
-            height: 14.678125rem;
+            width: 17.3rem;
+            height: 18.5rem;
           }
           .R {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 11.4rem;
+            width: 17.5rem;
             height: 15.3484375rem;
           }
           .O {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 14.678125rem;
-            height: 14.678125rem;
+            width: 16.4375rem;
+            height: 16.4375rem;
           }
         }
       }
     }
     .allies {
       flex-direction: row;
+      margin-top: 5em;
       p {
         font-size: 16px;
         line-height: 20px;
@@ -209,10 +212,10 @@
       }
       .allies-brands {
         &__1 {
-          width: initial;
+          width: 4.421875rem;
         }
         &__2 {
-          width: initial;
+          width: 8.5775rem;
         }
       }
     }
@@ -222,42 +225,40 @@
     height: 70vh;
     nav {
       .home__lista-rutas {
-        overflow-x: initial;;
         padding: initial;
         a + a {
-          margin-left: 6.4em;
+          margin-left: 0%;
         }
         &--link {
           .L {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 6.4835rem;
-            height: 9.3685rem;
+            width: 8.28rem;
+            height: 11.835rem;
           }
           .U {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 7.73rem;
-            height: 9.3685rem;
+            width: 12.168rem;
+            height: 11.835rem;
           }
           .C {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 9.6535rem;
-            height: 9.3685rem;
+            width: 12.456rem;
+            height: 13.32rem;
           }
           .R {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 7.2315rem;
-            height: 9.796rem;
-            margin-inline: auto;
+            width: 12.6rem;
+            height: 11.835rem;
           }
           .O {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 9.3685rem;
-            height: 9.3685rem;
+            width: 11.835rem;
+            height: 11.835rem;
           }
         }
       }
@@ -266,40 +267,40 @@
 
   @include xl {
     nav {
+      overflow-x: initial;
+      max-width: 75rem;
+      width: 100%;
       .home__lista-rutas {
-        a + a {
-          margin-left: 8em;
-        }
         &--link {
           .L {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 8.104375rem;
-            height: 11.710625rem;
+            width: 9.2rem;
+            height: 13.15rem;
           }
           .U {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 9.6625rem;
-            height: 11.710625rem;
+            width: 13.52rem;
+            height: 13.15rem;
           }
           .C {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 12.066875rem;
-            height: 11.710625rem;
+            width: 13.84rem;
+            height: 14.8rem;
           }
           .R {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 9.039375rem;
-            height: 12.245rem;
+            width: 14rem;
+            height: 13.15rem;
           }
           .O {
             background-repeat: no-repeat;
             background-size: cover;
-            width: 11.710625rem;
-            height: 11.710625rem;
+            width: 13.15rem;
+            height: 13.15rem;
           }
         }
       }

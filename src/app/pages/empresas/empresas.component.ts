@@ -9,14 +9,14 @@ import { CmsService } from 'src/app/@core/services/cms.service';
   styleUrls: ['./empresas.component.scss']
 })
 export class EmpresasComponent implements OnInit, AfterViewInit {
-  // @ViewChild('home')
-  // home:ElementRef = {} as ElementRef
-  // @ViewChild('purpose')
-  // purpose:ElementRef = {} as ElementRef
-  // @ViewChild('beliefs')
-  // beliefs:ElementRef = {} as ElementRef
-  // @ViewChild('work')
-  // work:ElementRef = {} as ElementRef
+  @ViewChild('home')
+  home:ElementRef = {} as ElementRef
+  @ViewChild('purpose')
+  purpose:ElementRef = {} as ElementRef
+  @ViewChild('beliefs')
+  beliefs:ElementRef = {} as ElementRef
+  @ViewChild('work')
+  work:ElementRef = {} as ElementRef
 
   public observer: any;
 
@@ -29,7 +29,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
   constructor(private service:CmsService) { }
 
   async ngOnInit() {
-    // this.intersectionObserver()
+    this.intersectionObserver()
     window.scrollTo(0, 0);
     const p = await this.service.get()
     this.clientes = p.Clientes
@@ -40,29 +40,27 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // this.observer.observe(this.home.nativeElement)
-    // this.observer.observe(this.purpose.nativeElement)
-    // this.observer.observe(this.beliefs.nativeElement)
-    // this.observer.observe(this.work.nativeElement)
+    this.observer.observe(this.home.nativeElement)
+    this.observer.observe(this.purpose.nativeElement)
+    this.observer.observe(this.beliefs.nativeElement)
+    this.observer.observe(this.work.nativeElement)
   }
 
-  // intersectionObserver()  {
-  //   let options = {
-  //     root: null,
-  //     rootMargin: '0px',
-  //     threshold: 0.3,
-  //   }
-
-  //   this.observer = new IntersectionObserver((entries) => {
-  //     entries.forEach(entry => {
-  //       if (!entry.isIntersecting) {
-  //         return;
-  //       }
-  //       entry.target.classList.toggle('show')
-  //       this.observer.unobserve(entry.target)
-  //     })
-  //   }, options);
-
-  // }
+  intersectionObserver()  {
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.95,
+    }
+  this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.toggle('show')
+        this.observer.unobserve(entry.target)
+      })
+    }, options);
+}
 
 }

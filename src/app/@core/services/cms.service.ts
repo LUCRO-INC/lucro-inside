@@ -169,34 +169,6 @@ export class CmsService {
 
     Soluciones: [
       {
-        name: 'machineLearning',
-        label: 'Machine Learning',
-        title: 'Machine Learning',
-        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
-        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
-        images: [
-          {
-            id: 1,
-            src: '../../../assets/images/Soluciones/MachineLearning/image 49.png',
-            class: 'machineLearning__image1'
-          },
-          {
-            id: 2,
-            src: '../../../assets/images/Soluciones/MachineLearning/image 50.png',
-            class: 'machineLearning__image2'
-          },
-          {
-            id: 3,
-            src: '../../../assets/images/Soluciones/MachineLearning/Union.png',
-            class: 'machineLearning__image3'
-          }
-        ],
-        button: {
-          content: 'contactar un comercial',
-          class: 'btn-ghost'
-        },
-      },
-      {
         name: 'solucionesDashboard',
         label: 'Dashboard',
         title: 'Soluciones Dashboard',
@@ -406,6 +378,34 @@ export class CmsService {
             id: 2,
             src: '../../../assets/images/Soluciones/chatbot/Group 1477.svg',
             class: 'chatbot__image2'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'machineLearning',
+        label: 'Machine Learning',
+        title: 'Machine Learning',
+        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
+        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/MachineLearning/image 49.png',
+            class: 'machineLearning__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/MachineLearning/image 50.png',
+            class: 'machineLearning__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/MachineLearning/Union.png',
+            class: 'machineLearning__image3'
           }
         ],
         button: {

@@ -73,7 +73,7 @@ header {
 
     .navbar {
       @include flexbox(space-between, flex-start, column);
-      height: 60%;
+      height: 85%;
       margin-block: 2em;
 
       &__item {
@@ -124,40 +124,6 @@ header {
         }
       }
     }
-    .allies {
-      @include flexbox(space-between, center, column);
-      p {
-        @include fontStyle(
-          14px,
-          17.71px,
-          $--fw-light,
-          $--clr-font-regular,
-          undefined
-        );
-        margin-bottom: 2em;
-      }
-      .v-line {
-        display: none;
-        width: 2px;
-        height: 44px;
-        background-color: $--clr-lucro-red;
-        margin-inline: 2.5em 4em;
-      }
-      .allies-brands {
-        @include flexbox(space-between, center, row);
-        img + img {
-          margin-left: 2em !important;
-        }
-        &__1 {
-          width: 2.816875rem;
-        }
-        &__2 {
-          width: 5.769375rem;
-          border-radius: 6%;
-          outline: solid 1px $--clr-font-dark;
-        }
-      }
-    }
   }
 
   &.active {
@@ -195,8 +161,8 @@ header {
     }
 
     .main-navbar {
-      background: rgba(244, 247, 245, 0.8);
-      backdrop-filter: blur(-16px);
+      background: rgba(244, 247, 245, 0.95);
+      backdrop-filter: blur(16px);
       position: fixed;
       @include flexbox(center, center, column);
       top: 0;
@@ -206,12 +172,13 @@ header {
       transform: translateY(-100%);
 
       .navbar {
-        @include flexbox(center, center, row);
+        @include flexbox(space-between, flex-end, row);
+        height: auto;
+        width: auto;
 
         &__item {
           position: relative;
           list-style: none;
-          padding: 0 30px 10px;
           transition: border-bottom 200ms linear;
 
           &--link {
@@ -229,37 +196,41 @@ header {
               background: url("../../../../assets/images/Header/01empresas.png");
               background-repeat: no-repeat;
               background-size: cover;
-              width: 6.4835rem;
-              height: 9.3685rem;
+              background-position: top left;
+              width: 8.28rem;
+              height: 11.835rem;
             }
             .U {
               background: url("../../../../assets/images/Header/02soluciones.png");
               background-repeat: no-repeat;
               background-size: cover;
-              width: 7.73rem;
-              height: 9.3685rem;
+              background-position: top left;
+              width: 12.168rem;
+              height: 11.835rem;
             }
             .C {
               background: url("../../../../assets/images/Header/03tecnologia.png");
               background-repeat: no-repeat;
               background-size: cover;
-              width: 9.6535rem;
-              height: 9.3685rem;
+              background-position: top left;
+              width: 12.456rem;
+              height: 13.32rem;
             }
             .R {
               background: url("../../../../assets/images/Header/04consumidores.png");
               background-repeat: no-repeat;
               background-size: cover;
-              width: 7.2315rem;
-              height: 9.796rem;
-              margin-inline: auto;
+              background-position: top left;
+              width: 12.6rem;
+              height: 11.835rem;
             }
             .O {
               background: url("../../../../assets/images/Header/05contactenos.png");
               background-repeat: no-repeat;
               background-size: cover;
-              width: 9.3685rem;
-              height: 9.3685rem;
+              background-position: top left;
+              width: 11.835rem;
+              height: 11.835rem;
             }
             p {
               margin-top: 0.5em;
@@ -269,36 +240,56 @@ header {
                 $--fw-light,
                 $--clr-font-dark,
                 undefined
-              );
+              );&::after {
+                display: none;
+              }
+
+              &:hover::after,
+              &:focus::after {
+                display: none;
+              }
             }
 
-            &::after {
-              display: none;
+            &:hover,
+            &:focus {
+              .L {
+                background: url("../../../../assets/images/Header/01empresas-hover.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top left;
+              }
+              .U {
+                background: url("../../../../assets/images/Header/02soluciones-hover.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top left;
+              }
+              .C {
+                background: url("../../../../assets/images/Header/03tecnologia-hover.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top left;
+              }
+              .R {
+                background: url("../../../../assets/images/Header/04consumidores-hover.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top left;
+              }
+              .O {
+                background: url("../../../../assets/images/Header/05contactenos-hover.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top left;
+              }
+              p {
+                font-weight: $--fw-black;
+                text-decoration: underline;
+                span {
+                  display: initial;
+                }
+              }
             }
-
-            &:hover::after,
-            &:focus::after {
-              display: none;
-            }
-          }
-        }
-      }
-      .allies {
-        flex-direction: row;
-        p {
-          font-size: 16px;
-          line-height: 20px;
-          margin-bottom: 0;
-        }
-        .v-line {
-          display: initial;
-        }
-        .allies-brands {
-          &__1 {
-            width: initial;
-          }
-          &__2 {
-            width: initial;
           }
         }
       }
@@ -306,6 +297,42 @@ header {
     &.active {
       .main-navbar {
         transform: translateY(0%);
+      }
+    }
+  }
+
+  @include xl {
+    .main-navbar {
+      .navbar {
+        max-width: 75rem;
+        width: 100%;
+        &__item {
+          a + a {
+            margin-left: 5em;
+          }
+          &--link {
+            .L {
+              width: 9.2rem;
+              height: 13.15rem;
+            }
+            .U {
+              width: 13.52rem;
+              height: 13.15rem;
+            }
+            .C {
+              width: 13.84rem;
+              height: 14.8rem;
+            }
+            .R {
+              width: 14rem;
+              height: 13.15rem;
+            }
+            .O {
+              width: 13.15rem;
+              height: 13.15rem;
+            }
+          }
+        }
       }
     }
   }

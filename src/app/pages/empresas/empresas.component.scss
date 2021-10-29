@@ -97,22 +97,22 @@
   &.show {
     .home__image {
       &1{
-        animation: vertical-float 2000ms linear 1500ms infinite forwards;
+        animation: vertical-float 40000ms linear 1700ms infinite forwards;
       }
       &2{
-        animation: fadein-left 500ms linear 800ms forwards;
+        animation: huge-fadein 1000ms linear 800ms forwards;
       }
       &3{
-        animation: fadein-right 500ms linear 1500ms forwards;
+        animation: fadein-right 500ms linear 1700ms forwards;
       }
       &4{
-        animation: fadein 400ms ease-in 1900ms forwards;
-      }
-      &5{
         animation: fadein 400ms ease-in 2100ms forwards;
       }
-      &6{
+      &5{
         animation: fadein 400ms ease-in 2300ms forwards;
+      }
+      &6{
+        animation: fadein 400ms ease-in 2500ms forwards;
       }
       &7{
         animation: fadein-right 400ms ease-in 200ms forwards;
@@ -537,7 +537,7 @@
   &.show {
     .purpose__image {
       &1{
-        animation: horizontal-float 2000ms linear 800ms infinite;
+        animation: fadein-down 800ms ease-in 800ms forwards;
       }
       &2{
         animation: rotate-infinite 400000ms linear infinite;
@@ -546,7 +546,7 @@
         animation: fadein-right 400ms linear 1200ms forwards;
       }
       &4{
-        animation: fadein 400ms linear 1500ms forwards;
+        animation: huge-fadein-left 1000ms linear 1500ms forwards;
       }
     }
     .purpose__text--title {
@@ -905,19 +905,19 @@
   &.show {
     .beliefs__image {
       &1{
-        animation: pop-in 2000ms linear 800ms infinite;
+        animation: fadein-right 500ms ease-in 800ms forwards;
       }
       &2{
-        animation: pop-in 2000ms linear 1000ms infinite;
+        animation: fadein-down 500ms ease-in 1000ms forwards;
       }
       &3{
-        animation: fadein-right 500ms linear 1500ms forwards;
+        animation: fadein-right 2000ms ease-in 1500ms forwards;
       }
       &4{
         animation: fadein 500ms ease-in 1900ms forwards;
       }
       &5{
-        animation: fadein 500ms ease-in 2300ms forwards;
+        animation: vertical-float 50000ms linear 2300ms infinite;
       }
     }
     .beliefs__text--title {
@@ -1267,19 +1267,19 @@
   &.show {
     .work__image {
       &1{
-        animation: fadein-right 500ms ease-in 800ms forwards;
+        animation: fadein 500ms ease-in 800ms forwards;
       }
       &2{
-        animation: fadein-left 500ms ease-in 1200ms forwards;
+        animation: pop-in 2000ms linear 1200ms infinite;
       }
       &3{
-        animation: fadein-left 500ms ease-in 1600ms forwards;
+        animation: pop-in 2000ms linear 1600ms infinite;
       }
       &4{
         animation: fadein 500ms ease-in 2100ms forwards;
       }
       &5{
-        animation: rotate-infinite 600000ms linear 700ms infinite;
+        animation: rotate-bottom-center 800ms ease-in 700ms forwards;
       }
     }
     .work__text--title {

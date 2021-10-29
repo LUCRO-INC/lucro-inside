@@ -15,7 +15,6 @@
 
       .contactenos__image {
         position: relative;
-        overflow: hidden;
         left: -5%;
         width: 12.789375rem;
         height: 8.75rem;
@@ -318,10 +317,10 @@
         animation: fadein-left 500ms ease-in 800ms forwards;
       }
       &2{
-        animation: fadein-right 500ms ease-in 1200ms forwards;
+        animation: fadein-rotate 4000ms ease-in-out 1200ms forwards;
       }
       &3{
-        animation: fadein-up 500ms ease-in 1600ms forwards;
+        animation: horizontal-float 4000ms linear 1600ms infinite;
       }
     }
     .contactenos__text--title {

@@ -1,7 +1,7 @@
 <header [ngClass]="{ active: clickHamburger }">
-  <div class="brand">
+  <a href="#" class="brand">
     <img src="../../../assets/images/Brand-Lucro.svg" alt="logo Lucro" />
-  </div>
+  </a>
 
   <button *ngIf="hasMenu" class="nav-toggle" aria-label="toggle navigation" (click)="clickHamburger = !clickHamburger">
     <p>Menú</p>
@@ -45,15 +45,5 @@
         </a>
       </li>
     </ul>
-    <div class="allies">
-      <p>Nuestros Aliados</p>
-      <span class="v-line"></span>
-      <ul class="allies-brands">
-        <img draggable="false" class="allies-brands__1" src="../../../assets/images/aliados/image 63.png"
-          alt="SAP partner brand" />
-        <img draggable="false" class="allies-brands__2" src="../../../assets/images/aliados/image 64.png"
-          alt="Google cloud partner brand" />
-      </ul>
-    </div>
   </nav>
 </header>

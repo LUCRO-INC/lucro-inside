@@ -79,10 +79,33 @@ $--fs-h3: 34px;
   }
 }
 
+@keyframes huge-fadein {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  90% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes fadein-up {
   0% {
     opacity: 0;
-    transform: translateY(-4rem);
+    transform: translateY(-5%);
   }
   100% {
     opacity: 1;
@@ -93,6 +116,26 @@ $--fs-h3: 34px;
 @keyframes fadein-left {
   0% {
     opacity: 0;
+    transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes huge-fadein-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(15%);
+  }
+  90% {
     transform: translateX(-5%);
   }
   100% {
@@ -115,7 +158,7 @@ $--fs-h3: 34px;
 @keyframes fadein-down {
   0% {
     opacity: 0;
-    transform: translateY(4rem);
+    transform: translateY(5%);
   }
   100% {
     opacity: 1;
@@ -123,11 +166,29 @@ $--fs-h3: 34px;
   }
 }
 
+@keyframes fadein-rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(110deg);
+  }
+  90% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
 @keyframes pop-in {
   0% {
     opacity: 0;
   }
-  1% {
+  0.01% {
     opacity: 1;
   }
   25% {
@@ -139,7 +200,7 @@ $--fs-h3: 34px;
   75% {
     transform: scale(0.9)
   }
-  99% {
+  99.99% {
     opacity: 1;
   }
   100% {
@@ -161,7 +222,7 @@ $--fs-h3: 34px;
 }
 
 @keyframes rotate-infinite {
-  1% {
+  0.01% {
     opacity: 1;
   }
   99% {
@@ -177,43 +238,173 @@ $--fs-h3: 34px;
   0% {
     opacity: 0;
   }
-  1% {
+  2.5% {
     opacity: 1;
+    transform: translateY(1rem)
+  }
+  5% {
+    transform: translateY(0%)
+  }
+  7.5% {
+    transform: translateY(-1rem)
+  }
+  10% {
+    transform: translateY(0%)
+  }
+  12.5% {
+    transform: translateY(1rem)
+  }
+  15% {
+    transform: translateY(0%)
+  }
+  17.5% {
+    transform: translateY(-1rem)
+  }
+  20% {
+    transform: translateY(0%)
+  }
+  22.5% {
+    transform: translateY(1rem)
   }
   25% {
+    transform: translateY(0%)
+  }
+  27.5% {
+    transform: translateY(-1rem)
+  }
+  30% {
+    transform: translateY(0%)
+  }
+  32.5% {
     transform: translateY(1rem)
+  }
+  35% {
+    transform: translateY(0%)
+  }
+  37.5% {
+    transform: translateY(-1rem)
+  }
+  40% {
+    transform: translateY(0%)
+  }
+  42.5% {
+    transform: translateY(1rem)
+  }
+  45% {
+    transform: translateY(0%)
+  }
+  47.5% {
+    transform: translateY(-1rem)
   }
   50% {
     transform: translateY(0%)
   }
-  75% {
+  52.5% {
+    transform: translateY(1rem)
+  }
+  55% {
+    transform: translateY(0%)
+  }
+  57.5% {
     transform: translateY(-1rem)
   }
-  99.9% {
+  60% {
+    transform: translateY(0%)
+  }
+  62.5% {
+    transform: translateY(1rem)
+  }
+  65% {
+    transform: translateY(0%)
+  }
+  67.5% {
+    transform: translateY(-1rem)
+  }
+  70% {
+    transform: translateY(0%)
+  }
+  72.5% {
+    transform: translateY(1rem)
+  }
+  75% {
+    transform: translateY(0%)
+  }
+  77.5% {
+    transform: translateY(-1rem)
+  }
+  80% {
+    transform: translateY(0%)
+  }
+  82.5% {
+    transform: translateY(1rem)
+  }
+  85% {
+    transform: translateY(0%)
+  }
+  87.5% {
+    transform: translateY(-1rem)
+  }
+  90% {
+    transform: translateY(0%)
+  }
+  92.5% {
+    transform: translateY(1rem)
+  }
+  95% {
+    transform: translateY(0%)
+  }
+  97.5% {
     opacity: 1;
+    transform: translateY(-1rem)
   }
   100% {
+    opacity: 0;
     transform: translateY(0%)
   }
 }
 
 @keyframes horizontal-float {
-  1% {
+  0% {
+    opacity: 0;
+  }
+  0.01% {
     opacity: 1;
   }
   25% {
-    transform: translateX(2rem)
+    transform: translateX(2rem);
   }
   50% {
-    transform: translateX(0%)
+    transform: translateX(0%);
   }
   75% {
-    transform: translateX(-2rem)
+    transform: translateX(-2rem);
   }
-  99.9% {
+  99.99% {
     opacity: 1;
   }
   100% {
-    transform: translateX(0%)
+    transform: translateX(0%);
+  }
+}
+
+@keyframes shake-in {
+  20% {
+    opacity: 1;
+    transform: rotate(40deg);
+  }
+  40% {
+    transform: rotate(-40deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(40deg);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(-40deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
   }
 }

@@ -89,7 +89,6 @@
     }
   }
 
-  .machineLearning,
   .solucionesDashboard,
   .solucionesRPA,
   .investigacionSegmentada,
@@ -98,7 +97,8 @@
   .realidadAumentada,
   .ads,
   .scraper,
-  .chatbot {
+  .chatbot,
+  .machineLearning {
     @include flexbox(center, center, column);
     display: none;
     top: 69px;
@@ -124,38 +124,6 @@
           letter-spacing: 0.4px;
           margin-top: initial;
           max-width: 11rem;
-        }
-      }
-    }
-  }
-
-  .machineLearning {
-    &__image {
-      max-width: 17.7rem;
-      height: 11rem;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        &.machineLearning__image1 {
-          position: absolute;
-          width: 9.75rem;
-          top: 3em;
-          opacity: 0;
-        }
-        &.machineLearning__image2 {
-          position: absolute;
-          width: 8.08125rem;
-          left: 15.3em;
-          opacity: 0;
-        }
-        &.machineLearning__image3 {
-          position: absolute;
-          width: 2.405rem;
-          top: 4.2em;
-          left: 13.3em;
-          z-index: 1;
-          opacity: 0;
         }
       }
     }
@@ -393,8 +361,39 @@
     }
   }
 
+  .machineLearning {
+    &__image {
+      max-width: 17.7rem;
+      height: 11rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.machineLearning__image1 {
+          position: absolute;
+          width: 9.75rem;
+          top: 3em;
+          opacity: 0;
+        }
+        &.machineLearning__image2 {
+          position: absolute;
+          width: 8.08125rem;
+          left: 15.3em;
+          opacity: 0;
+        }
+        &.machineLearning__image3 {
+          position: absolute;
+          width: 2.405rem;
+          top: 4.2em;
+          left: 13.3em;
+          z-index: 1;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
   .active {
-    &.machineLearning,
     &.solucionesDashboard,
     &.solucionesRPA,
     &.investigacionSegmentada,
@@ -403,7 +402,8 @@
     &.realidadAumentada,
     &.ads,
     &.scraper,
-    &.chatbot {
+    &.chatbot,
+    &.machineLearning {
       display: flex;
     }
 
@@ -420,17 +420,6 @@
       }
       .btn-ghost {
         animation: fadein-left 500ms ease-in 600ms forwards;
-      }
-      .machineLearning {
-        &__image1 {
-          animation: fadein-left 500ms ease-in forwards;
-        }
-        &__image2 {
-          animation: fadein-right 500ms ease-in 250ms forwards;
-        }
-        &__image3 {
-          animation: pop-in 2000ms linear 700ms infinite;
-        }
       }
       &.solucionesDashboard {
         .dashboard__image1 {
@@ -510,6 +499,17 @@
           animation: fadein-left 500ms ease-in 400ms forwards;
         }
       }
+      .machineLearning {
+        &__image1 {
+          animation: fadein-left 500ms ease-in forwards;
+        }
+        &__image2 {
+          animation: fadein-right 500ms ease-in 250ms forwards;
+        }
+        &__image3 {
+          animation: pop-in 2000ms linear 700ms infinite;
+        }
+      }
     }
   }
 
@@ -540,28 +540,6 @@
       line-height: 17.6px;
       letter-spacing: 0.0044;
       max-width: 26.95rem;
-    }
-    .machineLearning {
-      &__image {
-        max-width: 19.47rem;
-        height: 12.1rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 10.725rem;
-            top: 3.3em;
-          }
-          &.machineLearning__image2 {
-            width: 8.889375rem;
-            left: 16.83em;
-          }
-          &.machineLearning__image3 {
-            width: 2.6455rem;
-            top: 4.62em;
-            left: 14.63em;
-          }
-        }
-      }
     }
     .solucionesDashboard {
       &__image {
@@ -728,6 +706,28 @@
         }
       }
     }
+    .machineLearning {
+      &__image {
+        max-width: 19.47rem;
+        height: 12.1rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 10.725rem;
+            top: 3.3em;
+          }
+          &.machineLearning__image2 {
+            width: 8.889375rem;
+            left: 16.83em;
+          }
+          &.machineLearning__image3 {
+            width: 2.6455rem;
+            top: 4.62em;
+            left: 14.63em;
+          }
+        }
+      }
+    }
   }
 
   @include md {
@@ -757,28 +757,6 @@
       line-height: 20.8px;
       letter-spacing: 0.0052;
       max-width: 31.85rem;
-    }
-    .machineLearning {
-      &__image {
-        max-width: 23.01rem;
-        height: 14.3rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 12.675rem;
-            top: 3.9em;
-          }
-          &.machineLearning__image2 {
-            width: 10.505625rem;
-            left: 19.89em;
-          }
-          &.machineLearning__image3 {
-            width: 3.1265rem;
-            top: 5.46em;
-            left: 17.29em;
-          }
-        }
-      }
     }
     .solucionesDashboard {
       &__image {
@@ -945,6 +923,28 @@
         }
       }
     }
+    .machineLearning {
+      &__image {
+        max-width: 23.01rem;
+        height: 14.3rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 12.675rem;
+            top: 3.9em;
+          }
+          &.machineLearning__image2 {
+            width: 10.505625rem;
+            left: 19.89em;
+          }
+          &.machineLearning__image3 {
+            width: 3.1265rem;
+            top: 5.46em;
+            left: 17.29em;
+          }
+        }
+      }
+    }
   }
 
   @include lg {
@@ -1032,7 +1032,6 @@
     .btn-ghost {
       max-width: 13.7rem;
     }
-    .machineLearning,
     .solucionesDashboard,
     .solucionesRPA,
     .investigacionSegmentada,
@@ -1041,7 +1040,8 @@
     .realidadAumentada,
     .ads,
     .scraper,
-    .chatbot {
+    .chatbot,
+    .machineLearning {
       justify-content: space-evenly;
       flex-direction: row-reverse;
       height: 80vh;
@@ -1049,30 +1049,6 @@
       &__image {
         margin-top: 7.5em;
         margin-left: 3em;
-      }
-    }
-    .machineLearning {
-      &__image {
-        max-width: 27.2725rem;
-        height: 16.65rem;
-        margin: initial;
-        padding: initial;
-
-        img {
-          &.machineLearning__image1 {
-            width: 15.2rem;
-            top: 4.8em;
-          }
-          &.machineLearning__image2 {
-            width: 12.25rem;
-            left: 24.712em;
-          }
-          &.machineLearning__image3 {
-            width: 3.8rem;
-            top: 6.32em;
-            left: 21.44em;
-          }
-        }
       }
     }
     .solucionesDashboard {
@@ -1246,11 +1222,35 @@
         }
       }
     }
+    .machineLearning {
+      &__image {
+        max-width: 27.2725rem;
+        height: 16.65rem;
+        margin: initial;
+        padding: initial;
+
+        img {
+          &.machineLearning__image1 {
+            width: 15.2rem;
+            top: 4.8em;
+          }
+          &.machineLearning__image2 {
+            width: 12.25rem;
+            left: 24.712em;
+          }
+          &.machineLearning__image3 {
+            width: 3.8rem;
+            top: 6.32em;
+            left: 21.44em;
+          }
+        }
+      }
+    }
   }
   @include xl {
     max-width: 81.25rem;
     nav {
-      width: 10%;
+      min-width: 10%;
       ul {
         height: 38.25rem;
         width: 60%;
@@ -1275,6 +1275,8 @@
     }
     article {
       max-width: 28rem;
+      margin-left: 6.5em;
+      margin-right: 6.5em;
     }
     h3 {
       font-size: 48px;
@@ -1296,28 +1298,6 @@
     }
     .btn-ghost {
       max-width: 17.125rem;
-    }
-    .machineLearning {
-      &__image {
-        max-width: 34.090625rem;
-        height: 20.8125rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 19rem;
-            top: 6em;
-          }
-          &.machineLearning__image2 {
-            width: 15.3125rem;
-            left: 30.89em;
-          }
-          &.machineLearning__image3 {
-            width: 4.75rem;
-            top: 7.9em;
-            left: 26.8em;
-          }
-        }
-      }
     }
     .solucionesDashboard {
       &__image {
@@ -1483,6 +1463,28 @@
             width: 19.875rem;
             top: 6em;
             left: 7em;
+          }
+        }
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 34.090625rem;
+        height: 20.8125rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 19rem;
+            top: 6em;
+          }
+          &.machineLearning__image2 {
+            width: 15.3125rem;
+            left: 30.89em;
+          }
+          &.machineLearning__image3 {
+            width: 4.75rem;
+            top: 7.9em;
+            left: 26.8em;
           }
         }
       }
