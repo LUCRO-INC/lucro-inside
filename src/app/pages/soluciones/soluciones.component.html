@@ -2,14 +2,22 @@
   <nav>
     <ul>
       <li *ngFor="let solucion of soluciones">
-        <button type="button" class="nav-button" (click)="currentSel = solucion.name">
+        <button
+          type="button"
+          class="nav-button"
+          (click)="currentSel = solucion.name"
+        >
           <div></div>
-          <p class="solucion-label">{{solucion.label}}</p>
+          <p class="solucion-label">{{ solucion.label }}</p>
         </button>
       </li>
     </ul>
   </nav>
-  <div class="machineLearning" [ngClass]="{'active show': currentSel == machineLearning.name}" #section01>
+  <div
+    class="machineLearning"
+    [ngClass]="{ 'active show': currentSel == machineLearning.name }"
+    #section01
+  >
     <div class="machineLearning__image">
       <img
         *ngFor="let img of machineLearning.images"
@@ -29,17 +37,19 @@
         {{ machineLearning.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="solucionesDashboard" [ngClass]="{'active show': currentSel == solucionesDashboard.name}" #section02>
+  <div
+    class="solucionesDashboard"
+    [ngClass]="{ 'active show': currentSel == solucionesDashboard.name }"
+    #section02
+  >
     <div class="solucionesDashboard__image">
       <img
         *ngFor="let img of solucionesDashboard.images"
@@ -64,17 +74,19 @@
         {{ solucionesDashboard.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="solucionesRPA" [ngClass]="{'active show': currentSel == solucionesRPA.name}" #section03>
+  <div
+    class="solucionesRPA"
+    [ngClass]="{ 'active show': currentSel == solucionesRPA.name }"
+    #section03
+  >
     <div class="solucionesRPA__image">
       <img
         *ngFor="let img of solucionesRPA.images"
@@ -94,17 +106,19 @@
         {{ solucionesRPA.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="investigacionSegmentada" [ngClass]="{'active show': currentSel == investigacionSegmentada.name}" #section04>
+  <div
+    class="investigacionSegmentada"
+    [ngClass]="{ 'active show': currentSel == investigacionSegmentada.name }"
+    #section04
+  >
     <div class="investigacionSegmentada__image">
       <img
         *ngFor="let img of investigacionSegmentada.images"
@@ -129,17 +143,19 @@
         {{ investigacionSegmentada.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="evaluacionDesempeno" [ngClass]="{'active show': currentSel == evaluacionDesempeno.name}" #section05>
+  <div
+    class="evaluacionDesempeno"
+    [ngClass]="{ 'active show': currentSel == evaluacionDesempeno.name }"
+    #section05
+  >
     <div class="evaluacionDesempeno__image">
       <img
         *ngFor="let img of evaluacionDesempeno.images"
@@ -164,17 +180,19 @@
         {{ evaluacionDesempeno.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="codigosQR" [ngClass]="{'active show': currentSel == codigosQR.name}" #section06>
+  <div
+    class="codigosQR"
+    [ngClass]="{ 'active show': currentSel == codigosQR.name }"
+    #section06
+  >
     <div class="codigosQR__image">
       <img
         *ngFor="let img of codigosQR.images"
@@ -192,17 +210,19 @@
         {{ codigosQR.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="realidadAumentada" [ngClass]="{'active show': currentSel == realidadAumentada.name}" #section07>
+  <div
+    class="realidadAumentada"
+    [ngClass]="{ 'active show': currentSel == realidadAumentada.name }"
+    #section07
+  >
     <div class="realidadAumentada__image">
       <img
         *ngFor="let img of realidadAumentada.images"
@@ -227,17 +247,19 @@
         {{ realidadAumentada.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="ads" [ngClass]="{'active show': currentSel == ads.name}" #section08>
+  <div
+    class="ads"
+    [ngClass]="{ 'active show': currentSel == ads.name }"
+    #section08
+  >
     <div class="ads__image">
       <img *ngFor="let img of ads.images" [src]="img.src" [class]="img.class" />
     </div>
@@ -251,24 +273,33 @@
         {{ ads.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="scraper" [ngClass]="{'active show': currentSel == scraper.name}" #section09>
+  <div
+    class="scraper"
+    [ngClass]="{ 'active show': currentSel == scraper.name }"
+    #section09
+  >
     <div class="scraper__image">
-      <img
-        *ngFor="let img of scraper.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img src="../../../../assets/images/Soluciones/scraper/Ellipse 2076.svg" class="scraper__image1">
+      <img src="../../../../assets/images/Soluciones/scraper/image 40.png" class="scraper__image2">
+      <div class="scroll_compara">
+        <iframe
+          src="https://comparaprecios.lucro-app.com/home"
+          scrolling="none"
+        ></iframe>
+      </div>
+      <div class="gift_compara">
+        <img src="../../../../assets/images/Soluciones/scraper/comparador.gif" class="img-fluid" />
+      </div>
     </div>
+
     <article class="scraper__text">
       <h3 class="scraper__text--title">{{ scraper?.title }}</h3>
       <h6 class="scraper__text--subTitle">{{ scraper?.subTitle }}</h6>
@@ -279,17 +310,19 @@
         {{ scraper.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>Lucro responde tus necesidades</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>
   </div>
 
-  <div class="chatbot" [ngClass]="{'active show': currentSel == chatbot.name}" #section10>
+  <div
+    class="chatbot"
+    [ngClass]="{ 'active show': currentSel == chatbot.name }"
+    #section10
+  >
     <div class="chatbot__image">
       <img
         *ngFor="let img of chatbot.images"
@@ -307,11 +340,9 @@
         {{ chatbot.button?.content }}
       </button>
       <div class="bottom-text">
-        <p>
-          ¿Qué tipo de preguntas podemos resolverte?
-        </p>
+        <p>¿Qué tipo de preguntas podemos resolverte?</p>
         <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg"/>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
       </div>
     </article>

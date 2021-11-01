@@ -50,7 +50,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public chatbot: SolucionesSection = {};
   public soluciones: any;
   public buttons: any = document.querySelectorAll('.nav-button');
-  public currentSel: String = 'solucionesDashboard';
+  public currentSel: String = 'scraper';
   public active: any = {};
   public show: any = {};
 
