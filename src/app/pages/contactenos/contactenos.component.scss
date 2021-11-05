@@ -80,20 +80,20 @@
       #name {
         background: url("../../../assets/images/icons/user.svg") no-repeat 94.5% 45%, #fff;
       }
-
       #email {
         background: url("../../../assets/images/icons/at.svg") no-repeat 94.5% 45%, #fff;
       }
-
       #phoneNumber {
         background: url("../../../assets/images/icons/phone.svg") no-repeat 94.5% 45%, #fff;
       }
-
       #company {
         background:
           url("../../../assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%, #fff;
       }
-
+      #website {
+        background:
+          url("../../../assets/images/icons/website.svg") no-repeat 94.5% 45%, #fff;
+      }
       select,
       .form-control,
       .input-textarea {
@@ -179,6 +179,17 @@
         );
         text-align: center;
         margin-block: 0.5rem 4em;
+        a {
+          color: #000;
+          text-decoration: underline;
+
+          &:hover {
+            color: rgb(30, 59, 226);
+          }
+          &:visited {
+            color: rgb(116, 27, 231);
+          }
+        }
       }
     }
 
@@ -305,11 +316,14 @@
       #sector {
         animation: fadein-left 500ms ease-in 3000ms forwards;
       }
-      #employees {
+      #website {
         animation: fadein-left 500ms ease-in 3200ms forwards;
       }
-      #description {
+      #employees {
         animation: fadein-left 500ms ease-in 3400ms forwards;
+      }
+      #description {
+        animation: fadein-left 500ms ease-in 3600ms forwards;
       }
     }
     .contactenos__image {

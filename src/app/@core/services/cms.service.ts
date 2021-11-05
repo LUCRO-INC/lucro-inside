@@ -169,6 +169,62 @@ export class CmsService {
 
     Soluciones: [
       {
+        name: 'evaluacionDesempeno',
+        label: 'Desempeño de terreno',
+        title: 'Evaluación de desempeño en terreno',
+        subTitle: 'Lo que el vendedor ve, lo pueden ver todos en la compañía',
+        body: 'Adquiere un innovador sistema de evaluación y verificación para equipos de trabajo y/o capacitaciones, en el terreno de la ejecución, con trazabilidad en tiempo real para el logro de objetivos y potencializar tu fuerza comercial.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2076.svg',
+            class: 'evaluacion__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
+            class: 'evaluacion__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2077.svg',
+            class: 'evaluacion__image3'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
+        name: 'machineLearning',
+        label: 'Machine Learning',
+        title: 'Machine Learning',
+        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
+        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
+        images: [
+          {
+            id: 1,
+            src: '../../../assets/images/Soluciones/MachineLearning/Ellipse 2076.svg',
+            class: 'machineLearning__image1'
+          },
+          {
+            id: 2,
+            src: '../../../assets/images/Soluciones/MachineLearning/Ellipse 2077.svg',
+            class: 'machineLearning__image2'
+          },
+          {
+            id: 3,
+            src: '../../../assets/images/Soluciones/MachineLearning/Group 1478.png',
+            class: 'machineLearning__image3'
+          }
+        ],
+        button: {
+          content: 'contactar un comercial',
+          class: 'btn-ghost'
+        },
+      },
+      {
         name: 'solucionesDashboard',
         label: 'Dashboard',
         title: 'Soluciones Dashboard',
@@ -238,34 +294,6 @@ export class CmsService {
         },
       },
       {
-        name: 'evaluacionDesempeno',
-        label: 'Desempeño de terreno',
-        title: 'Evaluación de desempeño en terreno',
-        subTitle: 'Lo que el vendedor ve, lo pueden ver todos en la compañía',
-        body: 'Adquiere un innovador sistema de evaluación y verificación para equipos de trabajo y/o capacitaciones, en el terreno de la ejecución, con trazabilidad en tiempo real para el logro de objetivos y potencializar tu fuerza comercial.',
-        images: [
-          {
-            id: 1,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2076.svg',
-            class: 'evaluacion__image1'
-          },
-          {
-            id: 2,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
-            class: 'evaluacion__image2'
-          },
-          {
-            id: 3,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2077.svg',
-            class: 'evaluacion__image3'
-          }
-        ],
-        button: {
-          content: 'contactar un comercial',
-          class: 'btn-ghost'
-        },
-      },
-      {
         name: 'codigosQR',
         label: 'Códigos QR',
         title: 'Sistema de QR personalizados',
@@ -274,12 +302,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/sistemaQR/Mask Group.svg',
+            src: '../../../assets/images/Soluciones/sistemaQR/QR 1.png',
             class: 'codigos__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/sistemaQR/Ellipse 2076.svg',
+            src: '../../../assets/images/Soluciones/sistemaQR/Ellipse 2076.png',
             class: 'codigos__image2'
           }
         ],
@@ -302,12 +330,12 @@ export class CmsService {
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/realidadAumentada/Group 1476.png',
+            src: '../../../assets/images/Soluciones/realidadAumentada/Group 1478.png',
             class: 'realidad__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/realidadAumentada/image 44.svg',
+            src: '../../../assets/images/Soluciones/realidadAumentada/Ellipse 2077.svg',
             class: 'realidad__image3'
           }
         ],
@@ -376,36 +404,18 @@ export class CmsService {
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/chatbot/Group 1477.svg',
+            src: '../../../assets/images/Soluciones/chatbot/Group 1478.png',
             class: 'chatbot__image2'
-          }
-        ],
-        button: {
-          content: 'contactar un comercial',
-          class: 'btn-ghost'
-        },
-      },
-      {
-        name: 'machineLearning',
-        label: 'Machine Learning',
-        title: 'Machine Learning',
-        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
-        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
-        images: [
-          {
-            id: 1,
-            src: '../../../assets/images/Soluciones/MachineLearning/image 49.png',
-            class: 'machineLearning__image1'
-          },
-          {
-            id: 2,
-            src: '../../../assets/images/Soluciones/MachineLearning/image 50.png',
-            class: 'machineLearning__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/MachineLearning/Union.png',
-            class: 'machineLearning__image3'
+            src: '../../../assets/images/Soluciones/chatbot/Ellipse 2077.png',
+            class: 'chatbot__image3'
+          },
+          {
+            id: 4,
+            src: '../../../assets/images/Soluciones/chatbot/image 75.png',
+            class: 'chatbot__image4'
           }
         ],
         button: {
@@ -417,19 +427,24 @@ export class CmsService {
 
     Clientes: [
       {
-        name: 'unilever',
-        src: '../../../assets/images/clientes/unilever.png',
-        hover: '../../../assets/images/clientes/unilever-hover.png'
-      },
-      {
-        name: 'coca-cola',
-        src: '../../../assets/images/clientes/coca-cola.png',
-        hover: '../../../assets/images/clientes/coca-cola-hover.png'
-      },
-      {
         name: 'alpina',
         src: '../../../assets/images/clientes/alpina.png',
         hover: '../../../assets/images/clientes/alpina-hover.png'
+      },
+      {
+        name: 'carvajal',
+        src: '../../../assets/images/clientes/carvajal.png',
+        hover: '../../../assets/images/clientes/carvajal-hover.png'
+      },
+      {
+        name: 'abinbev',
+        src: '../../../assets/images/clientes/abinbev.png',
+        hover: '../../../assets/images/clientes/abinbev-hover.png'
+      },
+      {
+        name: 'bios',
+        src: '../../../assets/images/clientes/bios.png',
+        hover: '../../../assets/images/clientes/bios-hover.png'
       },
       {
         name: 'adbid',
@@ -442,25 +457,20 @@ export class CmsService {
         hover: '../../../assets/images/clientes/innova-hover.png'
       },
       {
-        name: 'bios',
-        src: '../../../assets/images/clientes/bios.png',
-        hover: '../../../assets/images/clientes/bios-hover.png'
-      },
-      {
-        name: 'abinbev',
-        src: '../../../assets/images/clientes/abinbev.png',
-        hover: '../../../assets/images/clientes/abinbev-hover.png'
-      },
-      {
         name: 'placita',
         src: '../../../assets/images/clientes/placita.png',
         hover: '../../../assets/images/clientes/placita-hover.png'
       },
-      {
-        name: 'carvajal',
-        src: '../../../assets/images/clientes/carvajal.png',
-        hover: '../../../assets/images/clientes/carvajal-hover.png'
-      }
+      // {
+      //   name: 'unilever',
+      //   src: '../../../assets/images/clientes/unilever.png',
+      //   hover: '../../../assets/images/clientes/unilever-hover.png'
+      // },
+      // {
+      //   name: 'coca-cola',
+      //   src: '../../../assets/images/clientes/coca-cola.png',
+      //   hover: '../../../assets/images/clientes/coca-cola-hover.png'
+      // },
     ]
   };
 

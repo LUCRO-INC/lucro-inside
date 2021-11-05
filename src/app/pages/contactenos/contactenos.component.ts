@@ -27,6 +27,7 @@ export class ContactenosComponent implements OnInit {
       country: ['',Validators.required],
       company: ['',Validators.required],
       sector: ['',Validators.required],
+      website: ['',Validators.nullValidator],
       employees: ['',Validators.required],
       description: ['',Validators.required],
     });

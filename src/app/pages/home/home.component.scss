@@ -4,15 +4,17 @@
   @include flexbox(center, center, column);
   margin-top: 10em;
   overflow-x: hidden;
+  padding-bottom: 2em;
   nav {
     @include flexbox(center, center, column);
     overflow-x: hidden;
     max-width: 100%;
+    padding-block: 5em 3em;
     .home__lista-rutas {
       @include flexbox(space-between, flex-end, row);
       overflow-x: scroll;
       width: 100%;
-      padding: 15% 30%;
+      padding-inline: 30% 15%;
 
       &::-webkit-scrollbar {
         background: transparent;
@@ -118,6 +120,18 @@
             }
           }
         }
+      }
+    }
+    .slider-controller {
+      @include flexbox(space-between, center, row);
+      width: 4.5rem;
+      height: 0.5rem;
+      margin-block: 4em;
+      &__circle {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: #BBC7CA;
       }
     }
   }
@@ -261,6 +275,9 @@
             height: 11.835rem;
           }
         }
+      }
+      .slider-controller {
+        display: none;
       }
     }
   }

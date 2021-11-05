@@ -50,7 +50,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     let options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.95,
+      threshold: 0.5,
     }
   this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

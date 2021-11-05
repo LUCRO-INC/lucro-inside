@@ -11,7 +11,6 @@
     ul {
       @include flexbox(space-between, flex-start, column);
       height: 21.25rem;
-      justify-content: space-between;
       li {
         text-align: right;
         button {
@@ -54,6 +53,7 @@
     @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
     letter-spacing: 0.004em;
     margin-top: 1.6875rem;
+    margin-right: auto;
     max-width: 24.5rem;
     opacity: 0;
   }
@@ -75,8 +75,9 @@
     letter-spacing: 0.004em;
     background: transparent;
     width: 70%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0;
     margin-top: 1.6875rem;
+    margin-right: auto;
     border: $--clr-font-dark 2px solid;
     border-radius: 10px;
     cursor: pointer;
@@ -89,18 +90,19 @@
     }
   }
 
+  .evaluacionDesempeno,
+  .machineLearning,
   .solucionesDashboard,
   .solucionesRPA,
   .investigacionSegmentada,
-  .evaluacionDesempeno,
   .codigosQR,
   .realidadAumentada,
   .ads,
   .scraper,
-  .chatbot,
-  .machineLearning {
+  .chatbot {
     @include flexbox(center, center, column);
     display: none;
+    max-width: 96%;
     top: 69px;
     padding-block: 5em;
     position: relative;
@@ -113,17 +115,159 @@
 
     &__text {
       width: 90%;
+      min-width: 17rem;
+      max-width: 17rem;
       position: relative;
 
+      .slider-container {
+        height: 17em;
+        margin-bottom: 3em;
+        overflow-x: hidden;
+        .slider {
+          @include flexbox(space-between, flex-end, row);
+          height: 100%;
+          .description {
+            @include flexbox(center, flex-start, column);
+            min-width: 17rem;
+            max-width: 17rem;
+            flex-wrap: wrap;
+          }
+          .questions {
+            @include flexbox(center, center, column);
+            min-width: 17rem;
+            max-width: 17rem;
+            .question {
+              @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
+              letter-spacing: 0.004em;
+              background-color: #fff;
+              padding: 0.75rem 1rem;
+              border-radius: 0.5rem;
+              margin-top: 0.5rem;
+            }
+          }
+        }
+        &.unfold {
+          height: 37em;
+          .slider {
+            align-items: center;
+            transform: translateX(-100%);
+          }
+        }
+      }
       .bottom-text {
-        @include flexbox(center, center, row);
-        position: absolute;
+        @include flexbox(left, center, row);
         margin-top: 7.6875rem;
+        margin-bottom: 3em;
+        cursor: pointer;
+        pointer-events: none;
         p {
           @include fontStyle(14px, 16px, $--fw-light, #049b41, undefined);
           letter-spacing: 0.4px;
           margin-top: initial;
-          max-width: 11rem;
+          &.displayed {
+            display: none;
+          }
+        }
+        span {
+          margin-left: 2em;
+          img {
+            transform: rotate(-90deg);
+          }
+        }
+        &:hover {
+          p {
+            text-decoration: underline;
+          }
+        }
+        &.unfold {
+          .hidden {
+            display: none;
+          }
+          .displayed {
+            display: initial;
+          }
+          span {
+            img {
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .solucionesDashboard,
+  .codigosQR,
+  .realidadAumentada,
+  .ads,
+  .chatbot {
+    &__text {
+      .slider-container {
+        &.unfold {
+          height: 26em;
+        }
+      }
+    }
+  }
+  .evaluacionDesempeno {
+    &__image {
+      max-width: 10.8125rem;
+      height: 13.5rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.evaluacion__image1 {
+          position: absolute;
+          width: 10.20125rem;
+          top: 2.3em;
+          opacity: 0;
+        }
+        &.evaluacion__image2 {
+          position: absolute;
+          width: 9.625rem;
+          left: 0.4em;
+          z-index: 1;
+          opacity: 0;
+        }
+        &.evaluacion__image3 {
+          position: absolute;
+          width: 4.36rem;
+          top: 0.5em;
+          left: 10.5em;
+          z-index: 2;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .machineLearning {
+    &__image {
+      max-width: 11.375rem;
+      height: 13.4025rem;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        &.machineLearning__image1 {
+          position: absolute;
+          width: 10.11125rem;
+          top: 2em;
+          opacity: 0;
+        }
+        &.machineLearning__image2 {
+          position: absolute;
+          width: 3.949375rem;
+          top: 12em;
+          left: 11.8em;
+          z-index: 2;
+          opacity: 0;
+        }
+        &.machineLearning__image3 {
+          position: absolute;
+          width: 8.419375rem;
+          left: 1.5em;
+          z-index: 1;
+          opacity: 0;
         }
       }
     }
@@ -197,60 +341,30 @@
         }
       }
     }
-  }
-
-  .evaluacionDesempeno {
-    &__image {
-      max-width: 10.8125rem;
-      height: 13.5rem;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        &.evaluacion__image1 {
-          position: absolute;
-          width: 10.20125rem;
-          top: 2.3em;
-          opacity: 0;
-        }
-        &.evaluacion__image2 {
-          position: absolute;
-          width: 9.625rem;
-          left: 0.4em;
-          z-index: 1;
-          opacity: 0;
-        }
-        &.evaluacion__image3 {
-          position: absolute;
-          width: 4.36rem;
-          top: 0.5em;
-          left: 10.5em;
-          z-index: 2;
-          opacity: 0;
-        }
-      }
+    .slider-container {
+      height: 19.5em;
     }
   }
 
   .codigosQR {
     &__image {
-      max-width: 13.1875rem;
-      height: 14rem;
+      max-width: 12.19875rem;
+      height: 12.274375rem;
 
       img {
         max-width: 100%;
         max-height: 100%;
         &.codigos__image1 {
           position: absolute;
-          width: 14.125rem;
+          width: 10.381875rem;
           z-index: 1;
           opacity: 0;
         }
         &.codigos__image2 {
           position: absolute;
-          width: 9.918125rem;
-          top: 5.4em;
-          left: 5.3em;
+          width: 9.080625rem;
+          top: 3.73em;
+          left: 3.75em;
           opacity: 0;
         }
       }
@@ -259,31 +373,48 @@
 
   .realidadAumentada {
     &__image {
-      max-width: 12.965625rem;
-      height: 13.50375rem;
+      max-width: 10.8125rem;
+      height: 13.5rem;
 
       img {
         max-width: 100%;
         max-height: 100%;
         &.realidad__image1 {
           position: absolute;
-          width: 9.581875rem;
-          top: 1.5em;
-          z-index: -1;
+          width: 10.20125rem;
+          top: 2.3em;
           opacity: 0;
         }
         &.realidad__image2 {
           position: absolute;
-          width: 4.003125rem;
-          top: 7em;
-          left: 1em;
+          width: 9.625rem;
+          left: 0.4em;
+          z-index: 2;
           opacity: 0;
         }
         &.realidad__image3 {
           position: absolute;
-          width: 8rem;
-          left: 8em;
+          width: 4.36rem;
+          top: 0.5em;
+          left: 10.5em;
+          z-index: 3;
           opacity: 0;
+        }
+      }
+      .video-container {
+        background-color: /*#181919*/rgb(0, 0, 0);
+        position: absolute;
+        overflow: hidden;
+        border-radius: 16px;
+        width: 6.5rem;
+        height: 12.2rem;
+        top: 0.2em;
+        left: 2.8em;
+        z-index: 1;
+        opacity: 0;
+        video {
+          width: 100%;
+          height: 100%;
         }
       }
     }
@@ -355,71 +486,72 @@
 
   .chatbot {
     &__image {
-      max-width: 11.45rem;
-      height: 13.41875rem;
+      max-width: 11.2975rem;
+      height: 13.5625rem;
 
       img {
         max-width: 100%;
         max-height: 100%;
         &.chatbot__image1 {
           position: absolute;
-          width: 11.155rem;
-          top: 1.3em;
+          width: 10.231875rem;
+          top: 2em;
           opacity: 0;
         }
         &.chatbot__image2 {
           position: absolute;
-          width: 9.384375rem;
-          left: 3.5em;
+          width: 8.52rem;
+          left: 1.5em;
+          z-index: 2;
+          opacity: 0;
+        }
+        &.chatbot__image3 {
+          position: absolute;
+          width: 3.996875rem;
+          top: 11.5em;
+          left: 11.6em;
+          z-index: 3;
+          opacity: 0;
+        }
+        &.chatbot__image4 {
+          position: absolute;
+          width: 3.756875rem;
+          top: 14.7em;
+          left: 10.6em;
+          z-index: 4;
           opacity: 0;
         }
       }
-    }
-  }
-
-  .machineLearning {
-    &__image {
-      max-width: 17.7rem;
-      height: 11rem;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        &.machineLearning__image1 {
-          position: absolute;
-          width: 9.75rem;
-          top: 3em;
-          opacity: 0;
-        }
-        &.machineLearning__image2 {
-          position: absolute;
-          width: 8.08125rem;
-          left: 15.3em;
-          opacity: 0;
-        }
-        &.machineLearning__image3 {
-          position: absolute;
-          width: 2.405rem;
-          top: 4.2em;
-          left: 13.3em;
-          z-index: 1;
-          opacity: 0;
+      .video-container {
+        background-color: /*#181919*/rgb(0, 0, 0);
+        position: absolute;
+        overflow: hidden;
+        border-radius: 16px;
+        width: 6.2rem;
+        height: 12.2rem;
+        top: 0.2em;
+        left: 3.2em;
+        z-index: 1;
+        opacity: 0;
+        video {
+          width: 100%;
+          height: 100%;
         }
       }
     }
   }
 
   .active {
+    &.evaluacionDesempeno,
+    &.machineLearning,
     &.solucionesDashboard,
     &.solucionesRPA,
     &.investigacionSegmentada,
-    &.evaluacionDesempeno,
     &.codigosQR,
     &.realidadAumentada,
     &.ads,
     &.scraper,
-    &.chatbot,
-    &.machineLearning {
+    &.chatbot {
       display: flex;
     }
 
@@ -436,6 +568,28 @@
       }
       .btn-ghost {
         animation: fadein-left 500ms ease-in 600ms forwards;
+      }
+      &.evaluacionDesempeno {
+        .evaluacion__image1 {
+          animation: fadein-right 500ms ease-in forwards;
+        }
+        .evaluacion__image2 {
+          animation: fadein 500ms ease-in 400ms forwards;
+        }
+        .evaluacion__image3 {
+          animation: fadein-left 500ms ease-in 200ms forwards;
+        }
+      }
+      .machineLearning {
+        &__image1 {
+          animation: fadein-right 500ms ease-in forwards;
+        }
+        &__image2 {
+          animation: fadein-left 500ms ease-in 250ms forwards;
+        }
+        &__image3 {
+          animation: fadein 2000ms ease-in 700ms forwards;
+        }
       }
       &.solucionesDashboard {
         .dashboard__image1 {
@@ -461,17 +615,6 @@
           animation: fadein-right 500ms ease-in 500ms forwards;
         }
       }
-      &.evaluacionDesempeno {
-        .evaluacion__image1 {
-          animation: fadein-right 500ms ease-in forwards;
-        }
-        .evaluacion__image2 {
-          animation: fadein 500ms ease-in 400ms forwards;
-        }
-        .evaluacion__image3 {
-          animation: fadein-left 500ms ease-in 200ms forwards;
-        }
-      }
       &.codigosQR {
         .codigos__image1 {
           animation: fadein 500ms ease-in 400ms forwards;
@@ -482,13 +625,16 @@
       }
       &.realidadAumentada {
         .realidad__image1 {
-          animation: fadein-left 500ms ease-in forwards;
+          animation: fadein-right 500ms ease-in forwards;
         }
         .realidad__image2 {
           animation: fadein 500ms ease-in 400ms forwards;
         }
         .realidad__image3 {
-          animation: fadein-right 500ms ease-in 200ms forwards;
+          animation: fadein-left 500ms ease-in 200ms forwards;
+        }
+        .video-container {
+          animation: fadein 500ms ease-in 400ms forwards;
         }
       }
       &.ads {
@@ -524,16 +670,14 @@
         .chatbot__image2 {
           animation: fadein-left 500ms ease-in 400ms forwards;
         }
-      }
-      .machineLearning {
-        &__image1 {
-          animation: fadein-left 500ms ease-in forwards;
+        .chatbot__image3 {
+          animation: fadein 500ms ease-in 800ms forwards;
         }
-        &__image2 {
-          animation: fadein-right 500ms ease-in 250ms forwards;
+        .chatbot__image4 {
+          animation: fadein-right 500ms ease-in 1200ms forwards;
         }
-        &__image3 {
-          animation: pop-in 2000ms linear 700ms infinite;
+        .video-container {
+          animation: fadein-left 500ms ease-in 400ms forwards;
         }
       }
     }
@@ -566,6 +710,96 @@
       line-height: 17.6px;
       letter-spacing: 0.0044;
       max-width: 26.95rem;
+    }
+    .evaluacionDesempeno,
+    .machineLearning,
+    .solucionesDashboard,
+    .solucionesRPA,
+    .investigacionSegmentada,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .scraper,
+    .chatbot {
+      &__text {
+        width: 100%;
+        min-width: 18.7rem;
+        max-width: 18.7rem;
+        .slider-container {
+          height: 18.7em;
+          margin-bottom: 3.3;
+          .slider {
+            .description {
+              min-width: 18.7rem;
+              max-width: 18.7rem;
+            }
+            .questions {
+              min-width: 18.7rem;
+              max-width: 18.7rem;
+            }
+          }
+          &.unfold {
+            height: 40.7em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .chatbot {
+      &__text {
+        .slider-container {
+          &.unfold {
+            height: 28.6em;
+          }
+        }
+      }
+    }
+    .evaluacionDesempeno {
+      &__image {
+        max-width: 11.89375rem;
+        height: 14.85rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 11.221375rem;
+            top: 2.53em;
+          }
+          &.evaluacion__image2 {
+            width: 70.5875rem;
+            left: -0.5em;
+          }
+          &.evaluacion__image3 {
+            width: 4.796rem;
+            top: 0.55em;
+            left: 11.55em;
+          }
+        }
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 12.5125rem;
+        height: 14.74275rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 11.122375rem;
+            top: 2.2em;
+          }
+          &.machineLearning__image2 {
+            width: 4.3443125rem;
+            top: 13.2em;
+            left: 12.98em;
+          }
+          &.machineLearning__image3 {
+            width: 9.2613125rem;
+            left: 1.65em;
+          }
+        }
+      }
     }
     .solucionesDashboard {
       &__image {
@@ -617,65 +851,53 @@
           }
         }
       }
-    }
-    .evaluacionDesempeno {
-      &__image {
-        max-width: 11.89375rem;
-        height: 14.85rem;
-
-        img {
-          &.evaluacion__image1 {
-            width: 11.221375rem;
-            top: 2.53em;
-          }
-          &.evaluacion__image2 {
-            width: 70.5875rem;
-            left: -0.5em;
-          }
-          &.evaluacion__image3 {
-            width: 4.796rem;
-            top: 0.55em;
-            left: 11.55em;
-          }
-        }
+      .slider-container {
+        height: 21.45em;
       }
     }
     .codigosQR {
       &__image {
-        max-width: 14.50625rem;
-        height: 14.7125rem;
+        max-width: 13.418625rem;
+        height: 13.5018125rem;
 
         img {
           &.codigos__image1 {
-            width: 15.5375rem;
+            width: 11.4200625rem;
           }
           &.codigos__image2 {
-            width: 10.9099375rem;
-            top: 5.94em;
-            left: 5.83em;
+            width: 9.9886875rem;
+            top: 4.103em;
+            left: 4.125em;
           }
         }
       }
     }
     .realidadAumentada {
       &__image {
-        max-width: 14.2621875rem;
-        height: 14.854125rem;
+        max-width: 11.89375rem;
+        height: 14.85rem;
 
         img {
           &.realidad__image1 {
-            width: 10.5400625rem;
-            top: 1.65em;
+            width: 11.221375rem;
+            top: 2.53em;
           }
           &.realidad__image2 {
-            width: 4.4034375rem;
-            top: 7.7em;
-            left: 1.1em;
+            width: 10.5875rem;
+            left: 0.44em;
           }
           &.realidad__image3 {
-            width: 8.8rem;
-            left: 8.8em;
+            width: 4.796rem;
+            top: 0.55em;
+            left: 11.55em;
           }
+        }
+        .video-container {
+          border-radius: 17.6px;
+          width: 7.15rem;
+          height: 13.42rem;
+          top: 0.22em;
+          left: 3.08em;
         }
       }
     }
@@ -721,43 +943,37 @@
         }
       }
     }
-
     .chatbot {
       &__image {
-        max-width: 12.595rem;
-        height: 14.760625rem;
+        max-width: 12.42725rem;
+        height: 14.91875rem;
 
         img {
           &.chatbot__image1 {
-            width: 12.2705rem;
-            top: 1.43em;
+            width: 11.2550625rem;
+            top: 2.2em;
           }
           &.chatbot__image2 {
-            width: 10.3228125rem;
-            left: 3.85em;
+            width: 9.372rem;
+            left: 1.65em;
+          }
+          &.chatbot__image3 {
+            width: 4.3965625rem;
+            top: 12.65em;
+            left: 12.76em;
+          }
+          &.chatbot__image4 {
+            width: 4.1325625rem;
+            top: 16.17em;
+            left: 11.66em;
           }
         }
-      }
-    }
-    .machineLearning {
-      &__image {
-        max-width: 19.47rem;
-        height: 12.1rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 10.725rem;
-            top: 3.3em;
-          }
-          &.machineLearning__image2 {
-            width: 8.889375rem;
-            left: 16.83em;
-          }
-          &.machineLearning__image3 {
-            width: 2.6455rem;
-            top: 4.62em;
-            left: 14.63em;
-          }
+        .video-container {
+          border-radius: 17.6px;
+          width: 6.82rem;
+          height: 13.42rem;
+          top: 0.22em;
+          left: 3.52em;
         }
       }
     }
@@ -790,6 +1006,95 @@
       line-height: 20.8px;
       letter-spacing: 0.0052;
       max-width: 31.85rem;
+    }
+    .evaluacionDesempeno,
+    .machineLearning,
+    .solucionesDashboard,
+    .solucionesRPA,
+    .investigacionSegmentada,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .scraper,
+    .chatbot {
+      &__text {
+        min-width: 22.1rem;
+        max-width: 22.1rem;
+        .slider-container {
+          height: 22.1em;
+          margin-bottom: 3.9em;
+          .slider {
+            .description {
+              min-width: 22.1rem;
+              max-width: 22.1rem;
+            }
+            .questions {
+              min-width: 22.1rem;
+              max-width: 22.1rem;
+            }
+          }
+          &.unfold {
+            height: 48.1em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .chatbot {
+      &__text {
+        .slider-container {
+          &.unfold {
+            height: 33.8em;
+          }
+        }
+      }
+    }
+    .evaluacionDesempeno {
+      &__image {
+        max-width: 14.05625rem;
+        height: 17.55rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 13.261625rem;
+            top: 2.99em;
+          }
+          &.evaluacion__image2 {
+            width: 12.5125rem;
+            left: 0.52em;
+          }
+          &.evaluacion__image3 {
+            width: 5.668rem;
+            top: 0.65em;
+            left: 13.65em;
+          }
+        }
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 14.7875rem;
+        height: 17.42325rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 13.144625rem;
+            top: 2.6em;
+          }
+          &.machineLearning__image2 {
+            width: 5.1341875rem;
+            top: 15.6em;
+            left: 15.34em;
+          }
+          &.machineLearning__image3 {
+            width: 10.9451875rem;
+            left: 1.95em;
+          }
+        }
+      }
     }
     .solucionesDashboard {
       &__image {
@@ -841,66 +1146,53 @@
           }
         }
       }
-    }
-
-    .evaluacionDesempeno {
-      &__image {
-        max-width: 14.05625rem;
-        height: 17.55rem;
-
-        img {
-          &.evaluacion__image1 {
-            width: 13.261625rem;
-            top: 2.99em;
-          }
-          &.evaluacion__image2 {
-            width: 12.5125rem;
-            left: 0.52em;
-          }
-          &.evaluacion__image3 {
-            width: 5.668rem;
-            top: 0.65em;
-            left: 13.65em;
-          }
-        }
+      .slider-container {
+        height: 25.35em;
       }
     }
     .codigosQR {
       &__image {
-        max-width: 17.14375rem;
-        height: 17.3875rem;
+        max-width: 15.858375rem;
+        height: 15.9566875rem;
 
         img {
           &.codigos__image1 {
-            width: 18.3625rem;
+            width: 13.4964375rem;
           }
           &.codigos__image2 {
-            width: 12.8935625rem;
-            top: 7.02em;
-            left: 6.89em;
+            width: 11.8048125rem;
+            top: 4.849em;
+            left: 4.875em;
           }
         }
       }
     }
     .realidadAumentada {
       &__image {
-        max-width: 16.8553125rem;
-        height: 17.554875rem;
+        max-width: 14.05625rem;
+        height: 17.55rem;
 
         img {
           &.realidad__image1 {
-            width: 12.4564375rem;
-            top: 1.95em;
+            width: 13.261625rem;
+            top: 2.99em;
           }
           &.realidad__image2 {
-            width: 5.2040625rem;
-            top: 9.1em;
-            left: 1.3em;
+            width: 12.5125rem;
+            left: 0.52em;
           }
           &.realidad__image3 {
-            width: 10.4rem;
-            left: 10.4em;
+            width: 5.668rem;
+            top: 0.65em;
+            left: 13.65em;
           }
+        }
+        .video-container {
+          border-radius: 20.8px;
+          width: 8.45rem;
+          height: 15.86rem;
+          top: 0.26em;
+          left: 3.64em;
         }
       }
     }
@@ -945,43 +1237,37 @@
         }
       }
     }
-
     .chatbot {
       &__image {
-        max-width: 14.885rem;
-        height: 17.444375rem;
+        max-width: 14.68675rem;
+        height: 17.63125rem;
 
         img {
           &.chatbot__image1 {
-            width: 14.5015rem;
-            top: 1.69em;
+            width: 13.3014375rem;
+            top: 2.6em;
           }
           &.chatbot__image2 {
-            width: 12.1996875rem;
-            left: 4.55em;
+            width: 11.076rem;
+            left: 1.95em;
+          }
+          &.chatbot__image3 {
+            width: 5.1959375rem;
+            top: 14.95em;
+            left: 15.08em;
+          }
+          &.chatbot__image4 {
+            width: 4.8839375rem;
+            top: 19.11em;
+            left: 13.78em;
           }
         }
-      }
-    }
-    .machineLearning {
-      &__image {
-        max-width: 23.01rem;
-        height: 14.3rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 12.675rem;
-            top: 3.9em;
-          }
-          &.machineLearning__image2 {
-            width: 10.505625rem;
-            left: 19.89em;
-          }
-          &.machineLearning__image3 {
-            width: 3.1265rem;
-            top: 5.46em;
-            left: 17.29em;
-          }
+        .video-container {
+          border-radius: 20.8px;
+          width: 8.06rem;
+          height: 15.86rem;
+          top: 0.26em;
+          left: 4.16em;
         }
       }
     }
@@ -1006,7 +1292,6 @@
             }
             .solucion-label {
               display: block;
-              margin-left: auto;
               width: 95%;
               text-align: right;
               @include fontStyle(
@@ -1023,9 +1308,9 @@
             &:focus {
               .solucion-label {
                 @include fontStyle(
-                  16px,
-                  19.2px,
-                  $--fw-black,
+                  12px,
+                  14.168px,
+                  $--fw-bold,
                   $--clr-font-regular,
                   undefined
                 );
@@ -1047,41 +1332,41 @@
       }
     }
     article {
-      max-width: 23rem;
+      max-width: 22.4rem;
       margin-left: 4.5em;
     }
     h3 {
       font-size: 38.4px;
       line-height: 48.576px;
       letter-spacing: 0.195;
-      min-width: 22rem;
-      max-width: 22.8125rem;
+      min-width: 26rem;
+      max-width: 26rem;
     }
     h6 {
       font-size: 16px;
       line-height: 19.2px;
       letter-spacing: 0.12;
-      max-width: 22.8125rem;
+      max-width: 22.25rem;
     }
     p {
       font-size: 9.6px;
       line-height: 12.8px;
       letter-spacing: 0.0032;
-      max-width: 22.8125rem;
+      max-width: 22.25rem;
     }
     .btn-ghost {
       max-width: 13.7rem;
     }
+    .evaluacionDesempeno,
+    .machineLearning,
     .solucionesDashboard,
     .solucionesRPA,
     .investigacionSegmentada,
-    .evaluacionDesempeno,
     .codigosQR,
     .realidadAumentada,
     .ads,
     .scraper,
-    .chatbot,
-    .machineLearning {
+    .chatbot {
       justify-content: space-evenly;
       flex-direction: row-reverse;
       height: 80vh;
@@ -1089,6 +1374,74 @@
       &__image {
         margin-top: 7.5em;
         margin-left: 3em;
+      }
+      &__text{
+        min-width: 22rem;
+        max-width: 22rem;
+        .slider-container {
+          height: 14.4em;
+          margin-bottom: 3.12em;
+          .slider {
+            .description {
+              min-width: 22rem;
+              max-width: 22rem;
+            }
+            .question {
+              min-width: 22rem;
+              max-width: 22rem;
+            }
+          }
+          &.unfold {
+            height: 38.48;
+          }
+        }
+      }
+    }
+    .evaluacionDesempeno {
+      &__image {
+        min-width: 20.35rem;
+        max-width: 20.35rem;
+        height: 25.45rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 19.2rem;
+            top: 3.6em;
+          }
+          &.evaluacion__image2 {
+            width: 15.95rem;
+            left: 2.64em;
+          }
+          &.evaluacion__image3 {
+            width: 7.5rem;
+            top: 0.52em;
+            left: 20.52em;
+          }
+        }
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 21.6rem;
+        height: 25.45rem;
+        margin: initial;
+        padding: initial;
+
+        img {
+          &.machineLearning__image1 {
+            width: 19.2rem;
+            top: 3.44em;
+          }
+          &.machineLearning__image2 {
+            width: 7.5rem;
+            top: 22.8em;
+            left: 22em;
+          }
+          &.machineLearning__image3 {
+            width: 15.988rem;
+            left: 2.64em;
+          }
+        }
       }
     }
     .solucionesDashboard {
@@ -1143,29 +1496,8 @@
           }
         }
       }
-    }
-
-    .evaluacionDesempeno {
-      &__image {
-        min-width: 20.35rem;
-        max-width: 20.35rem;
-        height: 25.45rem;
-
-        img {
-          &.evaluacion__image1 {
-            width: 19.2rem;
-            top: 3.6em;
-          }
-          &.evaluacion__image2 {
-            width: 15.95rem;
-            left: 2.64em;
-          }
-          &.evaluacion__image3 {
-            width: 7.5rem;
-            top: 0.52em;
-            left: 20.52em;
-          }
-        }
+      .slider-container {
+        height: 15em;
       }
     }
     .codigosQR {
@@ -1176,36 +1508,42 @@
 
         img {
           &.codigos__image1 {
-            width: 23.7775rem;
+            width: 20.75rem;
           }
           &.codigos__image2 {
             width: 17.7rem;
-            top: 10em;
-            left: 9.6em;
+            top: 8.352em;
+            left: 7.816em;
           }
         }
       }
     }
     .realidadAumentada {
       &__image {
-        min-width: 23.95rem;
-        max-width: 23.95rem;
-        height: 23.3rem;
+        min-width: 20.35rem;
+        max-width: 20.35rem;
+        height: 25.45rem;
 
         img {
           &.realidad__image1 {
-            width: 17.7rem;
-            top: 8.8em;
+            width: 19.2rem;
+            top: 3.6em;
           }
           &.realidad__image2 {
-            width: 7.45rem;
-            top: 19.2em;
-            left: 2em;
+            width: 15.95rem;
+            left: 2.64em;
           }
           &.realidad__image3 {
-            width: 14.15rem;
-            left: 15.36em;
+            width: 7.5rem;
+            top: 0.52em;
+            left: 20.52em;
           }
+        }
+        .video-container {
+          width: 10.52rem;
+          height: 22.736rem;
+          top: 0.64em;
+          left: 6.84em;
         }
       }
     }
@@ -1264,43 +1602,34 @@
     }
     .chatbot {
       &__image {
-        min-width: 19.4rem;
-        max-width: 19.4rem;
-        height: 24.885rem;
-
+        max-width: 21.2rem;
+        height: 25.45rem;
         img {
           &.chatbot__image1 {
-            width: 18.9rem;
+            width: 19.2rem;
+            top: 3.44em;
           }
           &.chatbot__image2 {
-            width: 15.9rem;
-            top: 4.8em;
-            left: 5.6em;
+            width: 15.988rem;
+            left: 2.72em;
+          }
+          &.chatbot__image3 {
+            width: 7.5rem;
+            top: 25.28em;
+            left: 21.6em;
+          }
+          &.chatbot__image4 {
+            width: 7.05rem;
+            top: 31.6em;
+            left: 19.84em;
           }
         }
-      }
-    }
-    .machineLearning {
-      &__image {
-        max-width: 27.2725rem;
-        height: 16.65rem;
-        margin: initial;
-        padding: initial;
-
-        img {
-          &.machineLearning__image1 {
-            width: 15.2rem;
-            top: 4.8em;
-          }
-          &.machineLearning__image2 {
-            width: 12.25rem;
-            left: 24.712em;
-          }
-          &.machineLearning__image3 {
-            width: 3.8rem;
-            top: 6.32em;
-            left: 21.44em;
-          }
+        .video-container {
+          border-radius: 21.44px;
+          width: 11.248rem;
+          height: 23.088rem;
+          top: 0.24em;
+          left: 6.528em;
         }
       }
     }
@@ -1323,8 +1652,9 @@
             &:active,
             &:focus {
               .solucion-label {
-                font-size: 20px;
-                line-height: 24px;
+                font-size: 16px;
+                line-height: 17.71px;
+                font-weight: $--fw-bold;
               }
             }
           }
@@ -1333,14 +1663,12 @@
     }
     article {
       max-width: 28rem;
-      margin-left: 6.5em;
-      margin-right: 6.5em;
     }
     h3 {
       font-size: 48px;
       line-height: 60.72px;
       letter-spacing: 0.195;
-      max-width: 27.8125rem;
+      max-width: 35rem;
     }
     h6 {
       font-size: 20px;
@@ -1356,6 +1684,96 @@
     }
     .btn-ghost {
       max-width: 17.125rem;
+    }
+    .evaluacionDesempeno,
+    .machineLearning,
+    .solucionesDashboard,
+    .solucionesRPA,
+    .investigacionSegmentada,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .scraper,
+    .chatbot {
+      &__text {
+        min-width: 33rem;
+        max-width: 33rem;
+        .slider-container {
+          height: 18em;
+          margin-bottom: 3.9em;
+          .slider {
+            .description {
+              min-width: 33rem;
+              max-width: 33rem;
+            }
+            .questions {
+              min-width: 33rem;
+              max-width: 33rem;
+            }
+          }
+          &.unfold {
+            height: 48.1em;
+          }
+        }
+      }
+    }
+    .solucionesDashboard,
+    .codigosQR,
+    .realidadAumentada,
+    .ads,
+    .chatbot {
+      &__text {
+        .slider-container {
+          &.unfold {
+            height: 33.8em;
+          }
+        }
+      }
+    }
+    .evaluacionDesempeno {
+      &__image {
+        min-width: 25.4375rem;
+        max-width: 25.4375rem;
+        height: 31.81rem;
+
+        img {
+          &.evaluacion__image1 {
+            width: 24rem;
+            top: 4.5em;
+          }
+          &.evaluacion__image2 {
+            width: 19.9375rem;
+            left: 3.3em;
+          }
+          &.evaluacion__image3 {
+            width: 9.375rem;
+            top: 0.65em;
+            left: 25.65em;
+          }
+        }
+      }
+    }
+    .machineLearning {
+      &__image {
+        max-width: 27rem;
+        height: 31.8125rem;
+
+        img {
+          &.machineLearning__image1 {
+            width: 24rem;
+            top: 4.3em;
+          }
+          &.machineLearning__image2 {
+            width: 9.375rem;
+            top: 28.5em;
+            left: 27.5em;
+          }
+          &.machineLearning__image3 {
+            width: 19.985rem;
+            left: 3.3em;
+          }
+        }
+      }
     }
     .solucionesDashboard {
       &__image {
@@ -1409,29 +1827,8 @@
           }
         }
       }
-    }
-
-    .evaluacionDesempeno {
-      &__image {
-        min-width: 25.4375rem;
-        max-width: 25.4375rem;
-        height: 31.81rem;
-
-        img {
-          &.evaluacion__image1 {
-            width: 24rem;
-            top: 4.5em;
-          }
-          &.evaluacion__image2 {
-            width: 19.9375rem;
-            left: 3.3em;
-          }
-          &.evaluacion__image3 {
-            width: 9.375rem;
-            top: 0.65em;
-            left: 25.65em;
-          }
-        }
+      .slider-container {
+        height: 20em;
       }
     }
     .codigosQR {
@@ -1442,35 +1839,42 @@
 
         img {
           &.codigos__image1 {
-            width: 29.721875rem;
+            width: 25.9375rem;
           }
           &.codigos__image2 {
             width: 22.125rem;
-            top: 12.5em;
-            left: 12em;
+            top: 10.44em;
+            left: 9.77em;
           }
         }
       }
     }
     .realidadAumentada {
       &__image {
-        max-width: 29.9375rem;
-        height: 29.125rem;
+        min-width: 25.4375rem;
+        max-width: 25.4375rem;
+        height: 31.81rem;
 
         img {
           &.realidad__image1 {
-            width: 22.125rem;
-            top: 11em;
+            width: 24rem;
+            top: 4.5em;
           }
           &.realidad__image2 {
-            width: 9.3125rem;
-            top: 24em;
-            left: 2.5em;
+            width: 19.9375rem;
+            left: 3.3em;
           }
           &.realidad__image3 {
-            width: 17.6875rem;
-            left: 19.2em;
+            width: 9.375rem;
+            top: 0.65em;
+            left: 25.65em;
           }
+        }
+        .video-container {
+          width: 13.15rem;
+          height: 28.42rem;
+          top: 0.8em;
+          left: 8.55em;
         }
       }
     }
@@ -1516,40 +1920,35 @@
     }
     .chatbot {
       &__image {
-        max-width: 24.25rem;
-        height: 31.10625rem;
+        max-width: 26.5rem;
+        height: 31.8125rem;
 
         img {
           &.chatbot__image1 {
-            width: 23.625rem;
+            width: 24rem;
+            top: 4.3em;
           }
           &.chatbot__image2 {
-            width: 19.875rem;
-            top: 6em;
-            left: 7em;
+            width: 19.985rem;
+            left: 3.4em;
+          }
+          &.chatbot__image3 {
+            width: 9.375rem;
+            top: 31.6em;
+            left: 27em;
+          }
+          &.chatbot__image4 {
+            width: 8.8125rem;
+            top: 39.5em;
+            left: 24.8em;
           }
         }
-      }
-    }
-    .machineLearning {
-      &__image {
-        max-width: 34.090625rem;
-        height: 20.8125rem;
-
-        img {
-          &.machineLearning__image1 {
-            width: 19rem;
-            top: 6em;
-          }
-          &.machineLearning__image2 {
-            width: 15.3125rem;
-            left: 30.89em;
-          }
-          &.machineLearning__image3 {
-            width: 4.75rem;
-            top: 7.9em;
-            left: 26.8em;
-          }
+        .video-container {
+          border-radius: 26.8px;
+          width: 14.06rem;
+          height: 28.86rem;
+          top: 0.3em;
+          left: 8.16em;
         }
       }
     }

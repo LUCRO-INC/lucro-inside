@@ -47,8 +47,19 @@
       />
       <select formControlName="country" name="country" id="country" class="form-control">
         <option disabled selected value>País</option>
+        <option value="EEUU">Estados Unidos</option>
+        <option value="Canadá">Canadá</option>
+        <option value="México">México</option>
+        <option value="Costa Rica">Costa Rica</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Chile">Chile</option>
         <option value="Colombia">Colombia</option>
-        <option value="EEUU">United States</option>
+        <option value="Ecuador">Ecuador</option>
+        <option value="Paraguay">Paraguay</option>
+        <option value="Perú">Perú</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="otro">Otro</option>
       </select>
       <input
         type="text"
@@ -61,22 +72,52 @@
       />
       <select name="sector" id="sector" formControlName="sector" class="form-control">
         <option disabled selected value>Sector de la empresa</option>
-        <option value="Law-business">Asesoría jurídica</option>
-        <option value="Data-science">Ciencia de datos</option>
+        <option value="Agricultura">Agricultura</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Comercio">Comercio</option>
+        <option value="Construcción">Construcción</option>
+        <option value="Educación">Educación</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Turismo">Turismo</option>
+        <option value="Industrias químicas">Industrias químicas</option>
+        <option value="Ingeniería mecánica">Ingeniería mecánica</option>
+        <option value="Medios de comunicación">Medios de comunicación</option>
+        <option value="Minería">Minería</option>
+        <option value="Petróleo">Petróleo</option>
+        <option value="Servicios de envío">Servicios de envío</option>
+        <option value="Servicios financieros">Servicios financieros</option>
+        <option value="Sevicios jurídicos">Sevicios jurídicos</option>
+        <option value="Servicios públicos">Servicios públicos</option>
+        <option value="Textil">Textil</option>
+        <option value="otro">Otro</option>
       </select>
+      <input
+        type="url"
+        name="website"
+        placeholder="Sitio web de la empresa (opcional)"
+        id="website"
+        class="form-control"
+        formControlName="website"
+      />
       <select name="employees" id="employees" formControlName="employees" class="form-control">
         <option disabled selected value>Cantidad de empleados</option>
-        <option value="0-5">de 0 a 5</option>
-        <option value="5-20">de 5 a 20</option>
-        <option value="20-50">de 20 a 50</option>
-        <option value=">50">Más de 50</option>
+        <option value="0-50">Menos de 50 empleados</option>
+        <option value="50-100">Entre 50 y 100 empleados</option>
+        <option value="100-300">Entre 100 y 300 empleados</option>
+        <option value="300-500">Entre 300 y 500 empleados</option>
+        <option value="500-1000">Entre 500 y 1.000 empleados</option>
+        <option value="1000+">Más de 1.000 empleados</option>
+        <option value="5000+">Más de 5.000 empleados</option>
+        <option value="10000+">Más de 10.000 empleados</option>
+        <option value="otro">Otro</option>
       </select>
       <textarea
         name="description"
         id="description"
         class="input-textarea"
         formControlName="description"
-        placeholder="Descripción"
+        placeholder="¡Cuéntanos qué necesitas!"
+        required
       ></textarea>
       <button
         type="submit"
@@ -87,8 +128,8 @@
       </button>
       <p class="form-conditions">
         Al dar click en enviar, autorizas el tratamiento de tus datos
-        personales, de acuerdo con la Política de Tratamiento de Datos
-        Personales.
+        personales, de acuerdo con la <a href="https://lucro-app.com/documentos/Lucro-Politica_de_Privacidad_de_Datos.pdf" target="_blank">Política de Tratamiento de Datos
+        Personales.</a>
       </p>
     </form>
     <span

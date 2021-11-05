@@ -793,7 +793,6 @@
   padding-bottom: 3em;
 
   .our-clients {
-    display: none;
     overflow-x: hidden;
     max-width: 95%;
     padding-block: 1em;
@@ -804,12 +803,23 @@
     }
     &__brands {
       position: relative;
-      @include flexbox(space-between, center, row);
+      @include flexbox(/*start*/space-between, center, row);
+      // flex-wrap: wrap;
       overflow-x: scroll;
       padding-block: 3em;
+
+      &::-webkit-scrollbar {
+        background: transparent;
+      }
       img {
-        max-width: 50%;
+        max-width: 100%;
         margin-inline: 2em;
+        filter: grayscale(100%);
+        cursor: pointer;
+        &:hover {
+          filter: grayscale(0%);
+          transform: scale(1.02);
+        }
       }
     }
   }

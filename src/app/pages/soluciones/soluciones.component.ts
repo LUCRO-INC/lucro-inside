@@ -15,6 +15,8 @@ import { CmsService } from 'src/app/@core/services/cms.service';
 })
 export class SolucionesComponent implements OnInit, AfterViewInit {
 
+  public clickArrow:boolean = false
+
   public hasFooter: boolean = false;
 
   @ViewChild('section01')
@@ -50,7 +52,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public chatbot: SolucionesSection = {};
   public soluciones: any;
   public buttons: any = document.querySelectorAll('.nav-button');
-  public currentSel: String = 'scraper';
+  public currentSel: String = 'evaluacionDesempeno';
   public active: any = {};
   public show: any = {};
 

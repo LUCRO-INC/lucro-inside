@@ -13,6 +13,58 @@
       </li>
     </ul>
   </nav>
+
+  <div
+    class="evaluacionDesempeno"
+    [ngClass]="{ 'active show': currentSel == evaluacionDesempeno.name }"
+    #section05
+  >
+    <div class="evaluacionDesempeno__image">
+      <img
+        *ngFor="let img of evaluacionDesempeno.images"
+        [src]="img.src"
+        [class]="img.class"
+      />
+    </div>
+    <article class="evaluacionDesempeno__text">
+      <h3 class="evaluacionDesempeno__text--title">
+        {{ evaluacionDesempeno?.title }}
+      </h3>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="evaluacionDesempeno__text--subTitle">
+              {{ evaluacionDesempeno?.subTitle }}
+            </h6>
+            <p class="evaluacionDesempeno__text--paragraph">
+              {{ evaluacionDesempeno?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿El vendedor realmente está yendo al trabajo de campo asignado?</p>
+            <p class="question">¿El vendedor organizó el punto de venta según los parámetros de la empresa?</p>
+            <p class="question">¿El vendedor identificó los agotados en el punto de venta?</p>
+            <p class="question">¿Los supermercados están cumpliendo las exhibiciones adicionales que acordamos?</p>
+            <p class="question">¿El estándar de lineal que definimos se cumple según las prioridades de la compañía?</p>
+          </ul>
+        </div>
+      </div>
+      <button
+        routerLink="/contactenos"
+        [class]="evaluacionDesempeno.button?.class"
+      >
+        {{ evaluacionDesempeno.button?.content }}
+      </button>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
+        <span>
+          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
+        </span>
+      </div>
+    </article>
+  </div>
+
   <div
     class="machineLearning"
     [ngClass]="{ 'active show': currentSel == machineLearning.name }"
@@ -27,17 +79,31 @@
     </div>
     <article class="machineLearning__text">
       <h3 class="machineLearning__text--title">{{ machineLearning?.title }}</h3>
-      <h6 class="machineLearning__text--subTitle">
-        {{ machineLearning?.subTitle }}
-      </h6>
-      <p class="machineLearning__text--paragraph">
-        {{ machineLearning?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="machineLearning__text--subTitle">
+              {{ machineLearning?.subTitle }}
+            </h6>
+            <p class="machineLearning__text--paragraph">
+              {{ machineLearning?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿A qué precio están realmente vendiendo mi producto y el de la competencia en un punto de venta?</p>
+            <p class="question">Cuando un vendedor sale de un punto de venta, ¿Cómo dejó el punto de venta? ¿Qué tan bien organizado está el punto de venta?</p>
+            <p class="question">¿Qué agotados tengo en el punto de venta en un momento determinado?</p>
+            <p class="question">¿Cuál es el porcentaje de lineal que tengo en cualquier punto de venta?</p>
+            <p class="question">¿Cómo son las canastas cruzadas y con qué otros productos compran mi marca?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="machineLearning.button?.class">
         {{ machineLearning.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -61,20 +127,32 @@
       <h3 class="solucionesDashboard__text--title">
         {{ solucionesDashboard?.title }}
       </h3>
-      <h6 class="solucionesDashboard__text--subTitle">
-        {{ solucionesDashboard?.subTitle }}
-      </h6>
-      <p class="solucionesDashboard__text--paragraph">
-        {{ solucionesDashboard?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="solucionesDashboard__text--subTitle">
+              {{ solucionesDashboard?.subTitle }}
+            </h6>
+            <p class="solucionesDashboard__text--paragraph">
+              {{ solucionesDashboard?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Existe correlación entre las ventas de un vendedor, su género y edad?</p>
+            <p class="question">¿Qué variables influyen en la venta de mi producto?</p>
+            <p class="question">¿Estar cerca de un colegio impacta la comercialización de mi producto?</p>
+          </ul>
+        </div>
+      </div>
       <button
         routerLink="/contactenos"
         [class]="solucionesDashboard.button?.class"
       >
         {{ solucionesDashboard.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -96,17 +174,30 @@
     </div>
     <article class="solucionesRPA__text">
       <h3 class="solucionesRPA__text--title">{{ solucionesRPA?.title }}</h3>
-      <h6 class="solucionesRPA__text--subTitle">
-        {{ solucionesRPA?.subTitle }}
-      </h6>
-      <p class="solucionesRPA__text--paragraph">
-        {{ solucionesRPA?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="solucionesRPA__text--subTitle">
+              {{ solucionesRPA?.subTitle }}
+            </h6>
+            <p class="solucionesRPA__text--paragraph">
+              {{ solucionesRPA?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Puedo automatizar mis procesos en el BackOffice de mi empresa aumentando la productividad y eliminando cargos?</p>
+            <p class="question">¿Puedo automatizar la comunicación con diferentes stakeholders sin tener que utilizar un call center o empleados directos?</p>
+            <p class="question">¿Puedo eliminar procesos que requieren extensos trámites ahorrando tiempo y dinero?</p>
+            <p class="question">¿Puedo eliminar procesos para enfocar aún más a mi equipo de trabajo en sus labores?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="solucionesRPA.button?.class">
         {{ solucionesRPA.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -130,57 +221,33 @@
       <h3 class="investigacionSegmentada__text--title">
         {{ investigacionSegmentada?.title }}
       </h3>
-      <h6 class="investigacionSegmentada__text--subTitle">
-        {{ investigacionSegmentada?.subTitle }}
-      </h6>
-      <p class="investigacionSegmentada__text--paragraph">
-        {{ investigacionSegmentada?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="investigacionSegmentada__text--subTitle">
+              {{ investigacionSegmentada?.subTitle }}
+            </h6>
+            <p class="investigacionSegmentada__text--paragraph">
+              {{ investigacionSegmentada?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Podemos construir un análisis de salud de marca a bajo costo y en menos de 15 quince días?</p>
+            <p class="question">¿Puedo analizar no sólo las ciudades principales sino también poblaciones y ciudades más pequeñas?</p>
+            <p class="question">¿Existe alguna correlación entre el consumo de mi marca y los hobbies de las personas?</p>
+            <p class="question">¿Puedo conocer más allá de lo que la gente dice lo que realmente hay en las neveras o anaqueles de mis consumidores?
+          </ul>
+        </div>
+      </div>
       <button
         routerLink="/contactenos"
         [class]="investigacionSegmentada.button?.class"
       >
         {{ investigacionSegmentada.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
-        <span>
-          <img src="../../../assets/images/Soluciones/down-arrow.svg" />
-        </span>
-      </div>
-    </article>
-  </div>
-
-  <div
-    class="evaluacionDesempeno"
-    [ngClass]="{ 'active show': currentSel == evaluacionDesempeno.name }"
-    #section05
-  >
-    <div class="evaluacionDesempeno__image">
-      <img
-        *ngFor="let img of evaluacionDesempeno.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
-    </div>
-    <article class="evaluacionDesempeno__text">
-      <h3 class="evaluacionDesempeno__text--title">
-        {{ evaluacionDesempeno?.title }}
-      </h3>
-      <h6 class="evaluacionDesempeno__text--subTitle">
-        {{ evaluacionDesempeno?.subTitle }}
-      </h6>
-      <p class="evaluacionDesempeno__text--paragraph">
-        {{ evaluacionDesempeno?.body }}
-      </p>
-      <button
-        routerLink="/contactenos"
-        [class]="evaluacionDesempeno.button?.class"
-      >
-        {{ evaluacionDesempeno.button?.content }}
-      </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -202,15 +269,27 @@
     </div>
     <article class="codigosQR__text">
       <h3 class="codigosQR__text--title">{{ codigosQR?.title }}</h3>
-      <h6 class="codigosQR__text--subTitle">{{ codigosQR?.subTitle }}</h6>
-      <p class="codigosQR__text--paragraph">
-        {{ codigosQR?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="codigosQR__text--subTitle">{{ codigosQR?.subTitle }}</h6>
+            <p class="codigosQR__text--paragraph">
+              {{ codigosQR?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Puedo controlar los accesos a mi compañía por medio de un código QR?</p>
+            <p class="question">¿Puedo generar un sistema de pago a través de códigos QR en diferentes puntos de venta?</p>
+            <p class="question">¿Puedo generar sistema de conversación con mis clientes/o consumidores a partir de códigos QR?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="codigosQR.button?.class">
         {{ codigosQR.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -229,25 +308,43 @@
         [src]="img.src"
         [class]="img.class"
       />
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="../../../assets/images/Soluciones/realidadAumentada/realidadAumentadaVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag
+        </video>
+      </div>
     </div>
     <article class="realidadAumentada__text">
       <h3 class="realidadAumentada__text--title">
         {{ realidadAumentada?.title }}
       </h3>
-      <h6 class="realidadAumentada__text--subTitle">
-        {{ realidadAumentada?.subTitle }}
-      </h6>
-      <p class="realidadAumentada__text--paragraph">
-        {{ realidadAumentada?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="realidadAumentada__text--subTitle">
+              {{ realidadAumentada?.subTitle }}
+            </h6>
+            <p class="realidadAumentada__text--paragraph">
+              {{ realidadAumentada?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Puedo lograr contar una historia con realidad aumentada a través de mis productos?</p>
+            <p class="question">¿Puedo lograr que a través de mis empaques le cuente una historia a mi consumidor con realidad aumentada?</p>
+            <p class="question">¿Puedo lograr que mis consumidores vayan a cierta ubicación geográfica a donde estratégicamente quiero llevarlos</p>
+          </ul>
+        </div>
+      </div>
       <button
         routerLink="/contactenos"
         [class]="realidadAumentada.button?.class"
       >
         {{ realidadAumentada.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -265,15 +362,28 @@
     </div>
     <article class="ads__text">
       <h3 class="ads__text--title">{{ ads?.title }}</h3>
-      <h6 class="ads__text--subTitle">{{ ads?.subTitle }}</h6>
-      <p class="ads__text--paragraph">
-        {{ ads?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="ads__text--subTitle">{{ ads?.subTitle }}</h6>
+            <p class="ads__text--paragraph">
+              {{ ads?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Puedo lograr hablarle a grupos específicos de consumidores</p>
+            <p class="question">¿Puedo pautarle solo a consumidores de mi competencia?</p>
+            <p class="question">¿Puedo pautarle a usuarios que hoy no me tienen en su hogar?</p>
+            <p class="question">¿Puedo pautarle a personas que están cambiando sus hábitos de consumo?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="ads.button?.class">
         {{ ads.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -302,15 +412,29 @@
 
     <article class="scraper__text">
       <h3 class="scraper__text--title">{{ scraper?.title }}</h3>
-      <h6 class="scraper__text--subTitle">{{ scraper?.subTitle }}</h6>
-      <p class="scraper__text--paragraph">
-        {{ scraper?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="scraper__text--subTitle">{{ scraper?.subTitle }}</h6>
+            <p class="scraper__text--paragraph">
+              {{ scraper?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Las diferentes plataformas E-commerce están respetando mi precio de venta?</p>
+            <p class="question">¿Cómo ha sido la variación de precios de mi competencia en los diferentes E-commerce?</p>
+            <p class="question">¿Puedo tener alarmas cuando mi competencia baje de precio?</p>
+            <p class="question">¿Puedo conocer en cuáles E-commerce están vendiendo mi producto y en cuáles estoy agotado?</p>
+            <p class="question">¿Puedo saber si el E-commerece está promocionando la imagen de mi producto adecuada?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="scraper.button?.class">
         {{ scraper.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>Lucro responde tus necesidades</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
@@ -329,18 +453,36 @@
         [src]="img.src"
         [class]="img.class"
       />
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source src="../../../assets/images/Soluciones/chatbot/chatbotVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag
+        </video>
+      </div>
     </div>
     <article class="chatbot__text">
       <h3 class="chatbot__text--title">{{ chatbot?.title }}</h3>
-      <h6 class="chatbot__text--subTitle">{{ chatbot?.subTitle }}</h6>
-      <p class="chatbot__text--paragraph">
-        {{ chatbot?.body }}
-      </p>
+      <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
+        <div class="slider">
+          <div class="description">
+            <h6 class="chatbot__text--subTitle">{{ chatbot?.subTitle }}</h6>
+            <p class="chatbot__text--paragraph">
+              {{ chatbot?.body }}
+            </p>
+          </div>
+          <ul class="questions">
+            <p class="question">¿Puedo hacer que un robot le de atención al cliente humanizada a mis consumidores?</p>
+            <p class="question">¿Puedo optimizar el proceso de PQR’s a través de un ChatBot?</p>
+            <p class="question">¿Puedo hacer que la experiencia del usuario al interactuar con el Bot sea agradable?</p>
+          </ul>
+        </div>
+      </div>
       <button routerLink="/contactenos" [class]="chatbot.button?.class">
         {{ chatbot.button?.content }}
       </button>
-      <div class="bottom-text">
-        <p>¿Qué tipo de preguntas podemos resolverte?</p>
+      <div class="bottom-text" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
+        <p class="hidden">Preguntas que podemos resolverte</p>
+        <p class="displayed">Volver a descripción</p>
         <span>
           <img src="../../../assets/images/Soluciones/down-arrow.svg" />
         </span>
