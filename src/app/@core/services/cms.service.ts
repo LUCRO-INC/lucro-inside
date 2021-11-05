@@ -14,37 +14,37 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Group 35.svg',
+            src: '/assets/images/Group 35.svg',
             class: 'home__image1',
           },
           {
             id: 2,
-            src: '../../../assets/images/Rectangle 241.png',
+            src: '/assets/images/Rectangle 241.png',
             class: 'home__image2',
           },
           {
             id: 3,
-            src: '../../../assets/images/Rectangle 238.png',
+            src: '/assets/images/Rectangle 238.png',
             class: 'home__image3',
           },
           {
             id: 4,
-            src: '../../../assets/images/Ellipse 44.svg',
+            src: '/assets/images/Ellipse 44.svg',
             class: 'home__image4',
           },
           {
             id: 5,
-            src: '../../../assets/images/Ellipse 42.png',
+            src: '/assets/images/Ellipse 42.png',
             class: 'home__image5',
           },
           {
             id: 6,
-            src: '../../../assets/images/Ellipse 43.png',
+            src: '/assets/images/Ellipse 43.png',
             class: 'home__image6',
           },
           {
             id: 7,
-            src: '../../../assets/images/Group 31.svg',
+            src: '/assets/images/Group 31.svg',
             class: 'home__image7',
           },
         ]
@@ -56,22 +56,22 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Path 997.svg',
+            src: '/assets/images/Path 997.svg',
             class: 'purpose__image1',
           },
           {
             id: 2,
-            src: '../../../assets/images/Group 1461.svg',
+            src: '/assets/images/Group 1461.svg',
             class: 'purpose__image2',
           },
           {
             id: 3,
-            src: '../../../assets/images/Group 31.png',
+            src: '/assets/images/Group 31.png',
             class: 'purpose__image3',
           },
           {
             id: 4,
-            src: '../../../assets/images/concentrated-dark-skinned-freelancer-holds-paper-documents-and-mobile-phone-works-remotely-in-coworking-space-watches-digital-online-webinar-thinks-about-organisation-plan 1.png',
+            src: '/assets/images/concentrated-dark-skinned-freelancer-holds-paper-documents-and-mobile-phone-works-remotely-in-coworking-space-watches-digital-online-webinar-thinks-about-organisation-plan 1.png',
             class: 'purpose__image4',
           },
         ]
@@ -83,27 +83,27 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Ellipse 44.svg',
+            src: '/assets/images/Ellipse 44.svg',
             class: 'beliefs__image1',
           },
           {
             id: 2,
-            src: '../../../assets/images/Ellipse 42.svg',
+            src: '/assets/images/Ellipse 42.svg',
             class: 'beliefs__image2',
           },
           {
             id: 3,
-            src: '../../../assets/images/Ellipse 43.svg',
+            src: '/assets/images/Ellipse 43.svg',
             class: 'beliefs__image3',
           },
           {
             id: 4,
-            src: '../../../assets/images/Group 31.svg',
+            src: '/assets/images/Group 31.svg',
             class: 'beliefs__image4',
           },
           {
             id: 5,
-            src: '../../../assets/images/satisfied-couple-making-fist-bump-gesture 2.png',
+            src: '/assets/images/satisfied-couple-making-fist-bump-gesture 2.png',
             class: 'beliefs__image5',
           }
         ]
@@ -115,27 +115,27 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Polygon 3.svg',
+            src: '/assets/images/Polygon 3.svg',
             class: 'work__image1',
           },
           {
             id: 2,
-            src: '../../../assets/images/Ellipse 42.svg',
+            src: '/assets/images/Ellipse 42.svg',
             class: 'work__image2',
           },
           {
             id: 3,
-            src: '../../../assets/images/Ellipse 44.svg',
+            src: '/assets/images/Ellipse 44.svg',
             class: 'work__image3',
           },
           {
             id: 4,
-            src: '../../../assets/images/Group 31.svg',
+            src: '/assets/images/Group 31.svg',
             class: 'work__image4',
           },
           {
             id: 5,
-            src: '../../../assets/images/diverse-hands-united-community-care-gesture 1.png',
+            src: '/assets/images/diverse-hands-united-community-care-gesture 1.png',
             class: 'work__image5',
           }
         ]
@@ -150,17 +150,17 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/contactenos/Group 31.svg',
+            src: '/assets/images/contactenos/Group 31.svg',
             class: 'contactenos__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/contactenos/Group 34.png',
+            src: '/assets/images/contactenos/Group 34.png',
             class: 'contactenos__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/contactenos/Ellipse 42.svg',
+            src: '/assets/images/contactenos/Ellipse 42.svg',
             class: 'contactenos__image3'
           }
         ]
@@ -177,17 +177,17 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/evaluacionDesempeño/Ellipse 2076.svg',
             class: 'evaluacion__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
+            src: '/assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
             class: 'evaluacion__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/evaluacionDesempeño/Ellipse 2077.svg',
+            src: '/assets/images/Soluciones/evaluacionDesempeño/Ellipse 2077.svg',
             class: 'evaluacion__image3'
           }
         ],
@@ -205,17 +205,17 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/MachineLearning/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/MachineLearning/Ellipse 2076.svg',
             class: 'machineLearning__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/MachineLearning/Ellipse 2077.svg',
+            src: '/assets/images/Soluciones/MachineLearning/Ellipse 2077.svg',
             class: 'machineLearning__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/MachineLearning/Group 1478.png',
+            src: '/assets/images/Soluciones/MachineLearning/Group 1478.png',
             class: 'machineLearning__image3'
           }
         ],
@@ -233,12 +233,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/solucionesDashboard/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/solucionesDashboard/Ellipse 2076.svg',
             class: 'dashboard__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/solucionesDashboard/image 39.svg',
+            src: '/assets/images/Soluciones/solucionesDashboard/image 39.svg',
             class: 'dashboard__image2'
           }
         ],
@@ -256,12 +256,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/solucionesRPA/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/solucionesRPA/Ellipse 2076.svg',
             class: 'rpa__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/solucionesRPA/image 41.png',
+            src: '/assets/images/Soluciones/solucionesRPA/image 41.png',
             class: 'rpa__image2'
           }
         ],
@@ -279,12 +279,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/investigacionSegmentada/Ellipse 2076 (1).svg',
+            src: '/assets/images/Soluciones/investigacionSegmentada/Ellipse 2076 (1).svg',
             class: 'investigacion__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/investigacionSegmentada/image 42.svg',
+            src: '/assets/images/Soluciones/investigacionSegmentada/image 42.svg',
             class: 'investigacion__image2'
           }
         ],
@@ -302,12 +302,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/sistemaQR/QR 1.png',
+            src: '/assets/images/Soluciones/sistemaQR/QR 1.png',
             class: 'codigos__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/sistemaQR/Ellipse 2076.png',
+            src: '/assets/images/Soluciones/sistemaQR/Ellipse 2076.png',
             class: 'codigos__image2'
           }
         ],
@@ -325,17 +325,17 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/realidadAumentada/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/realidadAumentada/Ellipse 2076.svg',
             class: 'realidad__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/realidadAumentada/Group 1478.png',
+            src: '/assets/images/Soluciones/realidadAumentada/Group 1478.png',
             class: 'realidad__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/realidadAumentada/Ellipse 2077.svg',
+            src: '/assets/images/Soluciones/realidadAumentada/Ellipse 2077.svg',
             class: 'realidad__image3'
           }
         ],
@@ -353,12 +353,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/ads/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/ads/Ellipse 2076.svg',
             class: 'ads__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/ads/image 40.svg',
+            src: '/assets/images/Soluciones/ads/image 40.svg',
             class: 'ads__image2'
           }
         ],
@@ -376,12 +376,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/scraper/Ellipse 2076 (1).svg',
+            src: '/assets/images/Soluciones/scraper/Ellipse 2076 (1).svg',
             class: 'scraper__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/scraper/image 40.svg',
+            src: '/assets/images/Soluciones/scraper/image 40.svg',
             class: 'scraper__image2'
           }
         ],
@@ -399,22 +399,22 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '../../../assets/images/Soluciones/chatbot/Ellipse 2076.svg',
+            src: '/assets/images/Soluciones/chatbot/Ellipse 2076.svg',
             class: 'chatbot__image1'
           },
           {
             id: 2,
-            src: '../../../assets/images/Soluciones/chatbot/Group 1478.png',
+            src: '/assets/images/Soluciones/chatbot/Group 1478.png',
             class: 'chatbot__image2'
           },
           {
             id: 3,
-            src: '../../../assets/images/Soluciones/chatbot/Ellipse 2077.png',
+            src: '/assets/images/Soluciones/chatbot/Ellipse 2077.png',
             class: 'chatbot__image3'
           },
           {
             id: 4,
-            src: '../../../assets/images/Soluciones/chatbot/image 75.png',
+            src: '/assets/images/Soluciones/chatbot/image 75.png',
             class: 'chatbot__image4'
           }
         ],
@@ -428,48 +428,48 @@ export class CmsService {
     Clientes: [
       {
         name: 'alpina',
-        src: '../../../assets/images/clientes/alpina.png',
-        hover: '../../../assets/images/clientes/alpina-hover.png'
+        src: '/assets/images/clientes/alpina.png',
+        hover: '/assets/images/clientes/alpina-hover.png'
       },
       {
         name: 'carvajal',
-        src: '../../../assets/images/clientes/carvajal.png',
-        hover: '../../../assets/images/clientes/carvajal-hover.png'
+        src: '/assets/images/clientes/carvajal.png',
+        hover: '/assets/images/clientes/carvajal-hover.png'
       },
       {
         name: 'abinbev',
-        src: '../../../assets/images/clientes/abinbev.png',
-        hover: '../../../assets/images/clientes/abinbev-hover.png'
+        src: '/assets/images/clientes/abinbev.png',
+        hover: '/assets/images/clientes/abinbev-hover.png'
       },
       {
         name: 'bios',
-        src: '../../../assets/images/clientes/bios.png',
-        hover: '../../../assets/images/clientes/bios-hover.png'
+        src: '/assets/images/clientes/bios.png',
+        hover: '/assets/images/clientes/bios-hover.png'
       },
       {
         name: 'adbid',
-        src: '../../../assets/images/clientes/adbid.png',
-        hover: '../../../assets/images/clientes/adbid-hover.png'
+        src: '/assets/images/clientes/adbid.png',
+        hover: '/assets/images/clientes/adbid-hover.png'
       },
       {
         name: 'innova',
-        src: '../../../assets/images/clientes/innova.png',
-        hover: '../../../assets/images/clientes/innova-hover.png'
+        src: '/assets/images/clientes/innova.png',
+        hover: '/assets/images/clientes/innova-hover.png'
       },
       {
         name: 'placita',
-        src: '../../../assets/images/clientes/placita.png',
-        hover: '../../../assets/images/clientes/placita-hover.png'
+        src: '/assets/images/clientes/placita.png',
+        hover: '/assets/images/clientes/placita-hover.png'
       },
       // {
       //   name: 'unilever',
-      //   src: '../../../assets/images/clientes/unilever.png',
-      //   hover: '../../../assets/images/clientes/unilever-hover.png'
+      //   src: '/assets/images/clientes/unilever.png',
+      //   hover: '/assets/images/clientes/unilever-hover.png'
       // },
       // {
       //   name: 'coca-cola',
-      //   src: '../../../assets/images/clientes/coca-cola.png',
-      //   hover: '../../../assets/images/clientes/coca-cola-hover.png'
+      //   src: '/assets/images/clientes/coca-cola.png',
+      //   hover: '/assets/images/clientes/coca-cola-hover.png'
       // },
     ]
   };

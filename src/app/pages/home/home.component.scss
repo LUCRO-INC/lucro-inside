@@ -28,7 +28,7 @@
         position: relative;
         cursor: pointer;
         .L {
-          background: url("../../../assets/images/Header/01empresas.png");
+          background: url("/assets/images/Header/01empresas.png");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top left;
@@ -36,7 +36,7 @@
           height: 14.79375rem;
         }
         .U {
-          background: url("../../../assets/images/Header/02soluciones.png");
+          background: url("/assets/images/Header/02soluciones.png");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top left;
@@ -44,7 +44,7 @@
           height: 14.79375rem;
         }
         .C {
-          background: url("../../../assets/images/Header/03tecnologia.png");
+          background: url("/assets/images/Header/03tecnologia.png");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top left;
@@ -52,7 +52,7 @@
           height: 16.65rem;
         }
         .R {
-          background: url("../../../assets/images/Header/04consumidores.png");
+          background: url("/assets/images/Header/04consumidores.png");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top left;
@@ -60,7 +60,7 @@
           height: 14.79375rem;
         }
         .O {
-          background: url("../../../assets/images/Header/05contactenos.png");
+          background: url("/assets/images/Header/05contactenos.png");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: top left;
@@ -83,31 +83,31 @@
         }
         &:hover {
           .L {
-            background: url("../../../assets/images/Header/01empresas-hover.png");
+            background: url("/assets/images/Header/01empresas-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top left;
           }
           .U {
-            background: url("../../../assets/images/Header/02soluciones-hover.png");
+            background: url("/assets/images/Header/02soluciones-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top left;
           }
           .C {
-            background: url("../../../assets/images/Header/03tecnologia-hover.png");
+            background: url("/assets/images/Header/03tecnologia-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top left;
           }
           .R {
-            background: url("../../../assets/images/Header/04consumidores-hover.png");
+            background: url("/assets/images/Header/04consumidores-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top left;
           }
           .O {
-            background: url("../../../assets/images/Header/05contactenos-hover.png");
+            background: url("/assets/images/Header/05contactenos-hover.png");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top left;

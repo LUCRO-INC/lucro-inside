@@ -78,21 +78,21 @@
 
     .contactenos-form {
       #name {
-        background: url("../../../assets/images/icons/user.svg") no-repeat 94.5% 45%, #fff;
+        background: url("/assets/images/icons/user.svg") no-repeat 94.5% 45%, #fff;
       }
       #email {
-        background: url("../../../assets/images/icons/at.svg") no-repeat 94.5% 45%, #fff;
+        background: url("/assets/images/icons/at.svg") no-repeat 94.5% 45%, #fff;
       }
       #phoneNumber {
-        background: url("../../../assets/images/icons/phone.svg") no-repeat 94.5% 45%, #fff;
+        background: url("/assets/images/icons/phone.svg") no-repeat 94.5% 45%, #fff;
       }
       #company {
         background:
-          url("../../../assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%, #fff;
+          url("/assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%, #fff;
       }
       #website {
         background:
-          url("../../../assets/images/icons/website.svg") no-repeat 94.5% 45%, #fff;
+          url("/assets/images/icons/website.svg") no-repeat 94.5% 45%, #fff;
       }
       select,
       .form-control,
@@ -131,7 +131,7 @@
         -moz-appearance: none;
         -webkit-appearance: none;
         appearance: none;
-        background: url("../../../assets/images/icons/select-arrow.svg")
+        background: url("/assets/images/icons/select-arrow.svg")
           no-repeat 94.5% 45%;
       }
 
