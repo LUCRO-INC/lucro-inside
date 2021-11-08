@@ -44,7 +44,7 @@
   h3 {
     @include fontStyle(20px, 24px, $--fw-black, #36af67, undefined);
     letter-spacing: 0.15px;
-    margin-top: 1.4rem;
+    margin-block: 0.5em 1em;
     max-width: 25rem;
     opacity: 0;
   }
@@ -65,18 +65,16 @@
     max-width: 24.5rem;
     opacity: 0;
   }
-
   span {
     opacity: 0;
   }
-
   .btn-ghost {
     @include fontStyle(12px, 16px, $--fw-bold, $--clr-font-regular, uppercase);
     letter-spacing: 0.004em;
     background: transparent;
     width: 70%;
     padding: 0.5rem 0;
-    margin-top: 1.6875rem;
+    margin-top: 1.5em;
     margin-right: auto;
     border: $--clr-font-dark 2px solid;
     border-radius: 10px;
@@ -89,7 +87,6 @@
       transform: scale(0.95);
     }
   }
-
   .evaluacionDesempeno,
   .machineLearning,
   .solucionesDashboard,
@@ -107,24 +104,61 @@
     padding-block: 5em;
     position: relative;
     margin-bottom: 15em;
-
     &__image {
       position: relative;
       width: 100%;
     }
-
     &__text {
       width: 90%;
       min-width: 17rem;
       max-width: 17rem;
       position: relative;
-
       .slider-container {
-        height: 17em;
         margin-bottom: 3em;
         overflow-x: hidden;
+        .upper-tabs {
+          display: inline-block;
+          justify-content: center;
+          width: 100%;
+          cursor: pointer;
+          a {
+            padding: 0.5rem 0.1375rem;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.004em;
+            margin-top: initial;
+            position: relative;
+            &.displayed {
+              color: #049b41;
+              font-weight: $--fw-bold;
+              border-bottom: 2px solid $--clr-lucro-red;
+            }
+            &.hidden {
+              color: $--clr-font-light;
+              font-weight: $--fw-light;
+              border-bottom: 2px solid #DDE3E4;
+            }
+            &:hover {
+              color: #049b41;
+            }
+          }
+          &.unfold {
+            a {
+              &.displayed {
+                color: $--clr-font-light;
+                font-weight: $--fw-light;
+                border-bottom: 2px solid #DDE3E4;
+              }
+              &.hidden {
+                color: #049b41;
+                font-weight: $--fw-bold;
+                border-bottom: 2px solid $--clr-lucro-red;
+              }
+            }
+          }
+        }
         .slider {
-          @include flexbox(space-between, flex-end, row);
+          @include flexbox(space-between, flex-start, row);
           height: 100%;
           .description {
             @include flexbox(center, flex-start, column);
@@ -134,10 +168,18 @@
           }
           .questions {
             @include flexbox(center, center, column);
+            display: none;
+            margin-top: 2em;
             min-width: 17rem;
             max-width: 17rem;
             .question {
-              @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
+              @include fontStyle(
+                12px,
+                16px,
+                $--fw-light,
+                $--clr-font-regular,
+                undefined
+              );
               letter-spacing: 0.004em;
               background-color: #fff;
               padding: 0.75rem 1rem;
@@ -147,63 +189,14 @@
           }
         }
         &.unfold {
-          height: 37em;
           .slider {
-            align-items: center;
-            transform: translateX(-100%);
-          }
-        }
-      }
-      .bottom-text {
-        @include flexbox(left, center, row);
-        margin-top: 7.6875rem;
-        margin-bottom: 3em;
-        cursor: pointer;
-        pointer-events: none;
-        p {
-          @include fontStyle(14px, 16px, $--fw-light, #049b41, undefined);
-          letter-spacing: 0.4px;
-          margin-top: initial;
-          &.displayed {
-            display: none;
-          }
-        }
-        span {
-          margin-left: 2em;
-          img {
-            transform: rotate(-90deg);
-          }
-        }
-        &:hover {
-          p {
-            text-decoration: underline;
-          }
-        }
-        &.unfold {
-          .hidden {
-            display: none;
-          }
-          .displayed {
-            display: initial;
-          }
-          span {
-            img {
-              transform: rotate(90deg);
+            .description {
+              display: none;
+            }
+            .questions {
+              display: initial;
             }
           }
-        }
-      }
-    }
-  }
-  .solucionesDashboard,
-  .codigosQR,
-  .realidadAumentada,
-  .ads,
-  .chatbot {
-    &__text {
-      .slider-container {
-        &.unfold {
-          height: 26em;
         }
       }
     }
@@ -226,7 +219,7 @@
           position: absolute;
           width: 9.625rem;
           left: 0.4em;
-          z-index: 1;
+          z-index: 2;
           opacity: 0;
         }
         &.evaluacion__image3 {
@@ -234,8 +227,24 @@
           width: 4.36rem;
           top: 0.5em;
           left: 10.5em;
-          z-index: 2;
+          z-index: 3;
           opacity: 0;
+        }
+      }
+      .video-container {
+        background-color: /*#181919*/ rgb(0, 0, 0);
+        position: absolute;
+        overflow: hidden;
+        border-radius: 16px;
+        width: 6.4rem;
+        height: 12.2rem;
+        top: 0.2em;
+        left: 3em;
+        z-index: 1;
+        opacity: 0;
+        video {
+          width: 100%;
+          height: 100%;
         }
       }
     }
@@ -341,9 +350,6 @@
         }
       }
     }
-    .slider-container {
-      height: 19.5em;
-    }
   }
 
   .codigosQR {
@@ -402,7 +408,7 @@
         }
       }
       .video-container {
-        background-color: /*#181919*/rgb(0, 0, 0);
+        background-color: /*#181919*/ rgb(0, 0, 0);
         position: absolute;
         overflow: hidden;
         border-radius: 16px;
@@ -523,7 +529,7 @@
         }
       }
       .video-container {
-        background-color: /*#181919*/rgb(0, 0, 0);
+        background-color: /*#181919*/ rgb(0, 0, 0);
         position: absolute;
         overflow: hidden;
         border-radius: 16px;
@@ -569,6 +575,28 @@
       .btn-ghost {
         animation: fadein-left 500ms ease-in 600ms forwards;
       }
+      .evaluacionDesempeno,
+      .machineLearning,
+      .solucionesDashboard,
+      .solucionesRPA,
+      .investigacionSegmentada,
+      .codigosQR,
+      .realidadAumentada,
+      .ads,
+      .scraper,
+      .chatbot {
+        &__text {
+          .slider-container {
+            .slider {
+              .questions {
+                .question {
+                  animation: fadein-right 500ms ease-in 400ms forwards;
+                }
+              }
+            }
+          }
+        }
+      }
       &.evaluacionDesempeno {
         .evaluacion__image1 {
           animation: fadein-right 500ms ease-in forwards;
@@ -578,6 +606,9 @@
         }
         .evaluacion__image3 {
           animation: fadein-left 500ms ease-in 200ms forwards;
+        }
+        .video-container {
+          animation: fadein 500ms ease-in 400ms forwards;
         }
       }
       .machineLearning {
@@ -646,7 +677,7 @@
         }
       }
       &.scraper {
-        img{
+        img {
           &.scraper__image1 {
             animation: fadein 500ms ease-in forwards;
           }
@@ -726,8 +757,12 @@
         min-width: 18.7rem;
         max-width: 18.7rem;
         .slider-container {
-          height: 18.7em;
-          margin-bottom: 3.3;
+          margin-bottom: 3.3em;
+          .upper-tabs {
+            a {
+              padding: 0.55rem 0.5625rem;
+            }
+          }
           .slider {
             .description {
               min-width: 18.7rem;
@@ -737,22 +772,6 @@
               min-width: 18.7rem;
               max-width: 18.7rem;
             }
-          }
-          &.unfold {
-            height: 40.7em;
-          }
-        }
-      }
-    }
-    .solucionesDashboard,
-    .codigosQR,
-    .realidadAumentada,
-    .ads,
-    .chatbot {
-      &__text {
-        .slider-container {
-          &.unfold {
-            height: 28.6em;
           }
         }
       }
@@ -768,14 +787,20 @@
             top: 2.53em;
           }
           &.evaluacion__image2 {
-            width: 70.5875rem;
-            left: -0.5em;
+            width: 10.5875rem;
+            left: 0.44em;
           }
           &.evaluacion__image3 {
             width: 4.796rem;
             top: 0.55em;
             left: 11.55em;
           }
+        }
+        .video-container {
+          width: 7.04rem;
+          height: 13.42rem;
+          top: 0.22em;
+          left: 3.3em;
         }
       }
     }
@@ -850,9 +875,6 @@
             width: 15.05625rem;
           }
         }
-      }
-      .slider-container {
-        height: 21.45em;
       }
     }
     .codigosQR {
@@ -1021,8 +1043,12 @@
         min-width: 22.1rem;
         max-width: 22.1rem;
         .slider-container {
-          height: 22.1em;
           margin-bottom: 3.9em;
+          .upper-tabs {
+            a {
+              padding: 0.65rem 1.25rem;
+            }
+          }
           .slider {
             .description {
               min-width: 22.1rem;
@@ -1032,22 +1058,6 @@
               min-width: 22.1rem;
               max-width: 22.1rem;
             }
-          }
-          &.unfold {
-            height: 48.1em;
-          }
-        }
-      }
-    }
-    .solucionesDashboard,
-    .codigosQR,
-    .realidadAumentada,
-    .ads,
-    .chatbot {
-      &__text {
-        .slider-container {
-          &.unfold {
-            height: 33.8em;
           }
         }
       }
@@ -1071,6 +1081,12 @@
             top: 0.65em;
             left: 13.65em;
           }
+        }
+        .video-container {
+          width: 8.32rem;
+          height: 15.86rem;
+          top: 0.26em;
+          left: 3.9em;
         }
       }
     }
@@ -1145,9 +1161,6 @@
             width: 17.79375rem;
           }
         }
-      }
-      .slider-container {
-        height: 25.35em;
       }
     }
     .codigosQR {
@@ -1336,6 +1349,7 @@
       margin-left: 4.5em;
     }
     h3 {
+      margin-block: 0.8em;
       font-size: 38.4px;
       line-height: 48.576px;
       letter-spacing: 0.195;
@@ -1347,6 +1361,7 @@
       line-height: 19.2px;
       letter-spacing: 0.12;
       max-width: 22.25rem;
+      margin-top: 2em;
     }
     p {
       font-size: 9.6px;
@@ -1375,12 +1390,20 @@
         margin-top: 7.5em;
         margin-left: 3em;
       }
-      &__text{
+      &__text {
         min-width: 22rem;
         max-width: 22rem;
         .slider-container {
-          height: 14.4em;
           margin-bottom: 3.12em;
+          .upper-tabs {
+            a {
+              padding: 0.65rem 1.625rem;
+              font-size: 11.2px;
+              line-height: 14.168px;
+              letter-spacing: 0.08px;
+              margin-bottom: em;
+            }
+          }
           .slider {
             .description {
               min-width: 22rem;
@@ -1390,9 +1413,6 @@
               min-width: 22rem;
               max-width: 22rem;
             }
-          }
-          &.unfold {
-            height: 38.48;
           }
         }
       }
@@ -1417,6 +1437,12 @@
             top: 0.52em;
             left: 20.52em;
           }
+        }
+        .video-container {
+          width: 10.8rem;
+          height: 22.4rem;
+          top: 0.64em;
+          left: 6.8em;
         }
       }
     }
@@ -1495,9 +1521,6 @@
             width: 25.65rem;
           }
         }
-      }
-      .slider-container {
-        height: 15em;
       }
     }
     .codigosQR {
@@ -1699,8 +1722,15 @@
         min-width: 33rem;
         max-width: 33rem;
         .slider-container {
-          height: 18em;
           margin-bottom: 3.9em;
+          .upper-tabs {
+            a {
+              padding: 0.8rem 36px;
+              font-size: 14px;
+              line-height: 17.71px;
+              letter-spacing: 0.1px;
+            }
+          }
           .slider {
             .description {
               min-width: 33rem;
@@ -1710,22 +1740,6 @@
               min-width: 33rem;
               max-width: 33rem;
             }
-          }
-          &.unfold {
-            height: 48.1em;
-          }
-        }
-      }
-    }
-    .solucionesDashboard,
-    .codigosQR,
-    .realidadAumentada,
-    .ads,
-    .chatbot {
-      &__text {
-        .slider-container {
-          &.unfold {
-            height: 33.8em;
           }
         }
       }
@@ -1750,6 +1764,12 @@
             top: 0.65em;
             left: 25.65em;
           }
+        }
+        .video-container {
+          width: 13.5rem;
+          height: 28rem;
+          top: 0.8em;
+          left: 8.5em;
         }
       }
     }
@@ -1826,9 +1846,6 @@
             width: 32.0625rem;
           }
         }
-      }
-      .slider-container {
-        height: 20em;
       }
     }
     .codigosQR {

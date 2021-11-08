@@ -182,7 +182,7 @@ export class CmsService {
           },
           {
             id: 2,
-            src: '/assets/images/Soluciones/evaluacionDesempeño/Group 1478.svg',
+            src: '/assets/images/Soluciones/evaluacionDesempeño/image 48.png',
             class: 'evaluacion__image2'
           },
           {

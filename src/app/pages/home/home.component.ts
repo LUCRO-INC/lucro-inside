@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public hasMenu: boolean = false;
+  public hasFooter: boolean = false;
 
   constructor() { }
 
