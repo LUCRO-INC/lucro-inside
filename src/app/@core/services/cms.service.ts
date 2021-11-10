@@ -279,12 +279,12 @@ export class CmsService {
         images: [
           {
             id: 1,
-            src: '/assets/images/Soluciones/investigacionSegmentada/Ellipse 2076 (1).svg',
+            src: '/assets/images/Soluciones/investigacionSegmentada/Ellipse 2076.svg',
             class: 'investigacion__image1'
           },
           {
             id: 2,
-            src: '/assets/images/Soluciones/investigacionSegmentada/image 42.svg',
+            src: '/assets/images/Soluciones/investigacionSegmentada/image 42.png',
             class: 'investigacion__image2'
           }
         ],
@@ -358,7 +358,7 @@ export class CmsService {
           },
           {
             id: 2,
-            src: '/assets/images/Soluciones/ads/image 40.svg',
+            src: '/assets/images/Soluciones/ads/image 40.png',
             class: 'ads__image2'
           }
         ],

@@ -1,9 +1,11 @@
+import { ElementSchemaRegistry } from '@angular/compiler';
 import {
   Component,
   OnInit,
   AfterViewInit,
   ElementRef,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
@@ -14,10 +16,11 @@ import { CmsService } from 'src/app/@core/services/cms.service';
   styleUrls: ['./soluciones.component.scss'],
 })
 export class SolucionesComponent implements OnInit, AfterViewInit {
+  public clickArrow: boolean = false;
 
-  public clickArrow:boolean = false
+  // public hasFooter: boolean = false;
 
-  public hasFooter: boolean = false;
+  public sections:Array<ElementRef> = [];
 
   @ViewChild('section01')
   section01: ElementRef = {} as ElementRef;
@@ -50,18 +53,20 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public ads: SolucionesSection = {};
   public scraper: SolucionesSection = {};
   public chatbot: SolucionesSection = {};
-  public soluciones: any;
+  public soluciones: Array<any> = [];
   public buttons: any = document.querySelectorAll('.nav-button');
   public currentSel: String = 'evaluacionDesempeno';
-  public active: any = {};
-  public show: any = {};
+  public observer: any;
 
-  constructor(private service: CmsService) { }
+  constructor(private service: CmsService) {}
 
   async ngOnInit() {
+    this.intersectionObserver();
     window.scrollTo(0, 0);
     const p = await this.service.get();
-    this.soluciones = p.Soluciones;
+    this.soluciones = p.Soluciones || [];
+    this.evaluacionDesempeno =
+      p.Soluciones?.find((item) => item.name == 'evaluacionDesempeno') || {};
     this.machineLearning =
       p.Soluciones?.find((item) => item.name == 'machineLearning') || {};
     this.solucionesDashboard =
@@ -71,8 +76,6 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
     this.investigacionSegmentada =
       p.Soluciones?.find((item) => item.name == 'investigacionSegmentada') ||
       {};
-    this.evaluacionDesempeno =
-      p.Soluciones?.find((item) => item.name == 'evaluacionDesempeno') || {};
     this.codigosQR =
       p.Soluciones?.find((item) => item.name == 'codigosQR') || {};
     this.realidadAumentada =
@@ -83,7 +86,53 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.active = document.querySelector('.active');
-    this.show = document.querySelector('.show');
+    this.observer.observe(this.section01.nativeElement);
+    this.observer.observe(this.section02.nativeElement);
+    this.observer.observe(this.section03.nativeElement);
+    this.observer.observe(this.section04.nativeElement);
+    this.observer.observe(this.section05.nativeElement);
+    this.observer.observe(this.section06.nativeElement);
+    this.observer.observe(this.section07.nativeElement);
+    this.observer.observe(this.section08.nativeElement);
+    this.observer.observe(this.section09.nativeElement);
+    this.observer.observe(this.section10.nativeElement);
+    this.sections = [
+      this.section01,
+      this.section02,
+      this.section03,
+      this.section04,
+      this.section05,
+      this.section06,
+      this.section07,
+      this.section08,
+      this.section09,
+      this.section10,
+    ]
+  }
+
+  goToSection(solucionLabel: String) {
+    this.soluciones.forEach((s, idx) => {
+      if(s.label == solucionLabel) {
+        this.sections[idx].nativeElement.scrollIntoView(true);
+      }
+    })
+  }
+
+  intersectionObserver() {
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      treshold: 0.2,
+    };
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        entry.target.classList.toggle('active');
+        entry.target.classList.toggle('show');
+        this.observer.unobserve(entry.target);
+      });
+    }, options);
   }
 }

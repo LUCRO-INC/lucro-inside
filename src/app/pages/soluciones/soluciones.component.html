@@ -5,7 +5,7 @@
         <button
           type="button"
           class="nav-button"
-          (click)="currentSel = solucion.name"
+          (click)="goToSection(solucion.label)"
         >
           <div></div>
           <p class="solucion-label">{{ solucion.label }}</p>
@@ -16,8 +16,7 @@
 
   <div
     class="evaluacionDesempeno"
-    [ngClass]="{ 'active show': currentSel == evaluacionDesempeno.name }"
-    #section05
+#section01
   >
     <div class="evaluacionDesempeno__image">
       <img
@@ -70,8 +69,7 @@
 
   <div
     class="machineLearning"
-    [ngClass]="{ 'active show': currentSel == machineLearning.name }"
-    #section01
+    #section02
   >
     <div class="machineLearning__image">
       <img
@@ -113,8 +111,7 @@
 
   <div
     class="solucionesDashboard"
-    [ngClass]="{ 'active show': currentSel == solucionesDashboard.name }"
-    #section02
+    #section03
   >
     <div class="solucionesDashboard__image">
       <img
@@ -159,8 +156,7 @@
 
   <div
     class="solucionesRPA"
-    [ngClass]="{ 'active show': currentSel == solucionesRPA.name }"
-    #section03
+    #section04
   >
     <div class="solucionesRPA__image">
       <img
@@ -201,8 +197,7 @@
 
   <div
     class="investigacionSegmentada"
-    [ngClass]="{ 'active show': currentSel == investigacionSegmentada.name }"
-    #section04
+    #section05
   >
     <div class="investigacionSegmentada__image">
       <img
@@ -248,7 +243,6 @@
 
   <div
     class="codigosQR"
-    [ngClass]="{ 'active show': currentSel == codigosQR.name }"
     #section06
   >
     <div class="codigosQR__image">
@@ -287,7 +281,6 @@
 
   <div
     class="realidadAumentada"
-    [ngClass]="{ 'active show': currentSel == realidadAumentada.name }"
     #section07
   >
     <div class="realidadAumentada__image">
@@ -339,7 +332,6 @@
 
   <div
     class="ads"
-    [ngClass]="{ 'active show': currentSel == ads.name }"
     #section08
   >
     <div class="ads__image">
@@ -375,7 +367,6 @@
 
   <div
     class="scraper"
-    [ngClass]="{ 'active show': currentSel == scraper.name }"
     #section09
   >
     <div class="scraper__image">
@@ -423,7 +414,6 @@
 
   <div
     class="chatbot"
-    [ngClass]="{ 'active show': currentSel == chatbot.name }"
     #section10
   >
     <div class="chatbot__image">

@@ -5,8 +5,9 @@
   overflow-x: visible;
 
   nav {
-    position: absolute;
+    position: fixed;
     width: 0.375rem;
+    top: 15vh;
     left: 0;
     ul {
       @include flexbox(space-between, flex-start, column);
@@ -98,7 +99,7 @@
   .scraper,
   .chatbot {
     @include flexbox(center, center, column);
-    display: none;
+    // display: none;
     max-width: 96%;
     top: 69px;
     padding-block: 5em;
