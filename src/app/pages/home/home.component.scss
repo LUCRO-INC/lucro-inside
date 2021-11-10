@@ -132,6 +132,12 @@
         height: 0.5rem;
         border-radius: 50%;
         background: #BBC7CA;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+        background: $--clr-font-regular;
+        }
       }
     }
   }
