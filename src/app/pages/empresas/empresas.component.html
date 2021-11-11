@@ -22,11 +22,23 @@
 </section>
 
 <section class="beliefs" #beliefs>
-  <div class="our-clients">
-    <h5>Ellos son nuestros clientes</h5>
-    <ul class="our-clients__brands">
-      <img *ngFor="let cliente of clientes" [src]="cliente.src">
-    </ul>
+  <div class="glide">
+    <div class="our-clients glide__track" data-glide-el="track">
+      <h5>Ellos son nuestros clientes</h5>
+      <ul class="our-clients__brands glide__slides">
+        <li class="glide__slide" *ngFor="let cliente of clientes">
+          <img [src]="cliente.src">
+        </li>
+      </ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        prev
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        next
+      </button>
+    </div>
   </div>
   <div class="beliefs__image">
     <img *ngFor="let img of sectionThree.images" [src]="img.src" [class]="img.class" />
@@ -51,3 +63,8 @@
     <button routerLink="/contactenos" class="btn-ghost">Contáctanos</button>
   </article>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  new Glide('.glide').mount()
+</script>

@@ -59,11 +59,11 @@ $--fs-h3: 34px;
 }
 
 // Custom devices
-@mixin rwd($screen) {
-  @media (min-width: $screen+'px') {
-      @content;
-  }
-}
+// @mixin rwd($screen) {
+//   @media (min-width: $screen+'px') {
+//       @content;
+//   }
+// }
 
 @keyframes fadein {
   0% {
