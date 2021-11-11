@@ -1,33 +1,34 @@
 <section class="home">
+  <div id="viewTarget"></div>
   <nav>
     <ul class="home__lista-rutas">
-      <a routerLink="/empresas" class="home__lista-rutas--link">
+      <a routerLink="/empresas" id="L" class="home__lista-rutas--link active" #L>
         <div class="L"></div>
         <p><span>Ir a </span>Empresas</p>
       </a>
-      <a routerLink="/soluciones" class="home__lista-rutas--link">
+      <a routerLink="/soluciones" id="U" class="home__lista-rutas--link" #U>
         <div class="U"></div>
         <p><span>Ir a </span>Soluciones</p>
       </a>
-      <a routerLink="/tecnologia" class="home__lista-rutas--link">
+      <a routerLink="/tecnologia" id="C" class="home__lista-rutas--link" #C>
         <div class="C"></div>
         <p><span>Ir a </span>Tecnología</p>
       </a>
-      <a routerLink="/consumidores" class="home__lista-rutas--link">
+      <a routerLink="/consumidores" id="R" class="home__lista-rutas--link" #R>
         <div class="R"></div>
         <p><span>Ir a </span>Consumidores</p>
       </a>
-      <a routerLink="/contactenos" class="home__lista-rutas--link">
+      <a routerLink="/contactenos" id="O" class="home__lista-rutas--link" #O>
         <div class="O"></div>
         <p><span>Ir a </span>Contáctenos</p>
       </a>
     </ul>
     <ul class="slider-controller">
-      <span class="slider-controller__circle"></span>
-      <span class="slider-controller__circle"></span>
-      <span class="slider-controller__circle"></span>
-      <span class="slider-controller__circle"></span>
-      <span class="slider-controller__circle"></span>
+      <span class="slider-controller__circle active" id="Lc" (click)="goToL()"></span>
+      <span class="slider-controller__circle" id="Uc" (click)="goToU()"></span>
+      <span class="slider-controller__circle" id="Cc" (click)="goToC()"></span>
+      <span class="slider-controller__circle" id="Rc" (click)="goToR()"></span>
+      <span class="slider-controller__circle" id="Oc" (click)="goToO()"></span>
     </ul>
   </nav>
   <div class="allies">

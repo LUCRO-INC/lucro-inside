@@ -2,9 +2,17 @@
 
 .home {
   @include flexbox(center, center, column);
+  position: relative;
   margin-top: 10em;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-bottom: 2em;
+  #viewTarget {
+    position: absolute;
+    width: 17.5rem;
+    height: 100vh;
+    opacity: 0.3;
+    pointer-events: none;
+  }
   nav {
     @include flexbox(center, center, column);
     overflow-x: hidden;
@@ -13,8 +21,10 @@
     .home__lista-rutas {
       @include flexbox(space-between, flex-end, row);
       overflow-x: scroll;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
       width: 100%;
-      padding-inline: 30% 15%;
+      padding-inline: 30% 30%;
 
       &::-webkit-scrollbar {
         background: transparent;
@@ -27,6 +37,7 @@
       &--link {
         position: relative;
         cursor: pointer;
+        scroll-snap-align: center;
         .L {
           background: url("/assets/images/Header/01empresas.png");
           background-repeat: no-repeat;
@@ -81,7 +92,8 @@
             display: none;
           }
         }
-        &:hover {
+        &:hover,
+        &.active {
           .L {
             background: url("/assets/images/Header/01empresas-hover.png");
             background-repeat: no-repeat;

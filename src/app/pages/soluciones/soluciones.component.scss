@@ -2,7 +2,6 @@
 
 .soluciones {
   @include flexbox(center, center, column);
-  overflow-x: visible;
 
   nav {
     position: fixed;

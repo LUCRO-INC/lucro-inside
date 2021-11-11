@@ -1,3 +1,4 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "./theme/settings";
 
 .home {
@@ -826,6 +827,8 @@
 
   &__image {
     position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
     margin-left: 4em;
     top: 3em;
     width: 90%;
