@@ -798,6 +798,7 @@
     overflow-x: hidden;
     max-width: 95%;
     padding-block: 1em;
+    display: none;
     h5 {
       @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
       letter-spacing: 0.15px;
@@ -1049,7 +1050,7 @@
 
     &__text {
       position: relative;
-      top: 12em;
+      top: 5em;
       width: 50%;
       max-width: 465.07px;
       margin-left: 3em;
@@ -1078,7 +1079,7 @@
     &__image {
       position: relative;
       width: 50%;
-      margin-top: 22em;
+      margin-top: 5em;
       min-width: 300px;
       height: 35.5rem;
       min-height: 200px;
