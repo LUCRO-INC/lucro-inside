@@ -11,10 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'tecnologia',
-    redirectTo: 'home',
-    pathMatch: 'full'
     // canActivate: [DeveloperGuard],
-    // loadChildren: () => import('./pages/tecnologia/tecnologia.module').then(m => m.TecnologiaModule)
+    loadChildren: () => import('./pages/tecnologia/tecnologia.module').then(m => m.TecnologiaModule)
   },
   {
     path: 'consumidores',
