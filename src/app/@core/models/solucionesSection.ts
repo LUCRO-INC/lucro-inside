@@ -8,5 +8,6 @@ export interface SolucionesSection {
     subTitle?: String;
     body?: String;
     images?: Array<Images>;
+    questions?: Array<String>;
     button?: Button;
 }

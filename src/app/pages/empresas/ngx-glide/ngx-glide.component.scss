@@ -1,0 +1,42 @@
+@import "./theme/settings";
+
+.ng-container {
+  background-color: khaki;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  h5 {
+    @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
+    letter-spacing: 0.15px;
+    text-align: center;
+  }
+
+  .our-clients {
+    max-width: 95%;
+    padding-block: 1em;
+    &__brands {
+      position: relative;
+      @include flexbox(/*start*/space-between, center, row);
+      // flex-wrap: wrap;
+      flex-shrink: 1;
+      overflow-x: scroll;
+      padding-block: 3em;
+
+      &::-webkit-scrollbar {
+        background: transparent;
+      }
+      img {
+        max-width: 100%;
+        margin-inline: 2em;
+        filter: grayscale(100%);
+        cursor: pointer;
+        &:hover {
+          filter: grayscale(0%);
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}

@@ -794,38 +794,6 @@
   overflow-x: initial;
   padding-bottom: 3em;
 
-  .our-clients {
-    overflow-x: hidden;
-    max-width: 95%;
-    padding-block: 1em;
-    h5 {
-      @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
-      letter-spacing: 0.15px;
-      text-align: center;
-    }
-    &__brands {
-      position: relative;
-      @include flexbox(/*start*/space-between, center, row);
-      // flex-wrap: wrap;
-      overflow-x: scroll;
-      padding-block: 3em;
-
-      &::-webkit-scrollbar {
-        background: transparent;
-      }
-      img {
-        max-width: 100%;
-        margin-inline: 2em;
-        filter: grayscale(100%);
-        cursor: pointer;
-        &:hover {
-          filter: grayscale(0%);
-          transform: scale(1.02);
-        }
-      }
-    }
-  }
-
   &__image {
     position: relative;
     margin-left: 4em;

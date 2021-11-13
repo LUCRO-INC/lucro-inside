@@ -1,0 +1,16 @@
+<ng-container ngClass="ng-container">
+  <h5>Ellos son nuestros clientes</h5>
+  <ngx-glide
+    class="our-clients"
+    #ngxGlide
+    [perView]="1"
+    [showBullets]="true"
+    type="'carousel'">
+    <ng-container class="glide__slides" *ngFor="let cliente of clientes">
+      <div class="glide__slide">
+        <img [src]="cliente.src">
+      </div>
+    </ng-container>
+
+  </ngx-glide>
+</ng-container>

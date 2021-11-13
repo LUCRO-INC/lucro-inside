@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
+import { NgxGlideModule } from 'ngx-glide';
 import { CommonModule } from '@angular/common';
 
 import { EmpresasRoutingModule } from './empresas-routing.module';
 import { EmpresasComponent } from './empresas.component';
+import { NgxGlideComponent } from './ngx-glide/ngx-glide.component';
 
 
 @NgModule({
-  declarations: [EmpresasComponent],
+  declarations: [EmpresasComponent, NgxGlideComponent],
   imports: [
     CommonModule,
-    EmpresasRoutingModule
+    EmpresasRoutingModule,
+    NgxGlideModule
   ]
 })
 export class EmpresasModule { }

@@ -1,8 +1,9 @@
-import { getLocaleDirection } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { getLocaleDirection } from '@angular/common';
 import { ClientsImg } from 'src/app/@core/models/clients-img';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
+import { NgxGlideComponent } from 'ngx-glide';
 
 @Component({
   selector: 'app-empresas',
@@ -33,7 +34,6 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     this.intersectionObserver()
     window.scrollTo(0, 0);
     const p = await this.service.get()
-    this.clientes = p.Clientes
     this.sectionOne = p.Empresas?.find(item => item.name == 'sectionOne') || {}
     this.sectionTwo = p.Empresas?.find(item => item.name == 'sectionTwo') || {}
     this.sectionThree = p.Empresas?.find(item => item.name == 'sectionThree') || {}

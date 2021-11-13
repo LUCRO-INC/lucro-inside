@@ -18,6 +18,8 @@ import { CmsService } from 'src/app/@core/services/cms.service';
 export class SolucionesComponent implements OnInit, AfterViewInit {
   public clickArrow: boolean = false;
 
+  public timer:number = 0;
+
   // public hasFooter: boolean = false;
 
   public sections:Array<ElementRef> = [];
@@ -61,6 +63,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   constructor(private service: CmsService) {}
 
   async ngOnInit() {
+    this.sliderTimer();
     this.intersectionObserver();
     window.scrollTo(0, 0);
     const p = await this.service.get();
@@ -134,5 +137,11 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
         this.observer.unobserve(entry.target);
       });
     }, options);
+  }
+
+  sliderTimer() {
+    setInterval(() => {
+      ++this.timer
+    },2000)
   }
 }
