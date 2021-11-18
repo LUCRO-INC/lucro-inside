@@ -3,8 +3,8 @@ import { Section } from "./section";
 import {SolucionesSection} from './solucionesSection';
 
 export interface Cms {
-    Empresas?:Array<Section>;
-    Contactenos?:Array<Section>;
-    Soluciones?: Array<SolucionesSection>;
-    Clientes?: Array<ClientsImg>;
+    Empresas?:Section[];
+    Contactenos?:Section[];
+    Soluciones?:SolucionesSection[];
+    Clientes?:ClientsImg[];
 }

@@ -4,5 +4,5 @@ export interface Section {
     name?: String;
     title?: String;
     body?: String;
-    images?: Array<Images>;
+    images?: Images[];
 }

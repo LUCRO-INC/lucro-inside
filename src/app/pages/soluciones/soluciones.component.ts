@@ -1,11 +1,9 @@
-import { ElementSchemaRegistry } from '@angular/compiler';
 import {
   Component,
   OnInit,
   AfterViewInit,
   ElementRef,
   ViewChild,
-  ViewChildren,
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
@@ -55,7 +53,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public chatbot: SolucionesSection = {};
   public soluciones: Array<any> = [];
   public buttons: any = document.querySelectorAll('.nav-button');
-  public currentSel: String = 'evaluacionDesempeno';
+  public currentSel: String = 'machineLearning';
   public observer: any;
 
   constructor(private service: CmsService) {}

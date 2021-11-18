@@ -7,6 +7,6 @@ export interface SolucionesSection {
     title?: String;
     subTitle?: String;
     body?: String;
-    images?: Array<Images>;
+    images?: Images[];
     button?: Button;
 }
