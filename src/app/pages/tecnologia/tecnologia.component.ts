@@ -18,6 +18,7 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
   public modelosPredictivos: TecnologiaSection = {};
   public bigData: TecnologiaSection = {};
   public mobiles:NodeList = {} as NodeList;
+  public counter:number = 1;
 
   constructor(private service: TechCmsService) {
   }
@@ -46,10 +47,19 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
     firstElement?.parentNode?.append(firstElement);
     let cards = document.querySelectorAll('.active');
     cards?.forEach(card => {
-      card.classList.remove('active');
-      console.log(card.nextElementSibling)
-      card.nextElementSibling?.classList.add('active');
-      card.previousElementSibling?.parentNode?.append(card.previousElementSibling);
+      if (this.counter <= 5) {
+        card.classList.remove('active');
+        console.log(this.counter)
+        card.nextElementSibling?.classList.add('active');
+        card.previousElementSibling?.parentNode?.append(card.previousElementSibling);
+        this.counter += 1;
+      } else {
+        card.classList.remove('active');
+        card.nextElementSibling?.classList.add('active');
+        console.log('first lap');
+        card.previousElementSibling?.parentNode?.append(card.previousElementSibling);
+        this.counter = 1;
+      }
     })
   }
 
@@ -58,5 +68,11 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
     let i = this.mobiles.length - 1;
     let lastElement = this.mobiles.item(i);
     lastElement?.parentNode?.prepend(lastElement);
+    let cards = document.querySelectorAll('.active');
+    cards?.forEach(card => {
+      card.classList.remove('active');
+      card.previousElementSibling?.classList.add('active');
+      card.nextElementSibling?.parentNode?.prepend(card.nextElementSibling);
+    })
   }
 }
