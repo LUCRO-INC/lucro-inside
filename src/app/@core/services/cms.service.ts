@@ -191,6 +191,14 @@ export class CmsService {
             class: 'evaluacion__image3'
           }
         ],
+        questions: [
+          "¿El vendedor realmente está yendo al trabajo de campo asignado?",
+          "¿El vendedor organizó el punto de venta según los parámetros de la empresa?",
+          "¿El vendedor identificó los agotados en el punto de venta?",
+          "¿Los supermercados están cumpliendo las exhibiciones adicionales que acordamos?",
+          "¿El estándar de lineal que definimos se cumple según las prioridades de la compañía?"
+
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -219,6 +227,14 @@ export class CmsService {
             class: 'machineLearning__image3'
           }
         ],
+        questions: [
+          "¿A qué precio están realmente vendiendo mi producto y el de la competencia en un punto de venta?",
+          "Cuando un vendedor sale de un punto de venta, ¿Cómo dejó el punto de venta? ¿Qué tan bien organizado está el punto de venta?",
+          "¿Qué agotados tengo en el punto de venta en un momento determinado?",
+          "¿Cuál es el porcentaje de lineal que tengo en cualquier punto de venta?",
+          "¿Cómo son las canastas cruzadas y con qué otros productos compran mi marca?"
+
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -241,6 +257,12 @@ export class CmsService {
             src: '/assets/images/Soluciones/solucionesDashboard/image 39.svg',
             class: 'dashboard__image2'
           }
+        ],
+        questions: [
+          "¿Existe correlación entre las ventas de un vendedor, su género y edad?",
+          "¿Qué variables influyen en la venta de mi producto?",
+          "¿Estar cerca de un colegio impacta la comercialización de mi producto?"
+
         ],
         button: {
           content: 'contactar un comercial',
@@ -265,6 +287,13 @@ export class CmsService {
             class: 'rpa__image2'
           }
         ],
+        questions: [
+          "¿Puedo automatizar mis procesos en el BackOffice de mi empresa aumentando la productividad y eliminando cargos?",
+          "¿Puedo automatizar la comunicación con diferentes stakeholders sin tener que utilizar un call center o empleados directos?",
+          "¿Puedo eliminar procesos que requieren extensos trámites ahorrando tiempo y dinero?",
+          "¿Puedo eliminar procesos para enfocar aún más a mi equipo de trabajo en sus labores?"
+
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -288,6 +317,12 @@ export class CmsService {
             class: 'investigacion__image2'
           }
         ],
+        questions: [
+          "¿Podemos construir un análisis de salud de marca a bajo costo y en menos de 15 quince días?",
+          "¿Puedo analizar no sólo las ciudades principales sino también poblaciones y ciudades más pequeñas?",
+          "¿Existe alguna correlación entre el consumo de mi marca y los hobbies de las personas?",
+          "¿Puedo conocer más allá de lo que la gente dice lo que realmente hay en las neveras o anaqueles de mis consumidores?"
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -310,6 +345,11 @@ export class CmsService {
             src: '/assets/images/Soluciones/sistemaQR/Ellipse 2076.png',
             class: 'codigos__image2'
           }
+        ],
+        questions: [
+          "¿Puedo controlar los accesos a mi compañía por medio de un código QR?",
+          "¿Puedo generar un sistema de pago a través de códigos QR en diferentes puntos de venta?",
+          "¿Puedo generar sistema de conversación con mis clientes/o consumidores a partir de códigos QR?"
         ],
         button: {
           content: 'contactar un comercial',
@@ -339,6 +379,11 @@ export class CmsService {
             class: 'realidad__image3'
           }
         ],
+        questions: [
+          "¿Puedo lograr contar una historia con realidad aumentada a través de mis productos?",
+          "¿Puedo lograr que a través de mis empaques le cuente una historia a mi consumidor con realidad aumentada?",
+          "¿Puedo lograr que mis consumidores vayan a cierta ubicación geográfica a donde estratégicamente quiero llevarlos?"
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -362,6 +407,12 @@ export class CmsService {
             class: 'ads__image2'
           }
         ],
+        questions: [
+          "¿Puedo lograr hablarle a grupos específicos de consumidores?",
+          "¿Puedo pautarle solo a consumidores de mi competencia?",
+          "¿Puedo pautarle a usuarios que hoy no me tienen en su hogar?",
+          "¿Puedo pautarle a personas que están cambiando sus hábitos de consumo?"
+        ],
         button: {
           content: 'contactar un comercial',
           class: 'btn-ghost'
@@ -384,6 +435,13 @@ export class CmsService {
             src: '/assets/images/Soluciones/scraper/image 40.svg',
             class: 'scraper__image2'
           }
+        ],
+        questions: [
+          "¿Las diferentes plataformas E-commerce están respetando mi precio de venta?",
+          "¿Cómo ha sido la variación de precios de mi competencia en los diferentes E-commerce?",
+          "¿Puedo tener alarmas cuando mi competencia baje de precio?",
+          "¿Puedo conocer en cuáles E-commerce están vendiendo mi producto y en cuáles estoy agotado?",
+          "¿Puedo saber si el E-commerece está promocionando la imagen de mi producto adecuada?"
         ],
         button: {
           content: 'contactar un comercial',
@@ -417,6 +475,11 @@ export class CmsService {
             src: '/assets/images/Soluciones/chatbot/image 75.png',
             class: 'chatbot__image4'
           }
+        ],
+        questions: [
+          "¿Puedo hacer que un robot le de atención al cliente humanizada a mis consumidores?",
+          "¿Puedo optimizar el proceso de PQR’s a través de un ChatBot?",
+          "¿Puedo hacer que la experiencia del usuario al interactuar con el Bot sea agradable?"
         ],
         button: {
           content: 'contactar un comercial',

@@ -50,11 +50,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿El vendedor realmente está yendo al trabajo de campo asignado?</p>
-            <p class="question">¿El vendedor organizó el punto de venta según los parámetros de la empresa?</p>
-            <p class="question">¿El vendedor identificó los agotados en el punto de venta?</p>
-            <p class="question">¿Los supermercados están cumpliendo las exhibiciones adicionales que acordamos?</p>
-            <p class="question">¿El estándar de lineal que definimos se cumple según las prioridades de la compañía?</p>
+            <li class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -95,11 +93,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿A qué precio están realmente vendiendo mi producto y el de la competencia en un punto de venta?</p>
-            <p class="question">Cuando un vendedor sale de un punto de venta, ¿Cómo dejó el punto de venta? ¿Qué tan bien organizado está el punto de venta?</p>
-            <p class="question">¿Qué agotados tengo en el punto de venta en un momento determinado?</p>
-            <p class="question">¿Cuál es el porcentaje de lineal que tengo en cualquier punto de venta?</p>
-            <p class="question">¿Cómo son las canastas cruzadas y con qué otros productos compran mi marca?</p>
+            <li class="questions__item" *ngFor="let question of machineLearning.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -139,9 +135,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Existe correlación entre las ventas de un vendedor, su género y edad?</p>
-            <p class="question">¿Qué variables influyen en la venta de mi producto?</p>
-            <p class="question">¿Estar cerca de un colegio impacta la comercialización de mi producto?</p>
+            <li class="questions__item" *ngFor="let question of solucionesDashboard.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -182,10 +178,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Puedo automatizar mis procesos en el BackOffice de mi empresa aumentando la productividad y eliminando cargos?</p>
-            <p class="question">¿Puedo automatizar la comunicación con diferentes stakeholders sin tener que utilizar un call center o empleados directos?</p>
-            <p class="question">¿Puedo eliminar procesos que requieren extensos trámites ahorrando tiempo y dinero?</p>
-            <p class="question">¿Puedo eliminar procesos para enfocar aún más a mi equipo de trabajo en sus labores?</p>
+            <li class="questions__item" *ngFor="let question of solucionesRPA.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -225,10 +220,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Podemos construir un análisis de salud de marca a bajo costo y en menos de 15 quince días?</p>
-            <p class="question">¿Puedo analizar no sólo las ciudades principales sino también poblaciones y ciudades más pequeñas?</p>
-            <p class="question">¿Existe alguna correlación entre el consumo de mi marca y los hobbies de las personas?</p>
-            <p class="question">¿Puedo conocer más allá de lo que la gente dice lo que realmente hay en las neveras o anaqueles de mis consumidores?
+            <li class="questions__item" *ngFor="let question of investigacionSegmentada.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -267,9 +261,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Puedo controlar los accesos a mi compañía por medio de un código QR?</p>
-            <p class="question">¿Puedo generar un sistema de pago a través de códigos QR en diferentes puntos de venta?</p>
-            <p class="question">¿Puedo generar sistema de conversación con mis clientes/o consumidores a partir de códigos QR?</p>
+            <li class="questions__item" *ngFor="let question of codigosQR.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -315,9 +309,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Puedo lograr contar una historia con realidad aumentada a través de mis productos?</p>
-            <p class="question">¿Puedo lograr que a través de mis empaques le cuente una historia a mi consumidor con realidad aumentada?</p>
-            <p class="question">¿Puedo lograr que mis consumidores vayan a cierta ubicación geográfica a donde estratégicamente quiero llevarlos</p>
+            <li class="questions__item" *ngFor="let question of realidadAumentada.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -352,10 +346,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Puedo lograr hablarle a grupos específicos de consumidores</p>
-            <p class="question">¿Puedo pautarle solo a consumidores de mi competencia?</p>
-            <p class="question">¿Puedo pautarle a usuarios que hoy no me tienen en su hogar?</p>
-            <p class="question">¿Puedo pautarle a personas que están cambiando sus hábitos de consumo?</p>
+            <li class="questions__item" *ngFor="let question of ads.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -398,11 +391,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Las diferentes plataformas E-commerce están respetando mi precio de venta?</p>
-            <p class="question">¿Cómo ha sido la variación de precios de mi competencia en los diferentes E-commerce?</p>
-            <p class="question">¿Puedo tener alarmas cuando mi competencia baje de precio?</p>
-            <p class="question">¿Puedo conocer en cuáles E-commerce están vendiendo mi producto y en cuáles estoy agotado?</p>
-            <p class="question">¿Puedo saber si el E-commerece está promocionando la imagen de mi producto adecuada?</p>
+            <li class="questions__item" *ngFor="let question of scraper.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -444,9 +435,9 @@
             </p>
           </div>
           <ul class="questions">
-            <p class="question">¿Puedo hacer que un robot le de atención al cliente humanizada a mis consumidores?</p>
-            <p class="question">¿Puedo optimizar el proceso de PQR’s a través de un ChatBot?</p>
-            <p class="question">¿Puedo hacer que la experiencia del usuario al interactuar con el Bot sea agradable?</p>
+            <li class="questions__item" *ngFor="let question of chatbot.questions">
+              <p class="question">{{question}}</p>
+            </li>
           </ul>
         </div>
       </div>
