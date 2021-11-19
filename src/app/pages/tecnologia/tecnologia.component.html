@@ -1,16 +1,55 @@
 <section class="tecnologia">
+  <div class="title-container">
+    <h1>{{ techContent.title }}</h1>
+  </div>
 
-<div class="title-container">
+  <div class="carousel">
+    <ul class="mobiles-slider">
+      <li class="mobiles-slider__item" *ngFor="let c of techContent.content">
+        <img
+          src="../../../assets/images/tecnologia/celFrame.png"
+          alt="Phone frame"
+          class="cel-frame"
+        />
+        <img [src]="c.img?.imgFocus" class="cel-back" />
+        <img [src]="c.img?.imgIcon" class="cel-back icon" />
+      </li>
+    </ul>
+    <span id="arrow-left" (click)="goBack()"><i class="fas fa-arrow-left"></i></span>
+    <span id="arrow-right" (click)="goNext()"><i class="fas fa-arrow-right"></i></span>
+  </div>
 
-  <h1>Nuestra tecnología</h1>
+  <div class="slider">
+    <div class="tc-container">
+      <div class="text-card gamificacion">
+        <h2 class="text-card__title">{{ gamificacion.card?.title }}</h2>
+        <p class="text-card__content">{{ gamificacion.card?.content }}</p>
+      </div>
 
-</div>
-
-<div class="img-carousel"></div>
-
-<div class="text-card">
-  <h2 class="text-card__title">Identificador de imágenes</h2>
-  <p class="text-card__content">Herramienta de reconocimiento de imagen para analizar e interpretar datos según las necesidades de la empresa. Imagina que un sistema usa sus “ojos” de la misma forma como lo hacen los humanos para la interpretación de datos a través de la captura de imágenes. “Libera el potencial escondido que tiene una imagen traducida a datos”.</p>
-</div>
-
+      <div class="text-card scrapper">
+        <h2 class="text-card__title">{{ scrapper.card?.title }}</h2>
+        <p class="text-card__content">{{ scrapper.card?.content }}</p>
+      </div>
+      <div class="text-card identificadorImagenes active">
+        <h2 class="text-card__title">
+          {{ identificadorImagenes.card?.title }}
+        </h2>
+        <p class="text-card__content">
+          {{ identificadorImagenes.card?.content }}
+        </p>
+      </div>
+      <div class="text-card automatizacionRPA">
+        <h2 class="text-card__title">{{ automatizacionRPA.card?.title }}</h2>
+        <p class="text-card__content">{{ automatizacionRPA.card?.content }}</p>
+      </div>
+      <div class="text-card modelosPredictivos">
+        <h2 class="text-card__title">{{ modelosPredictivos.card?.title }}</h2>
+        <p class="text-card__content">{{ modelosPredictivos.card?.content }}</p>
+      </div>
+      <div class="text-card bigData">
+        <h2 class="text-card__title">{{ bigData.card?.title }}</h2>
+        <p class="text-card__content">{{ bigData.card?.content }}</p>
+      </div>
+    </div>
+  </div>
 </section>

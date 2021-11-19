@@ -7,7 +7,7 @@ export interface SolucionesSection {
     title?: String;
     subTitle?: String;
     body?: String;
-    images?: Array<Images>;
     questions?: Array<String>;
+    images?: Images[];
     button?: Button;
 }
