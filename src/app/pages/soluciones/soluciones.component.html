@@ -50,8 +50,8 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of evaluacionDesempeno.questions; let i = index">
-              <p *ngIf="evaluacionDesempeno.questions && evaluacionDesempeno.questions.length" class="question" [ngClass]="{ 'active': i == this.timer%evaluacionDesempeno.questions.length}">{{question}}</p>
+            <li class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
+              <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
@@ -93,7 +93,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of machineLearning.questions">
+            <li class="questions__item" *ngFor="let question of machineLearning.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -135,7 +135,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of solucionesDashboard.questions">
+            <li class="questions__item" *ngFor="let question of solucionesDashboard.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -178,7 +178,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of solucionesRPA.questions">
+            <li class="questions__item" *ngFor="let question of solucionesRPA.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -220,7 +220,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of investigacionSegmentada.questions">
+            <li class="questions__item" *ngFor="let question of investigacionSegmentada.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -261,7 +261,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of codigosQR.questions">
+            <li class="questions__item" *ngFor="let question of codigosQR.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -309,7 +309,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of realidadAumentada.questions">
+            <li class="questions__item" *ngFor="let question of realidadAumentada.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -346,7 +346,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of ads.questions">
+            <li class="questions__item" *ngFor="let question of ads.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -391,7 +391,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of scraper.questions">
+            <li class="questions__item" *ngFor="let question of scraper.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -435,7 +435,7 @@
             </p>
           </div>
           <ul class="questions">
-            <li *ngFor="let question of chatbot.questions">
+            <li class="questions__item" *ngFor="let question of chatbot.questions">
               <p class="question">{{question}}</p>
             </li>
           </ul>

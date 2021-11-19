@@ -115,7 +115,6 @@
       max-width: 17rem;
       position: relative;
       .slider-container {
-        margin-bottom: 3em;
         overflow: hidden;
         height: 24.5em;
         .upper-tabs {
@@ -160,38 +159,45 @@
           }
         }
         .slider {
-          @include flexbox(space-between, flex-start, row);
+          display: block;
+          position: relative;
           height: 100%;
           .description {
-            @include flexbox(center, flex-start, column);
+            display: block;
             min-width: 17rem;
             max-width: 17rem;
-            flex-wrap: wrap;
           }
           .questions {
-            @include flexbox(center, center, column);
+            @include flexbox(space-evenly, center, column);
             display: none;
-            margin-top: 2em;
-            min-width: 17rem;
-            max-width: 17rem;
-            .question {
-              @include fontStyle(
-                12px,
-                16px,
-                $--fw-light,
-                $--clr-font-regular,
-                undefined
-              );
-              letter-spacing: 0.004em;
-              background-color: #fff;
-              padding: 0.75rem 1rem;
-              border-radius: 0.5rem;
-              margin-top: 0.5rem;
-
-              &.active {
-                transform: scale(1.1);
+            position: absolute;
+            top: 1.5em;
+            li {
+              transform: scale(0.85);
+              &:nth-child(2) {
+                transform: scale(0.95);
                 background-color: #ffffff;
-                font-weight: 700;box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.1), 0px 12px 17px 2px rgba(0, 0, 0, 0.07), 0px 5px 22px 4px rgba(0, 0, 0, 0.06);
+                box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.1), 0px 12px 17px 2px rgba(0, 0, 0, 0.07), 0px 5px 22px 4px rgba(0, 0, 0, 0.06);
+                p {
+                  font-weight: $--fw-bold;
+                }
+              }
+              &:nth-child(n+4) {
+                display: none;
+              }
+              .question {
+                @include fontStyle(
+                  12px,
+                  16px,
+                  $--fw-light,
+                  $--clr-font-regular,
+                  undefined
+                );
+                letter-spacing: 0.004em;
+                background-color: #fff;
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+                margin-top: 0.5rem;
               }
             }
           }
@@ -765,7 +771,6 @@
         min-width: 18.7rem;
         max-width: 18.7rem;
         .slider-container {
-          margin-bottom: 3.3em;
           .upper-tabs {
             a {
               padding: 0.55rem 0.5625rem;
@@ -1402,14 +1407,12 @@
         min-width: 22rem;
         max-width: 22rem;
         .slider-container {
-          margin-bottom: 3.12em;
           .upper-tabs {
             a {
               padding: 0.65rem 1.625rem;
               font-size: 11.2px;
               line-height: 14.168px;
               letter-spacing: 0.08px;
-              margin-bottom: em;
             }
           }
           .slider {
@@ -1727,10 +1730,8 @@
     .scraper,
     .chatbot {
       &__text {
-        min-width: 33rem;
-        max-width: 33rem;
+        max-width: 30rem;
         .slider-container {
-          margin-bottom: 3.9em;
           .upper-tabs {
             a {
               padding: 0.8rem 36px;
@@ -1741,12 +1742,12 @@
           }
           .slider {
             .description {
-              min-width: 33rem;
-              max-width: 33rem;
+              min-width: 30rem;
+              max-width: 30rem;
             }
             .questions {
-              min-width: 33rem;
-              max-width: 33rem;
+              min-width: 30rem;
+              max-width: 29rem;
             }
           }
         }
