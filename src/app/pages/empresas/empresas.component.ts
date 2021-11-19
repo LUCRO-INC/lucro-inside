@@ -3,7 +3,6 @@ import { getLocaleDirection } from '@angular/common';
 import { ClientsImg } from 'src/app/@core/models/clients-img';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
-import { NgxGlideComponent } from 'ngx-glide';
 
 @Component({
   selector: 'app-empresas',
@@ -38,6 +37,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     this.sectionTwo = p.Empresas?.find(item => item.name == 'sectionTwo') || {}
     this.sectionThree = p.Empresas?.find(item => item.name == 'sectionThree') || {}
     this.sectionFour = p.Empresas?.find(item => item.name == 'sectionFour') || {}
+    this.clientes = p.Clientes
   }
 
   ngAfterViewInit() {

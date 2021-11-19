@@ -1667,7 +1667,7 @@
       }
     }
   }
-  @include xl {
+  @media (min-width: 1400px) {
     max-width: 81.25rem;
     nav {
       min-width: 10%;
@@ -1729,7 +1729,8 @@
     .scraper,
     .chatbot {
       &__text {
-        max-width: 30rem;
+        min-width: 33rem;
+        max-width: 33rem;
         .slider-container {
           .upper-tabs {
             a {

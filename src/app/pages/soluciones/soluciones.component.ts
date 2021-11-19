@@ -145,7 +145,6 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
         let questions = s.nativeElement.querySelectorAll('.questions__item');
         let firstQuestion = questions.item(0);
         firstQuestion?.parentNode?.append(firstQuestion);
-        console.log(firstQuestion);
         ++this.timer
       })
     },2000)

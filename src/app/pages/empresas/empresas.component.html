@@ -22,25 +22,25 @@
 </section>
 
 <section class="beliefs" #beliefs>
-  <!-- <div class="glide">
-    <div class="our-clients glide__track" data-glide-el="track">
-      <h5>Ellos son nuestros clientes</h5>
-      <ul class="our-clients__brands glide__slides">
-        <li class="glide__slide" *ngFor="let cliente of clientes">
-          <img [src]="cliente.src">
-        </li>
-      </ul>
-    </div>
-  </div> -->
-  <div class="beliefs__image">
-    <img *ngFor="let img of sectionThree.images" [src]="img.src" [class]="img.class" />
+  <div class="our-clients">
+    <h5>Ellos son nuestros clientes</h5>
+    <ul class="our-clients__brands">
+      <li *ngFor="let cliente of clientes">
+        <img [src]="cliente.src">
+      </li>
+    </ul>
   </div>
-  <article class="beliefs__text">
-    <h2 class="beliefs__text--title">{{sectionThree?.title}}</h2>
-    <p class="beliefs__text--paragraph">
-      {{sectionThree?.body}}
-    </p>
-  </article>
+  <div class="section-contain">
+    <div class="beliefs__image">
+      <img *ngFor="let img of sectionThree.images" [src]="img.src" [class]="img.class" />
+    </div>
+    <article class="beliefs__text">
+      <h2 class="beliefs__text--title">{{sectionThree?.title}}</h2>
+      <p class="beliefs__text--paragraph">
+        {{sectionThree?.body}}
+      </p>
+    </article>
+  </div>
 </section>
 
 <section class="work" #work>
