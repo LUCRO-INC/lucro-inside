@@ -24,6 +24,7 @@
       overscroll-behavior-x: contain;
       scroll-snap-type: x proximity;
       width: 100%;
+      scrollbar-width: none;
       padding-inline: 30% 30%;
 
       &::-webkit-scrollbar {
@@ -88,9 +89,6 @@
             undefined
           );
           text-align: center;
-          span {
-            display: none;
-          }
         }
         &:hover,
         &.active {

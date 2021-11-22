@@ -18,7 +18,7 @@
     class="evaluacionDesempeno"
 #section01
   >
-    <div class="evaluacionDesempeno__image">
+    <div class="evaluacionDesempeno__image" [@evaluacionDesempenoImageAnimation]="evaluacionDesempeno.images?.length">
       <img
         *ngFor="let img of evaluacionDesempeno.images"
         [src]="img.src"
@@ -32,7 +32,7 @@
       </div>
     </div>
     <article class="evaluacionDesempeno__text">
-      <h3 class="evaluacionDesempeno__text--title">
+      <h3 class="evaluacionDesempeno__text--title" @fadein-left>
         {{ evaluacionDesempeno?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
@@ -42,14 +42,14 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="evaluacionDesempeno__text--subTitle">
+            <h6 class="evaluacionDesempeno__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ evaluacionDesempeno?.subTitle }}
             </h6>
-            <p class="evaluacionDesempeno__text--paragraph">
+            <p class="evaluacionDesempeno__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ evaluacionDesempeno?.body }}
             </p>
           </div>
-          <ul class="questions">
+          <ul class="questions" [@questionsFade]='evaluacionDesempeno.questions?.length'>
             <li class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
               <p class="question">{{question}}</p>
             </li>
@@ -58,8 +58,7 @@
       </div>
       <button
         routerLink="/contactenos"
-        [class]="evaluacionDesempeno.button?.class"
-      >
+        [class]="evaluacionDesempeno.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ evaluacionDesempeno.button?.content }}
       </button>
     </article>
@@ -77,7 +76,7 @@
       />
     </div>
     <article class="machineLearning__text">
-      <h3 class="machineLearning__text--title">{{ machineLearning?.title }}</h3>
+      <h3 class="machineLearning__text--title" @fadein-left>{{ machineLearning?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -85,21 +84,21 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="machineLearning__text--subTitle">
+            <h6 class="machineLearning__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ machineLearning?.subTitle }}
             </h6>
-            <p class="machineLearning__text--paragraph">
+            <p class="machineLearning__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ machineLearning?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of machineLearning.questions">
+            <li class="questions__item" *ngFor="let question of machineLearning.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="machineLearning.button?.class">
+      <button routerLink="/contactenos" [class]="machineLearning.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ machineLearning.button?.content }}
       </button>
     </article>
@@ -117,7 +116,7 @@
       />
     </div>
     <article class="solucionesDashboard__text">
-      <h3 class="solucionesDashboard__text--title">
+      <h3 class="solucionesDashboard__text--title" @fadein-left>
         {{ solucionesDashboard?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
@@ -127,15 +126,15 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="solucionesDashboard__text--subTitle">
+            <h6 class="solucionesDashboard__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ solucionesDashboard?.subTitle }}
             </h6>
-            <p class="solucionesDashboard__text--paragraph">
+            <p class="solucionesDashboard__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ solucionesDashboard?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of solucionesDashboard.questions">
+            <li class="questions__item" *ngFor="let question of solucionesDashboard.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -143,8 +142,7 @@
       </div>
       <button
         routerLink="/contactenos"
-        [class]="solucionesDashboard.button?.class"
-      >
+        [class]="solucionesDashboard.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ solucionesDashboard.button?.content }}
       </button>
     </article>
@@ -162,7 +160,7 @@
       />
     </div>
     <article class="solucionesRPA__text">
-      <h3 class="solucionesRPA__text--title">{{ solucionesRPA?.title }}</h3>
+      <h3 class="solucionesRPA__text--title" @fadein-left>{{ solucionesRPA?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -170,21 +168,21 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="solucionesRPA__text--subTitle">
+            <h6 class="solucionesRPA__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ solucionesRPA?.subTitle }}
             </h6>
-            <p class="solucionesRPA__text--paragraph">
+            <p class="solucionesRPA__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ solucionesRPA?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of solucionesRPA.questions">
+            <li class="questions__item" *ngFor="let question of solucionesRPA.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="solucionesRPA.button?.class">
+      <button routerLink="/contactenos" [class]="solucionesRPA.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ solucionesRPA.button?.content }}
       </button>
     </article>
@@ -202,7 +200,7 @@
       />
     </div>
     <article class="investigacionSegmentada__text">
-      <h3 class="investigacionSegmentada__text--title">
+      <h3 class="investigacionSegmentada__text--title" @fadein-left>
         {{ investigacionSegmentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
@@ -212,15 +210,15 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="investigacionSegmentada__text--subTitle">
+            <h6 class="investigacionSegmentada__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ investigacionSegmentada?.subTitle }}
             </h6>
-            <p class="investigacionSegmentada__text--paragraph">
+            <p class="investigacionSegmentada__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ investigacionSegmentada?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of investigacionSegmentada.questions">
+            <li class="questions__item" *ngFor="let question of investigacionSegmentada.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -228,7 +226,7 @@
       </div>
       <button
         routerLink="/contactenos"
-        [class]="investigacionSegmentada.button?.class"
+        [class]="investigacionSegmentada.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}"t
       >
         {{ investigacionSegmentada.button?.content }}
       </button>
@@ -247,7 +245,7 @@
       />
     </div>
     <article class="codigosQR__text">
-      <h3 class="codigosQR__text--title">{{ codigosQR?.title }}</h3>
+      <h3 class="codigosQR__text--title" @fadein-left>{{ codigosQR?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -255,19 +253,19 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="codigosQR__text--subTitle">{{ codigosQR?.subTitle }}</h6>
-            <p class="codigosQR__text--paragraph">
+            <h6 class="codigosQR__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ codigosQR?.subTitle }}</h6>
+            <p class="codigosQR__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ codigosQR?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of codigosQR.questions">
+            <li class="questions__item" *ngFor="let question of codigosQR.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="codigosQR.button?.class">
+      <button routerLink="/contactenos" [class]="codigosQR.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ codigosQR.button?.content }}
       </button>
     </article>
@@ -291,7 +289,7 @@
       </div>
     </div>
     <article class="realidadAumentada__text">
-      <h3 class="realidadAumentada__text--title">
+      <h3 class="realidadAumentada__text--title" @fadein-left>
         {{ realidadAumentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
@@ -301,15 +299,15 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="realidadAumentada__text--subTitle">
+            <h6 class="realidadAumentada__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">
               {{ realidadAumentada?.subTitle }}
             </h6>
-            <p class="realidadAumentada__text--paragraph">
+            <p class="realidadAumentada__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ realidadAumentada?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of realidadAumentada.questions">
+            <li class="questions__item" *ngFor="let question of realidadAumentada.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
@@ -317,7 +315,7 @@
       </div>
       <button
         routerLink="/contactenos"
-        [class]="realidadAumentada.button?.class"
+        [class]="realidadAumentada.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}"t
       >
         {{ realidadAumentada.button?.content }}
       </button>
@@ -332,7 +330,7 @@
       <img *ngFor="let img of ads.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="ads__text">
-      <h3 class="ads__text--title">{{ ads?.title }}</h3>
+      <h3 class="ads__text--title" @fadein-left>{{ ads?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -340,19 +338,19 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="ads__text--subTitle">{{ ads?.subTitle }}</h6>
-            <p class="ads__text--paragraph">
+            <h6 class="ads__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ ads?.subTitle }}</h6>
+            <p class="ads__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ ads?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of ads.questions">
+            <li class="questions__item" *ngFor="let question of ads.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="ads.button?.class">
+      <button routerLink="/contactenos" [class]="ads.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ ads.button?.content }}
       </button>
     </article>
@@ -377,7 +375,7 @@
     </div>
 
     <article class="scraper__text">
-      <h3 class="scraper__text--title">{{ scraper?.title }}</h3>
+      <h3 class="scraper__text--title" @fadein-left>{{ scraper?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -385,19 +383,19 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="scraper__text--subTitle">{{ scraper?.subTitle }}</h6>
-            <p class="scraper__text--paragraph">
+            <h6 class="scraper__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ scraper?.subTitle }}</h6>
+            <p class="scraper__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ scraper?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of scraper.questions">
+            <li class="questions__item" *ngFor="let question of scraper.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="scraper.button?.class">
+      <button routerLink="/contactenos" [class]="scraper.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ scraper.button?.content }}
       </button>
     </article>
@@ -421,7 +419,7 @@
       </div>
     </div>
     <article class="chatbot__text">
-      <h3 class="chatbot__text--title">{{ chatbot?.title }}</h3>
+      <h3 class="chatbot__text--title" @fadein-left>{{ chatbot?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
         <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
           <a class="displayed">Descripción</a>
@@ -429,19 +427,19 @@
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="chatbot__text--subTitle">{{ chatbot?.subTitle }}</h6>
-            <p class="chatbot__text--paragraph">
+            <h6 class="chatbot__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ chatbot?.subTitle }}</h6>
+            <p class="chatbot__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ chatbot?.body }}
             </p>
           </div>
           <ul class="questions">
-            <li class="questions__item" *ngFor="let question of chatbot.questions">
+            <li class="questions__item" *ngFor="let question of chatbot.questions" @fadein-right>
               <p class="question">{{question}}</p>
             </li>
           </ul>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="chatbot.button?.class">
+      <button routerLink="/contactenos" [class]="chatbot.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
         {{ chatbot.button?.content }}
       </button>
     </article>

@@ -7,11 +7,19 @@ import {
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
+import { setClassMetadata } from '@angular/core/src/r3_symbols';
+import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimation } from 'src/app/@shared/animations';
 
 @Component({
   selector: 'app-soluciones',
   templateUrl: './soluciones.component.html',
   styleUrls: ['./soluciones.component.scss'],
+  animations: [
+    fadeinLeft,
+    fadeinRight,
+    questionsFade,
+    evaluacionDesempenoImageAnimation
+  ]
 })
 export class SolucionesComponent implements OnInit, AfterViewInit {
   public clickArrow: boolean = false;
@@ -130,9 +138,9 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
         if (!entry.isIntersecting) {
           return;
         }
-        entry.target.classList.toggle('active');
-        entry.target.classList.toggle('show');
-        this.observer.unobserve(entry.target);
+        entry.target.classList.add('active');
+        entry.target.classList.add('show');
+        this.clickArrow = false;
       });
     }, options);
   }
@@ -145,6 +153,6 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
         firstQuestion?.parentNode?.append(firstQuestion);
         ++this.timer
       })
-    },2000)
+    },3000)
   }
 }

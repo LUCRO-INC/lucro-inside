@@ -787,34 +787,25 @@
 }
 
 .beliefs {
-  @include flexbox(center, center, column);
+  display: block;
   position: relative;
-  overflow-x: initial;
+  overflow-x: hidden;
   padding-bottom: 3em;
-
+  h5 {
+    @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
+    letter-spacing: 0.15px;
+    text-align: center;
+  }
   .our-clients {
-    max-width: 95%;
-    padding-block: 1em;
-    h5 {
-      @include fontStyle(20px, 24px, $--fw-light, $--clr-font-regular, undefined);
-      letter-spacing: 0.15px;
-      text-align: center;
-    }
-    &__brands {
-      position: relative;
-      @include flexbox(/*start*/space-between, center, row);
-      // flex-wrap: wrap;
-      overflow-x: scroll;
-      padding-block: 3em;
-
-      &::-webkit-scrollbar {
-        background: transparent;
-      }
-      img {
-        max-width: 100%;
-        margin-inline: 2em;
-        filter: grayscale(100%);
+    ng-container {
+      justify-content: center;
+      align-items: center;
+      ng-template {
         cursor: pointer;
+        img {
+          max-width: 200px;
+          filter: grayscale(100%);
+        }
         &:hover {
           filter: grayscale(0%);
           transform: scale(1.02);
@@ -829,9 +820,10 @@
       overflow-x: hidden;
       overflow-y: visible;
       margin-left: 4em;
+      margin-inline: auto;
       top: 3em;
-      width: 90%;
-      max-width: 336px;
+      width: 100%;
+      max-width: 297px;
       height: 263px;
 
       img {
@@ -1048,12 +1040,8 @@
     .section-contain {
       @include flexbox(space-evenly, center, row-reverse);
       .beliefs__text {
-        position: relative;
-        top: 5em;
-        width: 50%;
         min-width: 465.07px;
         max-width: 465.07px;
-        margin-left: 3em;
         &--title {
           @include fontStyle(
             45px,
@@ -1080,7 +1068,7 @@
         position: relative;
         width: 50%;
         margin-top: 5em;
-        min-width: 300px;
+        min-width: 460px;
         height: 35.5rem;
         min-height: 200px;
         max-height: 390px;
@@ -1119,7 +1107,7 @@
     .section-contain {
       .beliefs__text {
         min-width: 500px;
-        margin-left: 6em;
+        padding-left: 7em;
         &--title {
           font-size: 48px;
           line-height: 60.72px;
@@ -1407,8 +1395,8 @@
   }
 
   @include lg {
-    @include flexbox(space-evenly, center, row);
-    height: 49em;
+    @include flexbox(space-evenly, flex-start, row);
+    height: 50em;
 
     &__text {
       @include flexbox(center, flex-start, column);

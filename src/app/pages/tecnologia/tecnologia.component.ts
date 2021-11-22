@@ -24,6 +24,7 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit() {
+    window.scrollTo(0, 0);
     const p = await this.service.get();
     this.techContent = p || {};
     this.gamificacion =

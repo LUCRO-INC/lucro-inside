@@ -46,7 +46,6 @@
     letter-spacing: 0.15px;
     margin-block: 0.5em 1em;
     max-width: 25rem;
-    opacity: 0;
   }
 
   h6 {
@@ -55,7 +54,6 @@
     margin-top: 1.6875rem;
     margin-right: auto;
     max-width: 24.5rem;
-    opacity: 0;
   }
 
   p {
@@ -63,10 +61,6 @@
     letter-spacing: 0.004em;
     margin-top: 1.6875rem;
     max-width: 24.5rem;
-    opacity: 0;
-  }
-  span {
-    opacity: 0;
   }
   .btn-ghost {
     @include fontStyle(12px, 16px, $--fw-bold, $--clr-font-regular, uppercase);
@@ -79,7 +73,6 @@
     border: $--clr-font-dark 2px solid;
     border-radius: 10px;
     cursor: pointer;
-    opacity: 0;
     &:hover {
       opacity: 0.8;
     }
@@ -226,14 +219,12 @@
           position: absolute;
           width: 10.20125rem;
           top: 2.3em;
-          opacity: 0;
         }
         &.evaluacion__image2 {
           position: absolute;
           width: 9.625rem;
           left: 0.4em;
           z-index: 2;
-          opacity: 0;
         }
         &.evaluacion__image3 {
           position: absolute;
@@ -241,7 +232,6 @@
           top: 0.5em;
           left: 10.5em;
           z-index: 3;
-          opacity: 0;
         }
       }
       .video-container {
@@ -254,7 +244,6 @@
         top: 0.2em;
         left: 3em;
         z-index: 1;
-        opacity: 0;
         video {
           width: 100%;
           height: 100%;
@@ -274,7 +263,6 @@
           position: absolute;
           width: 10.11125rem;
           top: 2em;
-          opacity: 0;
         }
         &.machineLearning__image2 {
           position: absolute;
@@ -282,14 +270,12 @@
           top: 12em;
           left: 11.8em;
           z-index: 2;
-          opacity: 0;
         }
         &.machineLearning__image3 {
           position: absolute;
           width: 8.419375rem;
           left: 1.5em;
           z-index: 1;
-          opacity: 0;
         }
       }
     }
@@ -312,7 +298,6 @@
           position: absolute;
           width: 14.776875rem;
           left: 1em;
-          opacity: 0;
         }
       }
     }
@@ -335,7 +320,6 @@
         &.rpa__image2 {
           position: absolute;
           width: 10.49125rem;
-          opacity: 0;
         }
       }
     }
@@ -354,12 +338,10 @@
           width: 9.445rem;
           top: 0.2em;
           left: 3em;
-          opacity: 0;
         }
         &.investigacion__image2 {
           position: absolute;
           width: 13.6875rem;
-          opacity: 0;
         }
       }
     }
@@ -377,14 +359,12 @@
           position: absolute;
           width: 10.381875rem;
           z-index: 1;
-          opacity: 0;
         }
         &.codigos__image2 {
           position: absolute;
           width: 9.080625rem;
           top: 3.73em;
           left: 3.75em;
-          opacity: 0;
         }
       }
     }
@@ -402,14 +382,12 @@
           position: absolute;
           width: 10.20125rem;
           top: 2.3em;
-          opacity: 0;
         }
         &.realidad__image2 {
           position: absolute;
           width: 9.625rem;
           left: 0.4em;
           z-index: 2;
-          opacity: 0;
         }
         &.realidad__image3 {
           position: absolute;
@@ -417,7 +395,6 @@
           top: 0.5em;
           left: 10.5em;
           z-index: 3;
-          opacity: 0;
         }
       }
       .video-container {
@@ -430,7 +407,6 @@
         top: 0.2em;
         left: 2.8em;
         z-index: 1;
-        opacity: 0;
         video {
           width: 100%;
           height: 100%;
@@ -451,13 +427,11 @@
           position: absolute;
           width: 9.199375rem;
           top: 2em;
-          opacity: 0;
         }
         &.ads__image2 {
           position: absolute;
           width: 8.8875rem;
           left: 4em;
-          opacity: 0;
         }
       }
     }
@@ -475,7 +449,6 @@
           position: absolute;
           width: 9.1275rem;
           top: 5.7em;
-          opacity: 0;
         }
         &.scraper__image2 {
           position: absolute;
@@ -483,7 +456,6 @@
           pointer-events: none;
           left: 0.3em;
           z-index: 2;
-          opacity: 0;
         }
       }
       .scroll_compara {
@@ -497,7 +469,6 @@
           top: 1.8em;
           left: 4.4em;
           z-index: 1;
-          opacity: 0;
         }
       }
     }
@@ -515,14 +486,12 @@
           position: absolute;
           width: 10.231875rem;
           top: 2em;
-          opacity: 0;
         }
         &.chatbot__image2 {
           position: absolute;
           width: 8.52rem;
           left: 1.5em;
           z-index: 2;
-          opacity: 0;
         }
         &.chatbot__image3 {
           position: absolute;
@@ -530,7 +499,6 @@
           top: 11.5em;
           left: 11.6em;
           z-index: 3;
-          opacity: 0;
         }
         &.chatbot__image4 {
           position: absolute;
@@ -538,7 +506,6 @@
           top: 14.7em;
           left: 10.6em;
           z-index: 4;
-          opacity: 0;
         }
       }
       .video-container {
@@ -551,7 +518,6 @@
         top: 0.2em;
         left: 3.2em;
         z-index: 1;
-        opacity: 0;
         video {
           width: 100%;
           height: 100%;
@@ -575,41 +541,41 @@
     }
 
     &.show {
-      h3 {
-        animation: fadein-left 500ms ease-in forwards;
-      }
-      h6 {
-        animation: fadein-left 500ms ease-in 200ms forwards;
-      }
-      p,
-      span {
-        animation: fadein-left 500ms ease-in 400ms forwards;
-      }
-      .btn-ghost {
-        animation: fadein-left 500ms ease-in 600ms forwards;
-      }
-      .evaluacionDesempeno,
-      .machineLearning,
-      .solucionesDashboard,
-      .solucionesRPA,
-      .investigacionSegmentada,
-      .codigosQR,
-      .realidadAumentada,
-      .ads,
-      .scraper,
-      .chatbot {
-        &__text {
-          .slider-container {
-            .slider {
-              .questions {
-                .question {
-                  animation: fadein-right 500ms ease-in 400ms forwards;
-                }
-              }
-            }
-          }
-        }
-      }
+      // h3 {
+      //   animation: fadein-left 500ms ease-in forwards;
+      // }
+      // h6 {
+      //   animation: fadein-left 500ms ease-in 200ms forwards;
+      // }
+      // p,
+      // span {
+      //   animation: fadein-left 500ms ease-in 400ms forwards;
+      // }
+      // .btn-ghost {
+      //   animation: fadein-left 500ms ease-in 600ms forwards;
+      // }
+      // .evaluacionDesempeno,
+      // .machineLearning,
+      // .solucionesDashboard,
+      // .solucionesRPA,
+      // .investigacionSegmentada,
+      // .codigosQR,
+      // .realidadAumentada,
+      // .ads,
+      // .scraper,
+      // .chatbot {
+      //   &__text {
+      //     .slider-container {
+      //       .slider {
+      //         .questions {
+      //           .question {
+      //             animation: fadein 100ms linear forwards;
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
       &.evaluacionDesempeno {
         .evaluacion__image1 {
           animation: fadein-right 500ms ease-in forwards;
@@ -1622,7 +1588,6 @@
           top: 3.44em;
           left: 8.8em;
           z-index: 1;
-          opacity: 0;
           iframe {
             width: 100%;
             height: 100%;
