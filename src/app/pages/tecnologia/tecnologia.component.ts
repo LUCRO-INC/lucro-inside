@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { TechCmsService } from 'src/app/@core/services/techCms.service';
 import { Tecnologia } from 'src/app/@core/models/techModels/tecnologia';
 import { TecnologiaSection } from 'src/app/@core/models/techModels/tecnologiaSection';
-import { ArrayType } from '@angular/compiler';
 
 @Component({
   selector: 'app-tecnologia',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './@shared/shared.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,7 @@ import { HomeComponent } from './pages/home/home.component';
     SharedModule,
     BrowserAnimationsModule,
     RouterModule,
+    NoopAnimationsModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}

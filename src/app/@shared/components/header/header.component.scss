@@ -96,9 +96,6 @@ header {
 
           p {
             position: relative;
-            span {
-              display: none;
-            }
             &::after {
               content: '';
               position: absolute;
@@ -285,9 +282,6 @@ header {
               p {
                 font-weight: $--fw-black;
                 text-decoration: underline;
-                span {
-                  display: initial;
-                }
               }
             }
           }

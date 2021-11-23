@@ -19,6 +19,7 @@ export let fadeinRight = trigger('fadein-right', [
   state('void', style({ opacity: 0, transform: 'translateX(5%)' })),
   transition(':enter', [animate('500ms ease-in')]),
 ]);
+
 export let questionsFade = trigger('questionsFade', [
   state('void', style({ opacity: 0, transform: 'translateX(5%)' })),
   transition('* => *', [
@@ -41,3 +42,10 @@ export let evaluacionDesempenoImageAnimation = trigger(
     ], { optional: true })
   ])]
 );
+
+export let mainNavbarAnimation = trigger('mainNavbarAnimation', [
+  state('void', style({ transform: 'translateY(-120%)' })),
+  transition(':enter',  [
+    animate(200)
+  ])
+])

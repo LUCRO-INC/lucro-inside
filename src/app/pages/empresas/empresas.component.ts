@@ -103,10 +103,10 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
   }
 
   onSwiper(swiper: Swiper) {
-    console.log(swiper);
+    // console.log(swiper);
   }
   onSlideChange() {
-    console.log('slide change');
+    // console.log('slide change');
   }
 
 }

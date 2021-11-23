@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { fadeinLeft } from 'src/app/@shared/animations';
 
 @Component({
   selector: 'app-header',

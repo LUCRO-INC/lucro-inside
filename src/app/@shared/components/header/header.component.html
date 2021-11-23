@@ -7,41 +7,41 @@
     <p>Menú</p>
     <span class="hamburger"></span>
   </button>
-  <nav class="main-navbar">
+  <nav class="main-navbar" @mainNavbarAnimation>
     <ul class="navbar">
       <li class="navbar__item">
         <a routerLink="/empresas" routerLinkActive="active" class="navbar__item--link"
-          (click)="clickHamburger = !clickHamburger">
+          (click)="clickHamburger = false">
           <div class="L"></div>
-          <p><span>Ir a </span>Empresas</p>
+          <p>Empresas</p>
         </a>
       </li>
       <li class="navbar__item">
         <a routerLink="/soluciones" routerLinkActive="active" class="navbar__item--link"
-          (click)="clickHamburger = !clickHamburger">
+          (click)="clickHamburger = false">
           <div class="U"></div>
-          <p><span>Ir a </span>Soluciones</p>
+          <p>Soluciones</p>
         </a>
       </li>
       <li class="navbar__item">
         <a routerLink="/tecnologia" routerLinkActive="active" class="navbar__item--link"
-          (click)="clickHamburger = !clickHamburger">
+          (click)="clickHamburger = false">
           <div class="C"></div>
-          <p><span>Ir a </span>Tecnología</p>
+          <p>Tecnología</p>
         </a>
       </li>
       <li class="navbar__item">
         <a routerLink="/consumidores" routerLinkActive="active" class="navbar__item--link"
-          (click)="clickHamburger = !clickHamburger">
+          (click)="clickHamburger = false">
           <div class="R"></div>
-          <p><span>Ir a </span>Consumidores</p>
+          <p>Consumidores</p>
         </a>
       </li>
       <li class="navbar__item">
         <a routerLink="/contactenos" routerLinkActive="active" class="navbar__item--link"
-          (click)="clickHamburger = !clickHamburger">
+          (click)="clickHamburger = false">
           <div class="O"></div>
-          <p><span>Ir a </span>Contáctenos</p>
+          <p>Contáctenos</p>
         </a>
       </li>
     </ul>
