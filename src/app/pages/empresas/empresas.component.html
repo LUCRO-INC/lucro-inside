@@ -24,7 +24,15 @@
 <section class="beliefs" #beliefs>
   <h5>Ellos son nuestros clientes</h5>
   <div class="our-clients">
-    <owl-carousel-o [options]="customOptions">
+    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+      <ng-template swiperSlide *ngFor="let cliente of clientes">
+        <img [src]="cliente.src">
+      </ng-template>
+    </swiper>
+
+
+
+    <!--<owl-carousel-o [options]="customOptions">
 
       <ng-container *ngFor="let cliente of clientes">
         <ng-template carouselSlide [id]="cliente.name">
@@ -32,7 +40,7 @@
         </ng-template>
       </ng-container>
 
-    </owl-carousel-o>
+    </owl-carousel-o>-->
   </div>
   <div class="section-contain">
     <div class="beliefs__image">

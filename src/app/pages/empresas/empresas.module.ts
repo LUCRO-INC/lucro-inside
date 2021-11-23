@@ -4,7 +4,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { EmpresasRoutingModule } from './empresas-routing.module';
 import { EmpresasComponent } from './empresas.component';
-
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [EmpresasComponent],
@@ -12,6 +12,7 @@ import { EmpresasComponent } from './empresas.component';
     CommonModule,
     EmpresasRoutingModule,
     CarouselModule,
+    SwiperModule
   ]
 })
 export class EmpresasModule { }

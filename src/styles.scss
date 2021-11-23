@@ -1,4 +1,8 @@
 @import '~@glidejs/glide/src/assets/sass/glide.core';
+
+@import '~swiper/scss';
+@import '~swiper/scss/navigation';
+@import '~swiper/scss/pagination';
 @import "../theme/settings";
 
 @font-face {

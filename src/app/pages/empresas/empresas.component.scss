@@ -1,5 +1,29 @@
 @import "./theme/settings";
 
+::ng-deep {
+  .swiper-wrapper {
+    //justify-content: center;
+  }
+
+  .swiper-slide {
+    width: auto;
+    cursor: pointer;
+    img {
+      max-width: 200px;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: grayscale(0%);
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0px !important;
+  }
+}
+
 .home {
   @include flexbox(center, center, column);
   overflow: hidden;
@@ -74,13 +98,7 @@
     margin-top: 2.5em;
 
     &--title {
-      @include fontStyle(
-        24px,
-        30.36px,
-        $--fw-black,
-        $--clr-font-dark,
-        undefined
-      );
+      @include fontStyle(24px, 30.36px, $--fw-black, $--clr-font-dark, undefined);
       width: 90%;
       margin-bottom: 0.125em;
       opacity: 0;
@@ -96,25 +114,25 @@
 
   &.show {
     .home__image {
-      &1{
+      &1 {
         animation: vertical-float 40000ms linear 1700ms infinite forwards;
       }
-      &2{
+      &2 {
         animation: huge-fadein 1000ms linear 800ms forwards;
       }
-      &3{
+      &3 {
         animation: fadein-right 500ms linear 1700ms forwards;
       }
-      &4{
+      &4 {
         animation: fadein 400ms ease-in 2100ms forwards;
       }
-      &5{
+      &5 {
         animation: fadein 400ms ease-in 2300ms forwards;
       }
-      &6{
+      &6 {
         animation: fadein 400ms ease-in 2500ms forwards;
       }
-      &7{
+      &7 {
         animation: fadein-right 400ms ease-in 200ms forwards;
       }
     }
@@ -251,7 +269,8 @@
 
   @include lg {
     height: 85vh;
-    background: radial-gradient(30% 100% at 0% 50%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%), radial-gradient(100% 100% at 100% 10%, #cdebd99d 0%, rgba(205, 235, 217, 0) 80%);
+    background: radial-gradient(30% 100% at 0% 50%, rgba(249, 190, 185, 0.267) 0%, rgba(239, 93, 80, 0) 80%),
+      radial-gradient(100% 100% at 100% 10%, #cdebd99d 0%, rgba(205, 235, 217, 0) 80%);
     padding-inline: 6%;
     @include flexbox(space-evenly, center, row-reverse);
 
@@ -260,25 +279,13 @@
       max-width: 430px;
       width: 50%;
       &--title {
-        @include fontStyle(
-          45px,
-          55px,
-          $--fw-black,
-          $--clr-font-dark,
-          undefined
-        );
+        @include fontStyle(45px, 55px, $--fw-black, $--clr-font-dark, undefined);
         width: 90%;
         margin-bottom: 0.125em;
       }
       &--paragraph {
         width: 90%;
-        @include fontStyle(
-          15px,
-          20px,
-          $--fw-light,
-          $--clr-font-light,
-          undefined
-        );
+        @include fontStyle(15px, 20px, $--fw-light, $--clr-font-light, undefined);
       }
     }
     &__image {
@@ -430,7 +437,7 @@
 
 .purpose {
   @include flexbox(center, center, column);
-  background-color: #EAFD81;
+  background-color: #eafd81;
   padding-top: 6em;
   margin-block: 0.5em;
   position: relative;
@@ -439,7 +446,7 @@
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 50px;
     position: absolute;
@@ -510,13 +517,7 @@
     max-width: 373px;
 
     &--title {
-      @include fontStyle(
-        24px,
-        30.36px,
-        $--fw-black,
-        $--clr-font-dark,
-        undefined
-      );
+      @include fontStyle(24px, 30.36px, $--fw-black, $--clr-font-dark, undefined);
       width: 100%;
       margin-bottom: 0.725em;
       opacity: 0;
@@ -536,16 +537,16 @@
 
   &.show {
     .purpose__image {
-      &1{
+      &1 {
         animation: fadein-down 800ms ease-in 800ms forwards;
       }
-      &2{
+      &2 {
         animation: rotate-infinite 400000ms linear infinite;
       }
-      &3{
+      &3 {
         animation: fadein-right 400ms linear 1200ms forwards;
       }
-      &4{
+      &4 {
         animation: huge-fadein-left 1000ms linear 1500ms forwards;
       }
     }
@@ -674,25 +675,13 @@
       margin-left: 3em;
       z-index: 3;
       &--title {
-        @include fontStyle(
-          45px,
-          55px,
-          $--fw-black,
-          $--clr-font-dark,
-          undefined
-        );
+        @include fontStyle(45px, 55px, $--fw-black, $--clr-font-dark, undefined);
         width: 90%;
         margin-bottom: 0.5em;
       }
       &--paragraph {
         width: 90%;
-        @include fontStyle(
-          15px,
-          20px,
-          $--fw-light,
-          $--clr-font-light,
-          undefined
-        );
+        @include fontStyle(15px, 20px, $--fw-light, $--clr-font-light, undefined);
       }
     }
 
@@ -886,13 +875,7 @@
       top: 43.5rem;
 
       &--title {
-        @include fontStyle(
-          24px,
-          30.36px,
-          $--fw-black,
-          $--clr-font-dark,
-          undefined
-        );
+        @include fontStyle(24px, 30.36px, $--fw-black, $--clr-font-dark, undefined);
         width: 100%;
         margin-bottom: 0.725em;
         opacity: 0;
@@ -909,19 +892,19 @@
 
   &.show {
     .beliefs__image {
-      &1{
+      &1 {
         animation: fadein-right 500ms ease-in 800ms forwards;
       }
-      &2{
+      &2 {
         animation: fadein-down 500ms ease-in 1000ms forwards;
       }
-      &3{
+      &3 {
         animation: fadein-right 2000ms ease-in 1500ms forwards;
       }
-      &4{
+      &4 {
         animation: fadein 500ms ease-in 1900ms forwards;
       }
-      &5{
+      &5 {
         animation: vertical-float 50000ms linear 2300ms infinite;
       }
     }
@@ -1043,25 +1026,13 @@
         min-width: 465.07px;
         max-width: 465.07px;
         &--title {
-          @include fontStyle(
-            45px,
-            55px,
-            $--fw-black,
-            $--clr-font-dark,
-            undefined
-          );
+          @include fontStyle(45px, 55px, $--fw-black, $--clr-font-dark, undefined);
           width: 90%;
           margin-bottom: 0.5em;
         }
         &--paragraph {
           width: 90%;
-          @include fontStyle(
-            15px,
-            20px,
-            $--fw-light,
-            $--clr-font-light,
-            undefined
-          );
+          @include fontStyle(15px, 20px, $--fw-light, $--clr-font-light, undefined);
         }
       }
       .beliefs__image {
@@ -1115,13 +1086,7 @@
           margin-bottom: 0.5em;
         }
         &--paragraph {
-          @include fontStyle(
-            $--fs-p,
-            22px,
-            $--fw-light,
-            $--clr-font-light,
-            undefined
-          );
+          @include fontStyle($--fs-p, 22px, $--fw-light, $--clr-font-light, undefined);
           width: 100%;
           font-size: $--fs-p;
           line-height: 22px;
@@ -1244,13 +1209,7 @@
     }
 
     .btn-ghost {
-      @include fontStyle(
-        $--fs-p,
-        14px,
-        $--fw-bold,
-        $--clr-font-dark,
-        uppercase
-      );
+      @include fontStyle($--fs-p, 14px, $--fw-bold, $--clr-font-dark, uppercase);
       background: transparent;
       width: 90%;
       padding: 0.75rem;
@@ -1268,19 +1227,19 @@
 
   &.show {
     .work__image {
-      &1{
+      &1 {
         animation: fadein 500ms ease-in 800ms forwards;
       }
-      &2{
+      &2 {
         animation: pop-in 2000ms linear 1200ms infinite;
       }
-      &3{
+      &3 {
         animation: pop-in 2000ms linear 1600ms infinite;
       }
-      &4{
+      &4 {
         animation: fadein 500ms ease-in 2100ms forwards;
       }
-      &5{
+      &5 {
         animation: rotate-bottom-center 800ms ease-in 700ms forwards;
       }
     }
@@ -1406,25 +1365,13 @@
       max-width: 465.07px;
       margin-left: 3em;
       &--title {
-        @include fontStyle(
-          45px,
-          55px,
-          $--fw-black,
-          $--clr-font-dark,
-          undefined
-        );
+        @include fontStyle(45px, 55px, $--fw-black, $--clr-font-dark, undefined);
         width: 90%;
         margin-bottom: 0.5em;
       }
       &--paragraph {
         width: 90%;
-        @include fontStyle(
-          15px,
-          20px,
-          $--fw-light,
-          $--clr-font-light,
-          undefined
-        );
+        @include fontStyle(15px, 20px, $--fw-light, $--clr-font-light, undefined);
       }
     }
     &__image {
@@ -1476,7 +1423,7 @@
       min-width: 400px;
       max-width: 586px;
       margin-left: 6em;
-      padding-inline: .5em;
+      padding-inline: 0.5em;
       &--title {
         font-size: 48px;
         line-height: 60.72px;
@@ -1484,13 +1431,7 @@
         margin-bottom: 0.5em;
       }
       &--paragraph {
-        @include fontStyle(
-          $--fs-p,
-          22px,
-          $--fw-light,
-          $--clr-font-light,
-          undefined
-        );
+        @include fontStyle($--fs-p, 22px, $--fw-light, $--clr-font-light, undefined);
         width: 90%;
         font-size: $--fs-p;
         line-height: 22px;

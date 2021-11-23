@@ -5,6 +5,10 @@ import { ClientsImg } from 'src/app/@core/models/clients-img';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
 
+import SwiperCore, { Swiper, SwiperOptions, Pagination, Autoplay } from 'swiper';
+
+SwiperCore.use([Pagination, Autoplay]);
+
 @Component({
   selector: 'app-empresas',
   templateUrl: './empresas.component.html',
@@ -12,23 +16,31 @@ import { CmsService } from 'src/app/@core/services/cms.service';
 })
 export class EmpresasComponent implements OnInit, AfterViewInit {
   @ViewChild('home')
-  home:ElementRef = {} as ElementRef
+  home: ElementRef = {} as ElementRef
   @ViewChild('purpose')
-  purpose:ElementRef = {} as ElementRef
+  purpose: ElementRef = {} as ElementRef
   @ViewChild('beliefs')
-  beliefs:ElementRef = {} as ElementRef
+  beliefs: ElementRef = {} as ElementRef
   @ViewChild('work')
-  work:ElementRef = {} as ElementRef
+  work: ElementRef = {} as ElementRef
 
   public observer: any;
 
-  public sectionOne:Section = {}
-  public sectionTwo:Section = {}
-  public sectionThree:Section = {}
-  public sectionFour:Section = {}
+  public sectionOne: Section = {}
+  public sectionTwo: Section = {}
+  public sectionThree: Section = {}
+  public sectionFour: Section = {}
   public clientes: any
 
-  constructor(private service:CmsService) { }
+  config: SwiperOptions = {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    pagination: { dynamicBullets: true, clickable: true },
+    autoplay: { disableOnInteraction: false, delay: 2500, pauseOnMouseEnter: true },
+    //slideClass: 'swipper-slide-custom'
+  };
+
+  constructor(private service: CmsService) { }
 
   async ngOnInit() {
     this.intersectionObserver()
@@ -73,13 +85,13 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     nav: false
   }
 
-  intersectionObserver()  {
+  intersectionObserver() {
     let options = {
       root: null,
       rootMargin: '0px',
       threshold: 0.5,
     }
-  this.observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
           return;
@@ -88,6 +100,13 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
         this.observer.unobserve(entry.target)
       })
     }, options);
-}
+  }
+
+  onSwiper(swiper: Swiper) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
 
 }
