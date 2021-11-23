@@ -36,6 +36,7 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     slidesPerView: 'auto',
     spaceBetween: 30,
     pagination: { dynamicBullets: true, clickable: true },
+    scrollbar: { draggable: true },
     autoplay: { disableOnInteraction: false, delay: 2500, pauseOnMouseEnter: true },
     //slideClass: 'swipper-slide-custom'
   };

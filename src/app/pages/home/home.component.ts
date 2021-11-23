@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -36,13 +36,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public hasFooter: boolean = false;
   public observer: any;
   public actives = document.querySelectorAll('.active');
+  public x: any;
 
   constructor() { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this.sliderTimer();
+    // this.sliderTimer();
     this.intersectionObserver();
+    this.x = window.matchMedia('(max-width: 992px)')
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +53,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.observer.observe(this.C.nativeElement);
     this.observer.observe(this.R.nativeElement);
     this.observer.observe(this.O.nativeElement);
+    console.log(this.x)
   }
 
   ngOnDestroy() {
@@ -58,9 +61,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       clearInterval(this.id);
   }
 
+
   goToL() {
     this.L.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
-    this.timer = 0;
+    this.timer = 1;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
       a.classList.remove('active')
@@ -72,7 +76,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   goToU() {
     this.U.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
-    this.timer = 1;
+    this.timer = 2;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
       a.classList.remove('active')
@@ -84,7 +88,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   goToC() {
     this.C.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
-    this.timer = 2;
+    this.timer = 3;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
       a.classList.remove('active')
@@ -96,7 +100,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   goToR() {
     this.R.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
-    this.timer = 3;
+    this.timer = 4;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
       a.classList.remove('active')
@@ -108,7 +112,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   goToO() {
     this.O.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
-    this.timer = 4;
+    this.timer = 0;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
       a.classList.remove('active')
@@ -119,21 +123,23 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     oc?.classList.add('active')
   }
 
-  sliderTimer() {
-    this.id = setInterval(() => {
-      if (this.timer == 0) {
-        this.goToU();
-      } else if (this.timer == 1) {
-        this.goToC();
-      } else if (this.timer == 2) {
-        this.goToR();
-      } else if (this.timer == 3) {
-        this.goToO();
-      } else if (this.timer == 4) {
-        this.goToL();
-      }
-    }, 4000)
-  }
+  // sliderTimer() {
+  //   if (this.x.matches == true) {
+  //     this.id = setInterval(() => {
+  //       if (this.timer == 0) {
+  //         this.goToL();
+  //       } else if (this.timer == 1) {
+  //         this.goToU();
+  //       } else if (this.timer == 2) {
+  //         this.goToC();
+  //       } else if (this.timer == 3) {
+  //         this.goToR();
+  //       } else if (this.timer == 4) {
+  //         this.goToO();
+  //       }
+  //     }, 4000)
+  //   }
+  // }
 
   intersectionObserver() {
     let options = {
