@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private l = document.querySelector('#L');
   private lc = document.querySelector('#Lc');
   private u = document.querySelector('#U');
@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private o = document.querySelector('#O');
   private oc = document.querySelector('#Oc');
 
-  public timer:number = 0;
+  public timer: number = 0;
+
+  private id: any;
 
   @ViewChild('L')
   L: ElementRef = {} as ElementRef;
@@ -43,7 +45,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.intersectionObserver();
   }
 
-  ngAfterViewInit():void {
+  ngAfterViewInit(): void {
     this.observer.observe(this.L.nativeElement);
     this.observer.observe(this.U.nativeElement);
     this.observer.observe(this.C.nativeElement);
@@ -51,8 +53,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.observer.observe(this.O.nativeElement);
   }
 
+  ngOnDestroy() {
+    if (this.id)
+      clearInterval(this.id);
+  }
+
   goToL() {
-    this.L.nativeElement.scrollIntoView({block: "end", inline: "center", behavior: "smooth"});
+    this.L.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
     this.timer = 0;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
@@ -64,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     lc?.classList.add('active')
   }
   goToU() {
-    this.U.nativeElement.scrollIntoView({block: "end", inline: "center", behavior: "smooth"});
+    this.U.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
     this.timer = 1;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
@@ -76,7 +83,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     uc?.classList.add('active')
   }
   goToC() {
-    this.C.nativeElement.scrollIntoView({block: "end", inline: "center", behavior: "smooth"});
+    this.C.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
     this.timer = 2;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
@@ -88,7 +95,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     cc?.classList.add('active')
   }
   goToR() {
-    this.R.nativeElement.scrollIntoView({block: "end", inline: "center", behavior: "smooth"});
+    this.R.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
     this.timer = 3;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
@@ -100,7 +107,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     rc?.classList.add('active')
   }
   goToO() {
-    this.O.nativeElement.scrollIntoView({block: "end", inline: "center", behavior: "smooth"});
+    this.O.nativeElement.scrollIntoView({ block: "end", inline: "center", behavior: "smooth" });
     this.timer = 4;
     let actives = document.querySelectorAll('.active');
     actives.forEach(a => {
@@ -113,8 +120,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   sliderTimer() {
-    setInterval(() => {
-      if(this.timer == 0){
+    this.id = setInterval(() => {
+      if (this.timer == 0) {
         this.goToU();
       } else if (this.timer == 1) {
         this.goToC();
@@ -125,7 +132,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       } else if (this.timer == 4) {
         this.goToL();
       }
-    },4000)
+    }, 4000)
   }
 
   intersectionObserver() {

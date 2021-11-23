@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   ElementRef,
   ViewChild,
+  OnDestroy,
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
@@ -21,14 +22,14 @@ import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimati
     evaluacionDesempenoImageAnimation
   ]
 })
-export class SolucionesComponent implements OnInit, AfterViewInit {
+export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   public clickArrow: boolean = false;
 
-  public timer:number = 0;
+  public timer: number = 0;
 
   // public hasFooter: boolean = false;
 
-  public sections:Array<ElementRef> = [];
+  public sections: Array<ElementRef> = [];
 
   @ViewChild('section01')
   section01: ElementRef = {} as ElementRef;
@@ -66,7 +67,9 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   public currentSel: String = 'machineLearning';
   public observer: any;
 
-  constructor(private service: CmsService) {}
+  private id: any;
+
+  constructor(private service: CmsService) { }
 
   async ngOnInit() {
     this.sliderTimer();
@@ -119,9 +122,15 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
     ]
   }
 
+  ngOnDestroy() {
+    if (this.id) {
+      clearInterval(this.id);
+    }
+  }
+
   goToSection(solucionLabel: String) {
     this.soluciones.forEach((s, idx) => {
-      if(s.label == solucionLabel) {
+      if (s.label == solucionLabel) {
         this.sections[idx].nativeElement.scrollIntoView(true);
       }
     })
@@ -146,13 +155,13 @@ export class SolucionesComponent implements OnInit, AfterViewInit {
   }
 
   sliderTimer() {
-    setInterval(() => {
+    this.id = setInterval(() => {
       this.sections.forEach(s => {
         let questions = s.nativeElement.querySelectorAll('.questions__item');
         let firstQuestion = questions.item(0);
         firstQuestion?.parentNode?.append(firstQuestion);
         ++this.timer
       })
-    },3000)
+    }, 3000)
   }
 }
