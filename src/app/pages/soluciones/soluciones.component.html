@@ -1,5 +1,5 @@
 <section class="soluciones">
-  <nav>
+  <nav id="mainNavbar">
     <ul>
       <li *ngFor="let solucion of soluciones">
         <button
@@ -36,9 +36,9 @@
         {{ evaluacionDesempeno?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -78,9 +78,9 @@
     <article class="machineLearning__text">
       <h3 class="machineLearning__text--title" @fadein-left>{{ machineLearning?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -120,9 +120,9 @@
         {{ solucionesDashboard?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -162,9 +162,9 @@
     <article class="solucionesRPA__text">
       <h3 class="solucionesRPA__text--title" @fadein-left>{{ solucionesRPA?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -204,9 +204,9 @@
         {{ investigacionSegmentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -247,9 +247,9 @@
     <article class="codigosQR__text">
       <h3 class="codigosQR__text--title" @fadein-left>{{ codigosQR?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -293,9 +293,9 @@
         {{ realidadAumentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -332,9 +332,9 @@
     <article class="ads__text">
       <h3 class="ads__text--title" @fadein-left>{{ ads?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -377,9 +377,9 @@
     <article class="scraper__text">
       <h3 class="scraper__text--title" @fadein-left>{{ scraper?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -421,9 +421,9 @@
     <article class="chatbot__text">
       <h3 class="chatbot__text--title" @fadein-left>{{ chatbot?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs" (click)="clickArrow = !clickArrow" [ngClass]="{ unfold: clickArrow }">
-          <a class="displayed">Descripción</a>
-          <a class="hidden">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Descripción</a>
+          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
         </div>
         <div class="slider">
           <div class="description">

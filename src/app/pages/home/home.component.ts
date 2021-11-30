@@ -41,19 +41,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0);
     // this.sliderTimer();
     this.intersectionObserver();
     this.x = window.matchMedia('(max-width: 992px)')
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.observer.observe(this.L.nativeElement);
     this.observer.observe(this.U.nativeElement);
     this.observer.observe(this.C.nativeElement);
     this.observer.observe(this.R.nativeElement);
     this.observer.observe(this.O.nativeElement);
-    console.log(this.x)
+    // console.log(this.x)
   }
 
   ngOnDestroy() {

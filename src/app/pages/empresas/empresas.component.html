@@ -23,7 +23,7 @@
 
 <section class="beliefs" #beliefs>
   <h5>Ellos son nuestros clientes</h5>
-  <div class="our-clients">
+  <div class="our-clients specificator">
     <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
       <ng-template swiperSlide *ngFor="let cliente of clientes">
         <img [src]="cliente.src">

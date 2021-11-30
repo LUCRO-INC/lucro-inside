@@ -1,4 +1,7 @@
 @import "theme/settings";
+* {
+  scroll-behavior: initial;
+}
 
 .home {
   @include flexbox(center, center, column);
@@ -6,7 +9,6 @@
   margin-top: 10em;
   overflow: hidden;
   padding-bottom: 2em;
-  transition: initial;
   #viewTarget {
     position: absolute;
     width: 17.5rem;
@@ -40,6 +42,7 @@
         position: relative;
         cursor: pointer;
         scroll-snap-align: center;
+        transition: all 2000ms linear;
         .L {
           background: url("/assets/images/Header/01empresas.png");
           background-repeat: no-repeat;

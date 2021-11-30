@@ -7,7 +7,7 @@
     position: fixed;
     width: 0.375rem;
     top: 15vh;
-    left: 0;
+    left: 0; transition: all 0s;
     ul {
       @include flexbox(space-between, flex-start, column);
       height: 21.25rem;
@@ -38,6 +38,10 @@
           }
         }
       }
+    }
+    &.float {
+      position: absolute;
+      top: 870vh;
     }
   }
 
@@ -102,7 +106,6 @@
     max-width: 96%;
     top: 69px;
     padding-block: 5em;
-    position: relative;
     margin-bottom: 15em;
     &__image {
       position: relative;
@@ -1320,7 +1323,7 @@
             }
             .solucion-label {
               display: block;
-              width: 95%;
+              max-width: 4.2025rem;
               text-align: right;
               @include fontStyle(
                 11.2px,
@@ -1334,6 +1337,30 @@
             &:hover,
             &:active,
             &:focus {
+              .solucion-label {
+                @include fontStyle(
+                  12px,
+                  14.168px,
+                  $--fw-bold,
+                  $--clr-font-regular,
+                  undefined
+                );
+                position: relative;
+                right: 0;
+                &::after {
+                  content: "";
+                  position: absolute;
+                  width: 72px;
+                  height: 2px;
+                  bottom: -0.4em;
+                  right: 0;
+                  background: $--clr-lucro-red;
+                }
+              }
+            }
+          }
+          &:nth-child(5) {
+            button {
               .solucion-label {
                 @include fontStyle(
                   12px,
@@ -1682,11 +1709,20 @@
             .solucion-label {
               font-size: 14px;
               line-height: 17.71px;
-              width: 100%;
+              max-width: 5.253125rem;
             }
             &:hover,
             &:active,
             &:focus {
+              .solucion-label {
+                font-size: 16px;
+                line-height: 17.71px;
+                font-weight: $--fw-bold;
+              }
+            }
+          }
+          &:nth-child(5) {
+            button {
               .solucion-label {
                 font-size: 16px;
                 line-height: 17.71px;

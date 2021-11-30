@@ -10,18 +10,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'tecnologia',
-    // canActivate: [DeveloperGuard],
-    loadChildren: () => import('./pages/tecnologia/tecnologia.module').then(m => m.TecnologiaModule)
-  },
-  {
-    path: 'consumidores',
-    redirectTo: 'home',
-    pathMatch: 'full'
-    // canActivate: [DeveloperGuard],
-    // loadChildren: () => import('./pages/consumidores/consumidores.module').then(m => m.ConsumidoresModule)
-  },
-  {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
@@ -32,6 +20,14 @@ const routes: Routes = [
   {
     path: 'soluciones',
     loadChildren: () => import('./pages/soluciones/soluciones.module').then(m => m.SolucionesModule)
+  },
+  {
+    path: 'tecnologia',
+    loadChildren: () => import('./pages/tecnologia/tecnologia.module').then(m => m.TecnologiaModule)
+  },
+  {
+    path: 'consumidores',
+    loadChildren: () => import('./pages/consumidores/consumidores.module').then(m => m.ConsumidoresModule)
   },
   {
     path: 'contactenos',

@@ -1,1 +1,154 @@
-<p>consumidores works!</p>
+<section class="consumidores">
+  <section class="slider">
+    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" class="track">
+      <ng-template swiperSlide class="slide" *ngFor="let slide of slider">
+        <div [ngClass]="slide.imageClass">
+          <img
+            *ngFor="let img of slide.images"
+            [src]="img.src"
+            [class]="img.class"
+          />
+        </div>
+        <article class="slide__text">
+          <span *ngIf="slide.category" class="slide__text__category">
+            {{ slide.category }}
+          </span>
+          <h1 class="slide__text__title">
+            {{ slide.title }}
+          </h1>
+          <p *ngIf="slide.subtitle" class="slide__text__subtitle">
+            {{ slide.subtitle }}
+          </p>
+          <div class="button-container" *ngIf="slide.button">
+            <button>{{ slide.button }}</button>
+          </div>
+        </article>
+        <div class="button-container" *ngIf="slide.button">
+          <button>{{ slide.button }}</button>
+        </div>
+      </ng-template>
+    </swiper>
+    <span id="arrow-left" class="arrow-left"><i class="fas fa-arrow-left"></i></span>
+    <span id="arrow-right" class="arrow-right"><i class="fas fa-arrow-right"></i></span>
+  </section>
+
+  <section class="articles-container">
+    <div class="filter-container">
+      <p>
+        Consulta todos los estudios que hemos realizado con los datos curados,
+        listos para consumir
+      </p>
+
+      <span>
+        <h6>Ordenar por</h6>
+        <img
+          src="../../../assets/images/consumidores/grid-fliter.svg"
+          class="filter-icon"
+        />
+      </span>
+    </div>
+
+    <div class="grid">
+      <article class="article-thumb" *ngFor="let article of articles">
+        <h5>
+          <span>{{ article.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ article.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ article.fecha | date:'d MMM y' }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-thumb" *ngFor="let article of articles">
+        <h5>
+          <span>{{ article.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ article.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ article.fecha | date:'d MMM y' }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-thumb" *ngFor="let article of articles">
+        <h5>
+          <span>{{ article.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ article.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ article.fecha | date:'d MMM y' }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-thumb" *ngFor="let article of articles">
+        <h5>
+          <span>{{ article.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ article.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ article.fecha | date:'d MMM y' }}</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-thumb" *ngFor="let article of articles">
+        <h5>
+          <span>{{ article.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ article.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ article.fecha | date:'d MMM y' }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="pagination">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+  </section>
+</section>

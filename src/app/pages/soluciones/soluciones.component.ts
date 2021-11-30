@@ -10,6 +10,7 @@ import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
 import { setClassMetadata } from '@angular/core/src/r3_symbols';
 import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimation } from 'src/app/@shared/animations';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-soluciones',
@@ -66,17 +67,21 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   public buttons: any = document.querySelectorAll('.nav-button');
   public currentSel: String = 'machineLearning';
   public observer: any;
+  public footerObserver: any;
+  public navbar:any;
 
   private id: any;
+  private footer: any;
 
   constructor(private service: CmsService) { }
 
   async ngOnInit() {
     this.sliderTimer();
-    this.intersectionObserver();
+    //this.footerIntersectionObserver();
     window.scrollTo(0, 0);
     const p = await this.service.get();
     this.soluciones = p.Soluciones || [];
+    this.navbar = document.querySelector('#mainNavbar');
     this.evaluacionDesempeno =
       p.Soluciones?.find((item) => item.name == 'evaluacionDesempeno') || {};
     this.machineLearning =
@@ -98,6 +103,9 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.footer = document.querySelector('.footer');
+    this.intersectionObserver();
+    this.footerObserver.observe(this.footer)
     this.observer.observe(this.section01.nativeElement);
     this.observer.observe(this.section02.nativeElement);
     this.observer.observe(this.section03.nativeElement);
@@ -119,7 +127,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
       this.section08,
       this.section09,
       this.section10,
-    ]
+    ];
   }
 
   ngOnDestroy() {
@@ -130,6 +138,42 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
 
   goToSection(solucionLabel: String) {
     this.soluciones.forEach((s, idx) => {
+      // switch (solucionLabel) {
+      //   case 'Desempeño de terreno':
+      //     this.soluciones.sort();
+      //     console.log('Desempeño de terreno');
+      //     break;
+      //   case 'Machine Learning':
+      //     console.log('Machine Learning');
+      //     break;
+      //   case 'Dashboard':
+      //     console.log('Dashboard');
+      //     break;
+      //   case 'RPA':
+      //     console.log('RPA');
+      //     break;
+      //   case 'Wisdom':
+      //     console.log('Wisdom');
+      //     break;
+      //   case 'Códigos QR':
+      //     console.log('Códigos QR');
+      //     break;
+      //   case 'Realidad Aumentada':
+      //     console.log('Realidad Aumentada');
+      //     break;
+      //   case 'Ads':
+      //     console.log('Ads');
+      //     break;
+      //   case 'Scrapper':
+      //     console.log('Scrapper');
+      //     break;
+      //   case 'ChatBot':
+      //     console.log('ChatBot');
+      //     break;
+      //   default:
+      //     console.log('there is no click anywhere');
+      //     break;
+      // }
       if (s.label == solucionLabel) {
         this.sections[idx].nativeElement.scrollIntoView(true);
       }
@@ -144,12 +188,19 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     };
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          entry.target.classList.add('show');
+          this.clickArrow = false;
         }
-        entry.target.classList.add('active');
-        entry.target.classList.add('show');
-        this.clickArrow = false;
+      });
+    }, options);
+    this.footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.navbar?.classList.add('float');
+        } else {
+          this.navbar?.classList.remove('float');}
       });
     }, options);
   }

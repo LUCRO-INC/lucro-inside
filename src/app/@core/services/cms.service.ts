@@ -535,7 +535,7 @@ export class CmsService {
       //   hover: '/assets/images/clientes/coca-cola-hover.png'
       // },
     ]
-  };
+  }
 
   constructor() {}
 
