@@ -7,12 +7,12 @@ import { Category } from '../../@core/models/customersModels/category';
 @Injectable({
   providedIn: 'root',
 })
-export class CustomerService implements OnInit {
+export class CustomerService {
 
-  public articles:Article[] = [];
-  public categories:Category[] = [];
+  public articles: Article[] = [];
+  public categories: Category[] = [];
 
-  private data:Customers = {
+  private data: Customers = {
     slider: [
       {
         name: "slideOne",
@@ -97,19 +97,8 @@ export class CustomerService implements OnInit {
   }
 
   constructor(
-    private http:HttpClient
-    ) {}
-
-  ngOnInit() {
-    this.getArticles()
-      .subscribe(data => {
-        this.articles = data;
-      })
-    this.getCategories()
-      .subscribe(data => {
-        this.categories = data;
-      })
-  }
+    private http: HttpClient
+  ) { }
 
   getCategories() {
     return this.http.get<Category[]>(environment.url + 'categorias.php');

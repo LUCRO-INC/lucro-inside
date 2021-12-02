@@ -39,8 +39,9 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     window.scrollTo(0,0);
     const p = await this.service.get();
-    this.articles = p.articles || [];
-    this.categories = p.categories || [];
+    //this.articles = p.articles || [];
+    this.articles = await this.service.getArticles().toPromise();
+    this.categories = await this.service.getCategories().toPromise();
     this.slider = p.slider || [];
   }
 
