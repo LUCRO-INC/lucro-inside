@@ -1,9 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 import { Customers } from '../models/customersModels/customers';
+import { Article } from '../../@core/models/customersModels/article';
+import { Category } from '../../@core/models/customersModels/category';
 @Injectable({
   providedIn: 'root',
 })
-export class CustomerService {
+export class CustomerService implements OnInit {
+
+  public articles:Article[] = [];
+  public categories:Category[] = [];
+
   private data:Customers = {
     slider: [
       {
@@ -83,10 +91,37 @@ export class CustomerService {
         imageClass: "slideThree__image",
         button: 'Ver informe'
       }
-    ]
+    ],
+    articles: this.articles,
+    categories: this.categories
   }
 
-  constructor() {}
+  constructor(
+    private http:HttpClient
+    ) {}
+
+  ngOnInit() {
+    this.getArticles()
+      .subscribe(data => {
+        this.articles = data;
+      })
+    this.getCategories()
+      .subscribe(data => {
+        this.categories = data;
+      })
+  }
+
+  getCategories() {
+    return this.http.get<Category[]>(environment.url + 'categorias.php');
+  }
+
+  getArticles() {
+    return this.http.get<Article[]>(environment.url + 'blog.php');
+  }
+
+  getArticle(id: String) {
+    return this.articles.find(article => id === article.id);
+  }
 
   async get(): Promise<any> {
     return this.data;

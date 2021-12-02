@@ -105,7 +105,7 @@
     // display: none;
     max-width: 96%;
     top: 69px;
-    padding-block: 5em;
+    padding-block: 8.5em;
     margin-bottom: 15em;
     &__image {
       position: relative;
@@ -1428,6 +1428,7 @@
       flex-direction: row-reverse;
       height: 80vh;
       width: 80%;
+      padding-top: 6.5rem;
       &__image {
         margin-top: 7.5em;
         margin-left: 3em;

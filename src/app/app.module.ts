@@ -14,10 +14,11 @@ import { ContactenosComponent } from './pages/contactenos/contactenos.component'
 import { TecnologiaComponent } from './pages/tecnologia/tecnologia.component';
 import { ConsumidoresComponent } from './pages/consumidores/consumidores.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

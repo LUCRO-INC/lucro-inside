@@ -1,10 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { CustomerService } from '../../@core/services/customers.service';
 import { Article } from '../../@core/models/customersModels/article';
+import { Category } from '../../@core/models/customersModels/category';
 import { Slider } from '../../@core/models/customersModels/slider';
 import SwiperCore, { Swiper, SwiperOptions, Pagination, Autoplay, Navigation } from 'swiper';
-import { environment } from 'src/environments/environment';
 
 SwiperCore.use([Pagination, Autoplay, Navigation]);
 
@@ -17,6 +16,7 @@ SwiperCore.use([Pagination, Autoplay, Navigation]);
 export class ConsumidoresComponent implements OnInit, AfterViewInit {
 
   public articles:Article[] = [];
+  public categories:Category[] = [];
   public slider:Slider []= [];
 
   config: SwiperOptions = {
@@ -24,7 +24,7 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit {
     spaceBetween: 0,
     pagination: { dynamicBullets: true, clickable: true },
     scrollbar: { draggable: true },
-    autoplay: false/*{ disableOnInteraction: false, delay: 2500, pauseOnMouseEnter: true }*/,
+    autoplay: { disableOnInteraction: false, delay: 2500, pauseOnMouseEnter: true },
     navigation: {
       nextEl: '.arrow-right',
       prevEl: '.arrow-left',
@@ -33,31 +33,18 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit {
   };
 
   constructor(
-    private http:HttpClient,
     private service:CustomerService
   ) { }
 
   async ngOnInit() {
     window.scrollTo(0,0);
     const p = await this.service.get();
+    this.articles = p.articles || [];
+    this.categories = p.categories || [];
     this.slider = p.slider || [];
-    this.getArticles()
-      .subscribe(data => {
-        this.articles = data;
-      })
   }
 
   ngAfterViewInit() {
-    console.log(this.articles)
-
-  }
-
-  getCategories() {
-    return this.http.get(environment.url + 'categorias.php');
-  }
-
-  getArticles() {
-    return this.http.get<Article[]>(environment.url + 'blog.php');
   }
 
   onSwiper(swiper: Swiper) {

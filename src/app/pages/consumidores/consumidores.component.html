@@ -33,6 +33,16 @@
   </section>
 
   <section class="articles-container">
+    <div class="category-selector">
+      <ul class="category-selector__list">
+        <a href="/" class="catetegory-selector__list__link active">
+          <p class="catetegory-selector__list__link__text">Todos los estudios</p>
+        </a>
+        <a href="/" class="catetegory-selector__list__link" *ngFor="let cat of categories">
+          <p class="catetegory-selector__list__link__text">{{ cat.nombre }}</p>
+        </a>
+      </ul>
+    </div>
     <div class="filter-container">
       <p>
         Consulta todos los estudios que hemos realizado con los datos curados,

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { DeveloperGuard } from './developer.guard';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -28,6 +27,10 @@ const routes: Routes = [
   {
     path: 'consumidores',
     loadChildren: () => import('./pages/consumidores/consumidores.module').then(m => m.ConsumidoresModule)
+  },
+  {
+    path: 'consumidores/:id',
+    loadChildren: () => import('./pages/article/article.module').then(m => m.ArticleModule)
   },
   {
     path: 'contactenos',

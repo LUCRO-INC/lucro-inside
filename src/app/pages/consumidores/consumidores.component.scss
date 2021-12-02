@@ -577,10 +577,12 @@
 .consumidores {
   display: block;
   background: #f4f7f5;
+  overflow-x: hidden;
 
   .slider {
     display: block;
     height: 37.875rem;
+    padding-bottom: 4em;
     background-color: #cdebd9;
     overflow-x: hidden;
     .arrow-left { display: none }
@@ -588,7 +590,57 @@
   }
 
   .articles-container {
+    position: relative;
     padding: 2.6875rem 0.9375rem;
+    .category-selector {
+      position: absolute;
+      top: -4.7em;
+      overflow-x: hidden;
+      margin-inline: auto;
+      width: fit-content;
+      z-index: 2;
+      &__list {
+        display: inline-flex;
+        width: fit-content;
+      margin-inline: auto;
+        padding-block: 1.8em;
+        overflow-x: scroll;
+        overflow-y: visible;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          background: transparent;
+        }
+        a + a {
+          margin-left: 1.78125rem;
+        }
+        a {
+          @include flexbox(center, center, undefined);
+          position: relative;
+          min-width: fit-content;
+          padding-inline: 0.890625rem;
+          overflow-y: visible;
+          p {
+            @include fontStyle(16px, 22px, $--fw-light, $--clr-font-light, undefined);
+            overflow-y: visible;
+          }
+          &.active {
+            p {
+              font-weight: $--fw-black;
+              color: $--clr-font-regular;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -1.5em;
+              height: 0.5rem;
+              width: 100%;
+              border-radius: 0px 0px 8px 8px;
+              background-color: $--clr-lucro-red;
+            }
+          }
+        }
+      }
+    }
     .filter-container {
       @include flexbox(space-between, center, row);
       p {
