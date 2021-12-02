@@ -15,9 +15,10 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params:Params) => {
+    this.route.params.subscribe(async (params: Params) => {
       const id = params.id;
-      const article = this.customerService.getArticle(id)
+      const article = await this.customerService.getArticle(id);
+      console.log(article);
     });
   }
 

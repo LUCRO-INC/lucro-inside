@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Customers } from '../models/customersModels/customers';
 import { Article } from '../../@core/models/customersModels/article';
 import { Category } from '../../@core/models/customersModels/category';
+import { map, filter, tap } from 'rxjs/operators'
+
 @Injectable({
   providedIn: 'root',
 })
@@ -108,8 +110,9 @@ export class CustomerService {
     return this.http.get<Article[]>(environment.url + 'blog.php');
   }
 
-  getArticle(id: String) {
-    return this.articles.find(article => id === article.id);
+  async getArticle(id: String): Promise<any> {
+    const articles = await this.getArticles().toPromise()
+    return articles.find(article => id === article.id);
   }
 
   async get(): Promise<any> {
