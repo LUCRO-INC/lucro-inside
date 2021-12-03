@@ -175,7 +175,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
       //     break;
       // }
       if (s.label == solucionLabel) {
-        this.sections[idx].nativeElement.scrollIntoView(true);
+        this.sections[idx].nativeElement.scrollIntoView({block: 'end'});
       }
     })
   }
