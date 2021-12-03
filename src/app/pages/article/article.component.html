@@ -1,3 +1,16 @@
 <section class="article">
-  <p>article works!</p>
+
+  <div class="title">
+    <h1 class="title__text">
+      {{ article.titulo }}
+    </h1>
+  </div>
+
+  <article class="article-content">
+    <div class="date-container">
+      <i class="far fa-calendar-minus"></i>
+      <span>{{ article.fecha | date:'d MMM y' }}</span>
+    </div>
+    <p [innerHTML]="article.texto" class="article-content__text"></p>
+  </article>
 </section>

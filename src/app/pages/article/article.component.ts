@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Article } from 'src/app/@core/models/customersModels/article';
 import { CustomerService } from '../../@core/services/customers.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { CustomerService } from '../../@core/services/customers.service';
 })
 export class ArticleComponent implements OnInit {
 
+  public article:any;
+
   constructor(
     private route: ActivatedRoute,
     private customerService: CustomerService
@@ -17,8 +20,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(async (params: Params) => {
       const id = params.id;
-      const article = await this.customerService.getArticle(id);
-      console.log(article);
+      this.article = await this.customerService.getArticle(id);
     });
   }
 

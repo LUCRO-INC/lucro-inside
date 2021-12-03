@@ -59,7 +59,7 @@
     </div>
 
     <div class="grid">
-      <article class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
@@ -76,9 +76,9 @@
             <span>{{ article.fecha | date:'d MMM y' }}</span>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
@@ -95,9 +95,9 @@
             <span>{{ article.fecha | date:'d MMM y' }}</span>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
@@ -114,9 +114,9 @@
             <span>{{ article.fecha | date:'d MMM y' }}</span>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
@@ -133,9 +133,9 @@
             <span>{{ article.fecha | date:'d MMM y' }}</span>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
@@ -152,7 +152,7 @@
             <span>{{ article.fecha | date:'d MMM y' }}</span>
           </div>
         </div>
-      </article>
+      </a>
     </div>
 
     <div class="pagination">
