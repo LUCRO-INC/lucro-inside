@@ -12,12 +12,12 @@ export class TechCmsService {
         name: 'gamificacion',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/gamificacion/gamificacionMarco.png',
+            '/assets/images/tecnologia/gamificacion/gamificacionMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/gamificacion/gamificacionMarcoIcono.svg',
+            '/assets/images/tecnologia/gamificacion/gamificacionMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/gamificacion/gamificacionIcono.svg',
+          img: '/assets/images/tecnologia/gamificacion/gamificacionIcono.svg',
           title: 'Gamificación',
           content:
             'En Lucro empleamos mecánicas de juego en entornos que tradicionalmente no son recreativos para fortalecer organizaciones en su núcleo o mejorar el compromiso de los usuarios hacia un producto o servicio. Nuestra tecnología integra la experiencia y la diversión para dinamizar procesos y transformarlos en estrategias didácticas.',
@@ -27,12 +27,12 @@ export class TechCmsService {
         name: 'scrapper',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/scrapper/scrapperMarco.png',
+            '/assets/images/tecnologia/scrapper/scrapperMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/scrapper/scrapperMarcoIcono.svg',
+            '/assets/images/tecnologia/scrapper/scrapperMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/scrapper/scrapperIcono.svg',
+          img: '/assets/images/tecnologia/scrapper/scrapperIcono.svg',
           title: 'Scrapper',
           content:
             'Nuestro software extrae información de millones de sitios web mediante un proceso automático hasta dar con información relevante. Esta herramienta es de gran utilidad para las empresas que necesiten recolectar datos, compararlos y procesarlos.',
@@ -42,12 +42,12 @@ export class TechCmsService {
         name: 'identificadorImagenes',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/identificadorImagenes/identificadorImagenesMarco.png',
+            '/assets/images/tecnologia/identificadorImagenes/identificadorImagenesMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/identificadorImagenes/identificadorImagenesMarcoIcono.svg',
+            '/assets/images/tecnologia/identificadorImagenes/identificadorImagenesMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/identificadorImagenes/identificadorImagenesIcono.svg',
+          img: '/assets/images/tecnologia/identificadorImagenes/identificadorImagenesIcono.svg',
           title: 'Identificador de imágenes',
           content:
             'Herramienta de reconocimiento de imagen para analizar e interpretar datos según las necesidades de la empresa. Imagina que un sistema usa sus “ojos” de la misma forma como lo hacen los humanos para la interpretación de datos a través de la captura de imágenes. “Libera el potencial escondido que tiene una imagen traducida a datos”.',
@@ -57,12 +57,12 @@ export class TechCmsService {
         name: 'automatizacionRPA',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarco.png',
+            '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarcoIcono.svg',
+            '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/automatizacionRPA/automatizacionRPAIcono.svg',
+          img: '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAIcono.svg',
           title: 'Automatización robótica de procesos (RPA)',
           content:
             'En la actualidad muchas empresas que pueden crear Bots, pero ninguna como Lucro pone a disposición múltiples APIs (de seguridad, Qr, detección de imagen, flujo conversacional) que alimentan todo un ecosistema de bots para convertirlos en soluciones sencillas de alto impacto en la productividad de su modelo de negocio.',
@@ -72,12 +72,12 @@ export class TechCmsService {
         name: 'modelosPredictivos',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/modelosPredictivos/modelosPredictivosMarco.png',
+            '/assets/images/tecnologia/modelosPredictivos/modelosPredictivosMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/modelosPredictivos/modelosPredictivosMarcoIcono.svg',
+            '/assets/images/tecnologia/modelosPredictivos/modelosPredictivosMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/modelosPredictivos/modelosPredictivosIcono.svg',
+          img: '/assets/images/tecnologia/modelosPredictivos/modelosPredictivosIcono.svg',
           title: 'Modelos Predictivos',
           content:
             'En Lucro empleamos mecánicas de juego en entornos que tradicionalmente no son recreativos para fortalecer organizaciones en su núcleo o mejorar el compromiso de los usuarios hacia un producto o servicio. Nuestra tecnología integra la experiencia y la diversión para dinamizar procesos y transformarlos en estrategias didácticas.',
@@ -87,12 +87,12 @@ export class TechCmsService {
         name: 'bigData',
         img: {
           imgFocus:
-            './src/assets/images/tecnologia/bigData/bigDataMarco.png',
+            '/assets/images/tecnologia/bigData/bigDataMarco.png',
           imgIcon:
-            './src/assets/images/tecnologia/bigData/bigDataMarcoIcono.svg',
+            '/assets/images/tecnologia/bigData/bigDataMarcoIcono.svg',
         },
         card: {
-          img: './src/assets/images/tecnologia/bigData/bigDataIcono.svg',
+          img: '/assets/images/tecnologia/bigData/bigDataIcono.svg',
           title: 'Big Data',
           content:
             'El crecimiento exponencial de la comunidad de Lucro mantiene datos actualizados día a día que nos permiten ejecutar modelos correctivos y predictivos con una infraestructura tecnológica en tiempo real, para la creación de informes de gestión que faciliten la toma de decisiones.',
