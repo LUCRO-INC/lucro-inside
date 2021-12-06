@@ -10,8 +10,8 @@ import { CustomerService } from '../../@core/services/customers.service';
 })
 export class ArticleComponent implements OnInit {
 
-  public article:any;
-  public articles:any;
+  public article: any;
+  public articles: Array<Article> = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,12 +20,11 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(async (params: Params) => {
+      this.articles = await this.customerService.getArticles().toPromise()
       const id = params.id;
-      this.article = await this.customerService.getArticle(id);
+      this.article = this.articles.find(item => item.id == id)
+      console.log(this.articles);
     });
-    const p = this.customerService.getArticles()
-    this.articles = p || [];
-    console.log(this.articles);
   }
 
 }
