@@ -30,7 +30,6 @@ const routes: Routes = [
   },
   {
     path: 'consumidores/:id',
-    canActivate: [DeveloperGuard],
     loadChildren: () => import('./pages/article/article.module').then(m => m.ArticleModule)
   },
   {
