@@ -7,13 +7,19 @@
     </h1>
   </div>
 
-  <article class="article-content">
-    <div class="date-container">
-      <i class="far fa-calendar-minus"></i>
-      <span>{{ article.fecha | date:'d MMM y' }}</span>
-    </div>
-    <p [innerHTML]="article.texto" class="article-content__text"></p>
-  </article>
+  <div class="content">
+    <article class="article-content">
+      <div class="date-container">
+        <i class="far fa-calendar-minus"></i>
+        <span>{{ article.fecha | date:'d MMM y' }}</span>
+      </div>
+      <div [innerHTML]="article.texto" class="article-content__text"></div>
+    </article>
+    <img
+    src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+    alt="Definitively your best choice. A descriptive image"
+  />
+  </div>
 
   <div class="social">
     <ul class="social-list">
@@ -43,62 +49,65 @@
   <div class="related">
     <h2 class="related__text">Publicaciones relacionadas</h2>
 
+    <div class="grid">
 
-    <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
-      <h5>
-        <span>{{ a.categoria }}</span>
-      </h5>
-      <img
-        src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
-        alt="Definitively your best choice. A descriptive image"
-      />
-      <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
 
-      <div class="article-thumb__bottom">
-        <h1>{{ a.titulo }}</h1>
-        <div class="date-container">
-          <i class="far fa-calendar-minus"></i>
-          <span>{{ a.fecha | date:'d MMM y' }}</span>
+      <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
+        <h5>
+          <span>{{ a.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
+
+        <div class="article-thumb__bottom">
+          <h1>{{ a.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ a.fecha | date:'d MMM y' }}</span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
-      <h5>
-        <span>{{ a.categoria }}</span>
-      </h5>
-      <img
-        src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
-        alt="Definitively your best choice. A descriptive image"
-      />
-      <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
+      <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
+        <h5>
+          <span>{{ a.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
 
-      <div class="article-thumb__bottom">
-        <h1>{{ a.titulo }}</h1>
-        <div class="date-container">
-          <i class="far fa-calendar-minus"></i>
-          <span>{{ a.fecha | date:'d MMM y' }}</span>
+        <div class="article-thumb__bottom">
+          <h1>{{ a.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ a.fecha | date:'d MMM y' }}</span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
-      <h5>
-        <span>{{ a.categoria }}</span>
-      </h5>
-      <img
-        src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
-        alt="Definitively your best choice. A descriptive image"
-      />
-      <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
+      <a [routerLink]="['/consumidores', a.id]" class="article-thumb" *ngFor="let a of articles">
+        <h5>
+          <span>{{ a.categoria }}</span>
+        </h5>
+        <img
+          src="../../../assets/images/consumidores/media/upload_files/news_1637692376.png"
+          alt="Definitively your best choice. A descriptive image"
+        />
+        <!-- <img [src]="a.imagen" alt="Definitively your best choice. A descriptive image"> -->
 
-      <div class="article-thumb__bottom">
-        <h1>{{ a.titulo }}</h1>
-        <div class="date-container">
-          <i class="far fa-calendar-minus"></i>
-          <span>{{ a.fecha | date:'d MMM y' }}</span>
+        <div class="article-thumb__bottom">
+          <h1>{{ a.titulo }}</h1>
+          <div class="date-container">
+            <i class="far fa-calendar-minus"></i>
+            <span>{{ a.fecha | date:'d MMM y' }}</span>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </section>
