@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     // this.sliderTimer();
+    window.scrollTo(0,0);
     this.intersectionObserver();
     this.x = window.matchMedia('(max-width: 992px)')
   }

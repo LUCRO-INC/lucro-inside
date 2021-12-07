@@ -2,6 +2,7 @@
 
 .soluciones {
   @include flexbox(center, center, column);
+  padding-top: 4.5em;
 
   nav {
     position: fixed;
@@ -41,7 +42,7 @@
     }
     &.float {
       position: absolute;
-      top: 945vh;
+      top: 920vh;
     }
   }
 
@@ -104,8 +105,7 @@
     @include flexbox(center, center, column);
     // display: none;
     max-width: 96%;
-    margin-top: 4.5rem;
-    padding-top: 4.5em;
+    margin-top: 4.5em;
     margin-bottom: 15em;
     &__image {
       position: relative;

@@ -5,6 +5,8 @@
   position: relative;
   top: 3.5rem;
   width: 100%;
+  max-width: 22.5rem;
+  scrollbar-width: 0px;
   margin-inline: auto;
   padding-block: 3em;
 
@@ -15,6 +17,7 @@
   .title-container {
     margin-right: auto;
     max-width: 17.5rem;
+    opacity: 0;
     h1 {
       @include fontStyle(
         20px,
@@ -26,7 +29,7 @@
       letter-spacing: 0.15px;
       text-align: left;
       position: relative;
-      margin-left: 0.8em;
+      margin-left: 0.5rem;
       margin-right: auto;
       &::after {
         content: "";
@@ -58,7 +61,8 @@
       font-size: 18px;
       border-radius: 50%;
       cursor: pointer;
-      transition: transform 50ms linear, color 0ms linear;
+      opacity: 0;
+      transition: transform 50ms linear, color auto linear;
       &:active {
         transform: scale(0.85);
         background-color: #049B41;
@@ -81,6 +85,9 @@
       li + li {
         margin-left: 0.5em;
       }
+      li {
+        opacity: 0;
+      }
       &__item {
         position: relative;
         min-width: 6.324375rem;
@@ -95,7 +102,7 @@
           opacity: 0.3;
         }
         &:nth-child(3) {
-          transform: scale(1.2);
+          // transform: scale(1.2);
           .cel-frame {
             filter: grayscale(0);
           }
@@ -117,18 +124,19 @@
           left: 0.95em;
           width: 80%;
         }
-        &.active {
-          transform: scale(1.2);
-          .cel-frame {
-            filter: grayscale(0);
-          }
-        }
+        // &.active {
+        //   transform: scale(1.2);
+        //   .cel-frame {
+        //     filter: grayscale(0);
+        //   }
+        // }
       }
     }
   }
 
   .slider {
     overflow: hidden;
+    opacity: 0;
     .tc-container {
       @include flexbox(space-between, center, row);
       width: auto;
@@ -229,8 +237,50 @@
       }
     }
   }
-
+  &.show {
+    .title-container {
+      animation: fadein-left 500ms ease-in forwards;
+    }
+    .carousel {
+      #arrow-left,
+      #arrow-right {
+        animation: fadein-up 500ms ease-in 1000ms forwards;
+      }
+      .mobiles-slider {
+        &__item {
+          &:nth-child(even) {
+            animation: mobile-transparent 500ms ease-in 200ms forwards;
+          }
+          &:nth-child(3) {
+            animation: mobile-center 500ms ease-in 400ms forwards, fadein-up;
+          }
+        }
+      }
+    }
+    .slider {
+      animation: fadein 500ms ease-in 1200ms forwards;
+    }
+    @include lg {
+      .carousel {
+        .mobiles-slider {
+          &__item {
+            &:first-child,
+            &:nth-child(5) {
+              animation: mobile-transparent 500ms ease-in 200ms forwards;
+            }
+            &:nth-child(even) {
+              animation: fadein-regular 500ms ease-in forwards;
+            }
+            &:nth-child(3) {
+              animation: mobile-center 500ms ease-in 400ms forwards, fadein-up;
+            }
+          }
+        }
+      }
+    }
+  }
   @include sm {
+    max-width: 24.75rem;
     .title-container {
       max-width: 19.25rem;
       h1 {
@@ -296,6 +346,7 @@
   }
 
   @include md {
+    max-width: 29.25rem;
     .title-container {
       max-width: 22.75rem;
       h1 {
