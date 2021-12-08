@@ -45,22 +45,14 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
     this.mobiles = document.querySelectorAll('.mobiles-slider__item');
     let firstElement = this.mobiles.item(0);
     firstElement?.parentNode?.append(firstElement);
-    let cards = document.querySelectorAll('.active');
-    cards?.forEach(card => {
-      if (this.counter <= 5) {
-        card.classList.remove('active');
-        console.log(this.counter)
-        card.nextElementSibling?.classList.add('active');
-        card.previousElementSibling?.parentNode?.append(card.previousElementSibling);
-        this.counter += 1;
-      } else {
-        card.classList.remove('active');
-        card.nextElementSibling?.classList.add('active');
-        console.log('first lap');
-        card.previousElementSibling?.parentNode?.append(card.previousElementSibling);
-        this.counter = 1;
-      }
-    })
+    let active = document.querySelectorAll('.text-card.active')[0];
+    let next: any = active.nextElementSibling? active.nextElementSibling : null;
+    if (next == null) {
+      let restart = document.getElementById('tcContainer')?.firstElementChild;
+      next = restart
+    }
+    active.classList.remove('active');
+    next?.classList.add('active');
   }
 
   goBack() {
@@ -68,11 +60,13 @@ export class TecnologiaComponent implements OnInit, AfterViewInit {
     let i = this.mobiles.length - 1;
     let lastElement = this.mobiles.item(i);
     lastElement?.parentNode?.prepend(lastElement);
-    let cards = document.querySelectorAll('.active');
-    cards?.forEach(card => {
-      card.classList.remove('active');
-      card.previousElementSibling?.classList.add('active');
-      card.nextElementSibling?.parentNode?.prepend(card.nextElementSibling);
-    })
+    let active = document.querySelectorAll('.text-card.active')[0];
+    let prev: any = active.previousElementSibling? active.previousElementSibling : null;
+    if (prev == null) {
+      let restart = document.getElementById('tcContainer')?.lastElementChild;
+      prev = restart
+    }
+    active.classList.remove('active');
+    prev?.classList.add('active');
   }
 }

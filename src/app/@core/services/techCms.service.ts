@@ -39,7 +39,7 @@ export class TechCmsService {
         },
       },
       {
-        name: 'identificadorImagenes',
+        name: 'identificadorImagenes active',
         img: {
           imgFocus:
             '/assets/images/tecnologia/identificadorImagenes/identificadorImagenesMarco.png',

@@ -414,7 +414,7 @@
   @include lg {
     height: 100vh;
     top: 0;
-    min-width: 71.2125rem;
+    width: 100%;
     max-width: 71.2125rem;
     overflow-x: hidden;
     .title-container {
@@ -491,7 +491,6 @@
   }
 
   @include xl {
-    min-width: 79.125rem;
     max-width: 79.125rem;
     .title-container {
       max-width: 28.5rem;

@@ -15,40 +15,23 @@
         <img [src]="c.img?.imgIcon" class="cel-back icon" />
       </li>
     </ul>
-    <span id="arrow-left" (click)="goBack()"><i class="fas fa-arrow-left"></i></span>
-    <span id="arrow-right" (click)="goNext()"><i class="fas fa-arrow-right"></i></span>
+    <span id="arrow-left" (click)="goBack()"
+      ><i class="fas fa-arrow-left"></i
+    ></span>
+    <span id="arrow-right" (click)="goNext()"
+      ><i class="fas fa-arrow-right"></i
+    ></span>
   </div>
 
   <div class="slider">
-    <div class="tc-container">
-      <div class="text-card gamificacion">
-        <h2 class="text-card__title">{{ gamificacion.card?.title }}</h2>
-        <p class="text-card__content">{{ gamificacion.card?.content }}</p>
-      </div>
-
-      <div class="text-card scrapper">
-        <h2 class="text-card__title">{{ scrapper.card?.title }}</h2>
-        <p class="text-card__content">{{ scrapper.card?.content }}</p>
-      </div>
-      <div class="text-card identificadorImagenes active">
-        <h2 class="text-card__title">
-          {{ identificadorImagenes.card?.title }}
-        </h2>
-        <p class="text-card__content">
-          {{ identificadorImagenes.card?.content }}
-        </p>
-      </div>
-      <div class="text-card automatizacionRPA">
-        <h2 class="text-card__title">{{ automatizacionRPA.card?.title }}</h2>
-        <p class="text-card__content">{{ automatizacionRPA.card?.content }}</p>
-      </div>
-      <div class="text-card modelosPredictivos">
-        <h2 class="text-card__title">{{ modelosPredictivos.card?.title }}</h2>
-        <p class="text-card__content">{{ modelosPredictivos.card?.content }}</p>
-      </div>
-      <div class="text-card bigData">
-        <h2 class="text-card__title">{{ bigData.card?.title }}</h2>
-        <p class="text-card__content">{{ bigData.card?.content }}</p>
+    <div class="tc-container" id="tcContainer">
+      <div
+        class="text-card"
+        ngClass="{{ tech.name }}"
+        *ngFor="let tech of techContent.content"
+      >
+        <h2 class="text-card__title">{{ tech.card?.title }}</h2>
+        <p class="text-card__content">{{ tech.card?.content }}</p>
       </div>
     </div>
   </div>
