@@ -1,4 +1,5 @@
 export interface TecnologiaImg {
-  imgFocus: String;
+  imgFocus?: String;
+  video?: String;
   imgIcon: String;
 }

@@ -11,8 +11,8 @@ export class TechCmsService {
       {
         name: 'gamificacion',
         img: {
-          imgFocus:
-            '/assets/images/tecnologia/gamificacion/gamificacionMarco.png',
+          video:
+            '/assets/images/tecnologia/Videos/Gamification.mp4',
           imgIcon:
             '/assets/images/tecnologia/gamificacion/gamificacionMarcoIcono.svg',
         },
@@ -26,8 +26,8 @@ export class TechCmsService {
       {
         name: 'scrapper',
         img: {
-          imgFocus:
-            '/assets/images/tecnologia/scrapper/scrapperMarco.png',
+          video:
+            '/assets/images/tecnologia/Videos/Scrapper.mp4',
           imgIcon:
             '/assets/images/tecnologia/scrapper/scrapperMarcoIcono.svg',
         },
@@ -56,8 +56,8 @@ export class TechCmsService {
       {
         name: 'automatizacionRPA',
         img: {
-          imgFocus:
-            '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarco.png',
+          video:
+            '/assets/images/tecnologia/Videos/RPA.mp4',
           imgIcon:
             '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarcoIcono.svg',
         },

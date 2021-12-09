@@ -1,5 +1,5 @@
 <header [ngClass]="{ active: clickHamburger }">
-  <a href="#" class="brand">
+  <a routerLink="/home" class="brand" (click)="clickHamburger = false">
     <img src="/assets/images/Brand-Lucro.svg" alt="logo Lucro" />
   </a>
 
