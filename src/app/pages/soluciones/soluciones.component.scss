@@ -3,6 +3,9 @@
 .soluciones {
   @include flexbox(center, center, column);
   padding-top: 4.5em;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y proximity;
 
   nav {
     position: fixed;
@@ -91,6 +94,10 @@
     &:active {
       transform: scale(0.95);
     }
+  }
+
+  & > div {
+    scroll-snap-align: center !important;
   }
   .evaluacionDesempeno,
   .machineLearning,

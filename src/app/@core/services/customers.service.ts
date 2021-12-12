@@ -18,6 +18,7 @@ export class CustomerService {
     slider: [
       {
         name: "slideOne",
+        class: "slideOne",
         title: "Redefinimos la relación entre empresas, consumidores y puntos de venta",
         images: [
           {
@@ -40,6 +41,7 @@ export class CustomerService {
       },
       {
         name: "slideTwo",
+        class: "slideTwo",
         category: "Medio ambiente",
         title: "Lo que más le inquieta al colombiano frente a la contaminación ",
         subtitle: "Lo que más preocupa a los colombianos es que el agua suministrada a la población sea segura.",
@@ -65,6 +67,7 @@ export class CustomerService {
       },
       {
         name: "slideThree",
+        class: "slideThree",
         category: "Demografía",
         title: "Los tenderos, un gremio que lucha por su subsistencia.",
         subtitle: "Un estudio reciente de la Federación Nacional de Comerciantes Fenalco.",

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { CustomerService } from '../../@core/services/customers.service';
 import { Article } from '../../@core/models/customersModels/article';
 import { Category } from '../../@core/models/customersModels/category';
@@ -15,9 +15,34 @@ SwiperCore.use([Pagination, Autoplay, Navigation]);
 })
 export class ConsumidoresComponent implements OnInit, AfterViewInit {
 
+  // @ViewChildren('.track')
+  // track: ElementRef[]
+
   public articles:Article[] = [];
   public categories:Category[] = [];
   public slider:Slider []= [];
+  public observer: any;
+  public slideOne: Slider = {
+    name: '',
+    class: '',
+    title: '',
+    images: [],
+    imageClass: '',
+  };
+  public slideTwo: Slider = {
+    name: '',
+    class: '',
+    title: '',
+    images: [],
+    imageClass: '',
+  };
+  public slideThree: Slider = {
+    name: '',
+    class: '',
+    title: '',
+    images: [],
+    imageClass: '',
+  };
 
   config: SwiperOptions = {
     slidesPerView: 'auto',
@@ -42,9 +67,28 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit {
     this.articles = await this.service.getArticles().toPromise();
     this.categories = await this.service.getCategories().toPromise();
     this.slider = p.slider || [];
+    // this.slideOne = p.slider?.find(item => item.name == 'slideOne') || {}
   }
 
   ngAfterViewInit() {
+    this.slider.forEach(slide => {
+      this.observer.observe(slide);
+    })
+  }
+
+  intersectionObserver() {
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      treshold: 0.2,
+    };
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, options);
   }
 
   onSwiper(swiper: Swiper) {

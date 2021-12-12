@@ -2,21 +2,9 @@
 
 ::ng-deep .slider {
 
-  .swiper-slide {
-    width: auto;
-    cursor: initial;
-    img {
-      max-width: initial;
-      filter: initial;
-
-      &:hover {
-        filter: initial;
-        transform:initial;
-      }
-    }
-  }
-
   .swiper-pagination {
+    opacity: 0;
+    animation: fadein-regular 500ms ease-in 300ms forwards;
     &-bullet {
       width: 0.5rem;
       height: 0.5rem;
@@ -44,6 +32,7 @@
       @include flexbox(space-between, center, column);
       height: 100%;
       min-width: 100%;
+      max-width: 100%;
       scroll-snap-align: center;
       padding: 5.1875rem 5%;
       img {
@@ -147,7 +136,9 @@
         }
       }
       &__text {
+        position: relative;
         max-width: 23.963125rem;
+        min-height: 14.0625rem;
         margin-inline: auto;
         &__category {
           @include fontStyle(14px, 20px, $--fw-light, #ffffff, undefined);
@@ -157,7 +148,7 @@
         &__title {
           @include fontStyle(20px, 24px, $--fw-black, #037c34, undefined);
           letter-spacing: 0.15px;
-          margin-block: 0.5625rem;
+          margin-block: 1rem 0.5625rem;
         }
         &__subtitle {
           @include fontStyle(
@@ -170,23 +161,27 @@
           letter-spacing: 0.4px;
         }
         .button-container {
-          display: none;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          max-width: 23.963125rem;
+          margin-inline: auto;
+          button {
+            @include fontStyle(14px, 17.71px, $--fw-bold, #f4f7f5, uppercase);
+            letter-spacing: 1.25px;
+            padding: 0.6875rem 1.5rem;
+            margin-left: auto;
+            background-color: #36af67;
+            border: none;
+            border-radius: 0.5rem;
+          }
         }
       }
-      & > .button-container {
-        width: 100%;
-        max-width: 23.963125rem;
-        margin-inline: auto;
-        button {
-          @include fontStyle(14px, 17.71px, $--fw-bold, #f4f7f5, uppercase);
-          letter-spacing: 1.25px;
-          padding: 0.6875rem 1.5rem;
-          margin-left: auto;
-          background-color: #36af67;
-          border: none;
-          border-radius: 0.5rem;
-        }
-      }
+    }
+  }
+  .show {
+    img {
+      animation: fadein 500ms ease-in forwards;
     }
   }
   @include sm {
@@ -255,6 +250,7 @@
         }
         &__text {
           max-width: 26.3594375rem;
+          min-height: 15.46875rem;
           margin-inline: auto;
           &__category {
             font-size: 15.4px;
@@ -265,23 +261,23 @@
             font-size: 22px;
             line-height: 26.4px;
             letter-spacing: 0.165px;
-            margin-block: 0.61875rem;
+            margin-block: 1.1rem 0.61875rem;
           }
           &__subtitle {
             font-size: 15.4px;
             line-height: 22px;
             letter-spacing: 0.44px;
           }
-        }
-        .button-container {
-          max-width: 26.3594375rem;
-          margin-inline: auto;
-          button {
-            font-size: 15.4px;
-            line-height: 19.481px;
-            letter-spacing: 1.375px;
-            padding: 0.75625rem 1.65rem;
-            border-radius: 0.55rem;
+          .button-container {
+            max-width: 26.3594375rem;
+            margin-inline: auto;
+            button {
+              font-size: 15.4px;
+              line-height: 19.481px;
+              letter-spacing: 1.375px;
+              padding: 0.75625rem 1.65rem;
+              border-radius: 0.55rem;
+            }
           }
         }
       }
@@ -353,6 +349,7 @@
         }
         &__text {
           max-width: 31.1520625rem;
+          min-height: 18.28125rem;
           margin-inline: auto;
           &__category {
             font-size: 18.2px;
@@ -363,23 +360,23 @@
             font-size: 26px;
             line-height: 31.2px;
             letter-spacing: 0.195px;
-            margin-block: 0.73125rem;
+            margin-block: 1.3rem 0.73125rem;
           }
           &__subtitle {
             font-size: 18.2px;
             line-height: 26px;
             letter-spacing: 0.52px;
           }
-        }
-        .button-container {
-          max-width: 31.1520625rem;
-          margin-inline: auto;
-          button {
-            font-size: 18.2px;
-            line-height: 23.023px;
-            letter-spacing: 1.625px;
-            padding: 0.89375rem 1.95rem;
-            border-radius: 0.65rem;
+          .button-container {
+            max-width: 31.1520625rem;
+            margin-inline: auto;
+            button {
+              font-size: 18.2px;
+              line-height: 23.023px;
+              letter-spacing: 1.625px;
+              padding: 0.89375rem 1.95rem;
+              border-radius: 0.65rem;
+            }
           }
         }
       }
@@ -387,6 +384,7 @@
   }
   @include lg {
     .track {
+      padding-top: 8em;
       .slide {
         @include flexbox(space-evenly, center, row-reverse);
         &One__image {
@@ -451,6 +449,23 @@
         }
         &__text {
           margin-inline: 0;
+          max-width: 32.1rem;
+          min-height: 18.9rem;
+          &__category {
+            font-size: 12.8px;
+            line-height: 16px;
+            letter-spacing: 0.12px;
+          }
+          &__title {
+            font-size: 27.2px;
+            line-height: 34.408px;
+            letter-spacing: 0.2px;
+          }
+          &__subtitle {
+            font-size: 16px;
+            line-height: 19.2px;
+            letter-spacing: 0.12px;
+          }
           .button-container {
             display: initial;
             width: 100%;
@@ -473,14 +488,12 @@
             }
           }
         }
-        & > .button-container {
-          display: none;
-        }
       }
     }
   }
   @include xl {
     .track {
+      padding-top: 10em;
       .slide {
         &One__image {
           min-width: 33.82375rem;
@@ -544,8 +557,24 @@
         }
         &__text {
           margin-inline: 0;
+          max-width: 40.125rem;
+          min-height: 23.625rem;
+          &__category {
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.15px;
+          }
+          &__title {
+            font-size: 34px;
+            line-height: 43.01px;
+            letter-spacing: 0.25px;
+          }
+          &__subtitle {
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+          }
           .button-container {
-            display: initial;
             width: 100%;
             max-width: 23.963125rem;
             margin-inline: auto;
@@ -565,9 +594,6 @@
               border-radius: 0.5rem;
             }
           }
-        }
-        & > .button-container {
-          display: none;
         }
       }
     }
@@ -602,7 +628,7 @@
       &__list {
         display: inline-flex;
         width: fit-content;
-      margin-inline: auto;
+        margin-inline: auto;
         padding-block: 1.8em;
         overflow-x: scroll;
         overflow-y: visible;
@@ -660,16 +686,20 @@
       padding-block: 2.6875rem;
       gap: 1rem 0.4375rem;
       grid-template-columns: repeat(2, 1fr);
-      img {
-        width: 100%;
-      }
       .article-thumb {
         position: relative;
         background-color: #FFFFFF;
         box-shadow: 0px 0.723077px 1.44615px -0.361538px rgba(0, 0, 0, 0.1), 0px 1.44615px 1.80769px rgba(0, 0, 0, 0.07), 0px 0.361538px 3.61538px rgba(0, 0, 0, 0.06);
         border-radius: 0.5rem;
         overflow: hidden;
-
+        .image-container {
+          width: fit-content;
+          padding: 3em;
+          margin-inline: auto;
+          img {
+            max-width: 100%;
+          }
+        }
         h5 {
           position: absolute;
           top: 0.525rem;
@@ -843,6 +873,9 @@
     }
     .articles-container {
       padding: 3.49375rem 1.21875rem;
+      .category-selector {
+        left: calc(50% - 19.109375rem);
+      }
       .filter-container {
         p{
           font-size: 18.2px;
@@ -1002,9 +1035,6 @@
             }
           }
           &:first-child {
-            img {
-              max-height: 22.5em;
-            }
             .article-thumb__bottom {
               h1 {
                 font-size: 19.2px;
