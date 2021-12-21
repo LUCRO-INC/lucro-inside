@@ -740,8 +740,7 @@
           @include flexbox(center, center, column);
           padding: 0.598125rem 0.740625rem;
           h1 {
-            @include fontStyle(10px, 14px, $--fw-bold, #333333, undefined);
-            letter-spacing: 0.004em;
+            @include fontStyle(24px, 30.36px, $--fw-bold, #333333, undefined);
             margin-right: auto;
             margin-bottom: 1.2225rem;
           }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Article } from 'src/app/@core/models/customersModels/article';
+import { Category } from 'src/app/@core/models/customersModels/category';
 import { CustomerService } from 'src/app/@core/services/customers.service';
 import { environment } from 'src/environments/environment';
 
@@ -13,7 +14,9 @@ import { environment } from 'src/environments/environment';
 export class ArticleComponent implements OnInit {
 
   public article: any;
-  public articles: Array<Article> = [];
+  public articles: Article[] = [];
+  public categories:Category[] = [];
+  environmentUrl = environment.url;
   actualPage: number = 1;
   timeOut:any;
   url:string = '';
@@ -26,6 +29,7 @@ export class ArticleComponent implements OnInit {
   async ngOnInit() {
     window.scroll(0,0);
     this.articles = await this.customerService.getArticles().toPromise();
+    this.categories = await this.customerService.getCategories().toPromise();
     this.route.params.subscribe(async (params: Params) => {
       const id = params.id;
       const data = await this.customerService.getArticleById(id).toPromise();
@@ -36,6 +40,15 @@ export class ArticleComponent implements OnInit {
         this.url = '/assets/imageNotFound.svg';
       }
     });
+    this.articles.forEach((article) => {
+      this.categories.find((category) => {
+        if(category.id === article.categoria) {
+          return article.categoria = category.nombre
+        } else {
+          return null;
+        }
+      })
+    })
   }
 
   goToTop() {

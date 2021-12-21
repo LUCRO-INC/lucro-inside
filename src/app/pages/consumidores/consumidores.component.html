@@ -81,7 +81,7 @@
       </span>
     </div>
 
-    <div class="grid">
+    <div class="grid" id="grid">
       <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles | paginate: { itemsPerPage: 5, currentPage: actualPage }">
         <h5>
           <span>{{ article.categoria }}</span>
