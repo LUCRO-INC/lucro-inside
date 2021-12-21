@@ -1,43 +1,67 @@
+<style>
+  .pagination /deep/ .ngx-pagination {
+    width: fit-content;
+    margin-inline: auto;
+  }
+  .pagination /deep/ .ngx-pagination li {
+    margin-inline: 0.3rem;
+    border: solid 1px #049B41;
+    border-radius: 3.95455px;
+  }
+  .pagination /deep/ .ngx-pagination li:first-child,
+  .pagination /deep/ .ngx-pagination li:last-child {
+    display: none;
+  }
+  .pagination /deep/ .ngx-pagination li a span {
+    color: #3333338a;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .pagination /deep/ .ngx-pagination .current {
+    background-color: #049B41;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+  }
+</style>
 <section class="consumidores">
   <section class="slider">
-    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" class="track">
+    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()" (init)="onInit()" class="track">
       <ng-template swiperSlide class="slide" *ngFor="let slide of slider">
-        <div [ngClass]="slide.class">
-          <div [ngClass]="slide.imageClass">
-            <img
-              *ngFor="let img of slide.images"
-              [src]="img.src"
-              [class]="img.class"
-            />
-          </div>
-          <article class="slide__text">
-            <span *ngIf="slide.category" class="slide__text__category">
-              {{ slide.category }}
-            </span>
-            <h1 class="slide__text__title">
-              {{ slide.title }}
-            </h1>
-            <p *ngIf="slide.subtitle" class="slide__text__subtitle">
-              {{ slide.subtitle }}
-            </p>
-            <div class="button-container" *ngIf="slide.button">
-              <button>{{ slide.button }}</button>
-            </div>
-          </article>
+        <div [ngClass]="slide.imageClass">
+          <img
+            *ngFor="let img of slide.images"
+            [src]="img.src"
+            [class]="img.class"
+          />
         </div>
+        <article class="slide__text">
+          <span *ngIf="slide.category" class="slide__text__category">
+            {{ slide.category }}
+          </span>
+          <h1 class="slide__text__title">
+            {{ slide.title }}
+          </h1>
+          <p *ngIf="slide.subtitle" class="slide__text__subtitle">
+            {{ slide.subtitle }}
+          </p>
+          <div class="button-container" *ngIf="slide.button">
+            <button>{{ slide.button }}</button>
+          </div>
+        </article>
       </ng-template>
     </swiper>
     <span id="arrow-left" class="arrow-left"><i class="fas fa-arrow-left"></i></span>
     <span id="arrow-right" class="arrow-right"><i class="fas fa-arrow-right"></i></span>
   </section>
 
-  <section class="articles-container">
+  <section id="articlesContainer" class="articles-container" #gridContainer>
     <div class="category-selector">
       <ul class="category-selector__list">
-        <a href="/" class="catetegory-selector__list__link active">
+        <a class="catetegory-selector__list__link active" (click)="clearArray()">
           <p class="catetegory-selector__list__link__text">Todos los estudios</p>
         </a>
-        <a href="/" class="catetegory-selector__list__link" *ngFor="let cat of categories">
+        <a class="catetegory-selector__list__link" *ngFor="let cat of categories" (click)="categoryFilter(myCategory.innerText)" #myCategory>
           <p class="catetegory-selector__list__link__text">{{ cat.nombre }}</p>
         </a>
       </ul>
@@ -58,116 +82,26 @@
     </div>
 
     <div class="grid">
-      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
+      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles | paginate: { itemsPerPage: 5, currentPage: actualPage }">
         <h5>
           <span>{{ article.categoria }}</span>
         </h5>
         <div class="image-container">
-          <img
-            src="/assets/imageNotFound.png"
-            alt="Definitively your best choice. A descriptive image"
-          />
-          <!-- <img *ngIf="article.imagen != null" [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
+          <img [src]="article.imagen? environmentUrl + article.imagen : '/assets/imageNotFound.png'" alt="Definitively your best choice. A descriptive image">
         </div>
 
         <div class="article-thumb__bottom">
           <h1>{{ article.titulo }}</h1>
           <div class="date-container">
             <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha | date:'d MMM y' }}</span>
-          </div>
-        </div>
-      </a>
-
-      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
-        <h5>
-          <span>{{ article.categoria }}</span>
-        </h5>
-        <div class="image-container">
-          <img
-            src="/assets/imageNotFound.png"
-            alt="Definitively your best choice. A descriptive image"
-          />
-          <!-- <img *ngIf="article.imagen != null" [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
-        </div>
-
-        <div class="article-thumb__bottom">
-          <h1>{{ article.titulo }}</h1>
-          <div class="date-container">
-            <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha | date:'d MMM y' }}</span>
-          </div>
-        </div>
-      </a>
-
-      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
-        <h5>
-          <span>{{ article.categoria }}</span>
-        </h5>
-        <div class="image-container">
-          <img
-            src="/assets/imageNotFound.png"
-            alt="Definitively your best choice. A descriptive image"
-          />
-          <!-- <img *ngIf="article.imagen != null" [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
-        </div>
-
-        <div class="article-thumb__bottom">
-          <h1>{{ article.titulo }}</h1>
-          <div class="date-container">
-            <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha | date:'d MMM y' }}</span>
-          </div>
-        </div>
-      </a>
-
-      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
-        <h5>
-          <span>{{ article.categoria }}</span>
-        </h5>
-        <div class="image-container">
-          <img
-            src="/assets/imageNotFound.png"
-            alt="Definitively your best choice. A descriptive image"
-          />
-          <!-- <img *ngIf="article.imagen != null" [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
-        </div>
-
-        <div class="article-thumb__bottom">
-          <h1>{{ article.titulo }}</h1>
-          <div class="date-container">
-            <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha | date:'d MMM y' }}</span>
-          </div>
-        </div>
-      </a>
-
-      <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles">
-        <h5>
-          <span>{{ article.categoria }}</span>
-        </h5>
-        <div class="image-container">
-          <img
-            src="/assets/imageNotFound.png"
-            alt="Definitively your best choice. A descriptive image"
-          />
-          <!-- <img *ngIf="article.imagen != null" [src]="article.imagen" alt="Definitively your best choice. A descriptive image"> -->
-        </div>
-
-        <div class="article-thumb__bottom">
-          <h1>{{ article.titulo }}</h1>
-          <div class="date-container">
-            <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha | date:'d MMM y' }}</span>
+            <span>{{ article.fecha }}</span>
           </div>
         </div>
       </a>
     </div>
-
-    <div class="pagination">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-    </div>
+    <pagination-controls
+      class="pagination"
+      (pageChange)="actualPage = $event"
+      ></pagination-controls>
   </section>
 </section>

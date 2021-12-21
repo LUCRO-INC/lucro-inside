@@ -4,8 +4,13 @@
   @include flexbox(center, center, column);
   padding-top: 4.5em;
   overflow-y: scroll;
+  scrollbar-width: none;
   overscroll-behavior-y: contain;
   scroll-snap-type: y proximity;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   nav {
     position: fixed;
@@ -45,7 +50,7 @@
     }
     &.float {
       position: absolute;
-      top: 920vh;
+      top: 874vh;
     }
   }
 
@@ -1433,6 +1438,7 @@
     .chatbot {
       justify-content: space-evenly;
       flex-direction: row-reverse;
+      margin-top: 0;
       height: 80vh;
       width: 80%;
       padding-top: 6.5rem;

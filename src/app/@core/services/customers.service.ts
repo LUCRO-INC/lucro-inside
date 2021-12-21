@@ -106,16 +106,15 @@ export class CustomerService {
   ) { }
 
   getCategories() {
-    return this.http.get<Category[]>(environment.url + 'categorias.php');
+    return this.http.get<Category[]>(environment.url + 'servicios/categorias.php');
   }
 
   getArticles() {
-    return this.http.get<Article[]>(environment.url + 'blog.php');
+    return this.http.get<Article[]>(environment.url + 'servicios/blog.php');
   }
 
-  async getArticle(id: String): Promise<any> {
-    const articles = await this.getArticles().toPromise()
-    return articles.find(article => id === article.id);
+  getArticleById(id:string) {
+    return this.http.get<Article>(environment.urlById + id);
   }
 
   async get(): Promise<any> {

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://lucro.omgagency.co/servicios/'
+  url: 'https://lucro.omgagency.co/',
+  urlById: 'https://lucro.omgagency.co/servicios/articulo.php?id='
 };
 
 /*
