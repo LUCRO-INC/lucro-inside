@@ -46,7 +46,7 @@
             {{ slide.subtitle }}
           </p>
           <div class="button-container" *ngIf="slide.button">
-            <button>{{ slide.button }}</button>
+            <a [routerLink]="slide.link">{{ slide.button }}</a>
           </div>
         </article>
       </ng-template>
@@ -58,10 +58,10 @@
   <section id="articlesContainer" class="articles-container" #gridContainer>
     <div class="category-selector">
       <ul class="category-selector__list">
-        <a class="catetegory-selector__list__link active" (click)="clearArray()">
+        <a class="catetegory-selector__list__link active" (click)="clearArray($event)" #myCategory>
           <p class="catetegory-selector__list__link__text">Todos los estudios</p>
         </a>
-        <a class="catetegory-selector__list__link" *ngFor="let cat of categories" (click)="categoryFilter(myCategory.innerText)" #myCategory>
+        <a class="catetegory-selector__list__link" *ngFor="let cat of categories" (click)="categoryFilter(myCategory.innerText, $event)" #myCategory>
           <p class="catetegory-selector__list__link__text">{{ cat.nombre }}</p>
         </a>
       </ul>

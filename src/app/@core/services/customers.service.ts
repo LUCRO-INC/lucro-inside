@@ -63,12 +63,13 @@ export class CustomerService {
           }
         ],
         imageClass: "slideTwo__image",
-        button: 'Ver informe'
+        button: 'Ver informe',
+        link: '/consumidores/2'
       },
       {
         name: "slideThree",
         class: "slideThree",
-        category: "Demografía",
+        category: "Consumo",
         title: "Los tenderos, un gremio que lucha por su subsistencia.",
         subtitle: "Un estudio reciente de la Federación Nacional de Comerciantes Fenalco.",
         images: [
@@ -94,7 +95,8 @@ export class CustomerService {
           }
         ],
         imageClass: "slideThree__image",
-        button: 'Ver informe'
+        button: 'Ver informe',
+        link: '/consumidores/12'
       }
     ],
     articles: this.articles,

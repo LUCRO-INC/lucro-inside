@@ -172,7 +172,7 @@
           max-width: 23.963125rem;
           margin-inline: auto;
           opacity: 0;
-          button {
+          a {
             @include fontStyle(14px, 17.71px, $--fw-bold, #f4f7f5, uppercase);
             letter-spacing: 1.25px;
             padding: 0.6875rem 1.5rem;
@@ -291,7 +291,7 @@
           .button-container {
             max-width: 26.3594375rem;
             margin-inline: auto;
-            button {
+            a {
               font-size: 15.4px;
               line-height: 19.481px;
               letter-spacing: 1.375px;
@@ -390,7 +390,7 @@
           .button-container {
             max-width: 31.1520625rem;
             margin-inline: auto;
-            button {
+            a {
               font-size: 18.2px;
               line-height: 23.023px;
               letter-spacing: 1.625px;
@@ -491,7 +491,7 @@
             width: 100%;
             max-width: 23.963125rem;
             margin-inline: auto;
-            button {
+            a {
               @include fontStyle(
                 14px,
                 17.71px,
@@ -598,7 +598,7 @@
             width: 100%;
             max-width: 23.963125rem;
             margin-inline: auto;
-            button {
+            a {
               @include fontStyle(
                 14px,
                 17.71px,
@@ -670,6 +670,7 @@
           p {
             @include fontStyle(16px, 22px, $--fw-light, $--clr-font-light, undefined);
             overflow-y: visible;
+            pointer-events: none;
           }
           &.active {
             p {

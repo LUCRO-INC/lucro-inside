@@ -9,4 +9,5 @@ export interface Slider {
   images: Images[];
   imageClass: String;
   button?: String;
+  link?: string;
 }

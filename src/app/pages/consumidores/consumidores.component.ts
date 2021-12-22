@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 import { CustomerService } from 'src/app/@core/services/customers.service';
 import { Article } from 'src/app/@core/models/customersModels/article';
 import { Category } from 'src/app/@core/models/customersModels/category';
@@ -19,6 +18,8 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('gridContainer')
   gridContainer: ElementRef = {} as ElementRef;
+  @ViewChild('myCategory')
+  myCategory: ElementRef = {} as ElementRef;
 
   public fullArray:Article[] = [];
 
@@ -80,7 +81,16 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  categoryFilter(text: String) {
+  categoryFilter(text: String, event: Event) {
+    let links = document.querySelectorAll('.catetegory-selector__list__link');
+    let currentLink = event.target as Element;
+    links.forEach((link) => {
+      if(link.classList.contains('active')) {
+        link.classList.remove('active');
+      }
+    })
+    currentLink?.classList.add('active')
+    this.actualPage = 1;
     if (this.categorySelected === false) {
       const filteredArticles = this.articles.filter((article) => article.categoria.toLowerCase() === text.toLowerCase())
       this.articles = filteredArticles;
@@ -92,7 +102,16 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  clearArray() {
+  clearArray(event: Event): void {
+    this.actualPage = 1;
+    let links = document.querySelectorAll('.catetegory-selector__list__link');
+    let currentLink = event.target as Element;
+    links.forEach((link) => {
+      if(link.classList.contains('active')) {
+        link.classList.remove('active');
+      }
+    })
+    currentLink?.classList.add('active')
     this.articles = this.fullArray;
     this.categorySelected = false;
   }
