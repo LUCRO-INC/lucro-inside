@@ -1371,30 +1371,6 @@
               }
             }
           }
-          &:nth-child(5) {
-            button {
-              .solucion-label {
-                @include fontStyle(
-                  12px,
-                  14.168px,
-                  $--fw-bold,
-                  $--clr-font-regular,
-                  undefined
-                );
-                position: relative;
-                right: 0;
-                &::after {
-                  content: "";
-                  position: absolute;
-                  width: 72px;
-                  height: 2px;
-                  bottom: -0.4em;
-                  right: 0;
-                  background: $--clr-lucro-red;
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -1728,15 +1704,6 @@
             &:hover,
             &:active,
             &:focus {
-              .solucion-label {
-                font-size: 16px;
-                line-height: 17.71px;
-                font-weight: $--fw-bold;
-              }
-            }
-          }
-          &:nth-child(5) {
-            button {
               .solucion-label {
                 font-size: 16px;
                 line-height: 17.71px;

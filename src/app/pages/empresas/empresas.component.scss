@@ -2,7 +2,6 @@
 
 ::ng-deep .specificator {
   .swiper-wrapper {
-    justify-content: space-between;
     margin-block: 2em;
   }
 
@@ -798,7 +797,7 @@
     text-align: center;
   }
   .our-clients {
-    width: 98%;
+    width: 100%;
     max-width: 100rem;
     margin-inline: auto;
     ng-container {

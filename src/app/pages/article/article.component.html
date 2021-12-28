@@ -2,8 +2,8 @@
   <div class="title">
     <img
       class="title__background"
-      src="/assets/images/consumidores/article/categoryImages/medio-ambiente.jpg"
-      alt="banner-image"
+      [src]="bannerSource? bannerSource : '/assets/images/consumidores/article/trash-banner.png'"
+      alt="category-banner-image"
     />
     <h1 class="title__text">
       {{ article[0]?.titulo }}
@@ -68,7 +68,8 @@
         (click)="goToTop()"
         [routerLink]="['/consumidores', a.id]"
         class="article-thumb"
-        *ngFor="let a of articles | paginate: { itemsPerPage: 3, currentPage: actualPage }">
+        *ngFor="let a of articles | paginate: { itemsPerPage: 3, currentPage: actualPage }"
+        >
         <h5>
           <span>{{ a.categoria }}</span>
         </h5>

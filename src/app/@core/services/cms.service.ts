@@ -71,7 +71,7 @@ export class CmsService {
           },
           {
             id: 4,
-            src: '/assets/images/concentrated-dark-skinned-freelancer-holds-paper-documents-and-mobile-phone-works-remotely-in-coworking-space-watches-digital-online-webinar-thinks-about-organisation-plan 1.png',
+            src: '/assets/images/purpose-image.png',
             class: 'purpose__image4',
           },
         ]

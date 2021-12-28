@@ -34,26 +34,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public hasMenu: boolean = false;
   public hasFooter: boolean = false;
-  public observer: any;
   public actives = document.querySelectorAll('.active');
-  public x: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.sliderTimer();
+    this.sliderTimer();
     window.scrollTo(0,0);
-    this.intersectionObserver();
-    this.x = window.matchMedia('(max-width: 992px)')
   }
 
   ngAfterViewInit() {
-    this.observer.observe(this.L.nativeElement);
-    this.observer.observe(this.U.nativeElement);
-    this.observer.observe(this.C.nativeElement);
-    this.observer.observe(this.R.nativeElement);
-    this.observer.observe(this.O.nativeElement);
-    // console.log(this.x)
   }
 
   ngOnDestroy() {
@@ -123,42 +113,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     oc?.classList.add('active')
   }
 
-  // sliderTimer() {
-  //   if (this.x.matches == true) {
-  //     this.id = setInterval(() => {
-  //       if (this.timer == 0) {
-  //         this.goToL();
-  //       } else if (this.timer == 1) {
-  //         this.goToU();
-  //       } else if (this.timer == 2) {
-  //         this.goToC();
-  //       } else if (this.timer == 3) {
-  //         this.goToR();
-  //       } else if (this.timer == 4) {
-  //         this.goToO();
-  //       }
-  //     }, 4000)
-  //   }
-  // }
-
-  intersectionObserver() {
-    let options = {
-      root: document.querySelector('#viewTarget'),
-      rootMargin: '0px',
-      treshold: 0.5
-    };
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-        let actives = document.querySelectorAll('.active');
-        actives.forEach(a => {
-          a.classList.remove('active')
-        })
-        entry.target.classList.add('active')
-      })
-    }, options)
+  sliderTimer() {
+    this.id = setInterval(() => {
+      if (this.timer == 0) {
+        this.goToL();
+      } else if (this.timer == 1) {
+        this.goToU();
+      } else if (this.timer == 2) {
+        this.goToC();
+      } else if (this.timer == 3) {
+        this.goToR();
+      } else if (this.timer == 4) {
+        this.goToO();
+      }
+    }, 4000)
   }
 
 }
