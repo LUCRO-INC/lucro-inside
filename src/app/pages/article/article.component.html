@@ -16,17 +16,17 @@
         <i class="far fa-calendar-minus"></i>
         <span>{{ article[0]?.fecha }}</span>
       </div>
+      <figure class="image-container">
+        <img
+          [src]="url"
+          alt="Definitively your best choice. A descriptive image"
+        />
+      </figure>
       <div
         [innerHTML]="article[0]?.texto"
         class="article-content__text">
       </div>
     </article>
-    <figure class="image-container">
-      <img
-        [src]="url"
-        alt="Definitively your best choice. A descriptive image"
-      />
-    </figure>
   </div>
 
   <div class="social">

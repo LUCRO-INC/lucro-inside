@@ -189,8 +189,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          console.log(entry.target)
           entry.target.classList.add('active');
           entry.target.classList.add('show');
+          let navbarItems = document.querySelectorAll('.nav-button');
+          console.log(navbarItems)
+          navbarItems.forEach(item => {
+            item.classList.remove('active');
+          })
           this.clickArrow = false;
         }
       });

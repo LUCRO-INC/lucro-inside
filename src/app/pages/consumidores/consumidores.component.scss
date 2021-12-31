@@ -18,6 +18,12 @@
       }
     }
   }
+  .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: calc(50% - 40px);
+  }
+  .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0;
+  }
   .track {
     @include flexbox(space-between, center, row);
     height: 100%;
@@ -627,7 +633,7 @@
 
   .slider {
     display: block;
-    height: 37.875rem;
+    height: 39.875rem;
     padding-bottom: 4em;
     background-color: #cdebd9;
     overflow-x: hidden;
