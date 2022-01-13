@@ -26,9 +26,11 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
   public articles:Article[] = [];
   public categories:Category[] = [];
   public slider:Slider []= [];
+  public categorySelector: any;
   public observer: any;
   public id: any;
   public article: any;
+  categorySelectorCoordinates: any;
   environmentUrl = environment.url;
   actualPage: number = 1;
   categorySelected: Boolean = false;
@@ -69,6 +71,8 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
       })
     })
     this.fullArray = this.articles;
+    this.categorySelector = document.getElementById('categorySelector');
+    this.categorySelectorCoordinates = this.categorySelector?.getBoundingClientRect().y + window.scrollY;
   }
 
   ngAfterViewInit() {
@@ -79,6 +83,14 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.id) {
       clearInterval(this.id);
     }
+  }
+
+  onPageChange(page: number) {
+    this.actualPage = page;window.scrollTo({
+      top: this.categorySelectorCoordinates + -75,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   categoryFilter(text: String, event: Event) {

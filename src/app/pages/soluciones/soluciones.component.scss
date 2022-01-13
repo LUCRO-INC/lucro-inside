@@ -1,5 +1,194 @@
 @import "./theme/settings";
 
+::ng-deep {
+  .swiper-wrapper,
+  .swiper-wrapper-navbar {
+    height: 100%;
+  }
+  .questions {
+    @include flexbox(space-between, center, column);
+    display: none;
+    position: absolute;
+    top: 0.7rem;
+    height: 90%;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    .questions__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.85);
+      scroll-snap-align: center !important;
+      .question {
+        @include fontStyle(
+          12px,
+          16px,
+          $--fw-light,
+          $--clr-font-regular,
+          undefined
+        );
+        letter-spacing: 0.004em;
+        background-color: #ffffff;
+        box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.1), 0px 14px 21px 2px rgba(0, 0, 0, 0.07), 0px 5px 26px 4px rgba(0, 0, 0, 0.06);
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+      }
+      &.swiper-slide-next {
+        transform: scale(0.95);
+        .question {
+          font-weight: $--fw-bold;
+        }
+      }
+    }
+    @include sm {
+      top: 0.77rem;
+      .questions__item {
+        .question {
+          font-size: 13.2px;
+          line-height: 17.6px;
+          letter-spacing: 0.0044em;
+          padding: 0.825rem 1.1rem;
+          border-radius: 0.55rem;
+        }
+      }
+    }
+    @include md {
+      top: 0.91rem;
+      .questions__item {
+        .question {
+          font-size: 15.6px;
+          line-height: 20.8px;
+          letter-spacing: 0.0052;
+          padding: 0.975rem 1.3rem;
+          border-radius: 0.65rem;
+        }
+      }
+    }
+    @include xl {
+      top: 0.91rem;
+      .questions__item {
+        .question {
+          font-size: 15.6px;
+          line-height: 20.8px;
+          letter-spacing: 0.0052;
+          padding: 0.975rem 1.3rem;
+          border-radius: 0.65rem;
+        }
+      }
+    }
+    @media screen and (min-width: 1400px) {
+      top: 1.5rem;
+    }
+  }
+  .navbar {
+    @include flexbox(space-between, flex-start, column);
+    height: 21.25rem;
+    &__item {
+      text-align: right;
+      button {
+        background: transparent;
+        border-style: none;
+        cursor: pointer;
+        div {
+          content: "";
+          background-color: $--clr-font-light;
+          height: 0.125rem;
+          width: 0.375rem;
+        }
+        .solucion-label {
+          display: none;
+        }
+
+        &:hover,
+        &:active,
+        &.active,
+        &:focus {
+          div {
+            height: 0.25rem;
+            width: 0.75rem;
+            background-color: $--clr-lucro-red;
+          }
+        }
+      }
+    }
+    @include lg {
+      align-items: flex-end;
+      min-height: 100%;
+      width: 100%;
+      margin-left: auto;
+      &__item {
+        height: 100%;
+        width: 100%;
+        button {
+          div {
+            display: none;
+          }
+          .solucion-label {
+            display: block;
+            max-width: 4.2025rem;
+            text-align: right;
+            @include fontStyle(
+              11.2px,
+              14.168px,
+              $--fw-light,
+              $--clr-font-light,
+              undefined
+            );
+            opacity: 1;
+            pointer-events: none;
+          }
+          &:hover,
+          &.highlighted,
+          &.swiper-slide-active,
+          &:focus {
+            .solucion-label {
+              @include fontStyle(
+                12px,
+                14.168px,
+                $--fw-bold,
+                $--clr-font-regular,
+                undefined
+              );
+              position: relative;
+              right: 0;
+              &::after {
+                content: "";
+                position: absolute;
+                width: 72px;
+                height: 2px;
+                bottom: -0.4em;
+                right: 0;
+                background: $--clr-lucro-red;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (min-width: 1400px) {
+      width: 60%;
+      &__item {
+        button {
+          .solucion-label {
+            font-size: 14px;
+            line-height: 17.71px;
+            max-width: 5.253125rem;
+          }
+          &:hover,
+          &:active,
+          &:focus {
+            .solucion-label {
+              font-size: 16px;
+              line-height: 17.71px;
+              font-weight: $--fw-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .soluciones {
   @include flexbox(center, center, column);
   padding-top: 4.5em;
@@ -15,95 +204,12 @@
   nav {
     position: fixed;
     width: 0.375rem;
-    top: 15vh;
-    left: 0; transition: all 0s;
-    ul {
-      @include flexbox(space-between, flex-start, column);
-      height: 21.25rem;
-      li {
-        text-align: right;
-        button {
-          background: transparent;
-          border-style: none;
-          cursor: pointer;
-          div {
-            content: "";
-            background-color: $--clr-font-light;
-            height: 0.125rem;
-            width: 0.375rem;
-          }
-          .solucion-label {
-            display: none;
-          }
-
-          &:hover,
-          &:active,
-          &:focus {
-            div {
-              height: 0.25rem;
-              width: 0.75rem;
-              background-color: $--clr-lucro-red;
-            }
-          }
-        }
-      }
-    }
-    &.float {
-      position: absolute;
-      top: 874vh;
-    }
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    transition: all 0s;
   }
 
-  h3 {
-    @include fontStyle(20px, 24px, $--fw-black, #36af67, undefined);
-    letter-spacing: 0.15px;
-    margin-block: 0.5em 1em;
-    max-width: 25rem;
-    opacity: 0;
-  }
-
-  h6 {
-    @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
-    letter-spacing: 0.004em;
-    margin-top: 1.6875rem;
-    margin-right: auto;
-    max-width: 24.5rem;
-    opacity: 0;
-  }
-
-  p {
-    @include fontStyle(12px, 16px, $--fw-light, $--clr-font-light, undefined);
-    letter-spacing: 0.004em;
-    margin-top: 1.6875rem;
-    max-width: 24.5rem;
-    opacity: 0;
-  }
-  // span {
-  //   opacity: 0;
-  // }
-  .btn-ghost {
-    @include fontStyle(12px, 16px, $--fw-bold, $--clr-font-regular, uppercase);
-    letter-spacing: 0.004em;
-    background: transparent;
-    width: 70%;
-    padding: 0.5rem 0;
-    margin-top: 1.5em;
-    margin-right: auto;
-    border: $--clr-font-dark 2px solid;
-    border-radius: 10px;
-    cursor: pointer;
-    opacity: 0;
-    &:hover {
-      opacity: 0.8;
-    }
-    &:active {
-      transform: scale(0.95);
-    }
-  }
-
-  & > div {
-    scroll-snap-align: center !important;
-  }
   .evaluacionDesempeno,
   .machineLearning,
   .solucionesDashboard,
@@ -128,16 +234,42 @@
       min-width: 18rem;
       max-width: 18rem;
       position: relative;
+
+      &--title {
+        @include fontStyle(20px, 24px, $--fw-black, #36af67, undefined);
+        letter-spacing: 0.15px;
+        margin-block: 0.5em 1em;
+        max-width: 25rem;
+        opacity: 0;
+      }
+      .btn-ghost {
+        @include fontStyle(12px, 16px, $--fw-bold, $--clr-font-regular, uppercase);
+        letter-spacing: 0.004em;
+        background: transparent;
+        width: 70%;
+        padding: 0.5rem 0;
+        margin-top: 1.5em;
+        margin-right: auto;
+        border: $--clr-font-dark 2px solid;
+        border-radius: 10px;
+        cursor: pointer;
+        opacity: 0;
+        &:hover {
+          opacity: 0.8;
+        }
+        &:active {
+          transform: scale(0.95);
+        }
+      }
       .slider-container {
         overflow: hidden;
         height: 24.5em;
         .upper-tabs {
           display: inline-block;
           justify-content: center;
-          width: 100%;
           cursor: pointer;
           a + a {
-            margin-left: 0.2rem;
+            margin-left: 0.2em;
           }
           a {
             padding: 0.5rem 0.1375rem;
@@ -176,46 +308,29 @@
           }
         }
         .slider {
-          display: block;
           position: relative;
+          display: block;
           height: 100%;
           .description {
             display: block;
             min-width: 17rem;
             max-width: 17rem;
-          }
-          .questions {
-            @include flexbox(space-evenly, center, column);
-            display: none;
-            position: absolute;
-            top: 1.5em;
-            li {
-              transform: scale(0.85);
-              &:nth-child(2) {
-                transform: scale(0.95);
-                background-color: #ffffff;
-                box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.1), 0px 12px 17px 2px rgba(0, 0, 0, 0.07), 0px 5px 22px 4px rgba(0, 0, 0, 0.06);
-                p {
-                  font-weight: $--fw-bold;
-                }
-              }
-              &:nth-child(n+4) {
-                display: none;
-              }
-              .question {
-                @include fontStyle(
-                  12px,
-                  16px,
-                  $--fw-light,
-                  $--clr-font-regular,
-                  undefined
-                );
-                letter-spacing: 0.004em;
-                background-color: #fff;
-                padding: 0.75rem 1rem;
-                border-radius: 0.5rem;
-                margin-top: 0.5rem;
-              }
+
+            h6 {
+              @include fontStyle(12px, 16px, $--fw-light, $--clr-font-regular, undefined);
+              letter-spacing: 0.004em;
+              margin-top: 1.6875rem;
+              margin-right: auto;
+              max-width: 24.5rem;
+              opacity: 0;
+            }
+
+            p {
+              @include fontStyle(12px, 16px, $--fw-light, $--clr-font-light, undefined);
+              letter-spacing: 0.004em;
+              margin-top: 1.6875rem;
+              max-width: 24.5rem;
+              opacity: 0;
             }
           }
         }
@@ -748,9 +863,9 @@
   @include sm {
     nav {
       width: 0.4125rem;
-      ul {
+      .navbar {
         height: 23.375rem;
-        li {
+        &__item {
           button {
             div {
               height: 0.1375rem;
@@ -759,19 +874,6 @@
           }
         }
       }
-    }
-    h3 {
-      font-size: 22px;
-      line-height: 26.4px;
-      letter-spacing: 0.165;
-      max-width: 27.5rem;
-    }
-    h6,
-    p {
-      font-size: 13.2px;
-      line-height: 17.6px;
-      letter-spacing: 0.0044;
-      max-width: 26.95rem;
     }
     .evaluacionDesempeno,
     .machineLearning,
@@ -787,16 +889,44 @@
         width: 100%;
         min-width: 19.7rem;
         max-width: 19.7rem;
+        &--title {
+          font-size: 22px;
+          line-height: 26.4px;
+          letter-spacing: 0.165;
+          max-width: 27.5rem;
+        }
+        .btn-ghost {
+          font-size: 13.2px;
+          line-height: 17.6px;
+          letter-spacing: 0.0044em;
+          padding: 0.55rem 0;
+          margin-top: 1.65em;
+        }
         .slider-container {
+          height: 26.95em;
           .upper-tabs {
+            width: 110%;
+            a + a {
+              margin-left: 0;
+            }
             a {
               padding: 0.55rem 0.5625rem;
+              font-size: 13.2px;
+              line-height: 17.6px;
+              letter-spacing: 0.0044em;
             }
           }
           .slider {
             .description {
               min-width: 18.7rem;
               max-width: 18.7rem;
+              h6,
+              p {
+                font-size: 13.2px;
+                line-height: 17.6px;
+                letter-spacing: 0.0044;
+                max-width: 26.95rem;
+              }
             }
             .questions {
               min-width: 18.7rem;
@@ -1034,9 +1164,9 @@
   @include md {
     nav {
       width: 0.4875rem;
-      ul {
+      .navbar {
         height: 27.65rem;
-        li {
+        &__item {
           button {
             div {
               height: 0.1625rem;
@@ -1045,12 +1175,6 @@
           }
         }
       }
-    }
-    h3 {
-      font-size: 26px;
-      line-height: 31.2px;
-      letter-spacing: 0.195;
-      max-width: 32.5rem;
     }
     h6,
     p {
@@ -1072,9 +1196,23 @@
       &__text {
         min-width: 23.1rem;
         max-width: 23.1rem;
+        &--title {
+          font-size: 26px;
+          line-height: 31.2px;
+          letter-spacing: 0.195;
+          max-width: 32.5rem;
+        }
+        .btn-ghost {
+          font-size: 15.6px;
+          line-height: 20.8px;
+          letter-spacing: 0.0052em;
+          padding: 0.65rem 0;
+          margin-top: 1.95em;
+        }
         .slider-container {
-          margin-bottom: 3.9em;
+          height: 31.85em;
           .upper-tabs {
+            width: 100%;
             a {
               padding: 0.65rem 1.25rem;
             }
@@ -1083,6 +1221,13 @@
             .description {
               min-width: 22.1rem;
               max-width: 22.1rem;
+              h6,
+              p {
+                font-size: 15.6px;
+                line-height: 20.8px;
+                letter-spacing: 0.0052;
+                max-width: 31.85rem;
+              }
             }
             .questions {
               min-width: 22.1rem;
@@ -1321,86 +1466,15 @@
     max-width: 65rem;
     nav {
       min-width: 10%;
-      ul {
-        align-items: flex-end;
-        height: 30.6rem;
-        width: 100%;
-        margin-left: auto;
-        li {
-          height: 100%;
-          width: 100%;
-          button {
-            div {
-              display: none;
-            }
-            .solucion-label {
-              display: block;
-              max-width: 4.2025rem;
-              text-align: right;
-              @include fontStyle(
-                11.2px,
-                14.168px,
-                $--fw-light,
-                $--clr-font-light,
-                undefined
-              );
-              opacity: 1;
-            }
-            &:hover,
-            &:active,
-            &:focus {
-              .solucion-label {
-                @include fontStyle(
-                  12px,
-                  14.168px,
-                  $--fw-bold,
-                  $--clr-font-regular,
-                  undefined
-                );
-                position: relative;
-                right: 0;
-                &::after {
-                  content: "";
-                  position: absolute;
-                  width: 72px;
-                  height: 2px;
-                  bottom: -0.4em;
-                  right: 0;
-                  background: $--clr-lucro-red;
-                }
-              }
-            }
-          }
-        }
+      height: 30.6rem;
+      &.float {
+        position: absolute;
+        top: 900vh;
       }
     }
     article {
       max-width: 22.4rem;
       margin-left: 4.5em;
-    }
-    h3 {
-      margin-block: 0.8em;
-      font-size: 38.4px;
-      line-height: 48.576px;
-      letter-spacing: 0.195;
-      min-width: 26rem;
-      max-width: 26rem;
-    }
-    h6 {
-      font-size: 16px;
-      line-height: 19.2px;
-      letter-spacing: 0.12;
-      max-width: 22.25rem;
-      margin-top: 2em;
-    }
-    p {
-      font-size: 9.6px;
-      line-height: 12.8px;
-      letter-spacing: 0.0032;
-      max-width: 22.25rem;
-    }
-    .btn-ghost {
-      max-width: 13.7rem;
     }
     .evaluacionDesempeno,
     .machineLearning,
@@ -1425,6 +1499,21 @@
       &__text {
         min-width: 23rem;
         max-width: 23rem;
+        &--title {
+          margin-block: 0.8em;
+          font-size: 38.4px;
+          line-height: 48.576px;
+          letter-spacing: 0.195;
+          min-width: 26rem;
+          max-width: 26rem;
+        }
+        .btn-ghost {
+          font-size: 11.2px;
+          line-height: 14.168px;
+          letter-spacing: 0.8px;
+          padding: 1rem 1.2rem;
+          min-width: 13.7rem;
+        }
         .slider-container {
           .upper-tabs {
             a {
@@ -1438,6 +1527,19 @@
             .description {
               min-width: 22rem;
               max-width: 22rem;
+              h6 {
+                font-size: 16px;
+                line-height: 19.2px;
+                letter-spacing: 0.12;
+                max-width: 22.25rem;
+                margin-top: 2em;
+              }
+              p {
+                font-size: 9.6px;
+                line-height: 12.8px;
+                letter-spacing: 0.0032;
+                max-width: 22.25rem;
+              }
             }
             .question {
               min-width: 22rem;
@@ -1690,53 +1792,11 @@
   @media (min-width: 1400px) {
     max-width: 81.25rem;
     nav {
+      height: 38.25rem;
       min-width: 10%;
-      ul {
-        height: 38.25rem;
-        width: 60%;
-        li {
-          button {
-            .solucion-label {
-              font-size: 14px;
-              line-height: 17.71px;
-              max-width: 5.253125rem;
-            }
-            &:hover,
-            &:active,
-            &:focus {
-              .solucion-label {
-                font-size: 16px;
-                line-height: 17.71px;
-                font-weight: $--fw-bold;
-              }
-            }
-          }
-        }
-      }
     }
     article {
       max-width: 28rem;
-    }
-    h3 {
-      font-size: 48px;
-      line-height: 60.72px;
-      letter-spacing: 0.195;
-      max-width: 35rem;
-    }
-    h6 {
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 0.15;
-      max-width: 27.8125rem;
-    }
-    p {
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 0.004;
-      max-width: 27.8125rem;
-    }
-    .btn-ghost {
-      max-width: 17.125rem;
     }
     .evaluacionDesempeno,
     .machineLearning,
@@ -1751,6 +1811,19 @@
       &__text {
         min-width: 34rem;
         max-width: 34rem;
+        &--title {
+          font-size: 48px;
+          line-height: 60.72px;
+          letter-spacing: 0.195;
+          max-width: 35rem;
+        }
+        .btn-ghost {
+          font-size: 14px;
+          line-height: 17.71px;
+          letter-spacing: 1px;
+          padding: 1rem 1.5rem;
+          min-width: 17.125rem;
+        }
         .slider-container {
           .upper-tabs {
             a {
@@ -1764,10 +1837,22 @@
             .description {
               min-width: 30rem;
               max-width: 30rem;
+              h6 {
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: 0.15;
+                max-width: 27.8125rem;
+              }
+              p {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.004;
+                max-width: 27.8125rem;
+              }
             }
             .questions {
-              min-width: 30rem;
-              max-width: 29rem;
+              min-width: 29rem;
+              max-width: 30rem;
             }
           }
         }

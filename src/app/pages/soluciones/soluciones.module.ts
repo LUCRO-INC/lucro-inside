@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SwiperModule } from 'swiper/angular';
+
 import { SolucionesRoutingModule } from './soluciones-routing.module';
 import { SolucionesComponent } from './soluciones.component';
 
@@ -9,7 +11,8 @@ import { SolucionesComponent } from './soluciones.component';
   declarations: [SolucionesComponent],
   imports: [
     CommonModule,
-    SolucionesRoutingModule
+    SolucionesRoutingModule,
+    SwiperModule
   ]
 })
 export class SolucionesModule { }

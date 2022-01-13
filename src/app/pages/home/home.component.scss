@@ -34,59 +34,41 @@
         background: transparent;
       }
 
-      a + a {
-        margin-left: 5em;
-      }
-
       &--link {
-        position: relative;
+        display: block;
         cursor: pointer;
         scroll-snap-align: center;
-        transition: all 2000ms linear;
-        .L {
-          background: url("/assets/images/Header/01empresas.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top left;
-          width: 10.35rem;
-          height: 14.79375rem;
-          opacity: 0;
-        }
-        .U {
-          background: url("/assets/images/Header/02soluciones.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top left;
-          width: 15.21rem;
-          height: 14.79375rem;
-          opacity: 0;
-        }
-        .C {
-          background: url("/assets/images/Header/03tecnologia.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top left;
-          width: 15.57rem;
-          height: 16.65rem;
-          opacity: 0;
-        }
-        .R {
-          background: url("/assets/images/Header/04consumidores.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top left;
-          width: 15.75rem;
-          height: 14.79375rem;
-          opacity: 0;
-        }
-        .O {
-          background: url("/assets/images/Header/05contactenos.png");
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top left;
-          width: 14.79375rem;
-          height: 14.79375rem;
-          opacity: 0;
+        transition: opacity 2000ms linear;
+        figure {
+          position: relative;
+          min-width: 95%;
+          min-height: 95%;
+          width: 22.9625rem;
+          height: 21.51875rem;
+          .L,
+          .Lhover,
+          .U,
+          .Uhover,
+          .C,
+          .Chover,
+          .R,
+          .Rhover,
+          .O,
+          .Ohover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+          .Lhover,
+          .Uhover,
+          .Chover,
+          .Rhover,
+          .Ohover {
+            opacity: 0;
+          }
         }
         p {
           margin-top: 0.5em;
@@ -102,42 +84,25 @@
         }
         &:hover,
         &.active {
-          .L {
-            background: url("/assets/images/Header/01empresas-hover.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
-          }
-          .U {
-            background: url("/assets/images/Header/02soluciones-hover.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
-          }
-          .C {
-            background: url("/assets/images/Header/03tecnologia-hover.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
-          }
-          .R {
-            background: url("/assets/images/Header/04consumidores-hover.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
-          }
-          .O {
-            background: url("/assets/images/Header/05contactenos-hover.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top left;
+          figure {
+            .L,
+            .U,
+            .C,
+            .R,
+            .O {
+              opacity: 0;
+            }
+            .Lhover,
+            .Uhover,
+            .Chover,
+            .Rhover,
+            .Ohover {
+              opacity: 1;
+            }
           }
           p {
             font-weight: $--fw-black;
             text-decoration: underline;
-            span {
-              display: initial;
-            }
           }
         }
       }
@@ -248,35 +213,9 @@
     nav {
       .home__lista-rutas {
         &--link {
-          .L {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 11.5rem;
-            height: 16.4375rem;
-          }
-          .U {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 16.9rem;
-            height: 16.4375rem;
-          }
-          .C {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 17.3rem;
-            height: 18.5rem;
-          }
-          .R {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 17.5rem;
-            height: 15.3484375rem;
-          }
-          .O {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 16.4375rem;
-            height: 16.4375rem;
+          figure {
+            width: 25.25875rem;
+            height: 23.670625rem;
           }
         }
       }
@@ -303,44 +242,39 @@
     }
   }
 
+  @include md {
+    margin-top: 13em;
+    nav {
+      .home__lista-rutas {
+        &--link {
+          figure {
+            width: 29.85125rem;
+            height: 27.974375rem;
+          }
+        }
+      }
+    }
+  }
+
   @include lg {
     height: 70vh;
     nav {
+      width: 100%;
+      max-width: 60rem;
+      display: block;
+      overflow-x: initial;
       .home__lista-rutas {
-        padding: initial;
-        a + a {
-          margin-left: 0%;
-        }
+        width: 100%;
+        overflow-x: initial;
+        padding-inline: initial;
         &--link {
-          .L {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 8.28rem;
-            height: 11.835rem;
+          figure {
+            width: 12rem;
+            height: 11.5rem;
           }
-          .U {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 12.168rem;
-            height: 11.835rem;
-          }
-          .C {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 12.456rem;
-            height: 13.32rem;
-          }
-          .R {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 12.6rem;
-            height: 11.835rem;
-          }
-          .O {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 11.835rem;
-            height: 11.835rem;
+          p {
+            font-size: 19.2px;
+            line-height: 28.8px;
           }
         }
       }
@@ -352,40 +286,16 @@
 
   @include xl {
     nav {
-      overflow-x: initial;
       max-width: 75rem;
-      width: 100%;
       .home__lista-rutas {
         &--link {
-          .L {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 9.2rem;
-            height: 13.15rem;
+          figure {
+            width: 15rem;
+            height: 14.5rem;
           }
-          .U {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 13.52rem;
-            height: 13.15rem;
-          }
-          .C {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 13.84rem;
-            height: 14.8rem;
-          }
-          .R {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 14rem;
-            height: 13.15rem;
-          }
-          .O {
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 13.15rem;
-            height: 13.15rem;
+          p {
+            font-size: 24px;
+            line-height: 30.36px;
           }
         }
       }

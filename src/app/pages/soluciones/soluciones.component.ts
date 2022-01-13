@@ -5,12 +5,18 @@ import {
   ElementRef,
   ViewChild,
   OnDestroy,
+  HostListener,
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
 import { setClassMetadata } from '@angular/core/src/r3_symbols';
 import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimation } from 'src/app/@shared/animations';
 import { ElementSchemaRegistry } from '@angular/compiler';
+
+import SwiperCore, { Swiper, SwiperOptions, Pagination, Autoplay } from 'swiper';
+import swiper from 'swiper';
+
+SwiperCore.use([Pagination, Autoplay]);
 
 @Component({
   selector: 'app-soluciones',
@@ -72,12 +78,168 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private id: any;
   private footer: any;
+  private windowWidth: number = 320;
+  private spaceBetween: number = 27;
+
+  evaluacionDesempenoQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 5,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  machineLearningQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 5,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  solucionesDashboardQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  solucionesRPAQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  investigacionSegmentadaQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  codigosQRQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  realidadAumentadaQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  adsQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 4,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  scraperQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 5,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  chatbotQuestionsConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 3,
+    slidesPerView: 3,
+    spaceBetween: this.spaceBetween,
+    pagination: false,
+    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    observer: true,
+    observeParents: true,
+    slideClass: 'questions__item'
+  };
+
+  carouselConfig: SwiperOptions = {
+    direction: 'vertical',
+    loop: true,
+    loopedSlides: 10,
+    slidesPerView: 10,
+    centeredSlides: true,
+    scrollbar: { draggable: false },
+    slideToClickedSlide: true,
+    spaceBetween: 10,
+    pagination: false,
+    autoplay: false,
+    observer: true,
+    observeParents: true,
+    wrapperClass: 'swiper-wrapper-navbar',
+    slideClass: 'navbar__item',
+    breakpoints: {
+      992: {
+        spaceBetween: 8
+      },
+      1400: {
+        spaceBetween: 10
+      }
+    }
+  };
 
   constructor(private service: CmsService) { }
 
   async ngOnInit() {
-    this.sliderTimer();
-    //this.footerIntersectionObserver();
+    // this.sliderTimer();
     window.scrollTo(0, 0);
     const p = await this.service.get();
     this.soluciones = p.Soluciones || [];
@@ -136,67 +298,73 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  goToSection(solucionLabel: String) {
+  goToSection(solucionLabel: String, event:any) {
+    let navbarItems = document.querySelectorAll('.nav-button')
+    event.target?.classList.add('highlighted');
+    navbarItems.forEach((item) => {
+      if(item.classList.contains('highlighted') && item !== event.target) {
+        item.classList.remove('highlighted');
+      }
+    })
     this.soluciones.forEach((s, idx) => {
-      // switch (solucionLabel) {
-      //   case 'Desempeño de terreno':
-      //     this.soluciones.sort();
-      //     console.log('Desempeño de terreno');
-      //     break;
-      //   case 'Machine Learning':
-      //     console.log('Machine Learning');
-      //     break;
-      //   case 'Dashboard':
-      //     console.log('Dashboard');
-      //     break;
-      //   case 'RPA':
-      //     console.log('RPA');
-      //     break;
-      //   case 'Wisdom':
-      //     console.log('Wisdom');
-      //     break;
-      //   case 'Códigos QR':
-      //     console.log('Códigos QR');
-      //     break;
-      //   case 'Realidad Aumentada':
-      //     console.log('Realidad Aumentada');
-      //     break;
-      //   case 'Ads':
-      //     console.log('Ads');
-      //     break;
-      //   case 'Scrapper':
-      //     console.log('Scrapper');
-      //     break;
-      //   case 'ChatBot':
-      //     console.log('ChatBot');
-      //     break;
-      //   default:
-      //     console.log('there is no click anywhere');
-      //     break;
-      // }
       if (s.label == solucionLabel) {
         this.sections[idx].nativeElement.scrollIntoView({block: 'start'});
       }
     })
+    // switch (solucionLabel) {
+    //   case 'Desempeño de terreno':
+    //     console.log('Desempeño de terreno', navbarItems, event);
+    //     break;
+    //   case 'Machine Learning':
+    //     console.log('Machine Learning', navbarItems, event);
+    //     break;
+    //   case 'Dashboard':
+    //     console.log('Dashboard', navbarItems, event);
+    //     break;
+    //   case 'RPA':
+    //     console.log('RPA', navbarItems, event);
+    //     break;
+    //   case 'Wisdom':
+    //     console.log('Wisdom', navbarItems, event);
+    //     break;
+    //   case 'Códigos QR':
+    //     console.log('Códigos QR', navbarItems, event);
+    //     break;
+    //   case 'Realidad Aumentada':
+    //     console.log('Realidad Aumentada', navbarItems, event);
+    //     break;
+    //   case 'Ads':
+    //     console.log('Ads', navbarItems, event);
+    //     break;
+    //   case 'Scrapper':
+    //     console.log('Scrapper', navbarItems, event);
+    //     break;
+    //   case 'ChatBot':
+    //     console.log('ChatBot', navbarItems, event);
+    //     break;
+    //   default:
+    //     console.log('there is no click anywhere');
+    //     break;
+    // }
   }
 
   intersectionObserver() {
     let options = {
       root: null,
       rootMargin: '0px',
-      treshold: 0.2,
+      threshold: 0.2,
     };
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log(entry.target)
+          // console.log(entry.target)
           entry.target.classList.add('active');
           entry.target.classList.add('show');
-          let navbarItems = document.querySelectorAll('.nav-button');
-          console.log(navbarItems)
-          navbarItems.forEach(item => {
-            item.classList.remove('active');
-          })
+          // let navbarItems = document.querySelectorAll('.nav-button');
+          // console.log(navbarItems)
+          // navbarItems.forEach(item => {
+          //   item.classList.remove('highlighted');
+          // })
           this.clickArrow = false;
         }
       });
@@ -211,14 +379,20 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     }, options);
   }
 
-  sliderTimer() {
-    this.id = setInterval(() => {
-      this.sections.forEach(s => {
-        let questions = s.nativeElement.querySelectorAll('.questions__item');
-        let firstQuestion = questions.item(0);
-        firstQuestion?.parentNode?.append(firstQuestion);
-        ++this.timer
-      })
-    }, 3000)
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event: Event) {
+        this.windowWidth = window.innerWidth;
+        if (this.windowWidth > 576) { this.spaceBetween = 29.7 }
+        if (this.windowWidth > 768) { this.spaceBetween = 35.1 }
+        if (this.windowWidth > 1400) { this.spaceBetween = 50 }
+        else { this.spaceBetween = 27 }
+        // console.log(this.windowWidth, this.spaceBetween);
+  }
+
+  onSwiper(swiper: Swiper) {
+    // console.log(swiper);
+  }
+  onSlideChange() {
+    // console.log('slide change');
   }
 }

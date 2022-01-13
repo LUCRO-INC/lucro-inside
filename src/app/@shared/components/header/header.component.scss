@@ -90,12 +90,19 @@ header {
           cursor: pointer;
           @include fontStyle($--fs-p, 20px, undefined, $--clr-font-regular, undefined);
 
-          .L,
-          .U,
-          .C,
-          .R,
-          .O {
-            display: none;
+          figure {
+            .L,
+            .Lhover,
+            .U,
+            .Uhover,
+            .C,
+            .Chover,
+            .R,
+            .Rhover,
+            .O,
+            .Ohover {
+              display: none;
+            }
           }
 
           p {
@@ -161,7 +168,7 @@ header {
     }
 
     .main-navbar {
-      background: rgba(244, 247, 245, 0.95);
+      background: rgba(244, 247, 245, 0.9);
       backdrop-filter: blur(16px);
       position: fixed;
       @include flexbox(center, center, column);
@@ -173,10 +180,13 @@ header {
 
       .navbar {
         @include flexbox(space-between, flex-end, row);
-        height: auto;
+        position: absolute;
+        bottom: calc(50% - 7.07375rem);
+        height: fit-content;
         width: auto;
 
         &__item {
+          height: auto;
           position: relative;
           list-style: none;
           transition: border-bottom 200ms linear;
@@ -185,52 +195,41 @@ header {
             text-align: center;
             text-decoration: none;
             @include fontStyle($--fs-p, 20px, undefined, $--clr-font-regular, undefined);
-            .L,
-            .U,
-            .C,
-            .R,
-            .O {
-              display: block;
-            }
-            .L {
-              background: url("/assets/images/Header/01empresas.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top left;
-              width: 8.28rem;
-              height: 11.835rem;
-            }
-            .U {
-              background: url("/assets/images/Header/02soluciones.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top left;
-              width: 12.168rem;
-              height: 11.835rem;
-            }
-            .C {
-              background: url("/assets/images/Header/03tecnologia.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top left;
-              width: 12.456rem;
-              height: 13.32rem;
-            }
-            .R {
-              background: url("/assets/images/Header/04consumidores.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top left;
-              width: 12.6rem;
-              height: 11.835rem;
-            }
-            .O {
-              background: url("/assets/images/Header/05contactenos.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: top left;
-              width: 11.835rem;
-              height: 11.835rem;
+            figure {
+              position: relative;
+              width: 12rem;
+              height: 11.5rem;
+              .L,
+              .Lhover,
+              .U,
+              .Uhover,
+              .C,
+              .Chover,
+              .R,
+              .Rhover,
+              .O,
+              .Ohover {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+              .L,
+              .U,
+              .C,
+              .R,
+              .O {
+                opacity: 1;
+              }
+              .Lhover,
+              .Uhover,
+              .Chover,
+              .Rhover,
+              .Ohover {
+                opacity: 0;
+              }
             }
             p {
               margin-top: 0.5em;
@@ -240,10 +239,10 @@ header {
                 $--fw-light,
                 $--clr-font-dark,
                 undefined
-              );&::after {
+              );
+              &::after {
                 display: none;
               }
-
               &:hover::after,
               &:focus::after {
                 display: none;
@@ -252,35 +251,21 @@ header {
 
             &:hover,
             &:focus {
-              .L {
-                background: url("/assets/images/Header/01empresas-hover.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top left;
-              }
-              .U {
-                background: url("/assets/images/Header/02soluciones-hover.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top left;
-              }
-              .C {
-                background: url("/assets/images/Header/03tecnologia-hover.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top left;
-              }
-              .R {
-                background: url("/assets/images/Header/04consumidores-hover.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top left;
-              }
-              .O {
-                background: url("/assets/images/Header/05contactenos-hover.png");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: top left;
+              figure {
+                .L,
+                .U,
+                .C,
+                .R,
+                .O {
+                  opacity: 0;
+                }
+                .Lhover,
+                .Uhover,
+                .Chover,
+                .Rhover,
+                .Ohover {
+                  opacity: 1;
+                }
               }
               p {
                 font-weight: $--fw-black;
@@ -302,31 +287,12 @@ header {
     .main-navbar {
       .navbar {
         max-width: 75rem;
-        width: 100%;
+        bottom: calc(50% - 7.07375rem);
         &__item {
-          a + a {
-            margin-left: 5em;
-          }
           &--link {
-            .L {
-              width: 9.2rem;
-              height: 13.15rem;
-            }
-            .U {
-              width: 13.52rem;
-              height: 13.15rem;
-            }
-            .C {
-              width: 13.84rem;
-              height: 14.8rem;
-            }
-            .R {
-              width: 14rem;
-              height: 13.15rem;
-            }
-            .O {
-              width: 13.15rem;
-              height: 13.15rem;
+            figure {
+              width: 15rem;
+              height: 14.5rem;
             }
           }
         }

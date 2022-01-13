@@ -1,7 +1,11 @@
 <style>
   .pagination /deep/ .ngx-pagination {
     width: fit-content;
+    position: absolute;
+    bottom: 0.5em;
     margin-inline: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .pagination /deep/ .ngx-pagination li {
     margin-inline: 0.3rem;
@@ -56,7 +60,7 @@
   </section>
 
   <section id="articlesContainer" class="articles-container" #gridContainer>
-    <div class="category-selector">
+    <div class="category-selector" id="categorySelector">
       <ul class="category-selector__list">
         <a class="catetegory-selector__list__link active" (click)="clearArray($event)" #myCategory>
           <p class="catetegory-selector__list__link__text">Todos los estudios</p>
@@ -91,7 +95,7 @@
         </div>
 
         <div class="article-thumb__bottom">
-          <h1>{{ article.titulo }}</h1>
+          <h1>{{ (article.titulo.length>40)? (article.titulo | slice:0:40)+' ...': article.titulo }}</h1>
           <div class="date-container">
             <i class="far fa-calendar-minus"></i>
             <span>{{ article.fecha }}</span>
@@ -101,7 +105,7 @@
     </div>
     <pagination-controls
       class="pagination"
-      (pageChange)="actualPage = $event"
+      (pageChange)="onPageChange($event)"
       ></pagination-controls>
   </section>
 </section>

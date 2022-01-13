@@ -145,6 +145,8 @@
       }
       &__text {
         position: relative;
+        display: flex;
+        flex-direction: column;
         max-width: 23.963125rem;
         min-height: 14.0625rem;
         margin-inline: auto;
@@ -152,6 +154,7 @@
           @include fontStyle(14px, 20px, $--fw-light, #ffffff, undefined);
           background-color: #f27d73;
           padding: 0.5rem;
+          width: fit-content;
           opacity: 0;
         }
         &__title {
@@ -643,21 +646,27 @@
 
   .articles-container {
     position: relative;
-    padding: 2.6875rem 0.9375rem;
+    padding: 2.6875rem 0.9375rem 4rem;
     .category-selector {
       position: absolute;
       top: -4.7em;
+      left: 0;
       overflow-x: hidden;
+      overflow-y: visible;
       margin-inline: auto;
-      width: fit-content;
+      width: 100%;
+      max-width: 100%;
+      min-height: fit-content;
       opacity: 0;
       z-index: 2;
       &__list {
-        display: inline-flex;
-        width: fit-content;
+        @include flexbox(space-between, flex-end, row);
+        width: 100%;
         margin-inline: auto;
-        padding-block: 1.8em;
+        padding: 1.8em 0.9375rem;
         overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
         overflow-y: visible;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -672,6 +681,7 @@
           min-width: fit-content;
           padding-inline: 0.890625rem;
           overflow-y: visible;
+          scroll-snap-align: center;
           cursor: pointer;
           p {
             @include fontStyle(16px, 22px, $--fw-light, $--clr-font-light, undefined);
@@ -698,6 +708,7 @@
     }
     .filter-container {
       @include flexbox(space-between, center, row);
+      margin-bottom: 1em;
       p {
         @include fontStyle(14px, 20px, $--fw-light, $--clr-font-regular, undefined);
         letter-spacing: 0.4px;
@@ -720,13 +731,15 @@
       grid-template-rows: masonry;
       opacity: 0;
       .article-thumb {
+        display: inline-block;
         position: relative;
-        height: auto;
+        height: max-content;
         background-color: #FFFFFF;
         box-shadow: 0px 0.723077px 1.44615px -0.361538px rgba(0, 0, 0, 0.1), 0px 1.44615px 1.80769px rgba(0, 0, 0, 0.07), 0px 0.361538px 3.61538px rgba(0, 0, 0, 0.06);
         border-radius: 0.5rem;
         overflow: hidden;
         .image-container {
+          display: block;
           background-color: #dde3e4;
           width: 100%;
           margin-inline: auto;
@@ -747,7 +760,7 @@
           @include flexbox(center, center, column);
           padding: 0.598125rem 0.740625rem;
           h1 {
-            @include fontStyle(24px, 30.36px, $--fw-bold, #333333, undefined);
+            @include fontStyle(14px, 20px, $--fw-bold, #333333, undefined);
             margin-right: auto;
             margin-bottom: 1.2225rem;
           }
@@ -852,8 +865,8 @@
           &__bottom {
             padding: 0.6579375rem 0.8146875rem;
             h1 {
-              font-size: 11px;
-              line-height: 15.4px;
+              font-size: 15.41px;
+              line-height: 22px;
               letter-spacing: 0.0044em;
               margin-bottom: 1.34475rem;
             }
@@ -935,8 +948,8 @@
           &__bottom {
             padding: 0.7775625rem 0.9628125rem;
             h1 {
-              font-size: 13px;
-              line-height: 18.2px;
+              font-size: 18.2px;
+              line-height: 26px;
               letter-spacing: 0.0052em;
               margin-bottom: 1.58925rem;
             }
@@ -1022,10 +1035,11 @@
       }
     }
     .articles-container {
-      max-width: 58.5rem;
       margin-inline: auto;
       .category-selector {
-        left: calc(50% - 31.0365625rem);
+        &__list {
+          width: auto;
+        }
       }
       .filter-container {
         p {
@@ -1047,7 +1061,6 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: masonry;
         .article-thumb {
-          height: max-content;
           h5 {
             top: 1.3rem;
             left: 1.6rem;

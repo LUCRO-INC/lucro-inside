@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   public timer: number = 0;
 
   private id: any;
+  private windowWidth: number = 320;
 
   @ViewChild('L')
   L: ElementRef = {} as ElementRef;
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy() {
     if (this.id)
       clearInterval(this.id);
+      this.timer = 0;
   }
 
 
@@ -113,20 +115,43 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     oc?.classList.add('active')
   }
 
+  // @HostListener('window:resize', ['$event'])
+  // getScreenSize(event: Event) {
+  //       this.windowWidth = window.innerWidth;
+  //       if (this.windowWidth < 992) {
+  //         this.id = setInterval(() => {
+  //           if (this.timer == 0) {
+  //             this.goToL();
+  //           } else if (this.timer == 1) {
+  //             this.goToU();
+  //           } else if (this.timer == 2) {
+  //             this.goToC();
+  //           } else if (this.timer == 3) {
+  //             this.goToR();
+  //           } else if (this.timer == 4) {
+  //             this.goToO();
+  //           }
+  //         }, 4000)
+  //       }
+  //       else { clearInterval(this.id) }
+  //       // console.log(this.windowWidth);
+  // }
+
   sliderTimer() {
-    this.id = setInterval(() => {
-      if (this.timer == 0) {
-        this.goToL();
-      } else if (this.timer == 1) {
-        this.goToU();
-      } else if (this.timer == 2) {
-        this.goToC();
-      } else if (this.timer == 3) {
-        this.goToR();
-      } else if (this.timer == 4) {
-        this.goToO();
-      }
-    }, 4000)
+    if (window.innerWidth < 992) {
+      this.id = setInterval(() => {
+        if (this.timer == 0) {
+          this.goToL();
+        } else if (this.timer == 1) {
+          this.goToU();
+        } else if (this.timer == 2) {
+          this.goToC();
+        } else if (this.timer == 3) {
+          this.goToR();
+        } else if (this.timer == 4) {
+          this.goToO();
+        }
+      }, 4000)}
   }
 
 }

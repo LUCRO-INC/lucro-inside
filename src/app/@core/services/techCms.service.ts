@@ -33,7 +33,7 @@ export class TechCmsService {
         },
         card: {
           img: '/assets/images/tecnologia/scrapper/scrapperIcono.svg',
-          title: 'Scrapper',
+          title: 'Scraper',
           content:
             'Nuestro software extrae información de millones de sitios web mediante un proceso automático hasta dar con información relevante. Esta herramienta es de gran utilidad para las empresas que necesiten recolectar datos, compararlos y procesarlos.',
         },

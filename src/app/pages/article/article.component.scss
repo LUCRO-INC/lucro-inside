@@ -1,10 +1,13 @@
 @import "./theme/settings";
 
 .article {
+  @include flexbox(center, center, column);
   width: 90%;
   max-width: 30.3125rem;
   margin-inline: auto;
-  padding-block: 4.5rem;
+  position: relative;
+  top: 4.5rem;
+  padding-bottom: 4.5rem;
 
   .title {
     position: relative;
@@ -21,6 +24,14 @@
       @include fontStyle(20px, 24px, $--fw-black, #ffffff, undefined);
       text-align: left;
       max-width: 70%;
+    }
+
+    @media (max-width: 360px) {
+      &__text {
+        font-size: 15px;
+        line-height: 17px;
+        max-width: 11rem;
+      }
     }
   }
 
@@ -143,7 +154,7 @@
           @include flexbox(center, center, column);
           padding: 1.5rem 2rem 1.0625rem;
           h1 {
-            @include fontStyle(10px, 14px, $--fw-bold, #333333, undefined);
+            @include fontStyle(14px, 20px, $--fw-bold, #333333, undefined);
             margin-right: auto;
             margin-bottom: 0.5rem;
           }
@@ -158,8 +169,8 @@
             }
             span {
               width: fit-content;
-              @include fontStyle(8px, 12px, $--fw-light, #333333, undefined);
-              margin-left: 0.75rem;
+              @include fontStyle(8px, 11.57px, $--fw-light, #333333, undefined);
+              margin-left: 0.27125rem;
             }
           }
         }
@@ -182,7 +193,7 @@
 
   @include sm {
     max-width: 33.34375;
-    padding-block: 4.95rem;
+    padding-bottom: 4.95rem;
     .title {
       &__background {
         border-radius: 8.8px;
@@ -255,9 +266,10 @@
           &__bottom {
             padding: 1.65rem 2.2rem 1.16875rem;
             h1 {
-              font-size: 11px;
-              line-height: 15.4px;
-              margin-bottom: 0.55rem;
+              font-size: 15.41px;
+              line-height: 22px;
+              letter-spacing: 0.0044em;
+              margin-bottom: 1.34475rem;
             }
             .date-container {
               .far {
@@ -265,8 +277,8 @@
               }
               span {
                 font-size: 8.8px;
-                line-height: 13.2px;
-                margin-left: 0.825rem;
+                line-height: 12.727px;
+                margin-left: 0.298375rem;
               }
             }
           }
@@ -285,7 +297,7 @@
 
   @include md {
     max-width: 39.40625rem;
-    padding-block: 5.85rem;
+    padding-bottom: 5.85rem;
     .title {
       &__background {
         border-radius: 10.4px;
@@ -358,8 +370,9 @@
           &__bottom {
             padding: 1.95rem 2.6rem 1.38125rem;
             h1 {
-              font-size: 13px;
-              line-height: 18.2px;
+              font-size: 18.2px;
+              line-height: 26px;
+              letter-spacing: 0.0052em;
               margin-bottom: 0.65rem;
             }
             .date-container {
@@ -368,7 +381,7 @@
               }
               span {
                 font-size: 10.4px;
-                line-height: 15.6px;
+                line-height: 15.041px;
                 margin-left: 0.975rem;
               }
             }
@@ -393,8 +406,8 @@
         border-radius: 12.8px;
       }
       &__text {
-        bottom: 0.95em;
-        left: 1.85em;
+        bottom: 0.95rem;
+        left: 1.85rem;
         font-size: 38.4px;
         line-height: 48.576px;
       }
@@ -498,8 +511,8 @@
         border-radius: 16px;
       }
       &__text {
-        bottom: 1.1875em;
-        left: 2.3125em;
+        bottom: 1.1875rem;
+        left: 2.3125rem;
         font-size: 48px;
         line-height: 60.72px;
       }

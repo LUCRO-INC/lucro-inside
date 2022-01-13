@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { getLocaleDirection } from '@angular/common';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ClientsImg } from 'src/app/@core/models/clients-img';
 import { Section } from 'src/app/@core/models/section';
 import { CmsService } from 'src/app/@core/services/cms.service';
@@ -32,12 +31,14 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
   public sectionFour: Section = {}
   public clientes: any
 
-  config: SwiperOptions = {
+  clientsConfig: SwiperOptions = {
     slidesPerView: 'auto',
     spaceBetween: 30,
     pagination: { dynamicBullets: true, clickable: true },
     scrollbar: { draggable: true },
     autoplay: { disableOnInteraction: false, delay: 2500, pauseOnMouseEnter: true },
+    observer: true,
+    observeParents: true,
     //slideClass: 'swipper-slide-custom'
   };
 
@@ -59,31 +60,6 @@ export class EmpresasComponent implements OnInit, AfterViewInit {
     this.observer.observe(this.purpose.nativeElement)
     this.observer.observe(this.beliefs.nativeElement)
     this.observer.observe(this.work.nativeElement)
-  }
-
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 700,
-    navText: ['prev', 'next'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      280: {
-        items: 2
-      },
-      640: {
-        items: 4
-      },
-      960: {
-        items: 6
-      }
-    },
-    nav: false
   }
 
   intersectionObserver() {

@@ -1,16 +1,16 @@
 <section class="soluciones">
   <nav id="mainNavbar">
-    <ul>
-      <li *ngFor="let solucion of soluciones">
+    <swiper class="navbar" [config]="carouselConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+      <ng-template swiperSlide class="navbar__item" *ngFor="let solucion of soluciones">
         <button
           type="button"
           class="nav-button"
-          (click)="goToSection(solucion.label)"
+          (click)="goToSection(solucion.label, $event)"
         >
-          <p class="solucion-label">{{ solucion.label }}</p>
+          <span class="solucion-label">{{ solucion.label }}</span>
         </button>
-      </li>
-    </ul>
+      </ng-template>
+    </swiper>
   </nav>
 
   <div
@@ -48,11 +48,11 @@
               {{ evaluacionDesempeno?.body }}
             </p>
           </div>
-          <ul class="questions" [@questionsFade]='evaluacionDesempeno.questions?.length'>
-            <li class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
+          <swiper class="questions" [config]="evaluacionDesempenoQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button
@@ -90,11 +90,11 @@
               {{ machineLearning?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of machineLearning.questions" @fadein-right>
+          <swiper class="questions" [config]="machineLearningQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of machineLearning.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="machineLearning.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
@@ -132,11 +132,11 @@
               {{ solucionesDashboard?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of solucionesDashboard.questions" @fadein-right>
+          <swiper class="questions" [config]="solucionesDashboardQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of solucionesDashboard.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button
@@ -174,11 +174,11 @@
               {{ solucionesRPA?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of solucionesRPA.questions" @fadein-right>
+          <swiper class="questions" [config]="solucionesRPAQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of solucionesRPA.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="solucionesRPA.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
@@ -216,11 +216,11 @@
               {{ investigacionSegmentada?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of investigacionSegmentada.questions" @fadein-right>
+          <swiper class="questions" [config]="investigacionSegmentadaQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of investigacionSegmentada.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button
@@ -257,11 +257,11 @@
               {{ codigosQR?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of codigosQR.questions" @fadein-right>
+          <swiper class="questions" [config]="codigosQRQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of codigosQR.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="codigosQR.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
@@ -305,11 +305,11 @@
               {{ realidadAumentada?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of realidadAumentada.questions" @fadein-right>
+          <swiper class="questions" [config]="realidadAumentadaQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of realidadAumentada.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button
@@ -342,11 +342,11 @@
               {{ ads?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of ads.questions" @fadein-right>
+          <swiper class="questions" [config]="adsQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of ads.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="ads.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
@@ -387,11 +387,11 @@
               {{ scraper?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of scraper.questions" @fadein-right>
+          <swiper class="questions" [config]="scraperQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of scraper.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="scraper.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
@@ -431,11 +431,11 @@
               {{ chatbot?.body }}
             </p>
           </div>
-          <ul class="questions">
-            <li class="questions__item" *ngFor="let question of chatbot.questions" @fadein-right>
+          <swiper class="questions" [config]="chatbotQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+            <ng-template swiperSlide class="questions__item" *ngFor="let question of chatbot.questions">
               <p class="question">{{question}}</p>
-            </li>
-          </ul>
+            </ng-template>
+          </swiper>
         </div>
       </div>
       <button routerLink="/contactenos" [class]="chatbot.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
