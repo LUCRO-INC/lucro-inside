@@ -174,7 +174,7 @@
       .home__lista-rutas {
         &--link {
           .L {
-            animation: fadein-up ease-in 500ms forwards;
+            animation: fadein-up 500ms ease-in forwards;
           }
           .U {
             animation: fadein-up 500ms ease-in 400ms forwards;
