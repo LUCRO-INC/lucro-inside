@@ -714,13 +714,6 @@
         letter-spacing: 0.4px;
         opacity: 0;
       }
-      span {
-        margin-left: 2.0025rem;
-        opacity: 0;
-        h6 {
-          display: none;
-        }
-      }
     }
 
     .grid {
@@ -825,9 +818,6 @@
       .filter-container {
         p {
           animation: fadein-left 500ms ease-in 200ms forwards;
-        }
-        span {
-          animation: fadein-right 500ms ease-in 300ms forwards;
         }
       }
       .grid {
@@ -1047,13 +1037,6 @@
           line-height: 16px;
           letter-spacing: 0.12px;
         }
-        span {
-          h6 {
-            display: initial;
-            @include fontStyle(16px, 19.2px, $--fw-light, #000000, undefined);
-            margin-right: 0.502rem;
-          }
-        }
       }
       .grid {
         padding-block: 3.625rem;
@@ -1124,13 +1107,6 @@
           font-size: 16px;
           line-height: 20px;
           letter-spacing: 0.15px;
-        }
-        span {
-          h6 {
-            font-size: 20px;
-            line-height: 24px;
-            margin-right: 0.6275rem;
-          }
         }
       }
       .grid {
