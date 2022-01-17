@@ -1,5 +1,8 @@
-<section class="article show" *ngIf="article">
-  <div class="title">
+<section class="article show">
+  <div class="loading" *ngIf="loading">
+    <img src="/assets/images/loading.gif" alt="Cargando artículo">
+  </div>
+  <div class="title" *ngIf="article">
     <img
       class="title__background"
       [src]="bannerSource? bannerSource : '/assets/images/consumidores/article/trash-banner.png'"
@@ -10,7 +13,7 @@
     </h1>
   </div>
 
-  <div class="content">
+  <div class="content" *ngIf="article">
     <article class="article-content">
       <div class="date-container">
         <i class="far fa-calendar-minus"></i>

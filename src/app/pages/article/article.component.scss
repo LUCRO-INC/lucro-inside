@@ -9,6 +9,16 @@
   top: 4.5rem;
   padding-bottom: 4.5rem;
 
+  .loading {
+    @include flexbox(center, center, row);
+    height: 80vh;
+    width: 100%;
+    img {
+      width: 12.5rem;
+      height: 12.5rem;
+    }
+  }
+
   .title {
     position: relative;
 

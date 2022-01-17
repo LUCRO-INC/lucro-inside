@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ArticleComponent implements OnInit, AfterViewInit {
 
+  public loading: boolean = true;
   public article: any;
   public articles: Article[] = [];
   public categories:Category[] = [];
@@ -50,6 +51,11 @@ export class ArticleComponent implements OnInit, AfterViewInit {
       const id = params.id;
       const data = await this.customerService.getArticleById(id).toPromise();
       this.article = data;
+      if (!this.article) {
+        alert('not an article');
+      } else {
+        this.loading = false;
+      }
       if (this.article[0].imagen) {
         this.url = environment.url + this.article[0].imagen;
       } else {
