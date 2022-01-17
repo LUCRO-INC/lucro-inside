@@ -149,6 +149,7 @@
                 $--clr-font-regular,
                 undefined
               );
+              max-width: 4.6525rem;
               position: relative;
               right: 0;
               &::after {
@@ -166,7 +167,6 @@
       }
     }
     @media (min-width: 1400px) {
-      width: 60%;
       &__item {
         button {
           .solucion-label {
@@ -181,6 +181,7 @@
               font-size: 16px;
               line-height: 17.71px;
               font-weight: $--fw-bold;
+              max-width: 5.815625rem;
             }
           }
         }
