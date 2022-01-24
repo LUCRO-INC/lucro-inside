@@ -79,18 +79,25 @@
 
     <div class="grid" id="grid">
       <a [routerLink]="['/consumidores', article.id]" class="article-thumb" *ngFor="let article of articles | paginate: { itemsPerPage: 5, currentPage: actualPage }">
-        <h5>
-          <span>{{ article.categoria }}</span>
-        </h5>
-        <div class="image-container">
-          <img [src]="article.imagen? environmentUrl + article.imagen : '/assets/imageNotFound.png'" alt="Definitively your best choice. A descriptive image">
-        </div>
+        <div class="content">
+          <h5>
+            <span>{{ article.categoria }}</span>
+          </h5>
+          <div class="image-container">
+            <figure class="loading" *ngIf="imageLoading">
+              <img src="/assets/images/imageLoading.gif" alt="Cargando artículo">
+            </figure>
+            <figure *ngIf="imageLoading === false">
+              <img [src]="article.imagen? environmentUrl + article.imagen : '/assets/imageNotFound.png'" alt="Definitively your best choice. A descriptive image">
+            </figure>
+          </div>
 
-        <div class="article-thumb__bottom">
-          <h1>{{ (article.titulo.length>40)? (article.titulo | slice:0:40)+' ...': article.titulo }}</h1>
-          <div class="date-container">
-            <i class="far fa-calendar-minus"></i>
-            <span>{{ article.fecha }}</span>
+          <div class="article-thumb__bottom">
+            <h1>{{ (article.titulo.length>40)? (article.titulo | slice:0:40)+' ...': article.titulo }}</h1>
+            <div class="date-container">
+              <i class="far fa-calendar-minus"></i>
+              <span>{{ article.fecha | date:'d MMM y' }}</span>
+            </div>
           </div>
         </div>
       </a>

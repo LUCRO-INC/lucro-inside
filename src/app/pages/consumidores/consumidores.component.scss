@@ -991,6 +991,7 @@
       }
     }
   }
+
   @include lg {
     .slider {
       position: relative;
@@ -1025,10 +1026,21 @@
       }
     }
     .articles-container {
+      max-width: 58.5rem;
       margin-inline: auto;
       .category-selector {
         &__list {
-          width: auto;
+          width: 100%;
+          a + a {
+            margin-left: 1.425rem;
+          }
+          a {
+            padding-inline: 0.7125rem;
+            p {
+              font-size: 12.8px;
+              line-height: 17.6px;
+            }
+          }
         }
       }
       .filter-container {
@@ -1042,7 +1054,6 @@
         padding-block: 3.625rem;
         gap: 1.2rem 1.6rem;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: masonry;
         .article-thumb {
           h5 {
             top: 1.3rem;
@@ -1071,7 +1082,13 @@
             }
           }
           &:first-child {
+            height: auto;
+            .image-container {
+              max-height: 16.3rem;
+              overflow-y: hidden;
+            }
             .article-thumb__bottom {
+              min-height: 5.15rem;
               h1 {
                 font-size: 19.2px;
                 line-height: 24.288px;
@@ -1102,6 +1119,20 @@
     }
     .articles-container {
       max-width: 73.125rem;
+      .category-selector {
+        &__list {
+          a + a {
+            margin-left: 1.78125rem;
+          }
+          a {
+            padding-inline: 0.890625rem;
+            p {
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
       .filter-container {
         p {
           font-size: 16px;
@@ -1139,7 +1170,12 @@
             }
           }
           &:first-child {
+            min-height: 27.6125rem;
+            .image-container {
+              max-height: 20.7rem;
+            }
             .article-thumb__bottom {
+              min-height: 6.4375rem;
               h1 {
                 font-size: 24px;
                 line-height: 30.36px;

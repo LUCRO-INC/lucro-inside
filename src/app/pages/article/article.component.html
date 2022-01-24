@@ -17,7 +17,7 @@
     <article class="article-content">
       <div class="date-container">
         <i class="far fa-calendar-minus"></i>
-        <span>{{ article[0]?.fecha }}</span>
+        <span>{{ article[0]?.fecha | date:'d MMM y'  }}</span>
       </div>
       <figure class="image-container">
         <img
@@ -29,6 +29,12 @@
         [innerHTML]="article[0]?.texto"
         class="article-content__text">
       </div>
+      <figure class="plot-container">
+        <img
+          [src]="plotSource"
+          alt="Definitively your best choice. A descriptive image"
+        />
+      </figure>
     </article>
   </div>
 
@@ -84,7 +90,7 @@
           <h1>{{ a.titulo }}</h1>
           <div class="date-container">
             <i class="far fa-calendar-minus"></i>
-            <span>{{ a.fecha }}</span>
+            <span>{{ a.fecha | date:'d MMM y'  }}</span>
           </div>
         </div>
       </a>

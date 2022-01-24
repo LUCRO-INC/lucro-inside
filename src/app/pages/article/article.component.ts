@@ -22,19 +22,83 @@ export class ArticleComponent implements OnInit, AfterViewInit {
   timeOut:any;
   url:string = '';
   bannerSource:string = '';
+  plotSource:string = '';
 
   categoryImages = [
     {
       id: "1",
-      source: "/assets/images/consumidores/article/categoryImages/medio-ambiente.jpg"
+      source: "/assets/images/consumidores/article/categoryImages/medio-ambiente.png"
     },
     {
       id: "2",
-      source: "/assets/images/consumidores/article/categoryImages/demografia.jpg"
+      source: "/assets/images/consumidores/article/categoryImages/demografia.png"
     },
     {
       id: "3",
-      source: "/assets/images/consumidores/article/categoryImages/consumo.jpg"
+      source: "/assets/images/consumidores/article/categoryImages/consumo.png"
+    },
+    {
+      id: "4",
+      source: "/assets/images/consumidores/article/categoryImages/somos-lucro.png"
+    },
+    {
+      id: "5",
+      source: "/assets/images/consumidores/article/categoryImages/ellos-hablan.png"
+    }
+  ]
+
+  articlePlots = [
+    {
+      id: "2",
+      source: "/assets/images/consumidores/article/plotStats/Lo que más le inquieta al colombiano frente a la contaminación.png"
+    },
+    {
+      id: "3",
+      source: "/assets/images/consumidores/article/plotStats/Aceite de cocina, un contaminante desconocido.png"
+    },
+    {
+      id: "4",
+      source: "/assets/images/consumidores/article/plotStats/Manejo de residuos, una labor que se considera insufienciente.png"
+    },
+    {
+      id: "5",
+      source: "/assets/images/consumidores/article/plotStats/Población Lucro.png"
+    },
+    {
+      id: "6",
+      source: "/assets/images/consumidores/article/plotStats/Las mascotas reinan en los hogares colombianos.png"
+    },
+    {
+      id: "7",
+      source: "/assets/images/consumidores/article/plotStats/Las mascotas preferidas por los colombianos.png"
+    },
+    {
+      id: "8",
+      source: "/assets/images/consumidores/article/plotStats/Marcada presencia de mascotas en hogares sin hijos.png"
+    },
+    {
+      id: "9",
+      source: "/assets/images/consumidores/article/plotStats/Lo que dicen las personas sobre su orientación sexual en Colombia.png"
+    },
+    {
+      id: "10",
+      source: "/assets/images/consumidores/article/plotStats/La comunidad LGBTI y un concepto desconocido.png"
+    },
+    {
+      id: "11",
+      source: "/assets/images/consumidores/article/plotStats/La homofobia está presente incluso en la comunidad LGBTI.png"
+    },
+    {
+      id: "12",
+      source: "/assets/images/consumidores/article/plotStats/Los tenderos, un gremio que lucha por su subsistencia.png"
+    },
+    {
+      id: "13",
+      source: "/assets/images/consumidores/article/plotStats/Cada cuánto hacen mercado los colombianos.png"
+    },
+    {
+      id: "14",
+      source: "/assets/images/consumidores/article/plotStats/Hacer mercado en Colombia, según el estrato.png"
     }
   ]
 
@@ -64,6 +128,11 @@ export class ArticleComponent implements OnInit, AfterViewInit {
       this.categoryImages.forEach((img) => {
         if (img.id === this.article[0].categoria) {
           this.bannerSource = img.source;
+        }
+      })
+      this.articlePlots.forEach((plot) => {
+        if (plot.id === this.article[0].id) {
+          this.plotSource = plot.source;
         }
       })
       this.articles.forEach((article) => {

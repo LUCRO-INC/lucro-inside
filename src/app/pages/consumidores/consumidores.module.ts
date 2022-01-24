@@ -16,7 +16,7 @@ import { CategoryFilterPipe } from 'src/app/@core/pipes/category-filter.pipe';
     CommonModule,
     ConsumidoresRoutingModule,
     SwiperModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class ConsumidoresModule { }

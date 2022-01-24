@@ -23,6 +23,7 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public fullArray:Article[] = [];
 
+  public imageLoading: boolean = true;
   public articles:Article[] = [];
   public categories:Category[] = [];
   public slider:Slider []= [];
@@ -69,6 +70,13 @@ export class ConsumidoresComponent implements OnInit, AfterViewInit, OnDestroy {
           return null;
         }
       })
+    })
+    this.articles.forEach((article) => {
+      if (!article.imagen) {
+        alert('not image found');
+      } else {
+        this.imageLoading = false;
+      }
     })
     this.fullArray = this.articles;
     this.categorySelector = document.getElementById('categorySelector');

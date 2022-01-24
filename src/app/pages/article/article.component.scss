@@ -97,6 +97,16 @@
           padding-bottom: 1em;
         }
       }
+      .plot-container  {
+        grid-row: 4 / 5;
+        margin-inline: auto;
+        width: 100%;
+        max-width: 25rem;
+        opacity: 0;
+        img {
+          max-width: 100%;
+        }
+      }
     }
   }
 
@@ -142,6 +152,7 @@
       .article-thumb {
         position: relative;
         height: auto;
+        max-width: 25rem;
         background-color: #ffffff;
         box-shadow: 0px 0.723077px 1.44615px -0.361538px rgba(0, 0, 0, 0.1),
           0px 1.44615px 1.80769px rgba(0, 0, 0, 0.07),
@@ -222,6 +233,9 @@
         .image-container {
           animation: fadein-right 500ms ease-in 800ms forwards;
         }
+        .plot-container {
+          animation: fadein-up 500ms ease-in 1200ms forwards;
+        }
         &__text {
           animation: fadein-down 500ms ease-in 1200ms forwards;
         }
@@ -260,7 +274,6 @@
             border-radius: 8.8px;
           }
         }
-
         &__text {
           font-size: 15.4px;
           line-height: 22px;
@@ -269,6 +282,9 @@
           strong {
             line-height: 2.2em;
           }
+        }
+        .plot-container {
+          max-width: 27.5rem;
         }
       }
     }
@@ -294,6 +310,7 @@
         gap: 2.0625rem;
         .article-thumb {
           border-radius: 0.55rem;
+          max-width: 27.5rem;
           h5 {
             top: 0.5775rem;
             left: 0.8146875rem;
@@ -374,6 +391,9 @@
             line-height: 2.6em;
           }
         }
+        .plot-container {
+          max-width: 32.5rem;
+        }
       }
     }
     .social {
@@ -395,21 +415,23 @@
       }
       .grid {
         padding-block: 2.6rem;
-        gap: 2.0625rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.0625rem 1.5rem;
         .article-thumb {
           border-radius: 0.65rem;
+          max-width: 32.5rem;
           h5 {
             top: 0.6825rem;
             left: 0.9628125rem;
-            font-size: 18.2px;
+            font-size: 8px;
             line-height: 23.4px;
             letter-spacing: 1.95px;
           }
           &__bottom {
-            padding: 1.95rem 2.6rem 1.38125rem;
+            padding: 1rem 1rem 1.38125rem;
             h1 {
-              font-size: 18.2px;
-              line-height: 26px;
+              font-size: 12px;
+              line-height: 14px;
               letter-spacing: 0.0052em;
               margin-bottom: 0.65rem;
             }
@@ -458,26 +480,34 @@
         .date-container {
           grid-column: 1 / 2;
           grid-row: 1 / 2;
-          font-size: 9.6px;
-          line-height: 12.8px;
+          font-size: 12.8px;
+          line-height: 25.6px;
           span {
             margin-left: 0.6rem;
           }
         }
         .image-container {
+          grid-column: 1 / 2;
+          grid-row: 2 / 3;
+        }
+        .plot-container {
+          position: relative;
           grid-column: 2 / 3;
-          grid-row: 1 / 2;
+          grid-row: 1 / 4;
           margin: 0.8em auto;
           img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             border-radius: 12.8px;
           }
         }
         &__text {
           grid-column: 1 / 2;
-          grid-row: 1 / 2;
+          grid-row: 3 / 4;
           font-size: 16px;
           line-height: 19.2px;
-          padding-block: 3.2em;
+          padding-bottom: 3.2em;
           strong {
             line-height: 1.6em;
           }
@@ -501,7 +531,6 @@
         line-height: 48.576px;
       }
       .grid {
-        grid-template-columns: repeat(3, 1fr);
         padding-block: 2.7rem;
         gap: 1.5rem;
         .article-thumb {
@@ -560,14 +589,14 @@
       .article-content {
         gap: 1.875rem;
         .date-container {
-          font-size: 12px;
-          line-height: 16px;
+          font-size: 16px;
+          line-height: 32px;
           span {
             margin-left: 0.75rem;
           }
         }
         .image-container {
-          margin: 1em auto;
+          margin: 0 auto;
           img {
             border-radius: 16px;
           }
@@ -575,7 +604,7 @@
         &__text {
           font-size: 20px;
           line-height: 24px;
-          padding-block: 4em;
+          padding-block: 1em;
           strong {
             line-height: 2em;
           }
