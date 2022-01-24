@@ -575,6 +575,7 @@
     max-width: 69.375rem;
     .title {
       &__background {
+        min-width: 69.375rem;
         border-radius: 16px;
       }
       &__text {
