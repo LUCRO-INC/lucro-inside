@@ -114,7 +114,9 @@
     &-list {
       @include flexbox(center, center, row);
       &__item {
-        padding: 12px;
+        @include flexbox(center, center, column);
+        width: 2.625rem;
+        height: 2.625rem;
         margin-inline: 0.2rem;
         color: #111;
         border: 2px solid #36af67;
@@ -291,7 +293,8 @@
     .social {
       &-list {
         &__item {
-          padding: 13.2px;
+          width: 2.8875rem;
+          height: 2.8875rem;
           margin-inline: 0.22rem;
           .social-list__link {
             font-size: 13.2px;
@@ -399,7 +402,8 @@
     .social {
       &-list {
         &__item {
-          padding: 15.6px;
+          width: 3.4125rem;
+          height: 3.4125rem;
           margin-inline: 0.26rem;
           .social-list__link {
             font-size: 15.6px;
@@ -517,6 +521,8 @@
     .social {
       &-list {
         &__item {
+          width: 2.71rem;
+          height: 2.71rem;
           margin-inline: 0.8rem;
           .social-list__link {
             font-size: 12.8px;
@@ -615,6 +621,8 @@
     .social {
       &-list {
         &__item {
+          width: 3.3875rem;
+          height: 3.3875rem;
           margin-inline: 1rem;
           .social-list__link {
             font-size: 16px;

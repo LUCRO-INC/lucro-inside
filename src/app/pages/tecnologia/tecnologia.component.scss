@@ -53,9 +53,11 @@
     overflow-x: hidden;
     #arrow-left,
     #arrow-right {
+      @include flexbox(center, center, column);
       position: absolute;
       top: calc(50% - 21px);
-      padding: 10px;
+      width: 42px;
+      height: 42px;
       background-color: #DDE3E4;
       color: #049B41;
       font-size: 18px;
