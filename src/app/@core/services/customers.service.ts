@@ -1,10 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Customers } from '../models/customersModels/customers';
 import { Article } from '../../@core/models/customersModels/article';
 import { Category } from '../../@core/models/customersModels/category';
-import { map, filter, tap } from 'rxjs/operators'
+import { map, filter, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

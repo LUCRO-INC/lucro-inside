@@ -32,9 +32,9 @@
       position: absolute;
       bottom: 0.5em;
       left: 1em;
-      @include fontStyle(20px, 24px, $--fw-black, #008b13, undefined);
+      @include fontStyle(20px, 24px, $--fw-black, #059b42, undefined);
       text-align: left;
-      max-width: 70%;
+      max-width: 60%;
       opacity: 0;
     }
 
