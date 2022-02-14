@@ -19,12 +19,12 @@
         <i class="far fa-calendar-minus"></i>
         <span>{{ article[0]?.fecha | date:'d MMM y'  }}</span>
       </div>
-      <figure class="image-container">
+      <!-- <figure class="image-container">
         <img
           [src]="url"
           alt="Definitively your best choice. A descriptive image"
         />
-      </figure>
+      </figure> -->
       <div
         [innerHTML]="article[0]?.texto"
         class="article-content__text">
