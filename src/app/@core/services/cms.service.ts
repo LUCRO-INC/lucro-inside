@@ -515,6 +515,11 @@ export class CmsService {
         hover: '/assets/images/clientes/juan-valdez-hover.png'
       },
       {
+        name: 'reckitt',
+        src: '/assets/images/clientes/reckitt.png',
+        hover: '/assets/images/clientes/reckitt-hover.png'
+      },
+      {
         name: 'carvajal',
         src: '/assets/images/clientes/carvajal.png',
         hover: '/assets/images/clientes/carvajal-hover.png'
