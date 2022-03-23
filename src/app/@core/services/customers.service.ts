@@ -48,9 +48,9 @@ export class CustomerService {
         images: [
           {
             id: 1,
-            src: "../../../assets/images/consumidores/slide02/Frame.png",
+            src: "../../../assets/images/consumidores/slide02/plotStat.png",
             class: "slideTwo__image1"
-          },
+          }/* ,
           {
             id: 2,
             src: "../../../assets/images/consumidores/slide02/Ellipse 42.svg",
@@ -60,7 +60,7 @@ export class CustomerService {
             id: 3,
             src: "../../../assets/images/consumidores/slide02/Ellipse 41.svg",
             class: "slideTwo__image3"
-          }
+          } */
         ],
         imageClass: "slideTwo__image",
         button: 'Ver informe',
@@ -75,12 +75,12 @@ export class CustomerService {
         images: [
           {
             id: 1,
-            src: "../../../assets/images/consumidores/slide03/Group 31.svg",
+            src: "../../../assets/images/consumidores/slide03/plotStat.png",
             class: "slideThree__image1"
-          },
+          }/* ,
           {
             id: 2,
-            src: "../../../assets/images/consumidores/slide03/Frame-slide03.png",
+            src: "../../../assets/images/consumidores/slide03/Group 31.svg",
             class: "slideThree__image2"
           },
           {
@@ -92,7 +92,7 @@ export class CustomerService {
             id: 4,
             src: "../../../assets/images/consumidores/slide03/Ellipse 42.svg",
             class: "slideThree__image4"
-          }
+          } */
         ],
         imageClass: "slideThree__image",
         button: 'Ver informe',
