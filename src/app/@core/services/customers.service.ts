@@ -16,7 +16,7 @@ export class CustomerService {
 
   private data: Customers = {
     slider: [
-      {
+      /* {
         name: "slideOne",
         class: "slideOne",
         title: "Redefinimos la relación entre empresas, consumidores y puntos de venta",
@@ -38,7 +38,7 @@ export class CustomerService {
           }
         ],
         imageClass: "slideOne__image"
-      },
+      }, */
       {
         name: "slideTwo",
         class: "slideTwo",
