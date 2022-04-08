@@ -64,14 +64,14 @@ export class CustomerService {
         ],
         imageClass: "slideTwo__image",
         button: 'Ver informe',
-        link: '/consumidores/2'
+        link: '/consumidores/12'
       },
       {
         name: "slideThree",
         class: "slideThree",
         category: "Consumo",
-        title: "Los tenderos, un gremio que lucha por su subsistencia.",
-        subtitle: "Un estudio reciente de la Federación Nacional de Comerciantes Fenalco.",
+        title: "El auge de los tenderos en Colombia",
+        subtitle: "Un estudio reciente de la Federación Nacional de Comerciantes(Fenalco), y medios locales de Colombia refieren que las tiendas de barrio generan más de 1,7 millones de empleos y venden en promedio $305.758 pesos colombianos al día.",
         images: [
           {
             id: 1,
@@ -96,7 +96,7 @@ export class CustomerService {
         ],
         imageClass: "slideThree__image",
         button: 'Ver informe',
-        link: '/consumidores/12'
+        link: '/consumidores/2'
       }
     ],
     articles: this.articles,
