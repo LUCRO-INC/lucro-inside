@@ -10,7 +10,6 @@ import { map, filter, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CustomerService {
-
   public articles: Article[] = [];
   public categories: Category[] = [];
 
@@ -40,17 +39,19 @@ export class CustomerService {
         imageClass: "slideOne__image"
       }, */
       {
-        name: "slideTwo",
-        class: "slideTwo",
-        category: "Medio ambiente",
-        title: "Lo que más le inquieta al colombiano frente a la contaminación ",
-        subtitle: "Lo que más preocupa a los colombianos es que el agua suministrada a la población sea segura.",
+        name: 'slideTwo',
+        class: 'slideTwo',
+        category: 'Medio ambiente',
+        title:
+          'Lo que más le inquieta al colombiano frente a la contaminación ',
+        subtitle:
+          'Lo que más preocupa a los colombianos es que el agua suministrada a la población sea segura.',
         images: [
           {
             id: 1,
-            src: "../../../assets/images/consumidores/slide02/plotStat.png",
-            class: "slideTwo__image1"
-          }/* ,
+            src: '../../../assets/images/consumidores/slide02/plotStat.png',
+            class: 'slideTwo__image1',
+          } /* ,
           {
             id: 2,
             src: "../../../assets/images/consumidores/slide02/Ellipse 42.svg",
@@ -60,24 +61,24 @@ export class CustomerService {
             id: 3,
             src: "../../../assets/images/consumidores/slide02/Ellipse 41.svg",
             class: "slideTwo__image3"
-          } */
+          } */,
         ],
-        imageClass: "slideTwo__image",
+        imageClass: 'slideTwo__image',
         button: 'Ver informe',
-        link: '/consumidores/12'
+        link: '/consumidores/12',
       },
       {
-        name: "slideThree",
-        class: "slideThree",
-        category: "Consumo",
-        title: "El auge de los tenderos en Colombia",
-        subtitle: "Un estudio reciente de la Federación Nacional de Comerciantes(Fenalco), y medios locales de Colombia refieren que las tiendas de barrio generan más de 1,7 millones de empleos y venden en promedio $305.758 pesos colombianos al día.",
+        name: 'slideThree',
+        class: 'slideThree',
+        category: 'Consumo',
+        title: 'El auge de los tenderos en Colombia',
+        subtitle: `Las tiendas de barrio generan más de 1,7 millones de empleos y venden en promedio $305.758 pesos colombianos al día, según reportes de medios locales. En Lucro conocimos que un 10% de la población hace mercado en estos comercios`,
         images: [
           {
             id: 1,
-            src: "../../../assets/images/consumidores/slide03/plotStat.png",
-            class: "slideThree__image1"
-          }/* ,
+            src: '../../../assets/images/consumidores/slide03/plotStat.png',
+            class: 'slideThree__image1',
+          } /* ,
           {
             id: 2,
             src: "../../../assets/images/consumidores/slide03/Group 31.svg",
@@ -92,30 +93,30 @@ export class CustomerService {
             id: 4,
             src: "../../../assets/images/consumidores/slide03/Ellipse 42.svg",
             class: "slideThree__image4"
-          } */
+          } */,
         ],
-        imageClass: "slideThree__image",
+        imageClass: 'slideThree__image',
         button: 'Ver informe',
-        link: '/consumidores/2'
-      }
+        link: '/consumidores/2',
+      },
     ],
     articles: this.articles,
-    categories: this.categories
-  }
+    categories: this.categories,
+  };
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getCategories() {
-    return this.http.get<Category[]>(environment.url + 'servicios/categorias.php');
+    return this.http.get<Category[]>(
+      environment.url + 'servicios/categorias.php'
+    );
   }
 
   getArticles() {
     return this.http.get<Article[]>(environment.url + 'servicios/blog.php');
   }
 
-  getArticleById(id:string) {
+  getArticleById(id: string) {
     return this.http.get<Article>(environment.urlById + id);
   }
 
