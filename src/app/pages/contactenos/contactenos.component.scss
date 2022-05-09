@@ -77,22 +77,25 @@
     }
 
     .contactenos-form {
-      #name {
-        background: url("/assets/images/icons/user.svg") no-repeat 94.5% 45%, #fff;
+      #nombre {
+        background: url("/assets/images/icons/user.svg") no-repeat 94.5% 45%,
+          #fff;
       }
-      #email {
+      #correo {
         background: url("/assets/images/icons/at.svg") no-repeat 94.5% 45%, #fff;
       }
-      #phoneNumber {
-        background: url("/assets/images/icons/phone.svg") no-repeat 94.5% 45%, #fff;
+      #telefono {
+        background: url("/assets/images/icons/phone.svg") no-repeat 94.5% 45%,
+          #fff;
       }
-      #company {
-        background:
-          url("/assets/images/icons/lunch-box.svg") no-repeat 94.5% 45%, #fff;
+      #empresa {
+        background: url("/assets/images/icons/lunch-box.svg") no-repeat 94.5%
+            45%,
+          #fff;
       }
-      #website {
-        background:
-          url("/assets/images/icons/website.svg") no-repeat 94.5% 45%, #fff;
+      #web {
+        background: url("/assets/images/icons/website.svg") no-repeat 94.5% 45%,
+          #fff;
       }
       select,
       .form-control,
@@ -131,8 +134,8 @@
         -moz-appearance: none;
         -webkit-appearance: none;
         appearance: none;
-        background: url("/assets/images/icons/select-arrow.svg")
-          no-repeat 94.5% 45%;
+        background: url("/assets/images/icons/select-arrow.svg") no-repeat 94.5%
+          45%;
       }
 
       input {
@@ -226,7 +229,7 @@
 
       &__title {
         @include fontStyle(34px, 43.01px, $--fw-black, #fff, capitalize);
-        background: #68C38D;
+        background: #68c38d;
         position: absolute;
         border-radius: 16px 16px 0 0;
         top: 0;
@@ -236,7 +239,13 @@
         letter-spacing: 0.25px;
       }
       &__paragraph {
-        @include fontStyle(14px, 20px, $--fw-light, $--clr-font-regular, Undefined);
+        @include fontStyle(
+          14px,
+          20px,
+          $--fw-light,
+          $--clr-font-regular,
+          Undefined
+        );
         position: absolute;
         top: 7.0625rem;
         padding: 10% 1rem 0.5rem;
@@ -276,12 +285,12 @@
         left: 45%;
         bottom: -2em;
         font-size: 24px;
-        color: #EF5D50;
+        color: #ef5d50;
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 0.5rem;
         cursor: pointer;
-        background-color: #F4F7F5;
+        background-color: #f4f7f5;
         &:hover {
           color: #a13d33;
         }
@@ -298,42 +307,42 @@
 
   &.show {
     .contactenos-form {
-      #name {
+      #nombre {
         animation: fadein-left 500ms ease-in 2000ms forwards;
       }
-      #email {
+      #correo {
         animation: fadein-left 500ms ease-in 2200ms forwards;
       }
-      #phoneNumber {
+      #telefono {
         animation: fadein-left 500ms ease-in 2400ms forwards;
       }
-      #country {
+      #pais {
         animation: fadein-left 500ms ease-in 2600ms forwards;
       }
-      #company {
+      #empresa {
         animation: fadein-left 500ms ease-in 2800ms forwards;
       }
       #sector {
         animation: fadein-left 500ms ease-in 3000ms forwards;
       }
-      #website {
+      #web {
         animation: fadein-left 500ms ease-in 3200ms forwards;
       }
-      #employees {
+      #empleados {
         animation: fadein-left 500ms ease-in 3400ms forwards;
       }
-      #description {
+      #mensaje {
         animation: fadein-left 500ms ease-in 3600ms forwards;
       }
     }
     .contactenos__image {
-      &1{
+      &1 {
         animation: fadein-left 500ms ease-in 800ms forwards;
       }
-      &2{
+      &2 {
         animation: fadein-rotate 4000ms ease-in-out 1200ms forwards;
       }
-      &3{
+      &3 {
         animation: horizontal-float 4000ms linear 1600ms infinite;
       }
     }

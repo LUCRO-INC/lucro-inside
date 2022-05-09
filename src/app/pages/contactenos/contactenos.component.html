@@ -17,35 +17,39 @@
         </p>
       </div>
     </article>
-    <form class="contactenos-form" [formGroup]="contactForm" (ngSubmit)="sendForm(contactForm)">
+    <form
+      class="contactenos-form"
+      [formGroup]="contactForm"
+      (ngSubmit)="sendForm(contactForm)"
+    >
       <input
         type="text"
-        name="name"
+        name="nombre"
         placeholder="Nombre completo"
-        id="name"
+        id="nombre"
         class="form-control"
-        formControlName="name"
+        formControlName="nombre"
         required
       />
       <input
         type="email"
-        name="email"
+        name="correo"
         placeholder="Correo corporativo"
-        id="email"
+        id="correo"
         class="form-control"
-        formControlName="email"
+        formControlName="correo"
         required
       />
       <input
         type="tel"
-        name="phone-number"
+        name="telefono"
         placeholder="Teléfono"
-        id="phoneNumber"
+        id="telefono"
         class="form-control"
-        formControlName="tel"
+        formControlName="telefono"
         required
       />
-      <select formControlName="country" name="country" id="country" class="form-control">
+      <select formControlName="pais" name="pais" id="pais" class="form-control">
         <option disabled selected value>País</option>
         <option value="EEUU">Estados Unidos</option>
         <option value="Canadá">Canadá</option>
@@ -63,14 +67,19 @@
       </select>
       <input
         type="text"
-        name="company"
+        name="empresa"
         placeholder="¿Cómo se llama tu empresa?"
-        id="company"
+        id="empresa"
         class="form-control"
-        formControlName="company"
+        formControlName="empresa"
         required
       />
-      <select name="sector" id="sector" formControlName="sector" class="form-control">
+      <select
+        name="sector"
+        id="sector"
+        formControlName="sector"
+        class="form-control"
+      >
         <option disabled selected value>Sector de la empresa</option>
         <option value="Agricultura">Agricultura</option>
         <option value="Alimentos">Alimentos</option>
@@ -93,13 +102,18 @@
       </select>
       <input
         type="url"
-        name="website"
+        name="web"
         placeholder="Sitio web de la empresa (opcional)"
-        id="website"
+        id="web"
         class="form-control"
-        formControlName="website"
+        formControlName="web"
       />
-      <select name="employees" id="employees" formControlName="employees" class="form-control">
+      <select
+        name="empleados"
+        id="empleados"
+        formControlName="empleados"
+        class="form-control"
+      >
         <option disabled selected value>Cantidad de empleados</option>
         <option value="0-50">Menos de 50 empleados</option>
         <option value="50-100">Entre 50 y 100 empleados</option>
@@ -112,33 +126,29 @@
         <option value="otro">Otro</option>
       </select>
       <textarea
-        name="description"
-        id="description"
+        name="mensaje"
+        id="mensaje"
         class="input-textarea"
-        formControlName="description"
+        formControlName="mensaje"
         placeholder="¡Cuéntanos qué necesitas!"
         required
       ></textarea>
-      <button
-        type="submit"
-        id="submit"
-        class="submit-button"
-      >
-        Enviar
-      </button>
+      <button type="submit" id="submit" class="submit-button">Enviar</button>
       <p class="form-conditions">
         Al dar click en enviar, autorizas el tratamiento de tus datos
-        personales, de acuerdo con la <a href="https://lucro-app.com/documentos/Lucro-Politica_de_Privacidad_de_Datos.pdf" target="_blank">Política de Tratamiento de Datos
-        Personales.</a>
+        personales, de acuerdo con la
+        <a
+          href="https://lucro-app.com/documentos/Lucro-Politica_de_Privacidad_de_Datos.pdf"
+          target="_blank"
+          >Política de Tratamiento de Datos Personales.</a
+        >
       </p>
     </form>
     <span
-      ><img
-        class="backEllipse"
-        src="/assets/images/contactenos/Ellipse 44.svg"
+      ><img class="backEllipse" src="/assets/images/contactenos/Ellipse 44.svg"
     /></span>
   </div>
-  <div class="overlay" [ngClass]="{'active':clickSubmit}">
+  <div class="overlay" [ngClass]="{ active: clickSubmit }">
     <div class="sent">
       <h4 class="sent__title">Mensaje enviado</h4>
       <p class="sent__paragraph">
@@ -147,7 +157,9 @@
         Te invitamos a llenar una breve encuesta para concerte mejor.
       </p>
       <button class="sent-btn">Programa una llamada</button>
-      <button (click)="clickSubmit = !clickSubmit"><i class="fas fa-times"></i></button>
+      <button (click)="clickSubmit = !clickSubmit">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
   </div>
 </section>
