@@ -11,11 +11,11 @@ const baseUrl = environment.url;
   providedIn: 'root',
 })
 export class ContactService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   contact(message: any) {
     return this.http
-      .post(baseUrl + 'servicios/contacto.php', message)
-      .toPromise();
+      .get(baseUrl + 'servicios/contacto.php?nombre=' + message.nombre + '&correo=' + message.correo + '&pais=' + message.pais + '&empresa=' + message.empresa
+        + '&sector=' + message.sector + '&web=' + message.web + '&empleados=' + message.empleados + '&mensaje=' + message.mensaje, { responseType: 'text' });
   }
 }
