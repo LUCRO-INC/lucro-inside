@@ -49,7 +49,7 @@ export class ContactenosComponent implements OnInit, OnDestroy {
 
   sendForm(contactForm: FormGroup) {
     if (contactForm.valid) {
-      this.contactService.contact(contactForm.value);
+      this.contactService.contact(contactForm.value).toPromise();
       this.clickSubmit = true;
       contactForm.reset();
       this.timer = setTimeout(() => {
