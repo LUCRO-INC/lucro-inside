@@ -15,10 +15,25 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   contact(message: any) {
-    console.log(message);
     return this.http.get(
       baseUrl +
-        `servicios/contacto.php?nombre=${message.nombre}&correo=${message.nombre}&telefono=${message.telefono}&pais=${message.pais}&empresa=${message.empresa}&sector=${message.sector}&web=${message.web}&empleados=${message.empleados}&mensaje=${message.mensaje}`
+        'servicios/contacto.php?nombre=' +
+        message.nombre +
+        '&correo=' +
+        message.correo +
+        '&pais=' +
+        message.pais +
+        '&empresa=' +
+        message.empresa +
+        '&sector=' +
+        message.sector +
+        '&web=' +
+        message.web +
+        '&empleados=' +
+        message.empleados +
+        '&mensaje=' +
+        message.mensaje,
+      { responseType: 'text' }
     );
   }
 }

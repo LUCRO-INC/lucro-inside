@@ -47,14 +47,20 @@ export class ContactenosComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
-  sendForm(contactForm: FormGroup) {
+  async sendForm(contactForm: FormGroup) {
     if (contactForm.valid) {
-      this.contactService.contact(contactForm.value).toPromise();
-      this.clickSubmit = true;
-      contactForm.reset();
-      this.timer = setTimeout(() => {
-        this.router.navigate(['empresas']);
-      }, 10000);
+      this.contactService.contact(contactForm.value).subscribe(
+        (_res) => {
+          this.clickSubmit = true;
+          contactForm.reset();
+          this.timer = setTimeout(() => {
+            this.router.navigate(['empresas']);
+          }, 10000);
+        },
+        (_err) => {
+          console.log(_err);
+        }
+      );
     } else {
       console.log('Debe llenar todo el formulario');
     }
