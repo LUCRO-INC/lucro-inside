@@ -1,0 +1,19 @@
+@import "./theme/settings";
+
+.soluciones-test {
+  @include flexbox(center, center, column);
+  width: 100%;
+  min-height: 85vh;
+  gap: 1.5rem;
+  padding-top: 4.5rem;
+  margin-top: 4.5rem;
+  background-color: chocolate;
+
+  .preguntas-container {
+    width: 288px;
+    height: 220px;
+    /* padding: 1.5rem 0; */
+    overflow-y: hidden;
+    overflow-x: visible;
+  }
+}

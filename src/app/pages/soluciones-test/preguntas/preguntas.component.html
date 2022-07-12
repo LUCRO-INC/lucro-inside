@@ -1,0 +1,13 @@
+<swiper
+  [config]="config"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+  [virtual]="true"
+  class="preguntas"
+>
+  <ng-template swiperSlide *ngFor="let p of preguntas" class="question">
+    <p class="question-text">
+      {{ p }}
+    </p>
+  </ng-template>
+</swiper>

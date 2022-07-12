@@ -6,13 +6,8 @@ import { SwiperModule } from 'swiper/angular';
 import { SolucionesRoutingModule } from './soluciones-routing.module';
 import { SolucionesComponent } from './soluciones.component';
 
-
 @NgModule({
   declarations: [SolucionesComponent],
-  imports: [
-    CommonModule,
-    SolucionesRoutingModule,
-    SwiperModule
-  ]
+  imports: [CommonModule, SolucionesRoutingModule, SwiperModule],
 })
-export class SolucionesModule { }
+export class SolucionesModule {}

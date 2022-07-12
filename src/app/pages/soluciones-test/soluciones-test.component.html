@@ -1,0 +1,7 @@
+<section class="soluciones-test">
+  <ng-container *ngFor="let s of soluciones">
+    <section class="preguntas-container">
+      <app-preguntas [preguntas]="s.questions"></app-preguntas>
+    </section>
+  </ng-container>
+</section>

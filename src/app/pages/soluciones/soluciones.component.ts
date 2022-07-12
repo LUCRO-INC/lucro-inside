@@ -9,11 +9,19 @@ import {
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
-import { setClassMetadata } from '@angular/core/src/r3_symbols';
-import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimation } from 'src/app/@shared/animations';
-import { ElementSchemaRegistry } from '@angular/compiler';
+import {
+  fadeinLeft,
+  fadeinRight,
+  questionsFade,
+  evaluacionDesempenoImageAnimation,
+} from 'src/app/@shared/animations';
 
-import SwiperCore, { Swiper, SwiperOptions, Pagination, Autoplay } from 'swiper';
+import SwiperCore, {
+  Swiper,
+  SwiperOptions,
+  Pagination,
+  Autoplay,
+} from 'swiper';
 import swiper from 'swiper';
 
 SwiperCore.use([Pagination, Autoplay]);
@@ -26,15 +34,13 @@ SwiperCore.use([Pagination, Autoplay]);
     fadeinLeft,
     fadeinRight,
     questionsFade,
-    evaluacionDesempenoImageAnimation
-  ]
+    evaluacionDesempenoImageAnimation,
+  ],
 })
 export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   public clickArrow: boolean = false;
 
   public timer: number = 0;
-
-  // public hasFooter: boolean = false;
 
   public sections: Array<ElementRef> = [];
 
@@ -74,7 +80,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   public currentSel: String = 'machineLearning';
   public observer: any;
   public footerObserver: any;
-  public navbar:any;
+  public navbar: any;
 
   private id: any;
   private footer: any;
@@ -88,10 +94,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   machineLearningQuestionsConfig: SwiperOptions = {
@@ -101,10 +111,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   solucionesDashboardQuestionsConfig: SwiperOptions = {
@@ -114,10 +128,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   solucionesRPAQuestionsConfig: SwiperOptions = {
@@ -127,10 +145,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   investigacionSegmentadaQuestionsConfig: SwiperOptions = {
@@ -140,10 +162,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   codigosQRQuestionsConfig: SwiperOptions = {
@@ -153,10 +179,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   realidadAumentadaQuestionsConfig: SwiperOptions = {
@@ -166,10 +196,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   adsQuestionsConfig: SwiperOptions = {
@@ -179,10 +213,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   scraperQuestionsConfig: SwiperOptions = {
@@ -192,10 +230,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   chatbotQuestionsConfig: SwiperOptions = {
@@ -205,10 +247,14 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesPerView: 3,
     spaceBetween: this.spaceBetween,
     pagination: false,
-    autoplay: { disableOnInteraction: false, delay: 3000, pauseOnMouseEnter: false },
+    autoplay: {
+      disableOnInteraction: false,
+      delay: 3000,
+      pauseOnMouseEnter: false,
+    },
     observer: true,
     observeParents: true,
-    slideClass: 'questions__item'
+    slideClass: 'questions__item',
   };
 
   carouselConfig: SwiperOptions = {
@@ -228,15 +274,15 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     slideClass: 'navbar__item',
     breakpoints: {
       992: {
-        spaceBetween: 8
+        spaceBetween: 8,
       },
       1400: {
-        spaceBetween: 10
-      }
-    }
+        spaceBetween: 10,
+      },
+    },
   };
 
-  constructor(private service: CmsService) { }
+  constructor(private service: CmsService) {}
 
   async ngOnInit() {
     // this.sliderTimer();
@@ -267,7 +313,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     this.footer = document.querySelector('.footer');
     this.intersectionObserver();
-    this.footerObserver.observe(this.footer)
+    this.footerObserver.observe(this.footer);
     this.observer.observe(this.section01.nativeElement);
     this.observer.observe(this.section02.nativeElement);
     this.observer.observe(this.section03.nativeElement);
@@ -298,54 +344,19 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  goToSection(solucionLabel: String, event:any) {
-    let navbarItems = document.querySelectorAll('.nav-button')
+  goToSection(solucionLabel: String, event: any) {
+    let navbarItems = document.querySelectorAll('.nav-button');
     event.target?.classList.add('highlighted');
     navbarItems.forEach((item) => {
-      if(item.classList.contains('highlighted') && item !== event.target) {
+      if (item.classList.contains('highlighted') && item !== event.target) {
         item.classList.remove('highlighted');
       }
-    })
+    });
     this.soluciones.forEach((s, idx) => {
       if (s.label == solucionLabel) {
-        this.sections[idx].nativeElement.scrollIntoView({block: 'start'});
+        this.sections[idx].nativeElement.scrollIntoView({ block: 'start' });
       }
-    })
-    // switch (solucionLabel) {
-    //   case 'Desempeño de terreno':
-    //     console.log('Desempeño de terreno', navbarItems, event);
-    //     break;
-    //   case 'Machine Learning':
-    //     console.log('Machine Learning', navbarItems, event);
-    //     break;
-    //   case 'Dashboard':
-    //     console.log('Dashboard', navbarItems, event);
-    //     break;
-    //   case 'RPA':
-    //     console.log('RPA', navbarItems, event);
-    //     break;
-    //   case 'Wisdom':
-    //     console.log('Wisdom', navbarItems, event);
-    //     break;
-    //   case 'Códigos QR':
-    //     console.log('Códigos QR', navbarItems, event);
-    //     break;
-    //   case 'Realidad Aumentada':
-    //     console.log('Realidad Aumentada', navbarItems, event);
-    //     break;
-    //   case 'Ads':
-    //     console.log('Ads', navbarItems, event);
-    //     break;
-    //   case 'Scrapper':
-    //     console.log('Scrapper', navbarItems, event);
-    //     break;
-    //   case 'ChatBot':
-    //     console.log('ChatBot', navbarItems, event);
-    //     break;
-    //   default:
-    //     console.log('there is no click anywhere');
-    //     break;
-    // }
+    });
   }
 
   intersectionObserver() {
@@ -365,18 +376,13 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
           navbarItems.forEach((item: any) => {
             let navbarLabel = item.innerText;
             let activeTags: Array<Element> = [];
-            // if (item.classList.contains('highlighted')) {
-            //   item.classList.remove('highlighted');
-            //   item.parentElement.classList.remove('swiper-slide-active');
-            // }
-            if (navbarLabel === sectionLabel && !item.parentElement.classList.contains('swiper-slide-duplicate')) {
-              // activeTags.push(item);
-              // console.log(activeTags)
+            if (
+              navbarLabel === sectionLabel &&
+              !item.parentElement.classList.contains('swiper-slide-duplicate')
+            ) {
               item.click();
-              // item.classList.add('highlighted');
-              // item.parentElement.classList.add('swiper-slide-active');
             }
-          })
+          });
           this.clickArrow = false;
         }
       });
@@ -386,19 +392,27 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
         if (entry.isIntersecting) {
           this.navbar?.classList.add('float');
         } else {
-          this.navbar?.classList.remove('float');}
+          this.navbar?.classList.remove('float');
+        }
       });
     }, options);
   }
 
   @HostListener('window:resize', ['$event'])
   getScreenSize(event: Event) {
-        this.windowWidth = window.innerWidth;
-        if (this.windowWidth > 576) { this.spaceBetween = 29.7 }
-        if (this.windowWidth > 768) { this.spaceBetween = 35.1 }
-        if (this.windowWidth > 1400) { this.spaceBetween = 50 }
-        else { this.spaceBetween = 27 }
-        // console.log(this.windowWidth, this.spaceBetween);
+    this.windowWidth = window.innerWidth;
+    if (this.windowWidth > 576) {
+      this.spaceBetween = 29.7;
+    }
+    if (this.windowWidth > 768) {
+      this.spaceBetween = 35.1;
+    }
+    if (this.windowWidth > 1400) {
+      this.spaceBetween = 50;
+    } else {
+      this.spaceBetween = 27;
+    }
+    // console.log(this.windowWidth, this.spaceBetween);
   }
 
   onSwiper(swiper: Swiper) {
