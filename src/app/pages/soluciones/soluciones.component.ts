@@ -353,8 +353,11 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
     this.soluciones.forEach((s, idx) => {
+      this.sections[idx].nativeElement.classList.remove('active');
       if (s.label == solucionLabel) {
-        this.sections[idx].nativeElement.scrollIntoView({ block: 'start' });
+        this.sections[idx].nativeElement.classList.add('active');
+        // s;
+        /* this.sections[idx].nativeElement.scrollIntoView({block: 'start'}); */
       }
     });
   }
@@ -368,21 +371,12 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          let sectionTarget: any = entry.target;
-          let sectionLabel: string = sectionTarget.ariaLabel;
-          sectionTarget.classList.add('active');
-          sectionTarget.classList.add('show');
-          let navbarItems = document.querySelectorAll('.nav-button');
-          navbarItems.forEach((item: any) => {
-            let navbarLabel = item.innerText;
-            let activeTags: Array<Element> = [];
-            if (
-              navbarLabel === sectionLabel &&
-              !item.parentElement.classList.contains('swiper-slide-duplicate')
-            ) {
-              item.click();
-            }
-          });
+          entry.target.classList.add('show');
+          // let navbarItems = document.querySelectorAll('.nav-button');
+          // console.log(navbarItems)
+          // navbarItems.forEach(item => {
+          //   item.classList.remove('highlighted');
+          // })
           this.clickArrow = false;
         }
       });

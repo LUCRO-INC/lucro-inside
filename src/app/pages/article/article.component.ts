@@ -50,7 +50,7 @@ export class ArticleComponent implements OnInit, AfterViewInit {
   articlePlots = [
     {
       id: "2",
-      source: "/assets/images/consumidores/article/plotStats/Lo que más le inquieta al colombiano frente a la contaminación.png"
+      source: "/assets/images/consumidores/article/plotStats/Los tenderos, un gremio que lucha por su subsistencia.png"
     },
     {
       id: "3",
@@ -90,7 +90,7 @@ export class ArticleComponent implements OnInit, AfterViewInit {
     },
     {
       id: "12",
-      source: "/assets/images/consumidores/article/plotStats/Los tenderos, un gremio que lucha por su subsistencia.png"
+      source: "/assets/images/consumidores/article/plotStats/Lo que más le inquieta al colombiano frente a la contaminación.png"
     },
     {
       id: "13",

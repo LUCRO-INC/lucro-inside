@@ -11,8 +11,7 @@ export class TechCmsService {
       {
         name: 'gamificacion',
         img: {
-          video:
-            '/assets/images/tecnologia/Videos/Gamification.mp4',
+          video: '/assets/images/tecnologia/Videos/Gamification.mp4',
           imgIcon:
             '/assets/images/tecnologia/gamificacion/gamificacionMarcoIcono.svg',
         },
@@ -26,10 +25,8 @@ export class TechCmsService {
       {
         name: 'scrapper',
         img: {
-          video:
-            '/assets/images/tecnologia/Videos/Scrapper.mp4',
-          imgIcon:
-            '/assets/images/tecnologia/scrapper/scrapperMarcoIcono.svg',
+          video: '/assets/images/tecnologia/Videos/Scrapper.mp4',
+          imgIcon: '/assets/images/tecnologia/scrapper/scrapperMarcoIcono.svg',
         },
         card: {
           img: '/assets/images/tecnologia/scrapper/scrapperIcono.svg',
@@ -56,8 +53,7 @@ export class TechCmsService {
       {
         name: 'automatizacionRPA',
         img: {
-          video:
-            '/assets/images/tecnologia/Videos/RPA.mp4',
+          video: '/assets/images/tecnologia/Videos/RPA.mp4',
           imgIcon:
             '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAMarcoIcono.svg',
         },
@@ -80,16 +76,14 @@ export class TechCmsService {
           img: '/assets/images/tecnologia/modelosPredictivos/modelosPredictivosIcono.svg',
           title: 'Modelos Predictivos',
           content:
-            'En Lucro empleamos mecánicas de juego en entornos que tradicionalmente no son recreativos para fortalecer organizaciones en su núcleo o mejorar el compromiso de los usuarios hacia un producto o servicio. Nuestra tecnología integra la experiencia y la diversión para dinamizar procesos y transformarlos en estrategias didácticas.',
+            'Lucro identifica, segmenta y perfila cientos de usuarios que aciertan la predicción de eventos deportivos por encima del promedio de la población. Estas predicciones, más la información histórica, nos permite determinar los mejores pronósticos de eventos o resultados futuros. Nuestro modelo predictivo más el almacenamiento y procesamiento de grandes cantidades de datos, se direccionan en busca de tendencias que aporten soluciones a las empresas.',
         },
       },
       {
         name: 'bigData',
         img: {
-          imgFocus:
-            '/assets/images/tecnologia/bigData/bigDataMarco.png',
-          imgIcon:
-            '/assets/images/tecnologia/bigData/bigDataMarcoIcono.svg',
+          imgFocus: '/assets/images/tecnologia/bigData/bigDataMarco.png',
+          imgIcon: '/assets/images/tecnologia/bigData/bigDataMarcoIcono.svg',
         },
         card: {
           img: '/assets/images/tecnologia/bigData/bigDataIcono.svg',

@@ -495,6 +495,31 @@ export class CmsService {
         hover: '/assets/images/clientes/alpina-hover.png'
       },
       {
+        name: 'coca-cola',
+        src: '/assets/images/clientes/coca-cola.png',
+        hover: '/assets/images/clientes/coca-cola-hover.png'
+      },
+      {
+        name: 'henkel',
+        src: '/assets/images/clientes/henkel.png',
+        hover: '/assets/images/clientes/henkel-hover.png'
+      },
+      {
+        name: 'cafam',
+        src: '/assets/images/clientes/cafam.png',
+        hover: '/assets/images/clientes/cafam-hover.png'
+      },
+      {
+        name: 'juan-valdez',
+        src: '/assets/images/clientes/juan-valdez.png',
+        hover: '/assets/images/clientes/juan-valdez-hover.png'
+      },
+      {
+        name: 'reckitt',
+        src: '/assets/images/clientes/reckitt.png',
+        hover: '/assets/images/clientes/reckitt-hover.png'
+      },
+      {
         name: 'carvajal',
         src: '/assets/images/clientes/carvajal.png',
         hover: '/assets/images/clientes/carvajal-hover.png'
