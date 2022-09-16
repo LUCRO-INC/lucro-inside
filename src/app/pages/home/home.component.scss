@@ -148,12 +148,17 @@
       opacity: 0;
     }
     .allies-brands {
-      @include flexbox(space-between, center, row);
-      a + a {
-        margin-left: 2em !important;
+      @media screen and (max-width: 360px){
+        @include flexbox(space-between, center, column);
       }
+      @include flexbox(space-between, center, row);
       a {
         opacity: 0;
+        margin-left: 2.6em;
+        @media screen and (max-width: 360px){
+            margin-left:0;
+            margin-top: 1.5em;
+        }
         &:hover {
           transform: scale(1.05);
         }
@@ -168,6 +173,7 @@
         width: 5.673125rem;
       }
     }
+    
   }
   &.show {
     nav {
@@ -236,7 +242,7 @@
           width: 4.421875rem;
         }
         &__2 {
-          width: 8.5775rem;
+          width: 7.6rem;
         }
       }
     }
