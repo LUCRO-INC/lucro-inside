@@ -510,6 +510,10 @@ export class CmsService {
         hover: '/assets/images/clientes/cafam-hover.png'
       },
       {
+        name: 'postobon',
+        src: '/assets/images/clientes/postobon.png',
+      },
+      {
         name: 'juan-valdez',
         src: '/assets/images/clientes/juan-valdez.png',
         hover: '/assets/images/clientes/juan-valdez-hover.png'
