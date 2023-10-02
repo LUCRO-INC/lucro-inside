@@ -7,6 +7,7 @@
     <p class="home__text--paragraph">
       {{ sectionOne?.body }}
     </p>
+    <p class="home__text--paragraph" *ngIf="sectionOne?.body" [innerHTML]="sectionOne?.subbody"></p>
   </article>
 </section>
 
@@ -36,8 +37,7 @@
     </div>
     <article class="beliefs__text">
       <h2 class="beliefs__text--title">{{sectionThree?.title}}</h2>
-      <p class="beliefs__text--paragraph">
-        {{sectionThree?.body}}
+      <p class="beliefs__text--paragraph" [innerHTML]="sectionThree?.body">
       </p>
     </article>
   </div>
@@ -49,9 +49,7 @@
   </div>
   <article class="work__text">
     <h2 class="work__text--title">¿Cómo trabajamos<br />con los clientes</h2>
-    <p class="work__text--paragraph">
-      {{sectionFour?.body}}
-    </p>
+    <p class="work__text--paragraph" [innerHTML]="sectionFour?.body"></p>
     <button routerLink="/contactenos" class="btn-ghost">Contáctanos</button>
   </article>
 </section>

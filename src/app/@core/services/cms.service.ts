@@ -10,7 +10,8 @@ export class CmsService {
       {
         name: 'sectionOne',
         title: '¿Qué es Lucro para empresas?',
-        body: 'Fortalece tus procesos empresariales con nuestras soluciones de software a la medida. Con Lucro Inside estarás a la vanguardia en la implementación de sistemas para calcular variables de interés que mejoren las estrategias de negocio e impulsen la relación entre clientes y productos.',
+        body: 'Somos una empresa colombiana orientada a ofrecer la posibilidad de tomar decisiones con data gestionable por medio de servicios de tecnología y soluciones de software. Generando así soluciones martech y salestech.',
+        subbody:'<br><br>Trabajamos bajo 2 premisas: <br><ul><li>1. Lo que la gente piensa y hace lo volvemos insights de consumidor.</li><li>2. Transformamos todo lo que que el ojo humano puede ver en datos.</li></ul>',
         images: [
           {
             id: 1,
@@ -52,7 +53,7 @@ export class CmsService {
       {
         name: 'sectionTwo',
         title: 'Nuestro propósito',
-        body: 'Somos una empresa colombiana orientada a ofrecer servicios de tecnología, soluciones de software y transformación digital para empresas. Para Lucro, la investigación e inmersión profunda sobre los datos estadísticos del consumidor y el mercado garantizan el éxito en las estrategias empresariales. Investigación, análisis de datos, estrategia y ejecución son los pilares que defendemos. Esto ha hecho que grandes empresas líderes en Colombia trabajen de la mano con Lucro-inside para potencializar su core de negocio.',
+        body: 'Buscamos que las empresas comprendan la importancia de tener data en tiempo real, lo que les permitirá realizar una toma de decisiones mucho más acertada, para así poder generar estrategias de mayor valor teniendo como base el comportamiento de los consumidores y logrando así aumentar sus ventas e incrementar la competitividad en el mercado.',
         images: [
           {
             id: 1,
@@ -79,7 +80,7 @@ export class CmsService {
       {
         name: 'sectionThree',
         title: '¿En qué creemos?',
-        body: 'En Lucro creemos en la participación de cada individuo en la sociedad y en la inclusión de todos sin importar sus diferencias de pensamiento, orientación sexual y creencias, por eso contamos con un equipo diverso de profesionales, colaboradores y líderes que trabajan día a día por generar una buena experiencia de usuario y utilizar nuestra tecnología para crear plataformas y recursos que generen un impacto positivo en las empresas.',
+        body: 'Digitalizamos la información para reducir el acumulación de envases,tapas,cajas o cualquier elemento de participación en promociones.<br><br>Estamos generando un ingreso extra a las personas que hacen parte de nuestra comunidad Lucro.<br><br>Eliminando los agotados ayudamos a que los tenderos y los puntos de venta de las grandes cadenas de almacenes y consumo masivo puedan vender más.',
         images: [
           {
             id: 1,
@@ -111,7 +112,7 @@ export class CmsService {
       {
         name: 'sectionFour',
         title: '¿Cómo trabajamos con los clientes?',
-        body: 'En Lucro trabajamos de la mano con los clientes, estudiamos sus necesidades y profundizamos en los datos estadísticos de nuestra base adecuados a cada perfil para así proponer las mejores soluciones que requieran y apoyarlos con sus objetivos de negocio. Nuestros estudios de mercado representan a comunidades y culturas de Colombia y el mundo porque creemos que basados en ese entendimiento profundo de los gustos e intereses de las personas se pueden generar mejores oportunidades de crecimiento en los diferentes sectores de la economía.',
+        body: 'En Lucro estudiamos las necesidades de cada cliente y nos basamos en la filosofía del  “Como SÍ”  nos adaptamos a cada perfil para así proponer las mejores soluciones que requieran y apoyarlos con sus objetivos de negocio.<br><br>Siendo referentes en Inteligencia Artificial y con los servicios de tecnología y softwares que hemos desarrollado, buscamos  solucionar la problemática principal de las empresas de consumo masivo, que desconocen la información de los puntos de venta donde se encuentran sus productos y en desconocimiento por parte de su consumidor final.',
         images: [
           {
             id: 1,
