@@ -2,31 +2,20 @@
   <nav id="mainNavbar">
     <swiper class="navbar" [config]="carouselConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
       <ng-template swiperSlide class="navbar__item" *ngFor="let solucion of soluciones">
-        <button
-          type="button"
-          class="nav-button"
-          (click)="goToSection(solucion.label, $event)"
-        >
+        <button type="button" class="nav-button" (click)="goToSection(solucion.label, $event)">
           <span class="solucion-label">{{ solucion.label }}</span>
         </button>
       </ng-template>
     </swiper>
   </nav>
 
-  <div
-    class="evaluacionDesempeno active"
-#section01
-  >
+  <div class="evaluacionDesempeno active" #section01>
     <div class="evaluacionDesempeno__image" [@evaluacionDesempenoImageAnimation]="evaluacionDesempeno.images?.length">
-      <img
-        *ngFor="let img of evaluacionDesempeno.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of evaluacionDesempeno.images" [src]="img.src" [class]="img.class" />
       <div class="video-container">
         <video autoplay muted loop playsinline>
           <source src="/assets/images/Soluciones/evaluacionDesempeño/evaluacionDesempenoVideo.mp4" type="video/mp4">
-        Your browser does not support the video tag
+          Your browser does not support the video tag
         </video>
       </div>
     </div>
@@ -35,9 +24,9 @@
         {{ evaluacionDesempeno?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -48,38 +37,31 @@
               {{ evaluacionDesempeno?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="evaluacionDesempenoQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="evaluacionDesempenoQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of evaluacionDesempeno.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button
-        routerLink="/contactenos"
-        [class]="evaluacionDesempeno.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="evaluacionDesempeno.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ evaluacionDesempeno.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="machineLearning"
-    #section02
-  >
+  <div class="machineLearning" #section02>
     <div class="machineLearning__image">
-      <img
-        *ngFor="let img of machineLearning.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of machineLearning.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="machineLearning__text">
       <h3 class="machineLearning__text--title" @fadein-left>{{ machineLearning?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -90,38 +72,33 @@
               {{ machineLearning?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="machineLearningQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="machineLearningQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of machineLearning.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="machineLearning.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="machineLearning.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ machineLearning.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="solucionesDashboard"
-    #section03
-  >
+  <div class="solucionesDashboard" #section03>
     <div class="solucionesDashboard__image">
-      <img
-        *ngFor="let img of solucionesDashboard.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of solucionesDashboard.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="solucionesDashboard__text">
       <h3 class="solucionesDashboard__text--title" @fadein-left>
         {{ solucionesDashboard?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -132,38 +109,31 @@
               {{ solucionesDashboard?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="solucionesDashboardQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="solucionesDashboardQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of solucionesDashboard.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button
-        routerLink="/contactenos"
-        [class]="solucionesDashboard.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="solucionesDashboard.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ solucionesDashboard.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="solucionesRPA"
-    #section04
-  >
+  <div class="solucionesRPA" #section04>
     <div class="solucionesRPA__image">
-      <img
-        *ngFor="let img of solucionesRPA.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of solucionesRPA.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="solucionesRPA__text">
       <h3 class="solucionesRPA__text--title" @fadein-left>{{ solucionesRPA?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -174,38 +144,33 @@
               {{ solucionesRPA?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="solucionesRPAQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="solucionesRPAQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of solucionesRPA.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="solucionesRPA.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="solucionesRPA.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ solucionesRPA.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="investigacionSegmentada"
-    #section05
-  >
+  <div class="investigacionSegmentada" #section05>
     <div class="investigacionSegmentada__image">
-      <img
-        *ngFor="let img of investigacionSegmentada.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of investigacionSegmentada.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="investigacionSegmentada__text">
       <h3 class="investigacionSegmentada__text--title" @fadein-left>
         {{ investigacionSegmentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -216,74 +181,62 @@
               {{ investigacionSegmentada?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="investigacionSegmentadaQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="investigacionSegmentadaQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of investigacionSegmentada.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button
-        routerLink="/contactenos"
-        [class]="investigacionSegmentada.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}"t
-      >
+      <button routerLink="/contactenos" [class]="investigacionSegmentada.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}" t>
         {{ investigacionSegmentada.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="codigosQR"
-    #section06
-  >
+  <div class="codigosQR" #section06>
     <div class="codigosQR__image">
-      <img
-        *ngFor="let img of codigosQR.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of codigosQR.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="codigosQR__text">
       <h3 class="codigosQR__text--title" @fadein-left>{{ codigosQR?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="codigosQR__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ codigosQR?.subTitle }}</h6>
+            <h6 class="codigosQR__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{
+              codigosQR?.subTitle }}</h6>
             <p class="codigosQR__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ codigosQR?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="codigosQRQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="codigosQRQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of codigosQR.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="codigosQR.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="codigosQR.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ codigosQR.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="realidadAumentada"
-    #section07
-  >
+  <div class="realidadAumentada" #section07>
     <div class="realidadAumentada__image">
-      <img
-        *ngFor="let img of realidadAumentada.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of realidadAumentada.images" [src]="img.src" [class]="img.class" />
       <div class="video-container">
         <video playsinline autoplay muted loop>
           <source src="/assets/images/Soluciones/realidadAumentada/realidadAumentadaVideo.mp4" type="video/mp4">
-        Your browser does not support the video tag
+          Your browser does not support the video tag
         </video>
       </div>
     </div>
@@ -292,9 +245,9 @@
         {{ realidadAumentada?.title }}
       </h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -305,35 +258,31 @@
               {{ realidadAumentada?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="realidadAumentadaQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="realidadAumentadaQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of realidadAumentada.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button
-        routerLink="/contactenos"
-        [class]="realidadAumentada.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}"t
-      >
+      <button routerLink="/contactenos" [class]="realidadAumentada.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}" t>
         {{ realidadAumentada.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="ads"
-    #section08
-  >
+  <div class="ads" #section08>
     <div class="ads__image">
       <img *ngFor="let img of ads.images" [src]="img.src" [class]="img.class" />
     </div>
     <article class="ads__text">
       <h3 class="ads__text--title" @fadein-left>{{ ads?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
@@ -342,31 +291,26 @@
               {{ ads?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="adsQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="adsQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of ads.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="ads.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="ads.button?.class" [@fadein-left]="{value:'', params: {delay:600}}">
         {{ ads.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="scraper"
-    #section09
-  >
+  <div class="scraper" #section09>
     <div class="scraper__image">
       <img src="/assets/images/Soluciones/scraper/Ellipse 2076.svg" class="scraper__image1">
       <img src="/assets/images/Soluciones/scraper/image 40.png" class="scraper__image2">
       <div class="scroll_compara">
-        <iframe
-          src="https://comparaprecios.lucro-app.com/home"
-          scrolling="none"
-        ></iframe>
+        <iframe src="https://comparaprecios.lucro-app.com/home" scrolling="none"></iframe>
       </div>
       <div class="gift_compara">
         <img src="/assets/images/Soluciones/scraper/comparador.gif" class="img-fluid" />
@@ -376,69 +320,68 @@
     <article class="scraper__text">
       <h3 class="scraper__text--title" @fadein-left>{{ scraper?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="scraper__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ scraper?.subTitle }}</h6>
+            <h6 class="scraper__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ scraper?.subTitle }}
+            </h6>
             <p class="scraper__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ scraper?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="scraperQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="scraperQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of scraper.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="scraper.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="scraper.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ scraper.button?.content }}
       </button>
     </article>
   </div>
 
-  <div
-    class="chatbot"
-    #section10
-  >
+  <div class="chatbot" #section10>
     <div class="chatbot__image">
-      <img
-        *ngFor="let img of chatbot.images"
-        [src]="img.src"
-        [class]="img.class"
-      />
+      <img *ngFor="let img of chatbot.images" [src]="img.src" [class]="img.class" />
       <div class="video-container">
         <video playsinline autoplay muted loop>
           <source src="/assets/images/Soluciones/chatbot/chatbotVideo.mp4" type="video/mp4">
-        Your browser does not support the video tag
+          Your browser does not support the video tag
         </video>
       </div>
     </div>
     <article class="chatbot__text">
       <h3 class="chatbot__text--title" @fadein-left>{{ chatbot?.title }}</h3>
       <div class="slider-container" [ngClass]="{ unfold: clickArrow }">
-        <div class="upper-tabs"[ngClass]="{ unfold: clickArrow }">
-          <a class="displayed" (click)="clickArrow = false">Descripción</a>
-          <a class="hidden" (click)="clickArrow = true">Preguntas que podemos resolverte</a>
+        <div class="upper-tabs" [ngClass]="{ unfold: clickArrow }">
+          <a class="displayed" (click)="clickArrow = false">Description</a>
+          <a class="hidden" (click)="clickArrow = true">Questions que can answer for you</a>
         </div>
         <div class="slider">
           <div class="description">
-            <h6 class="chatbot__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ chatbot?.subTitle }}</h6>
+            <h6 class="chatbot__text--subTitle" [@fadein-left]="{value:'', params: {delay:200}}">{{ chatbot?.subTitle }}
+            </h6>
             <p class="chatbot__text--paragraph" [@fadein-left]="{value:'', params: {delay:400}}">
               {{ chatbot?.body }}
             </p>
           </div>
-          <swiper class="questions" [config]="chatbotQuestionsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+          <swiper class="questions" [config]="chatbotQuestionsConfig" (swiper)="onSwiper($event)"
+            (slideChange)="onSlideChange()">
             <ng-template swiperSlide class="questions__item" *ngFor="let question of chatbot.questions">
               <p class="question">{{question}}</p>
             </ng-template>
           </swiper>
         </div>
       </div>
-      <button routerLink="/contactenos" [class]="chatbot.button?.class"  [@fadein-left]="{value:'', params: {delay:600}}">
+      <button routerLink="/contactenos" [class]="chatbot.button?.class"
+        [@fadein-left]="{value:'', params: {delay:600}}">
         {{ chatbot.button?.content }}
       </button>
     </article>

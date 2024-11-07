@@ -9,9 +9,9 @@ export class CmsService {
     Empresas: [
       {
         name: 'sectionOne',
-        title: '¿Qué es Lucro para empresas?',
-        body: 'Somos una empresa colombiana orientada a ofrecer la posibilidad de tomar decisiones con data gestionable por medio de servicios de tecnología y soluciones de software. Generando así soluciones martech y salestech.',
-        subbody:'<br><br>Trabajamos bajo 2 premisas: <br><ul><li>1. Lo que la gente piensa y hace lo volvemos insights de consumidor.</li><li>2. Transformamos todo lo que que el ojo humano puede ver en datos.</li></ul>',
+        title: 'What is Lucro for businesses?',
+        body: `We are a Colombian company focused on actionable data through technology services and software solutions, specializing in martech and salestech. We turn people's thoughts and actions into consumer insights, and transform everything the human eye can see into data.`,
+        subbody: '<br><br>Trabajamos bajo 2 premisas: <br><ul><li>1. Lo que la gente piensa y hace lo volvemos insights de consumidor.</li><li>2. Transformamos todo lo que que el ojo humano puede ver en datos.</li></ul>',
         images: [
           {
             id: 1,
@@ -52,8 +52,8 @@ export class CmsService {
       },
       {
         name: 'sectionTwo',
-        title: 'Nuestro propósito',
-        body: 'Buscamos que las empresas comprendan la importancia de tener data en tiempo real, lo que les permitirá realizar una toma de decisiones mucho más acertada, para así poder generar estrategias de mayor valor teniendo como base el comportamiento de los consumidores y logrando así aumentar sus ventas e incrementar la competitividad en el mercado.',
+        title: 'Our purpose',
+        body: 'We aim to help CPGs in LATAM understand the importance of having real-time data, enabling them to make more informed decisions and develop higher-value strategies. By relying on accurate information, they can increase sales and enhance their competitiveness in the market.',
         images: [
           {
             id: 1,
@@ -79,8 +79,8 @@ export class CmsService {
       },
       {
         name: 'sectionThree',
-        title: '¿En qué creemos?',
-        body: 'Digitalizamos la información para reducir el acumulación de envases,tapas,cajas o cualquier elemento de participación en promociones.<br><br>Estamos generando un ingreso extra a las personas que hacen parte de nuestra comunidad Lucro.<br><br>Eliminando los agotados ayudamos a que los tenderos y los puntos de venta de las grandes cadenas de almacenes y consumo masivo puedan vender más.',
+        title: 'What do we believe in?',
+        body: 'Integrating machine learning algorithms uncovers hidden patterns in consumer behavior, enabling businesses to design more targeted and effective marketing campaigns.<br><br>Real-time data analytics enhance the ability to anticipate market trends, allowing businesses to proactively adapt their strategies and make informed decisions.<br><br>Digital transformation and the adoption of advanced technologies optimize data capture and analysis at the point of sale, improving marketing strategies and maximizing sales opportunities.',
         images: [
           {
             id: 1,
@@ -111,8 +111,8 @@ export class CmsService {
       },
       {
         name: 'sectionFour',
-        title: '¿Cómo trabajamos con los clientes?',
-        body: 'En Lucro estudiamos las necesidades de cada cliente y nos basamos en la filosofía del  “Como SÍ”  nos adaptamos a cada perfil para así proponer las mejores soluciones que requieran y apoyarlos con sus objetivos de negocio.<br><br>Siendo referentes en Inteligencia Artificial y con los servicios de tecnología y softwares que hemos desarrollado, buscamos  solucionar la problemática principal de las empresas de consumo masivo, que desconocen la información de los puntos de venta donde se encuentran sus productos y en desconocimiento por parte de su consumidor final.',
+        title: 'How do we work with clients?',
+        body: 'At Lucro, we understand the unique needs of each client and adapt to their profile and objectives to provide technological solutions that truly add value. Using artificial intelligence, machine learning, and computer vision, we collect accurate, actionable, real-time data from points of sale.<br><br>We deliver this information through BI dashboards, enabling companies to make quick, informed decisions that enhance their commercial strategies. This addresses the main challenge for CPGs, who often lack critical insights into how their products are performing at the point of sale.',
         images: [
           {
             id: 1,
@@ -146,8 +146,8 @@ export class CmsService {
     Contactenos: [
       {
         name: 'sectionContactenos',
-        title: '¡Inicia tu solicitud con Lucro!',
-        body: 'Nos complace crear una asesoría para ti en Lucro. Es necesario que puedas contar con más de 3 minutos para completar esta solicitud y reservar tu asesoría. ¡Vamos a empezar!',
+        title: 'Start Your Request with Lucro!',
+        body: 'We are excited to assist you in setting up a consultation at Lucro. Please ensure you have more than 3 minutes to complete this request and secure your consultation. Let’s get started!!',
         images: [
           {
             id: 1,
@@ -171,10 +171,10 @@ export class CmsService {
     Soluciones: [
       {
         name: 'evaluacionDesempeno',
-        label: 'Desempeño de terreno',
-        title: 'Evaluación de desempeño en terreno',
-        subTitle: 'Lo que el vendedor ve, lo pueden ver todos en la compañía',
-        body: 'Adquiere un innovador sistema de evaluación y verificación para equipos de trabajo y/o capacitaciones, en el terreno de la ejecución, con trazabilidad en tiempo real para el logro de objetivos y potencializar tu fuerza comercial.',
+        label: 'GROUND PERFORMANCE',
+        title: 'Everything the human eye sees, we convert into data',
+        subTitle: 'By capturing images or videos, we gain insights into product and consumer behavior by measuring over 100 metrics from real-time data sets.',
+        body: 'This generates valuable information for sales, marketing, go-to-market, and trade marketing teams.',
         images: [
           {
             id: 1,
@@ -193,24 +193,21 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿El vendedor realmente está yendo al trabajo de campo asignado?",
-          "¿El vendedor organizó el punto de venta según los parámetros de la empresa?",
-          "¿El vendedor identificó los agotados en el punto de venta?",
-          "¿Los supermercados están cumpliendo las exhibiciones adicionales que acordamos?",
-          "¿El estándar de lineal que definimos se cumple según las prioridades de la compañía?"
-
+          'When are there more competitor products than your own?',
+          'At what times does my product rotate the most?',
+          'Which stores are we currently out of stock in?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'machineLearning',
-        label: 'Machine Learning',
+        label: 'MACHINE LEARNING',
         title: 'Machine Learning',
-        subTitle: 'Somos los ojos de tu compañía en puntos de venta, hogares de los consumidores y en donde necesites ver de primera mano.',
-        body: 'Utiliza este campo de la Inteligencia Artificial para la realización de auditorías de inventarios, calificación y cuantificación de productos presentes en anaqueles en tiempo real, verificación del estándar de exhibición y más.',
+        subTitle: `We are the eyes of your company at points of sale, in consumers' homes, and wherever you need to observe firsthand the behavior of your products and consumers.`,
+        body: 'Leverage this field of Artificial Intelligence to measure inventory in real time, assess and quantify products on shelves, verify display standards, and more.',
         images: [
           {
             id: 1,
@@ -229,24 +226,23 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿A qué precio están realmente vendiendo mi producto y el de la competencia en un punto de venta?",
-          "Cuando un vendedor sale de un punto de venta, ¿Cómo dejó el punto de venta? ¿Qué tan bien organizado está el punto de venta?",
-          "¿Qué agotados tengo en el punto de venta en un momento determinado?",
-          "¿Cuál es el porcentaje de lineal que tengo en cualquier punto de venta?",
-          "¿Cómo son las canastas cruzadas y con qué otros productos compran mi marca?"
-
+          'How many products do you have on the shelf?',
+          'What proportion of the inventory does your product occupy?',
+          'What is the best display for each type of point of sale?',
+          'What is the profile of the people who buy my brand?',
+          `Who buys my competitor's products?`
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'solucionesDashboard',
         label: 'Dashboard',
-        title: 'Soluciones Dashboard',
-        subTitle: 'No es sólo tener datos, es tenerlos organizados para encontrar insight.',
-        body: 'Emplea herramientas de gestión empresarial para levantamiento de información (indicadores, métricas, geolocalización, fechas, entre otros) a través de una app personalizada.',
+        title: 'Data Visualization',
+        subTitle: `It's not just about having data; it's about organizing it to uncover insights.`,
+        body: 'Through BI dashboards, you gain access to clear information on indicators, metrics, geolocation, dates, and more, all customized to fit your internal culture.',
         images: [
           {
             id: 1,
@@ -260,22 +256,23 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Existe correlación entre las ventas de un vendedor, su género y edad?",
-          "¿Qué variables influyen en la venta de mi producto?",
-          "¿Estar cerca de un colegio impacta la comercialización de mi producto?"
-
+          `How do my consumers' preferences vary by location?`,
+          'What are the areas where I have the most competition?',
+          'What was my market share yesterday?',
+          'What day does my brand rotate the most?',
+          'What products is my competitor promoting?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'solucionesRPA',
         label: 'RPA',
-        title: 'Soluciones RPA',
-        subTitle: 'Automatizaciones que generan eficiencias.',
-        body: 'Aplica la automatización robótica de procesos (Software que emula acciones humanas) para dar soluciones de lenguaje natural y análisis de sentimiento en las estrategias omnicanal de tu empresa. ',
+        title: 'RPA Solutions',
+        subTitle: 'Automations that drives to efficiency.',
+        body: `Implement robotic process automation (software that mimics human actions) to deliver natural language solutions and sentiment analysis as part of your company's omnichannel strategies.`,
         images: [
           {
             id: 1,
@@ -289,23 +286,23 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Puedo automatizar mis procesos en el BackOffice de mi empresa aumentando la productividad y eliminando cargos?",
-          "¿Puedo automatizar la comunicación con diferentes stakeholders sin tener que utilizar un call center o empleados directos?",
-          "¿Puedo eliminar procesos que requieren extensos trámites ahorrando tiempo y dinero?",
-          "¿Puedo eliminar procesos para enfocar aún más a mi equipo de trabajo en sus labores?"
+          'Can I eliminate processes that require extensive procedures, saving time and money?',
+          'Can I eliminate processes to further focus my team on their tasks?',
+          'Can I automate my back-office processes, increasing productivity and eliminating positions?',
+          'Can I automate communication with different stakeholders without having to use a call center or direct employees?'
 
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'investigacionSegmentada',
         label: 'Wisdom',
-        title: 'Investigación segmentada',
-        subTitle: 'El futuro de la investigación de mercados en el mundo: Conocemos lo que gente dice y lo que realmente hace',
-        body: 'Toma decisiones empresariales inteligentes, basadas en nuestros paneles de investigación, creados con segmentaciones, filtros avanzados y cruces que evidencian correlaciones con las más de 8 mil preguntas que hemos realizado a nuestro panel.',
+        title: 'Segmented Research',
+        subTitle: 'The future of market research worldwide: Understanding what people say and what they actually do.',
+        body: 'Make smart business decisions based on our research panels, designed with advanced segmentation, filters, and cross-tabulations that reveal correlations from over 8,000 questions we’ve asked our panel',
         images: [
           {
             id: 1,
@@ -319,22 +316,22 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Podemos construir un análisis de salud de marca a bajo costo y en menos de 15 quince días?",
-          "¿Puedo analizar no sólo las ciudades principales sino también poblaciones y ciudades más pequeñas?",
-          "¿Existe alguna correlación entre el consumo de mi marca y los hobbies de las personas?",
-          "¿Puedo conocer más allá de lo que la gente dice lo que realmente hay en las neveras o anaqueles de mis consumidores?"
+          'Can I know beyond what people say, what truly lies in the everyday behaviors of my consumers?',
+          'Can I build a brand health analysis at a low cost and in under 15 days?',
+          'Can I analyze not only major cities but also smaller towns and cities?',
+          `Is there a correlation between the consumption of my brand and people's hobbies?`
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'codigosQR',
-        label: 'Códigos QR',
-        title: 'Sistema de QR personalizados',
-        subTitle: 'Generamos códigos QR que son tu llave para la información',
-        body: 'Implementa sistemas de QR personalizados altamente funcionales para promocionales, seguimiento de paquetes o inventario, cartas de restaurantes, controles de accesos, entre otros.',
+        label: 'Convert pictures',
+        title: 'Convert pictures and videos into actionable data',
+        subTitle: 'Transform images into actionable insights.',
+        body: 'By placing a compact device on the ceiling of small stores, monitor product behavior 24/7 with no human intervention. Access all the information needed to optimize operations and make smarter decisions in real-time.',
         images: [
           {
             id: 1,
@@ -348,21 +345,21 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Puedo controlar los accesos a mi compañía por medio de un código QR?",
-          "¿Puedo generar un sistema de pago a través de códigos QR en diferentes puntos de venta?",
-          "¿Puedo generar sistema de conversación con mis clientes/o consumidores a partir de códigos QR?"
+          'Is my product present on the shelf or not?',
+          'How many products do you have on the shelf?',
+          'What proportion of the inventory does your product occupy?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'realidadAumentada',
-        label: 'Realidad Aumentada',
-        title: 'Gamificación y realidad aumentada',
-        subTitle: 'Cuando el usuario juega con tu marca, aprende mucho más de ella.',
-        body: 'Ejecuta dinámicas y mecánicas de gamificación para mejorar estrategias, resultados y demás proyectos empresariales, convirtiendo tareas y procesos aburridos en mundos virtuales divertidos.',
+        label: 'Augmented Reality',
+        title: 'Gamification and Augmented Reality',
+        subTitle: 'When users interact with your brand, they learn significantly more about it.',
+        body: 'Implement gamification dynamics and mechanics to enhance strategies, results, and various business projects, transforming mundane tasks and processes into engaging virtual experiences.',
         images: [
           {
             id: 1,
@@ -381,21 +378,21 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Puedo lograr contar una historia con realidad aumentada a través de mis productos?",
-          "¿Puedo lograr que a través de mis empaques le cuente una historia a mi consumidor con realidad aumentada?",
-          "¿Puedo lograr que mis consumidores vayan a cierta ubicación geográfica a donde estratégicamente quiero llevarlos?"
+          'Can I tell a story through augmented reality using my products?',
+          'Can I make my packaging tell a story to my consumers using augmented reality?',
+          'Can I direct my consumers to a specific geographic location that I strategically want to lead them to?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'ads',
-        label: 'Ads',
-        title: 'Optimizador de pauta',
-        subTitle: 'Volviendo la publicidad digital aún más eficiente',
-        body: 'Crea una pauta comercial optimizada en consumidores que presenten un interés real y comprobable sobre tu marca. Nuestra tecnología realiza un entendimiento profundo de clientes y su entorno en tiempo real, más allá de gustos e intereses.',
+        label: 'ADS',
+        title: 'Ad Optimization',
+        subTitle: 'Enhancing the efficiency of digital advertising.',
+        body: 'Develop an optimized advertising strategy that targets consumers with genuine and verifiable interest in your brand. Our technology offers a profound understanding of customers and their environments in real time, going beyond mere likes and interests.',
         images: [
           {
             id: 1,
@@ -409,22 +406,22 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Puedo lograr hablarle a grupos específicos de consumidores?",
-          "¿Puedo pautarle solo a consumidores de mi competencia?",
-          "¿Puedo pautarle a usuarios que hoy no me tienen en su hogar?",
-          "¿Puedo pautarle a personas que están cambiando sus hábitos de consumo?"
+          'Can I target only the consumers of my competitors?',
+          'Can I target only users who do not currently have my product in their homes?',
+          'Can I specifically address targeted consumer groups?',
+          'Can I target only people who are changing their consumption habits?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       },
       {
         name: 'scraper',
-        label: 'Scraper',
+        label: 'SCRAPER',
         title: 'Lucro Scraper',
-        subTitle: 'Una misma marca, un mundo de precios diferentes',
-        body: 'Incrementa tus ventas y analiza el precio de tus productos y de la competencia con nuestro identificador de precios en tiendas electrónicas en tiempo real. Incluye arquitectura analítica de agrupación de datos, comparación por secuencias de tiempos y su respectivo tablero.',
+        subTitle: 'One brand, a world of varied prices.',
+        body: 'Increase your sales by analyzing, in real time, the prices of your products and those of your competitors using our Price Scraper tool for online stores. It features an analytical architecture for data grouping and time series comparisons, offering detailed insights by city and region, all accessible through an intuitive dashboard.',
         images: [
           {
             id: 1,
@@ -438,23 +435,22 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Las diferentes plataformas E-commerce están respetando mi precio de venta?",
-          "¿Cómo ha sido la variación de precios de mi competencia en los diferentes E-commerce?",
-          "¿Puedo tener alarmas cuando mi competencia baje de precio?",
-          "¿Puedo conocer en cuáles E-commerce están vendiendo mi producto y en cuáles estoy agotado?",
-          "¿Puedo saber si el E-commerece está promocionando la imagen de mi producto adecuada?"
+          'How do the prices of my products vary?',
+          'In which products am I more expensive or cheaper than my competitors?',
+          'What is the historical pricing of my products and those of the competition?',
+          `What are my competitors' current promotions?`,
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         }
       },
       {
         name: 'chatbot',
         label: 'ChatBot',
-        title: 'Desarrollo de ChatBot',
-        subTitle: 'Una conversación fluida con tus clientes te genera resultados increíbles',
-        body: 'Utiliza nuestra metodología Robotic Process Automation junto con el procesamiento del lenguaje natural para brindar una mejor experiencia a clientes o consumidores y al mismo tiempo recopilar información útil para la empresa.',
+        title: 'Lucro Promo',
+        subTitle: `Claiming promotions from the comfort of home enhances your customers' experience.`,
+        body: 'With our WhatsApp Chatbot, consumers can send photos of products to earn points that can be redeemed for prizes, all quickly and easily. We integrate Robotic Process Automation and natural language processing to facilitate seamless interactions while collecting valuable information for your business.',
         images: [
           {
             id: 1,
@@ -478,12 +474,13 @@ export class CmsService {
           }
         ],
         questions: [
-          "¿Puedo hacer que un robot le de atención al cliente humanizada a mis consumidores?",
-          "¿Puedo optimizar el proceso de PQR’s a través de un ChatBot?",
-          "¿Puedo hacer que la experiencia del usuario al interactuar con el Bot sea agradable?"
+          `Can I see the information about the participants' profiles?`,
+          'Can I see how many consumers are interacting with the promotion?',
+          'Can I know which promotions generate the most interaction and success?',
+          'Can I find out what percentage of users participate in future promotions again?'
         ],
         button: {
-          content: 'contactar un comercial',
+          content: 'contact a sales representative',
           class: 'btn-ghost'
         },
       }
@@ -567,7 +564,7 @@ export class CmsService {
     ]
   }
 
-  constructor() {}
+  constructor() { }
 
   async get(): Promise<Cms> {
     return this.data;

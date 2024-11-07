@@ -6,7 +6,7 @@ import { Tecnologia } from '../models/techModels/tecnologia';
 })
 export class TechCmsService {
   private data: Tecnologia = {
-    title: 'Nuestra tecnología',
+    title: 'Our technology',
     content: [
       {
         name: 'gamificacion',
@@ -17,9 +17,9 @@ export class TechCmsService {
         },
         card: {
           img: '/assets/images/tecnologia/gamificacion/gamificacionIcono.svg',
-          title: 'Gamificación',
+          title: 'Gamification',
           content:
-            'En Lucro empleamos mecánicas de juego en entornos que tradicionalmente no son recreativos para fortalecer organizaciones en su núcleo o mejorar el compromiso de los usuarios hacia un producto o servicio. Nuestra tecnología integra la experiencia y la diversión para dinamizar procesos y transformarlos en estrategias didácticas.',
+            'At Lucro, we apply game mechanics in non-traditional recreational environments to strengthen organizations at their core and enhance user engagement with products or services. Our technology blends experience and enjoyment to energize processes, transforming them into effective educational strategies.',
         },
       },
       {
@@ -32,7 +32,7 @@ export class TechCmsService {
           img: '/assets/images/tecnologia/scrapper/scrapperIcono.svg',
           title: 'Scraper',
           content:
-            'Nuestro software extrae información de millones de sitios web mediante un proceso automático hasta dar con información relevante. Esta herramienta es de gran utilidad para las empresas que necesiten recolectar datos, compararlos y procesarlos.',
+            'Our software extracts information from millions of websites through an automated process, providing CPGs with real-time insights into price and promotion execution on e-commerce platforms. With its dashboards and customizable alert parameters, Scraper allows CPGs to stay informed without the need to manually check each platform.',
         },
       },
       {
@@ -45,9 +45,8 @@ export class TechCmsService {
         },
         card: {
           img: '/assets/images/tecnologia/identificadorImagenes/identificadorImagenesIcono.svg',
-          title: 'Identificador de imágenes',
-          content:
-            'Herramienta de reconocimiento de imagen para analizar e interpretar datos según las necesidades de la empresa. Imagina que un sistema usa sus “ojos” de la misma forma como lo hacen los humanos para la interpretación de datos a través de la captura de imágenes. “Libera el potencial escondido que tiene una imagen traducida a datos”.',
+          title: 'Image Identifier',
+          content: `An image recognition tool designed to analyze and interpret data according to your company's needs. Imagine a system using its 'eyes' just like humans do, capturing and interpreting data through images. “Unleash the hidden potential of images transformed into actionable data”.`,
         },
       },
       {
@@ -59,9 +58,9 @@ export class TechCmsService {
         },
         card: {
           img: '/assets/images/tecnologia/automatizacionRPA/automatizacionRPAIcono.svg',
-          title: 'Automatización robótica de procesos (RPA)',
+          title: 'Robotic Process Automation (RPA)',
           content:
-            'En la actualidad muchas empresas que pueden crear Bots, pero ninguna como Lucro pone a disposición múltiples APIs (de seguridad, Qr, detección de imagen, flujo conversacional) que alimentan todo un ecosistema de bots para convertirlos en soluciones sencillas de alto impacto en la productividad de su modelo de negocio.',
+            'Today, many companies can create bots, but none like Lucro offers multiple APIs (security, QR, image detection, conversational flow) that fuel an entire bot ecosystem, transforming them into simple, high-impact solutions that significantly boost the productivity of your business model.',
         },
       },
       {
@@ -74,9 +73,9 @@ export class TechCmsService {
         },
         card: {
           img: '/assets/images/tecnologia/modelosPredictivos/modelosPredictivosIcono.svg',
-          title: 'Modelos Predictivos',
+          title: 'Predictive model',
           content:
-            'Lucro identifica, segmenta y perfila cientos de usuarios que aciertan la predicción de eventos deportivos por encima del promedio de la población. Estas predicciones, más la información histórica, nos permite determinar los mejores pronósticos de eventos o resultados futuros. Nuestro modelo predictivo más el almacenamiento y procesamiento de grandes cantidades de datos, se direccionan en busca de tendencias que aporten soluciones a las empresas.',
+            `At Lucro, we turn data collection on product and consumer behavior into a powerful tool for CPGs. Our technology enables real-time information capture, allowing companies to anticipate trends and boost their sales.`,
         },
       },
       {
@@ -89,13 +88,13 @@ export class TechCmsService {
           img: '/assets/images/tecnologia/bigData/bigDataIcono.svg',
           title: 'Big Data',
           content:
-            'El crecimiento exponencial de la comunidad de Lucro mantiene datos actualizados día a día que nos permiten ejecutar modelos correctivos y predictivos con una infraestructura tecnológica en tiempo real, para la creación de informes de gestión que faciliten la toma de decisiones.',
+            'The exponential growth of daily updated data capture allows us to execute corrective and predictive models with real-time technological infrastructure for the creation of management reports that facilitate decision-making.',
         },
       },
     ],
   };
 
-  constructor() {}
+  constructor() { }
 
   async get(): Promise<Tecnologia> {
     return this.data;

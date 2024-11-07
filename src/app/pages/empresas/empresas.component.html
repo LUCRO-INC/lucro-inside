@@ -7,7 +7,7 @@
     <p class="home__text--paragraph">
       {{ sectionOne?.body }}
     </p>
-    <p class="home__text--paragraph" *ngIf="sectionOne?.body" [innerHTML]="sectionOne?.subbody"></p>
+    <!-- <p class="home__text--paragraph" *ngIf="sectionOne?.body" [innerHTML]="sectionOne?.subbody"></p> -->
   </article>
 </section>
 
@@ -23,7 +23,7 @@
 </section>
 
 <section class="beliefs" #beliefs>
-  <h5>Ellos son nuestros clientes</h5>
+  <h5>They are our clients</h5>
   <div class="our-clients specificator">
     <swiper [config]="clientsConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
       <ng-template swiperSlide *ngFor="let cliente of clientes">
@@ -48,8 +48,8 @@
     <img *ngFor="let img of sectionFour.images" [src]="img.src" [class]="img.class" />
   </div>
   <article class="work__text">
-    <h2 class="work__text--title">¿Cómo trabajamos<br />con los clientes</h2>
+    <h2 class="work__text--title">How do we work<br />with clients?</h2>
     <p class="work__text--paragraph" [innerHTML]="sectionFour?.body"></p>
-    <button routerLink="/contactenos" class="btn-ghost">Contáctanos</button>
+    <button routerLink="/contactenos" class="btn-ghost">Contact us</button>
   </article>
 </section>

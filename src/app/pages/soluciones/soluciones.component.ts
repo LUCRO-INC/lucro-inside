@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { SolucionesSection } from 'src/app/@core/models/solucionesSection';
 import { CmsService } from 'src/app/@core/services/cms.service';
-import { setClassMetadata } from '@angular/core/src/r3_symbols';
+// import { setClassMetadata } from '@angular/core/src/r3_symbols';
 import { fadeinLeft, fadeinRight, questionsFade, evaluacionDesempenoImageAnimation } from 'src/app/@shared/animations';
 import { ElementSchemaRegistry } from '@angular/compiler';
 
@@ -74,7 +74,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
   public currentSel: String = 'machineLearning';
   public observer: any;
   public footerObserver: any;
-  public navbar:any;
+  public navbar: any;
 
   private id: any;
   private footer: any;
@@ -298,11 +298,11 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  goToSection(solucionLabel: String, event:any) {
+  goToSection(solucionLabel: String, event: any) {
     let navbarItems = document.querySelectorAll('.nav-button')
     event.target?.classList.add('highlighted');
     navbarItems.forEach((item) => {
-      if(item.classList.contains('highlighted') && item !== event.target) {
+      if (item.classList.contains('highlighted') && item !== event.target) {
         item.classList.remove('highlighted');
       }
     })
@@ -360,7 +360,7 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-           console.log(entry.target.classList)
+          console.log(entry.target.classList)
           entry.target.classList.add('show');
           // let navbarItems = document.querySelectorAll('.nav-button');
           // console.log(navbarItems)
@@ -376,19 +376,20 @@ export class SolucionesComponent implements OnInit, AfterViewInit, OnDestroy {
         if (entry.isIntersecting) {
           this.navbar?.classList.add('float');
         } else {
-          this.navbar?.classList.remove('float');}
+          this.navbar?.classList.remove('float');
+        }
       });
     }, options);
   }
 
   @HostListener('window:resize', ['$event'])
   getScreenSize(event: Event) {
-        this.windowWidth = window.innerWidth;
-        if (this.windowWidth > 576) { this.spaceBetween = 29.7 }
-        if (this.windowWidth > 768) { this.spaceBetween = 35.1 }
-        if (this.windowWidth > 1400) { this.spaceBetween = 50 }
-        else { this.spaceBetween = 27 }
-        // console.log(this.windowWidth, this.spaceBetween);
+    this.windowWidth = window.innerWidth;
+    if (this.windowWidth > 576) { this.spaceBetween = 29.7 }
+    if (this.windowWidth > 768) { this.spaceBetween = 35.1 }
+    if (this.windowWidth > 1400) { this.spaceBetween = 50 }
+    else { this.spaceBetween = 27 }
+    // console.log(this.windowWidth, this.spaceBetween);
   }
 
   onSwiper(swiper: Swiper) {
